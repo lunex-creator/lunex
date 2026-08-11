@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1740" width="1600" height="1740" font-family="Inter, Segoe UI, Helvetica Neue, Arial, sans-serif">
+<defs>
+  <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
+    <path d="M20 0H0V20" fill="none" stroke="#E6EBF0" stroke-width="1"/>
+  </pattern>
+  <pattern id="grid5" width="100" height="100" patternUnits="userSpaceOnUse">
+    <rect width="100" height="100" fill="url(#grid)"/>
+    <path d="M100 0H0V100" fill="none" stroke="#D6DEE7" stroke-width="1"/>
+  </pattern>
+  <marker id="tri-navy" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+    <path d="M0 0 L10 5 L0 10 Z" fill="#1F3B57"/>
+  </marker>
+  <marker id="tri-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+    <path d="M0 0 L10 5 L0 10 Z" fill="#2F6F9E"/>
+  </marker>
+  <marker id="tri-green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+    <path d="M0 0 L10 5 L0 10 Z" fill="#2E7D4F"/>
+  </marker>
+  <marker id="tri-gray" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+    <path d="M0 0 L10 5 L0 10 Z" fill="#8FA0B3"/>
+  </marker>
+</defs>
+
+<rect width="1600" height="1740" fill="#FBFAF8"/>
+<rect width="1600" height="1740" fill="url(#grid5)"/>
+
+<text x="60" y="56" font-size="14" font-weight="400" fill="#5A6B7B" text-anchor="start" letter-spacing="2.5">LUNEX — SUB-MODEL 12</text>
+<text x="60" y="86" font-size="26" font-weight="600" fill="#16202B" text-anchor="start">Scenario Simulation &amp; Operator Guidance</text>
+<text x="60" y="110" font-size="13" font-weight="400" fill="#5A6B7B" text-anchor="start">AI-driven, not just alarm-triggered — tested on the Digital Twin (Sub-model 7) before the operator ever sees it</text>
+<rect x="30" y="145" width="1540" height="380" rx="10" fill="#FFFFFF" stroke="#2F6F9E" stroke-width="2.2"/>
+<text x="58" y="183" font-size="20" font-weight="700" fill="#2F6F9E" text-anchor="start">GuidanceRecommendation — a Set of Simulated Scenarios</text>
+<text x="58" y="205" font-size="12.5" font-weight="400" fill="#5A6B7B" text-anchor="start">peer of Interlock, Zone, Conduit, Alarm — goldenScenarioId is optional, not guaranteed</text>
+<rect x="60" y="245" width="560" height="230" rx="8" fill="#FFFFFF" stroke="#1F3B57" stroke-width="2"/>
+<text x="78" y="273" font-size="13.5" font-weight="700" fill="#2F6F9E" text-anchor="start">GuidanceRecommendation</text>
+<text x="78" y="301" font-size="12" font-weight="400" fill="#33404D" text-anchor="start" font-family="Consolas, Menlo, monospace">+ id : string</text>
+<text x="78" y="325" font-size="12" font-weight="400" fill="#33404D" text-anchor="start" font-family="Consolas, Menlo, monospace">+ context : DeviceRef | AlarmRef</text>
+<text x="78" y="349" font-size="12" font-weight="400" fill="#33404D" text-anchor="start" font-family="Consolas, Menlo, monospace">+ source : procedural | simulated</text>
+<text x="78" y="373" font-size="12" font-weight="400" fill="#33404D" text-anchor="start" font-family="Consolas, Menlo, monospace">+ scenarios : ScenarioResult[]</text>
+<text x="78" y="397" font-size="12" font-weight="400" fill="#33404D" text-anchor="start" font-family="Consolas, Menlo, monospace">+ goldenScenarioId : string | null</text>
+<text x="78" y="421" font-size="12" font-weight="400" fill="#33404D" text-anchor="start" font-family="Consolas, Menlo, monospace">+ generatedAt : timestamp</text>
+<text x="78" y="451" font-size="11.5" font-weight="400" fill="#B3402F" text-anchor="start" font-style="italic">null → equivalent options shown,</text>
+<text x="78" y="469" font-size="11.5" font-weight="400" fill="#B3402F" text-anchor="start" font-style="italic">no single “best” recommended</text>
+<rect x="680" y="245" width="560" height="230" rx="8" fill="#FFFFFF" stroke="#1F3B57" stroke-width="2"/>
+<text x="698" y="273" font-size="13.5" font-weight="700" fill="#2F6F9E" text-anchor="start">ScenarioResult</text>
+<text x="698" y="301" font-size="12" font-weight="400" fill="#33404D" text-anchor="start" font-family="Consolas, Menlo, monospace">+ id : string</text>
+<text x="698" y="325" font-size="12" font-weight="400" fill="#33404D" text-anchor="start" font-family="Consolas, Menlo, monospace">+ description : string</text>
+<text x="698" y="349" font-size="12" font-weight="400" fill="#33404D" text-anchor="start" font-family="Consolas, Menlo, monospace">+ predictedOutcome : string</text>
+<text x="698" y="373" font-size="12" font-weight="400" fill="#33404D" text-anchor="start" font-family="Consolas, Menlo, monospace">+ successProbability : 0–1</text>
+<text x="698" y="397" font-size="12" font-weight="400" fill="#33404D" text-anchor="start" font-family="Consolas, Menlo, monospace">+ isGolden : bool</text>
+<line x1="620" y1="360.0" x2="680" y2="360.0" stroke="#1F3B57" stroke-width="1.8" marker-start="url(#diamond-navy)"/>
+<text x="650.0" y="350.0" font-size="11.5" font-weight="400" fill="#5A6B7B" text-anchor="middle" font-style="italic">0..*</text>
+<text x="58" y="495" font-size="12" font-weight="400" fill="#33404D" text-anchor="start" font-style="italic">tested on the Digital Twin, not the physical Device — a wrong scenario costs nothing (Sub-model 7)</text>
+<rect x="30" y="575" width="1540" height="400" rx="10" fill="#FFFFFF" stroke="#2F6F9E" stroke-width="2.2"/>
+<text x="58" y="613" font-size="20" font-weight="700" fill="#2F6F9E" text-anchor="start">Two Sources, One Operator Screen</text>
+<text x="58" y="635" font-size="12.5" font-weight="400" fill="#5A6B7B" text-anchor="start">static procedure and live simulation feed the same guidance panel — for alarms AND normal operation</text>
+<rect x="60" y="675" width="700.0" height="130" rx="10" fill="#FFFFFF" stroke="#5A6B7B" stroke-width="2"/>
+<text x="84" y="705" font-size="14.5" font-weight="700" fill="#5A6B7B" text-anchor="start">ARP (Sub-model 11)</text>
+<text x="84" y="727" font-size="11.5" font-weight="400" fill="#5A6B7B" text-anchor="start" font-style="italic" font-family="Consolas, Menlo, monospace">source: procedural</text>
+<text x="84" y="755" font-size="12" font-weight="400" fill="#33404D" text-anchor="start">static, engineer-written —</text>
+<text x="84" y="775" font-size="12" font-weight="400" fill="#33404D" text-anchor="start">same text every time</text>
+<rect x="820.0" y="675" width="700.0" height="130" rx="10" fill="#FFFFFF" stroke="#2F6F9E" stroke-width="2.4"/>
+<text x="844.0" y="705" font-size="14.5" font-weight="700" fill="#2F6F9E" text-anchor="start">Scenario Simulation</text>
+<text x="844.0" y="727" font-size="11.5" font-weight="400" fill="#2F6F9E" text-anchor="start" font-style="italic" font-family="Consolas, Menlo, monospace">source: simulated</text>
+<text x="844.0" y="755" font-size="12" font-weight="400" fill="#33404D" text-anchor="start">dynamic, on the Digital Twin —</text>
+<text x="844.0" y="775" font-size="12" font-weight="400" fill="#33404D" text-anchor="start">current state, current outcome</text>
+<rect x="630.0" y="845" width="320" height="60" rx="10" fill="#FFFFFF" stroke="#1F3B57" stroke-width="2.4"/>
+<text x="790.0" y="869" font-size="13.5" font-weight="700" fill="#1F3B57" text-anchor="middle">Operator Guidance Panel</text>
+<text x="790.0" y="889" font-size="11" font-weight="400" fill="#5A6B7B" text-anchor="middle">same screen, whichever fired</text>
+<line x1="410.0" y1="805" x2="750.0" y2="845" stroke="#5A6B7B" stroke-width="1.8" marker-end="url(#tri-gray)"/>
+<line x1="1170.0" y1="805" x2="830.0" y2="845" stroke="#2F6F9E" stroke-width="1.8" marker-end="url(#tri-blue)"/>
+<text x="58" y="940" font-size="12" font-weight="400" fill="#33404D" text-anchor="start" font-style="italic">an alarm can trigger either or both; a normal setpoint change can too — governed by the policy in Panel 3</text>
+<rect x="30" y="1025" width="1540" height="560" rx="10" fill="#FFFFFF" stroke="#2F6F9E" stroke-width="2.2"/>
+<text x="58" y="1063" font-size="20" font-weight="700" fill="#2F6F9E" text-anchor="start">Simulation Policy — When Normal Operation Gets Checked</text>
+<text x="58" y="1085" font-size="12.5" font-weight="400" fill="#5A6B7B" text-anchor="start">decided in advance, per Assembly — not every setpoint change needs an AI simulation</text>
+<rect x="60" y="1135" width="473.3333333333333" height="150" rx="10" fill="#FFFFFF" stroke="#2E7D4F" stroke-width="2.4"/>
+<text x="80" y="1169" font-size="15" font-weight="700" fill="#2E7D4F" text-anchor="start" font-family="Consolas, Menlo, monospace">always</text>
+<text x="80" y="1197" font-size="11.5" font-weight="400" fill="#33404D" text-anchor="start">every operator action is simulated first</text>
+<text x="80" y="1215" font-size="11.5" font-weight="400" fill="#33404D" text-anchor="start">highest assurance, highest compute cost</text>
+<rect x="553.3333333333333" y="1135" width="473.3333333333333" height="150" rx="10" fill="#FFFFFF" stroke="#2F6F9E" stroke-width="2.4"/>
+<text x="573.3333333333333" y="1169" font-size="15" font-weight="700" fill="#2F6F9E" text-anchor="start" font-family="Consolas, Menlo, monospace">risk-based</text>
+<text x="573.3333333333333" y="1197" font-size="11.5" font-weight="400" fill="#33404D" text-anchor="start">simulated only if predicted worst-case</text>
+<text x="573.3333333333333" y="1215" font-size="11.5" font-weight="400" fill="#33404D" text-anchor="start">≥ Tier 1 (Sub-model 9) — the middle ground</text>
+<rect x="1046.6666666666665" y="1135" width="473.3333333333333" height="150" rx="10" fill="#FFFFFF" stroke="#5A6B7B" stroke-width="2.4"/>
+<text x="1066.6666666666665" y="1169" font-size="15" font-weight="700" fill="#5A6B7B" text-anchor="start" font-family="Consolas, Menlo, monospace">none</text>
+<text x="1066.6666666666665" y="1197" font-size="11.5" font-weight="400" fill="#33404D" text-anchor="start">no automatic trigger — relies entirely on</text>
+<text x="1066.6666666666665" y="1215" font-size="11.5" font-weight="400" fill="#33404D" text-anchor="start">manualOverrideAvailable below</text>
+<text x="789.9999999999999" y="1263" font-size="11" font-weight="700" fill="#2F6F9E" text-anchor="middle" font-family="Consolas, Menlo, monospace">SimulationPolicy.automaticMode</text>
+<text x="789.9999999999999" y="1279" font-size="11" font-weight="400" fill="#5A6B7B" text-anchor="middle" font-style="italic">reuses the severity tiers — no new scale</text>
+<rect x="60" y="1303" width="1480" height="46" rx="10" fill="#FFFFFF" stroke="#2E7D4F" stroke-width="2"/>
+<text x="84" y="1332" font-size="12.5" font-weight="700" fill="#2E7D4F" text-anchor="start" font-family="Consolas, Menlo, monospace">manualOverrideAvailable : true — always, regardless of automaticMode (not a fourth “hybrid” mode)</text>
+<rect x="60" y="1379" width="1480" height="130" rx="10" fill="#FFFFFF" stroke="#1F3B57" stroke-width="2"/>
+<text x="84" y="1409" font-size="13" font-weight="700" fill="#16202B" text-anchor="start">example: Assembly “Reactor Feed”, SimulationPolicy.automaticMode = risk-based, riskThreshold = Tier 1</text>
+<text x="84" y="1437" font-size="12" font-weight="400" fill="#33404D" text-anchor="start">• setpoint nudge within normal band → predicted worst-case stays Tier 3 → not simulated, applied directly</text>
+<text x="84" y="1459" font-size="12" font-weight="400" fill="#33404D" text-anchor="start">• setpoint change approaching an Interlock's trip point → predicted worst-case reaches Tier 1 →</text>
+<text x="84" y="1479" font-size="12" font-weight="400" fill="#33404D" text-anchor="start">  simulation runs automatically, operator sees scenarios before confirming</text>
+<text x="58" y="1539" font-size="12" font-weight="400" fill="#33404D" text-anchor="start" font-style="italic">Priority 1/2 alarms (Sub-model 10) are always simulated — actionable + high severity already implies the threshold is met</text>
+<line x1="60" y1="1625" x2="1540" y2="1625" stroke="#D6DEE7" stroke-width="1"/>
+<text x="60" y="1648" font-size="12" font-weight="400" fill="#5A6B7B" text-anchor="start" letter-spacing="1.6">LEGEND</text>
+<line x1="60" y1="1680" x2="106" y2="1680" stroke="#5A6B7B" stroke-width="1.8" marker-end="url(#tri-gray)"/>
+<text x="118" y="1685" font-size="13" font-weight="400" fill="#16202B" text-anchor="start">procedural (ARP) contribution</text>
+<line x1="400" y1="1680" x2="446" y2="1680" stroke="#2F6F9E" stroke-width="1.8" marker-end="url(#tri-blue)"/>
+<text x="458" y="1685" font-size="13" font-weight="400" fill="#16202B" text-anchor="start">simulated (Digital Twin) contribution</text>
+<line x1="800" y1="1680" x2="846" y2="1680" stroke="#1F3B57" stroke-width="1.8" marker-start="url(#diamond-navy)"/>
+<text x="858" y="1685" font-size="13" font-weight="400" fill="#16202B" text-anchor="start">composition (has 0..*)</text>
+</svg>

@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1770" width="1600" height="1770" font-family="Inter, Segoe UI, Helvetica Neue, Arial, sans-serif">
+<defs>
+  <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
+    <path d="M20 0H0V20" fill="none" stroke="#E6EBF0" stroke-width="1"/>
+  </pattern>
+  <pattern id="grid5" width="100" height="100" patternUnits="userSpaceOnUse">
+    <rect width="100" height="100" fill="url(#grid)"/>
+    <path d="M100 0H0V100" fill="none" stroke="#D6DEE7" stroke-width="1"/>
+  </pattern>
+  <marker id="tri-navy" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+    <path d="M0 0 L10 5 L0 10 Z" fill="#1F3B57"/>
+  </marker>
+  <marker id="tri-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+    <path d="M0 0 L10 5 L0 10 Z" fill="#2F6F9E"/>
+  </marker>
+  <marker id="tri-gray" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+    <path d="M0 0 L10 5 L0 10 Z" fill="#8FA0B3"/>
+  </marker>
+</defs>
+
+<rect width="1600" height="1770" fill="#FBFAF8"/>
+<rect width="1600" height="1770" fill="url(#grid5)"/>
+
+<text x="60" y="56" font-size="14" font-weight="400" fill="#5A6B7B" text-anchor="start" letter-spacing="2.5">LUNEX — SUB-MODEL 14</text>
+<text x="60" y="86" font-size="26" font-weight="600" fill="#16202B" text-anchor="start">Historian &amp; Analytics</text>
+<text x="60" y="110" font-size="13" font-weight="400" fill="#5A6B7B" text-anchor="start">what the state WAS, not just what it IS — the retrospective half of Sub-model 7</text>
+<rect x="30" y="145" width="1540" height="330" rx="10" fill="#FFFFFF" stroke="#2F6F9E" stroke-width="2.2"/>
+<text x="58" y="183" font-size="20" font-weight="700" fill="#2F6F9E" text-anchor="start">Historian — Append-Only, Not Overwritten</text>
+<text x="58" y="205" font-size="12.5" font-weight="400" fill="#5A6B7B" text-anchor="start">same Telemetry Envelope (Sub-model 7), two destinations — one overwrites, one never does</text>
+<rect x="150" y="305" width="220" height="60" rx="10" fill="#FFFFFF" stroke="#1F3B57" stroke-width="2.2"/>
+<text x="260" y="340" font-size="13.5" font-weight="700" fill="#1F3B57" text-anchor="middle">Telemetry Envelope</text>
+<rect x="620" y="235" width="280" height="60" rx="10" fill="#FFFFFF" stroke="#2F6F9E" stroke-width="2.2"/>
+<text x="760" y="259" font-size="13.5" font-weight="700" fill="#2F6F9E" text-anchor="middle">Digital Twin</text>
+<text x="760" y="279" font-size="11" font-weight="400" fill="#5A6B7B" text-anchor="middle">overwrites — current state only</text>
+<rect x="620" y="375" width="280" height="60" rx="10" fill="#FFFFFF" stroke="#2E7D4F" stroke-width="2.4"/>
+<text x="760" y="399" font-size="13.5" font-weight="700" fill="#2E7D4F" text-anchor="middle">Historian</text>
+<text x="760" y="419" font-size="11" font-weight="400" fill="#5A6B7B" text-anchor="middle">appends — every state, ever</text>
+<line x1="370" y1="321" x2="620" y2="265" stroke="#2F6F9E" stroke-width="1.8" marker-end="url(#tri-blue)"/>
+<line x1="370" y1="349" x2="620" y2="405" stroke="#2E7D4F" stroke-width="1.8" marker-end="url(#tri-navy)"/>
+<rect x="980" y="265" width="340" height="200" rx="10" fill="#FFFFFF" stroke="#1F3B57" stroke-width="2"/>
+<text x="1120" y="295" font-size="13.5" font-weight="700" fill="#1F3B57" text-anchor="middle">HistorianRecord</text>
+<text x="1000" y="321" font-size="11.5" font-weight="400" fill="#33404D" text-anchor="start" font-family="Consolas, Menlo, monospace">+ path, timestamp  (Sub-model 2/7)</text>
+<text x="1000" y="345" font-size="11.5" font-weight="400" fill="#33404D" text-anchor="start" font-family="Consolas, Menlo, monospace">+ state, health, properties</text>
+<text x="1000" y="369" font-size="11.5" font-weight="400" fill="#33404D" text-anchor="start" font-family="Consolas, Menlo, monospace">+ retention : RetentionPolicyRef</text>
+<text x="1000" y="407" font-size="11" font-weight="400" fill="#5A6B7B" text-anchor="start" font-style="italic">one row per envelope, kept at</text>
+<text x="1000" y="425" font-size="11" font-weight="400" fill="#5A6B7B" text-anchor="start" font-style="italic">whatever resolution the policy sets</text>
+<text x="58" y="445" font-size="12" font-weight="400" fill="#33404D" text-anchor="start" font-style="italic">the Historian never blocks or slows the Twin — it observes the same stream, it doesn't gate it</text>
+<rect x="30" y="525" width="1540" height="560" rx="10" fill="#FFFFFF" stroke="#2F6F9E" stroke-width="2.2"/>
+<text x="58" y="563" font-size="20" font-weight="700" fill="#2F6F9E" text-anchor="start">Retention Policy — the Same Shape as Simulation Policy</text>
+<text x="58" y="585" font-size="12.5" font-weight="400" fill="#5A6B7B" text-anchor="start">decided in advance, per Assembly — the classic big-data cost/detail trade-off, not a new decision pattern</text>
+<rect x="60" y="635" width="473.3333333333333" height="150" rx="10" fill="#FFFFFF" stroke="#2E7D4F" stroke-width="2.4"/>
+<text x="80" y="669" font-size="15" font-weight="700" fill="#2E7D4F" text-anchor="start" font-family="Consolas, Menlo, monospace">always</text>
+<text x="80" y="697" font-size="11.5" font-weight="400" fill="#33404D" text-anchor="start">every point kept at full</text>
+<text x="80" y="715" font-size="11.5" font-weight="400" fill="#33404D" text-anchor="start">resolution — highest cost</text>
+<rect x="553.3333333333333" y="635" width="473.3333333333333" height="150" rx="10" fill="#FFFFFF" stroke="#2F6F9E" stroke-width="2.4"/>
+<text x="573.3333333333333" y="669" font-size="15" font-weight="700" fill="#2F6F9E" text-anchor="start" font-family="Consolas, Menlo, monospace">risk-based</text>
+<text x="573.3333333333333" y="697" font-size="11.5" font-weight="400" fill="#33404D" text-anchor="start">full resolution only where it</text>
+<text x="573.3333333333333" y="715" font-size="11.5" font-weight="400" fill="#33404D" text-anchor="start">matters — the default</text>
+<rect x="1046.6666666666665" y="635" width="473.3333333333333" height="150" rx="10" fill="#FFFFFF" stroke="#5A6B7B" stroke-width="2.4"/>
+<text x="1066.6666666666665" y="669" font-size="15" font-weight="700" fill="#5A6B7B" text-anchor="start" font-family="Consolas, Menlo, monospace">none</text>
+<text x="1066.6666666666665" y="697" font-size="11.5" font-weight="400" fill="#33404D" text-anchor="start">no automatic trigger — relies entirely on</text>
+<text x="1066.6666666666665" y="715" font-size="11.5" font-weight="400" fill="#33404D" text-anchor="start">manualOverrideAvailable below</text>
+<text x="789.9999999999999" y="763" font-size="11" font-weight="700" fill="#2F6F9E" text-anchor="middle" font-family="Consolas, Menlo, monospace">RetentionPolicy.automaticMode</text>
+<text x="789.9999999999999" y="779" font-size="11" font-weight="400" fill="#5A6B7B" text-anchor="middle" font-style="italic">reuses the severity tiers — same field as Sub-model 12</text>
+<rect x="60" y="803" width="1480" height="46" rx="10" fill="#FFFFFF" stroke="#2E7D4F" stroke-width="2"/>
+<text x="84" y="832" font-size="12.5" font-weight="700" fill="#2E7D4F" text-anchor="start" font-family="Consolas, Menlo, monospace">manualOverrideAvailable : true — always, regardless of automaticMode (not a fourth “hybrid” mode)</text>
+<rect x="60" y="879" width="1480" height="130" rx="10" fill="#FFFFFF" stroke="#1F3B57" stroke-width="2"/>
+<text x="84" y="909" font-size="13" font-weight="700" fill="#16202B" text-anchor="start">example: Assembly “Reactor Feed”, RetentionPolicy.automaticMode = risk-based, riskThreshold = Tier 1</text>
+<text x="84" y="937" font-size="12" font-weight="400" fill="#33404D" text-anchor="start">• normal telemetry, worstTier stays 3 → downsampled after 24h (1-minute averages, kept 1 year)</text>
+<text x="84" y="959" font-size="12" font-weight="400" fill="#33404D" text-anchor="start">• a contributor to a Tier ≤ 1 rollup, or the source of a Priority 1/2 alarm (Sub-model 9/10) →</text>
+<text x="84" y="979" font-size="12" font-weight="400" fill="#33404D" text-anchor="start">  kept at full raw resolution, indefinitely — exactly the data an investigation will need</text>
+<text x="58" y="1039" font-size="12" font-weight="400" fill="#33404D" text-anchor="start" font-style="italic">same policy shape as Sub-model 12 by design — one mental model for “when does this get the expensive treatment”</text>
+<rect x="30" y="1135" width="1540" height="480" rx="10" fill="#FFFFFF" stroke="#2F6F9E" stroke-width="2.2"/>
+<text x="58" y="1173" font-size="20" font-weight="700" fill="#2F6F9E" text-anchor="start">Analytics — Descriptive, Not Predictive</text>
+<text x="58" y="1195" font-size="12.5" font-weight="400" fill="#5A6B7B" text-anchor="start">deliberately distinct from Sub-model 12 — this looks back at the Historian, that looks forward on the Twin</text>
+<rect x="60" y="1245" width="700.0" height="110" rx="10" fill="#FFFFFF" stroke="#2F6F9E" stroke-width="2.2"/>
+<text x="84" y="1275" font-size="14.5" font-weight="700" fill="#2F6F9E" text-anchor="start">Analytics (here)</text>
+<text x="84" y="1297" font-size="11.5" font-weight="400" fill="#2F6F9E" text-anchor="start" font-style="italic" font-family="Consolas, Menlo, monospace">source: Historian, retrospective</text>
+<text x="84" y="1323" font-size="12" font-weight="400" fill="#33404D" text-anchor="start">what happened, how often,</text>
+<text x="84" y="1341" font-size="12" font-weight="400" fill="#33404D" text-anchor="start">how this alarm/loop performs</text>
+<rect x="820.0" y="1245" width="700.0" height="110" rx="10" fill="#FFFFFF" stroke="#5A6B7B" stroke-width="2"/>
+<text x="844.0" y="1275" font-size="14" font-weight="700" fill="#5A6B7B" text-anchor="start">Scenario Simulation (Sub-model 12)</text>
+<text x="844.0" y="1297" font-size="11.5" font-weight="400" fill="#5A6B7B" text-anchor="start" font-style="italic" font-family="Consolas, Menlo, monospace">source: Digital Twin, predictive</text>
+<text x="844.0" y="1323" font-size="12" font-weight="400" fill="#33404D" text-anchor="start">what would happen if —</text>
+<text x="844.0" y="1341" font-size="12" font-weight="400" fill="#33404D" text-anchor="start">before the operator acts</text>
+<rect x="60" y="1405" width="1480" height="170" rx="10" fill="#FFFFFF" stroke="#1F3B57" stroke-width="2"/>
+<text x="84" y="1435" font-size="13.5" font-weight="700" fill="#16202B" text-anchor="start">ISA-18.2 requires alarm performance metrics — impossible without the Historian</text>
+<text x="84" y="1461" font-size="12" font-weight="400" fill="#33404D" text-anchor="start">• alarms per hour, per operator position — industry benchmark: &lt; 6/hour average, &lt; 2/10min in upset</text>
+<text x="84" y="1488" font-size="12" font-weight="400" fill="#33404D" text-anchor="start">• “bad actors” — the small set of alarm types generating a disproportionate share of all activations</text>
+<text x="84" y="1515" font-size="12" font-weight="400" fill="#33404D" text-anchor="start">• average time-to-acknowledge, by Priority (Sub-model 10) — is Priority 1 actually acknowledged fastest?</text>
+<text x="84" y="1542" font-size="12" font-weight="400" fill="#33404D" text-anchor="start">• stale alarms — Shelved (Sub-model 10) instances approaching shelvedUntil expiry, not yet resolved</text>
+<text x="58" y="1593" font-size="12" font-weight="400" fill="#33404D" text-anchor="start" font-style="italic">computed periodically over Historian data, not streamed — a report, not a telemetry envelope</text>
+<line x1="60" y1="1655" x2="1540" y2="1655" stroke="#D6DEE7" stroke-width="1"/>
+<text x="60" y="1678" font-size="12" font-weight="400" fill="#5A6B7B" text-anchor="start" letter-spacing="1.6">LEGEND</text>
+<line x1="60" y1="1710" x2="106" y2="1710" stroke="#2F6F9E" stroke-width="1.8" marker-end="url(#tri-blue)"/>
+<text x="118" y="1715" font-size="13" font-weight="400" fill="#16202B" text-anchor="start">to Digital Twin (current state)</text>
+<line x1="400" y1="1710" x2="446" y2="1710" stroke="#2E7D4F" stroke-width="1.8" marker-end="url(#tri-navy)"/>
+<text x="458" y="1715" font-size="13" font-weight="400" fill="#16202B" text-anchor="start">to Historian (permanent record)</text>
+</svg>

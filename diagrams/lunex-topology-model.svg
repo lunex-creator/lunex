@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1700 1314" width="1700" height="1314" font-family="Inter, Segoe UI, Helvetica Neue, Arial, sans-serif">
+<defs>
+  <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
+    <path d="M20 0H0V20" fill="none" stroke="#E6EBF0" stroke-width="1"/>
+  </pattern>
+  <pattern id="grid5" width="100" height="100" patternUnits="userSpaceOnUse">
+    <rect width="100" height="100" fill="url(#grid)"/>
+    <path d="M100 0H0V100" fill="none" stroke="#D6DEE7" stroke-width="1"/>
+  </pattern>
+  <marker id="tri-navy" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+    <path d="M0 0 L10 5 L0 10 Z" fill="#1F3B57"/>
+  </marker>
+  <marker id="tri-gray" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+    <path d="M0 0 L10 5 L0 10 Z" fill="#8FA0B3"/>
+  </marker>
+  <marker id="tri-open" viewBox="0 0 12 12" refX="10" refY="6" markerWidth="9" markerHeight="9" orient="auto-start-reverse">
+    <path d="M0 0 L12 6 L0 12 Z" fill="#FFFFFF" stroke="#1F3B57" stroke-width="1.3"/>
+  </marker>
+</defs>
+<rect width="1700" height="1314" fill="#FBFAF8"/>
+<rect width="1700" height="1314" fill="url(#grid5)"/>
+
+<text x="60" y="56" font-size="14" font-weight="400" fill="#5A6B7B" text-anchor="start" letter-spacing="2.5">LUNEX — SUB-MODEL 3</text>
+<text x="60" y="86" font-size="26" font-weight="600" fill="#16202B" text-anchor="start">Topology Model (Assembly)</text>
+<text x="60" y="110" font-size="13" font-weight="400" fill="#5A6B7B" text-anchor="start">Axis 1: wiring shape (choose exactly one per Assembly)  ·  Axis 2: capability flags (independent of shape)</text>
+<rect x="30" y="150" width="380" height="340" rx="10" fill="#FFFFFF" stroke="#1F3B57" stroke-width="2.2"/>
+<text x="54" y="186" font-size="19" font-weight="700" fill="#1F3B57" text-anchor="start">Integrated</text>
+<rect x="90" y="270" width="260" height="100" rx="10" fill="#FFFFFF" stroke="#1F3B57" stroke-width="2.5"/>
+<line x1="176.66666666666669" y1="270" x2="176.66666666666669" y2="370" stroke="#1F3B57" stroke-width="1.4" stroke-dasharray="4,3"/>
+<line x1="263.33333333333337" y1="270" x2="263.33333333333337" y2="370" stroke="#1F3B57" stroke-width="1.4" stroke-dasharray="4,3"/>
+<text x="133.33333333333334" y="326.0" font-size="18" font-weight="700" fill="#2E7D4F" text-anchor="middle" font-family="Consolas, Menlo, monospace">S</text>
+<text x="220.00000000000003" y="326.0" font-size="18" font-weight="700" fill="#1F3B57" text-anchor="middle" font-family="Consolas, Menlo, monospace">CU</text>
+<text x="306.6666666666667" y="326.0" font-size="18" font-weight="700" fill="#2E7D4F" text-anchor="middle" font-family="Consolas, Menlo, monospace">A</text>
+<text x="54" y="415" font-size="12.5" font-weight="400" fill="#33404D" text-anchor="start">one physical unit — sensing, logic and</text>
+<text x="54" y="433" font-size="12.5" font-weight="400" fill="#33404D" text-anchor="start">actuation fused together</text>
+<text x="54" y="460" font-size="12" font-weight="400" fill="#5A6B7B" text-anchor="start" font-style="italic">plug-and-play · minimal wiring</text>
+<rect x="450" y="150" width="380" height="340" rx="10" fill="#FFFFFF" stroke="#1F3B57" stroke-width="2.2"/>
+<text x="474" y="186" font-size="19" font-weight="700" fill="#1F3B57" text-anchor="start">Point-to-Point</text>
+<rect x="472.0" y="283.0" width="48" height="34" rx="6" fill="#FFFFFF" stroke="#2E7D4F" stroke-width="2"/>
+<text x="496" y="305" font-size="12.5" font-weight="700" fill="#2E7D4F" text-anchor="middle" font-family="Consolas, Menlo, monospace">S</text>
+<line x1="523" y1="300" x2="537" y2="300" stroke="#1F3B57" stroke-width="2" marker-end="url(#tri-navy)"/>
+<rect x="540.0" y="283.0" width="48" height="34" rx="6" fill="#FFFFFF" stroke="#2F6F9E" stroke-width="2"/>
+<text x="564" y="305" font-size="12.5" font-weight="700" fill="#2F6F9E" text-anchor="middle" font-family="Consolas, Menlo, monospace">T</text>
+<line x1="591" y1="300" x2="605" y2="300" stroke="#1F3B57" stroke-width="2" marker-end="url(#tri-navy)"/>
+<rect x="608.0" y="283.0" width="48" height="34" rx="6" fill="#FFFFFF" stroke="#1F3B57" stroke-width="2"/>
+<text x="632" y="305" font-size="12.5" font-weight="700" fill="#1F3B57" text-anchor="middle" font-family="Consolas, Menlo, monospace">CU</text>
+<line x1="659" y1="300" x2="673" y2="300" stroke="#1F3B57" stroke-width="2" marker-end="url(#tri-navy)"/>
+<rect x="676.0" y="283.0" width="48" height="34" rx="6" fill="#FFFFFF" stroke="#2F6F9E" stroke-width="2"/>
+<text x="700" y="305" font-size="12.5" font-weight="700" fill="#2F6F9E" text-anchor="middle" font-family="Consolas, Menlo, monospace">SC</text>
+<line x1="727" y1="300" x2="741" y2="300" stroke="#1F3B57" stroke-width="2" marker-end="url(#tri-navy)"/>
+<rect x="744.0" y="283.0" width="48" height="34" rx="6" fill="#FFFFFF" stroke="#2E7D4F" stroke-width="2"/>
+<text x="768" y="305" font-size="12.5" font-weight="700" fill="#2E7D4F" text-anchor="middle" font-family="Consolas, Menlo, monospace">A</text>
+<path d="M 574 280 Q 598.0 258, 622 280" fill="none" stroke="#8FA0B3" stroke-width="1.6" marker-end="url(#tri-gray)" stroke-dasharray="4,3"/>
+<path d="M 642 280 Q 666.0 258, 690 280" fill="none" stroke="#8FA0B3" stroke-width="1.6" marker-end="url(#tri-gray)" stroke-dasharray="4,3"/>
+<text x="474" y="355" font-size="11.5" font-weight="400" fill="#5A6B7B" text-anchor="start" font-style="italic">feedback — only between Control Units</text>
+<text x="474" y="415" font-size="12.5" font-weight="400" fill="#33404D" text-anchor="start">straight 1:1 chain, each stage wired to</text>
+<text x="474" y="433" font-size="12.5" font-weight="400" fill="#33404D" text-anchor="start">its neighbor only — no shared stage</text>
+<text x="474" y="460" font-size="12" font-weight="400" fill="#5A6B7B" text-anchor="start" font-style="italic">the simplest multi-device pattern</text>
+<rect x="870" y="150" width="380" height="340" rx="10" fill="#FFFFFF" stroke="#1F3B57" stroke-width="2.2"/>
+<text x="894" y="186" font-size="19" font-weight="700" fill="#1F3B57" text-anchor="start">Star</text>
+<rect x="1034.0" y="296.0" width="52" height="38" rx="6" fill="#FFFFFF" stroke="#1F3B57" stroke-width="2"/>
+<text x="1060.0" y="320" font-size="12.5" font-weight="700" fill="#1F3B57" text-anchor="middle" font-family="Consolas, Menlo, monospace">CU</text>
+<rect x="888.0" y="253.0" width="48" height="34" rx="6" fill="#FFFFFF" stroke="#2E7D4F" stroke-width="2"/>
+<text x="912" y="275" font-size="12.5" font-weight="700" fill="#2E7D4F" text-anchor="middle" font-family="Consolas, Menlo, monospace">S</text>
+<rect x="950.0" y="253.0" width="48" height="34" rx="6" fill="#FFFFFF" stroke="#2F6F9E" stroke-width="2"/>
+<text x="974" y="275" font-size="12.5" font-weight="700" fill="#2F6F9E" text-anchor="middle" font-family="Consolas, Menlo, monospace">T</text>
+<line x1="937" y1="270" x2="949" y2="270" stroke="#1F3B57" stroke-width="1.7" marker-end="url(#tri-navy)"/>
+<line x1="999" y1="270" x2="1033.0" y2="304" stroke="#1F3B57" stroke-width="1.7" marker-end="url(#tri-navy)"/>
+<rect x="888.0" y="343.0" width="48" height="34" rx="6" fill="#FFFFFF" stroke="#2E7D4F" stroke-width="2"/>
+<text x="912" y="365" font-size="12.5" font-weight="700" fill="#2E7D4F" text-anchor="middle" font-family="Consolas, Menlo, monospace">S</text>
+<rect x="950.0" y="343.0" width="48" height="34" rx="6" fill="#FFFFFF" stroke="#2F6F9E" stroke-width="2"/>
+<text x="974" y="365" font-size="12.5" font-weight="700" fill="#2F6F9E" text-anchor="middle" font-family="Consolas, Menlo, monospace">T</text>
+<line x1="937" y1="360" x2="949" y2="360" stroke="#1F3B57" stroke-width="1.7" marker-end="url(#tri-navy)"/>
+<line x1="999" y1="360" x2="1033.0" y2="326" stroke="#1F3B57" stroke-width="1.7" marker-end="url(#tri-navy)"/>
+<rect x="1122.0" y="253.0" width="48" height="34" rx="6" fill="#FFFFFF" stroke="#2F6F9E" stroke-width="2"/>
+<text x="1146" y="275" font-size="12.5" font-weight="700" fill="#2F6F9E" text-anchor="middle" font-family="Consolas, Menlo, monospace">SC</text>
+<rect x="1184.0" y="253.0" width="48" height="34" rx="6" fill="#FFFFFF" stroke="#2E7D4F" stroke-width="2"/>
+<text x="1208" y="275" font-size="12.5" font-weight="700" fill="#2E7D4F" text-anchor="middle" font-family="Consolas, Menlo, monospace">A</text>
+<line x1="1087.0" y1="304" x2="1121" y2="270" stroke="#1F3B57" stroke-width="1.7" marker-end="url(#tri-navy)"/>
+<line x1="1171" y1="270" x2="1183" y2="270" stroke="#1F3B57" stroke-width="1.7" marker-end="url(#tri-navy)"/>
+<rect x="1122.0" y="343.0" width="48" height="34" rx="6" fill="#FFFFFF" stroke="#2F6F9E" stroke-width="2"/>
+<text x="1146" y="365" font-size="12.5" font-weight="700" fill="#2F6F9E" text-anchor="middle" font-family="Consolas, Menlo, monospace">SC</text>
+<rect x="1184.0" y="343.0" width="48" height="34" rx="6" fill="#FFFFFF" stroke="#2E7D4F" stroke-width="2"/>
+<text x="1208" y="365" font-size="12.5" font-weight="700" fill="#2E7D4F" text-anchor="middle" font-family="Consolas, Menlo, monospace">A</text>
+<line x1="1087.0" y1="326" x2="1121" y2="360" stroke="#1F3B57" stroke-width="1.7" marker-end="url(#tri-navy)"/>
+<line x1="1171" y1="360" x2="1183" y2="360" stroke="#1F3B57" stroke-width="1.7" marker-end="url(#tri-navy)"/>
+<text x="894" y="415" font-size="12.5" font-weight="400" fill="#33404D" text-anchor="start">several sensors and actuators share</text>
+<text x="894" y="433" font-size="12.5" font-weight="400" fill="#33404D" text-anchor="start">one Control Unit</text>
+<text x="894" y="460" font-size="12" font-weight="400" fill="#5A6B7B" text-anchor="start" font-style="italic">fan-in / fan-out</text>
+<rect x="1290" y="150" width="380" height="340" rx="10" fill="#FFFFFF" stroke="#1F3B57" stroke-width="2.2"/>
+<text x="1314" y="186" font-size="19" font-weight="700" fill="#1F3B57" text-anchor="start">Mesh</text>
+<line x1="1480.0" y1="300" x2="1385" y2="395" stroke="#1F3B57" stroke-width="1.8" marker-end="url(#tri-navy)" marker-start="url(#tri-navy)"/>
+<line x1="1480.0" y1="300" x2="1575" y2="395" stroke="#1F3B57" stroke-width="1.8" marker-end="url(#tri-navy)" marker-start="url(#tri-navy)"/>
+<line x1="1385" y1="395" x2="1575" y2="395" stroke="#1F3B57" stroke-width="1.8" marker-end="url(#tri-navy)" marker-start="url(#tri-navy)"/>
+<rect x="1455.0" y="282.0" width="50" height="36" rx="6" fill="#FFFFFF" stroke="#1F3B57" stroke-width="2"/>
+<text x="1480.0" y="305" font-size="12.5" font-weight="700" fill="#1F3B57" text-anchor="middle" font-family="Consolas, Menlo, monospace">CU</text>
+<rect x="1360.0" y="377.0" width="50" height="36" rx="6" fill="#FFFFFF" stroke="#1F3B57" stroke-width="2"/>
+<text x="1385" y="400" font-size="12.5" font-weight="700" fill="#1F3B57" text-anchor="middle" font-family="Consolas, Menlo, monospace">CU</text>
+<rect x="1550.0" y="377.0" width="50" height="36" rx="6" fill="#FFFFFF" stroke="#1F3B57" stroke-width="2"/>
+<text x="1575" y="400" font-size="12.5" font-weight="700" fill="#1F3B57" text-anchor="middle" font-family="Consolas, Menlo, monospace">CU</text>
+<rect x="1305.0" y="278.0" width="40" height="28" rx="6" fill="#FFFFFF" stroke="#2E7D4F" stroke-width="2"/>
+<text x="1325.0" y="297" font-size="12.5" font-weight="700" fill="#2E7D4F" text-anchor="middle" font-family="Consolas, Menlo, monospace">S</text>
+<rect x="1370.0" y="278.0" width="40" height="28" rx="6" fill="#FFFFFF" stroke="#2F6F9E" stroke-width="2"/>
+<text x="1390.0" y="297" font-size="12.5" font-weight="700" fill="#2F6F9E" text-anchor="middle" font-family="Consolas, Menlo, monospace">T</text>
+<rect x="1550.0" y="278.0" width="40" height="28" rx="6" fill="#FFFFFF" stroke="#2F6F9E" stroke-width="2"/>
+<text x="1570.0" y="297" font-size="12.5" font-weight="700" fill="#2F6F9E" text-anchor="middle" font-family="Consolas, Menlo, monospace">SC</text>
+<rect x="1615.0" y="278.0" width="40" height="28" rx="6" fill="#FFFFFF" stroke="#2E7D4F" stroke-width="2"/>
+<text x="1635.0" y="297" font-size="12.5" font-weight="700" fill="#2E7D4F" text-anchor="middle" font-family="Consolas, Menlo, monospace">A</text>
+<line x1="1346.0" y1="292" x2="1369.0" y2="292" stroke="#1F3B57" stroke-width="1.6" marker-end="url(#tri-navy)"/>
+<line x1="1411.0" y1="292" x2="1453.0" y2="290" stroke="#1F3B57" stroke-width="1.6" marker-end="url(#tri-navy)"/>
+<line x1="1507.0" y1="290" x2="1549.0" y2="292" stroke="#1F3B57" stroke-width="1.6" marker-end="url(#tri-navy)"/>
+<line x1="1591.0" y1="292" x2="1614.0" y2="292" stroke="#1F3B57" stroke-width="1.6" marker-end="url(#tri-navy)"/>
+<text x="1314" y="437" font-size="12.5" font-weight="400" fill="#33404D" text-anchor="start">networked Control Units, each with</text>
+<text x="1314" y="455" font-size="12.5" font-weight="400" fill="#33404D" text-anchor="start">its own I/O (shown once, for clarity)</text>
+<text x="1314" y="475" font-size="12" font-weight="400" fill="#5A6B7B" text-anchor="start" font-style="italic">peer-to-peer network</text>
+<path d="M 50 525 L 1650 525" fill="none" stroke="#8FA0B3" stroke-width="1.6" stroke-dasharray="5,4"/>
+<path d="M 220.0 525 L 220.0 490" fill="none" stroke="#8FA0B3" stroke-width="1.6" stroke-dasharray="5,4"/>
+<path d="M 640.0 525 L 640.0 490" fill="none" stroke="#8FA0B3" stroke-width="1.6" stroke-dasharray="5,4"/>
+<path d="M 1060.0 525 L 1060.0 490" fill="none" stroke="#8FA0B3" stroke-width="1.6" stroke-dasharray="5,4"/>
+<path d="M 1480.0 525 L 1480.0 490" fill="none" stroke="#8FA0B3" stroke-width="1.6" stroke-dasharray="5,4"/>
+<text x="850.0" y="515" font-size="12.5" font-weight="400" fill="#5A6B7B" text-anchor="middle" font-style="italic">capability flags apply independently to any shape above</text>
+<path d="M 430.0 525 L 430.0 555" fill="none" stroke="#8FA0B3" stroke-width="1.6" stroke-dasharray="5,4"/>
+<path d="M 1270.0 525 L 1270.0 555" fill="none" stroke="#8FA0B3" stroke-width="1.6" stroke-dasharray="5,4"/>
+<rect x="30" y="555" width="800" height="410" rx="10" fill="#FFFFFF" stroke="#2E7D4F" stroke-width="2.2"/>
+<text x="58" y="593" font-size="20" font-weight="700" fill="#2E7D4F" text-anchor="start">High-Availability</text>
+<text x="58" y="615" font-size="12.5" font-weight="400" fill="#5A6B7B" text-anchor="start">any Control Unit, in any shape above, deployed as a redundant pair</text>
+<line x1="90" y1="720" x2="172" y2="720" stroke="#1F3B57" stroke-width="1.8" marker-end="url(#tri-navy)"/>
+<text x="86" y="704" font-size="11" font-weight="400" fill="#5A6B7B" text-anchor="start" font-style="italic">shared input</text>
+<line x1="180" y1="714" x2="345.0" y2="672" stroke="#1F3B57" stroke-width="1.8" marker-end="url(#tri-navy)"/>
+<line x1="180" y1="726" x2="345.0" y2="768" stroke="#1F3B57" stroke-width="1.6" marker-end="url(#tri-navy)" stroke-dasharray="5,4"/>
+<rect x="345.0" y="648" width="170" height="48" rx="8" fill="#FFFFFF" stroke="#1F3B57" stroke-width="2.4"/>
+<text x="430.0" y="670" font-size="14" font-weight="700" fill="#1F3B57" text-anchor="middle" font-family="Consolas, Menlo, monospace">CU — Primary</text>
+<text x="430.0" y="688" font-size="11" font-weight="700" fill="#2E7D4F" text-anchor="middle">active</text>
+<rect x="345.0" y="744" width="170" height="48" rx="8" fill="#FFFFFF" stroke="#5A6B7B" stroke-width="2.2" stroke-dasharray="6,4"/>
+<text x="430.0" y="766" font-size="14" font-weight="700" fill="#5A6B7B" text-anchor="middle" font-family="Consolas, Menlo, monospace">CU — Standby</text>
+<text x="430.0" y="784" font-size="11" font-weight="700" fill="#5A6B7B" text-anchor="middle">standby</text>
+<path d="M 525.0 690 L 525.0 750" fill="none" stroke="#2E7D4F" stroke-width="1.8" marker-end="url(#tri-navy)" marker-start="url(#tri-navy)" stroke-dasharray="3,3"/>
+<text x="538.0" y="725" font-size="11" font-weight="400" fill="#2E7D4F" text-anchor="start" font-style="italic">sync /</text>
+<text x="538.0" y="740" font-size="11" font-weight="400" fill="#2E7D4F" text-anchor="start" font-style="italic">heartbeat</text>
+<line x1="515.0" y1="672" x2="680" y2="714" stroke="#1F3B57" stroke-width="1.8" marker-end="url(#tri-navy)"/>
+<line x1="515.0" y1="768" x2="680" y2="726" stroke="#1F3B57" stroke-width="1.6" marker-end="url(#tri-navy)" stroke-dasharray="5,4"/>
+<line x1="688" y1="720" x2="770" y2="720" stroke="#1F3B57" stroke-width="1.8" marker-end="url(#tri-navy)"/>
+<text x="700" y="704" font-size="11" font-weight="400" fill="#5A6B7B" text-anchor="end" font-style="italic">shared output</text>
+<text x="58" y="923" font-size="12.5" font-weight="400" fill="#33404D" text-anchor="start">on failure, Standby takes over the shared inputs/outputs —</text>
+<text x="58" y="943" font-size="12.5" font-weight="400" fill="#33404D" text-anchor="start">the shape above (Point-to-Point, Star or Mesh) is unchanged</text>
+<rect x="870" y="555" width="800" height="410" rx="10" fill="#FFFFFF" stroke="#2F6F9E" stroke-width="2.2"/>
+<text x="898" y="593" font-size="20" font-weight="700" fill="#2F6F9E" text-anchor="start">Cloud &amp; Analytics</text>
+<text x="898" y="615" font-size="12.5" font-weight="400" fill="#5A6B7B" text-anchor="start">any Control Unit, in any shape above, streams telemetry upward</text>
+<rect x="1200.0" y="823" width="140" height="44" rx="8" fill="#FFFFFF" stroke="#1F3B57" stroke-width="2.2"/>
+<text x="1270.0" y="850" font-size="15" font-weight="700" fill="#1F3B57" text-anchor="middle" font-family="Consolas, Menlo, monospace">CU</text>
+<text x="1270.0" y="879" font-size="11" font-weight="400" fill="#5A6B7B" text-anchor="middle" font-style="italic">any shape above</text>
+<rect x="1080.0" y="650" width="380" height="66" rx="20" fill="#FFFFFF" stroke="#2F6F9E" stroke-width="2.4"/>
+<text x="1270.0" y="678" font-size="16" font-weight="700" fill="#2F6F9E" text-anchor="middle">AI / Analytics Layer</text>
+<text x="1270.0" y="698" font-size="11" font-weight="400" fill="#5A6B7B" text-anchor="middle">Sub-model 7</text>
+<path d="M 1270.0 823 L 1270.0 726" fill="none" stroke="#2F6F9E" stroke-width="2" marker-end="url(#tri-navy)" stroke-dasharray="2,6"/>
+<circle cx="1270.0" cy="795.84" r="4" fill="#2F6F9E"/>
+<circle cx="1270.0" cy="772.56" r="4" fill="#2F6F9E"/>
+<circle cx="1270.0" cy="749.28" r="4" fill="#2F6F9E"/>
+<text x="1320.0" y="780.5" font-size="11.5" font-weight="400" fill="#5A6B7B" text-anchor="start" font-style="italic">state · health ·</text>
+<text x="1320.0" y="798.5" font-size="11.5" font-weight="400" fill="#5A6B7B" text-anchor="start" font-style="italic">properties</text>
+<text x="1320.0" y="816.5" font-size="11.5" font-weight="400" fill="#5A6B7B" text-anchor="start" font-style="italic">(Sub-model 1)</text>
+<text x="898" y="923" font-size="12.5" font-weight="400" fill="#33404D" text-anchor="start">telemetry feeds the AI layer regardless of shape — Integrated,</text>
+<text x="898" y="943" font-size="12.5" font-weight="400" fill="#33404D" text-anchor="start">Point-to-Point, Star and Mesh all expose the same interface</text>
+<line x1="850.0" y1="985" x2="850.0" y2="1012" stroke="#8FA0B3" stroke-width="1.8" marker-end="url(#tri-gray)" stroke-dasharray="5,4"/>
+<rect x="60" y="1020" width="1580" height="90" rx="12" fill="#FFFFFF" stroke="#1F3B57" stroke-width="2.2"/>
+<text x="90" y="1058" font-size="17" font-weight="700" fill="#1F3B57" text-anchor="start">Level 0 — Physical Infrastructure Layer</text>
+<text x="90" y="1082" font-size="12.5" font-weight="400" fill="#5A6B7B" text-anchor="start">the physical process / equipment every shape above ultimately drives (Purdue L0, Sub-model 2)</text>
+<line x1="60" y1="1155" x2="1640" y2="1155" stroke="#D6DEE7" stroke-width="1"/>
+<text x="60" y="1178" font-size="12" font-weight="400" fill="#5A6B7B" text-anchor="start" letter-spacing="1.6">LEGEND</text>
+<rect x="62.0" y="1195.0" width="44" height="30" rx="6" fill="#FFFFFF" stroke="#2E7D4F" stroke-width="2"/>
+<text x="84" y="1215" font-size="12.5" font-weight="700" fill="#2E7D4F" text-anchor="middle" font-family="Consolas, Menlo, monospace">S</text>
+<text x="116" y="1215" font-size="12.5" font-weight="400" fill="#16202B" text-anchor="start">Sensor</text>
+<rect x="230.0" y="1195.0" width="44" height="30" rx="6" fill="#FFFFFF" stroke="#2F6F9E" stroke-width="2"/>
+<text x="252" y="1215" font-size="12.5" font-weight="700" fill="#2F6F9E" text-anchor="middle" font-family="Consolas, Menlo, monospace">T</text>
+<text x="284" y="1215" font-size="12.5" font-weight="400" fill="#16202B" text-anchor="start">Transducer</text>
+<rect x="446.0" y="1195.0" width="44" height="30" rx="6" fill="#FFFFFF" stroke="#1F3B57" stroke-width="2"/>
+<text x="468" y="1215" font-size="12.5" font-weight="700" fill="#1F3B57" text-anchor="middle" font-family="Consolas, Menlo, monospace">CU</text>
+<text x="500" y="1215" font-size="12.5" font-weight="400" fill="#16202B" text-anchor="start">Control Unit</text>
+<rect x="686.0" y="1195.0" width="44" height="30" rx="6" fill="#FFFFFF" stroke="#2F6F9E" stroke-width="2"/>
+<text x="708" y="1215" font-size="12.5" font-weight="700" fill="#2F6F9E" text-anchor="middle" font-family="Consolas, Menlo, monospace">SC</text>
+<text x="740" y="1215" font-size="12.5" font-weight="400" fill="#16202B" text-anchor="start">Signal Converter</text>
+<rect x="974.0" y="1195.0" width="44" height="30" rx="6" fill="#FFFFFF" stroke="#2E7D4F" stroke-width="2"/>
+<text x="996" y="1215" font-size="12.5" font-weight="700" fill="#2E7D4F" text-anchor="middle" font-family="Consolas, Menlo, monospace">A</text>
+<text x="1028" y="1215" font-size="12.5" font-weight="400" fill="#16202B" text-anchor="start">Actuator</text>
+<line x1="60" y1="1254" x2="106" y2="1254" stroke="#1F3B57" stroke-width="2" marker-end="url(#tri-navy)"/>
+<text x="118" y="1259" font-size="13" font-weight="400" fill="#16202B" text-anchor="start">signal flow</text>
+<path d="M 250 1254 L 296 1254" fill="none" stroke="#8FA0B3" stroke-width="1.6" marker-end="url(#tri-gray)" stroke-dasharray="5,4"/>
+<text x="308" y="1259" font-size="13" font-weight="400" fill="#16202B" text-anchor="start">feedback / dependency</text>
+<line x1="560" y1="1254" x2="606" y2="1254" stroke="#1F3B57" stroke-width="1.8" marker-end="url(#tri-navy)" marker-start="url(#tri-navy)"/>
+<text x="618" y="1259" font-size="13" font-weight="400" fill="#16202B" text-anchor="start">peer-to-peer mesh link</text>
+</svg>

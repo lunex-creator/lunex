@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1660" width="1600" height="1660" font-family="Inter, Segoe UI, Helvetica Neue, Arial, sans-serif">
+<defs>
+  <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
+    <path d="M20 0H0V20" fill="none" stroke="#E6EBF0" stroke-width="1"/>
+  </pattern>
+  <pattern id="grid5" width="100" height="100" patternUnits="userSpaceOnUse">
+    <rect width="100" height="100" fill="url(#grid)"/>
+    <path d="M100 0H0V100" fill="none" stroke="#D6DEE7" stroke-width="1"/>
+  </pattern>
+  <marker id="tri-navy" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+    <path d="M0 0 L10 5 L0 10 Z" fill="#1F3B57"/>
+  </marker>
+  <marker id="tri-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+    <path d="M0 0 L10 5 L0 10 Z" fill="#2F6F9E"/>
+  </marker>
+  <marker id="tri-hollow" viewBox="0 0 12 12" refX="11" refY="6" markerWidth="11" markerHeight="11" orient="auto-start-reverse">
+    <path d="M0 0 L12 6 L0 12 Z" fill="#FFFFFF" stroke="#1F3B57" stroke-width="1.4"/>
+  </marker>
+</defs>
+
+<rect width="1600" height="1660" fill="#FBFAF8"/>
+<rect width="1600" height="1660" fill="url(#grid5)"/>
+
+<text x="60" y="56" font-size="14" font-weight="400" fill="#5A6B7B" text-anchor="start" letter-spacing="2.5">LUNEX — SUB-MODEL 7</text>
+<text x="60" y="86" font-size="26" font-weight="600" fill="#16202B" text-anchor="start">Data / AI Layer</text>
+<text x="60" y="110" font-size="13" font-weight="400" fill="#5A6B7B" text-anchor="start">The layer PackML and S88 don't have — telemetry with meaning attached, ready for AI consumption</text>
+<rect x="30" y="145" width="1540" height="420" rx="10" fill="#FFFFFF" stroke="#2F6F9E" stroke-width="2.2"/>
+<text x="58" y="183" font-size="20" font-weight="700" fill="#2F6F9E" text-anchor="start">Telemetry Envelope — What Every LunexObject Emits</text>
+<text x="58" y="205" font-size="12.5" font-weight="400" fill="#5A6B7B" text-anchor="start">no new fields invented — this just wraps and addresses what Sub-models 1, 2 and 4 already define</text>
+<rect x="60" y="245" width="620" height="250" rx="8" fill="#FFFFFF" stroke="#1F3B57" stroke-width="2"/>
+<text x="80" y="279" font-size="13" font-weight="700" fill="#16202B" text-anchor="start" font-family="Consolas, Menlo, monospace">{</text>
+<text x="100" y="305" font-size="12.5" font-weight="400" fill="#2F6F9E" text-anchor="start" font-family="Consolas, Menlo, monospace">"path": "lunex://AcmeCorp/.../PT-101"</text>
+<text x="100" y="332" font-size="12.5" font-weight="400" fill="#33404D" text-anchor="start" font-family="Consolas, Menlo, monospace">"timestamp": "2026-08-09T14:32:01Z"</text>
+<text x="100" y="359" font-size="12.5" font-weight="400" fill="#2E7D4F" text-anchor="start" font-family="Consolas, Menlo, monospace">"class": "Sensor.PressureSensor"</text>
+<text x="100" y="386" font-size="12.5" font-weight="400" fill="#1F3B57" text-anchor="start" font-family="Consolas, Menlo, monospace">"state": "On"</text>
+<text x="100" y="413" font-size="12.5" font-weight="400" fill="#33404D" text-anchor="start" font-family="Consolas, Menlo, monospace">"health": { "score": 0.97, "flags": [] }</text>
+<text x="100" y="440" font-size="12.5" font-weight="400" fill="#33404D" text-anchor="start" font-family="Consolas, Menlo, monospace">"properties": { "value": 4.2, "unit": "bar" }</text>
+<text x="80" y="467" font-size="13" font-weight="700" fill="#16202B" text-anchor="start" font-family="Consolas, Menlo, monospace">}</text>
+<text x="730" y="275" font-size="12.5" font-weight="700" fill="#2F6F9E" text-anchor="start" font-family="Consolas, Menlo, monospace">path</text>
+<text x="810" y="275" font-size="12" font-weight="400" fill="#33404D" text-anchor="start">Sub-model 2 — the addressable namespace</text>
+<text x="730" y="309" font-size="12.5" font-weight="700" fill="#2F6F9E" text-anchor="start" font-family="Consolas, Menlo, monospace">class</text>
+<text x="810" y="309" font-size="12" font-weight="400" fill="#33404D" text-anchor="start">Sub-model 1 — which universal class / derived type</text>
+<text x="730" y="343" font-size="12.5" font-weight="700" fill="#2F6F9E" text-anchor="start" font-family="Consolas, Menlo, monospace">state</text>
+<text x="810" y="343" font-size="12" font-weight="400" fill="#33404D" text-anchor="start">Sub-model 4 — the state machine instance</text>
+<text x="730" y="377" font-size="12.5" font-weight="700" fill="#2F6F9E" text-anchor="start" font-family="Consolas, Menlo, monospace">health</text>
+<text x="810" y="377" font-size="12" font-weight="400" fill="#33404D" text-anchor="start">Sub-model 1 — diagnostics, independent of state</text>
+<text x="730" y="411" font-size="12.5" font-weight="700" fill="#2F6F9E" text-anchor="start" font-family="Consolas, Menlo, monospace">properties</text>
+<text x="810" y="411" font-size="12" font-weight="400" fill="#33404D" text-anchor="start">Sub-model 1 — the object's own parameters</text>
+<text x="58" y="527" font-size="12" font-weight="400" fill="#33404D" text-anchor="start" font-style="italic">same envelope for a Sensor, a Firewall/IDS or an Interlock — one shape, every class (Sub-models 1, 5, 6)</text>
+<rect x="30" y="615" width="1540" height="400" rx="10" fill="#FFFFFF" stroke="#2F6F9E" stroke-width="2.2"/>
+<text x="58" y="653" font-size="20" font-weight="700" fill="#2F6F9E" text-anchor="start">Context Layer — What Makes It AI-Ready, Not Just Data</text>
+<text x="58" y="675" font-size="12.5" font-weight="400" fill="#5A6B7B" text-anchor="start">semantic relationships an AI can traverse — separate from the containment chain in Sub-model 2</text>
+<rect x="768.0" y="778.0" width="64" height="44" rx="6" fill="#FFFFFF" stroke="#2E7D4F" stroke-width="2"/>
+<text x="800.0" y="805" font-size="12.5" font-weight="700" fill="#2E7D4F" text-anchor="middle" font-family="Consolas, Menlo, monospace">S</text>
+<text x="800.0" y="840" font-size="11.5" font-weight="400" fill="#5A6B7B" text-anchor="middle" font-style="italic">PT-101</text>
+<rect x="240.0" y="686" width="200" height="48" rx="10" fill="#FFFFFF" stroke="#2E7D4F" stroke-width="2"/>
+<text x="340.0" y="716" font-size="12.5" font-weight="700" fill="#2E7D4F" text-anchor="middle">Vessel-01</text>
+<line x1="440.0" y1="710" x2="768.0" y2="786" stroke="#2E7D4F" stroke-width="1.8" marker-end="url(#tri-navy)"/>
+<text x="604.0" y="738.0" font-size="11" font-weight="400" fill="#2E7D4F" text-anchor="middle" font-style="italic" stroke="#FBFAF8" stroke-width="5" paint-order="stroke" stroke-linejoin="round">measures</text>
+<rect x="240.0" y="866" width="200" height="48" rx="10" fill="#FFFFFF" stroke="#1F3B57" stroke-width="2"/>
+<text x="340.0" y="896" font-size="12.5" font-weight="700" fill="#1F3B57" text-anchor="middle">Assembly-04</text>
+<line x1="440.0" y1="890" x2="768.0" y2="814" stroke="#1F3B57" stroke-width="1.8" marker-end="url(#tri-navy)"/>
+<text x="604.0" y="842.0" font-size="11" font-weight="400" fill="#1F3B57" text-anchor="middle" font-style="italic" stroke="#FBFAF8" stroke-width="5" paint-order="stroke" stroke-linejoin="round">partOf</text>
+<rect x="1160.0" y="686" width="200" height="48" rx="10" fill="#FFFFFF" stroke="#2F6F9E" stroke-width="2"/>
+<text x="1260.0" y="716" font-size="12.5" font-weight="700" fill="#2F6F9E" text-anchor="middle">unit: bar</text>
+<line x1="1160.0" y1="710" x2="832.0" y2="786" stroke="#2F6F9E" stroke-width="1.8" marker-end="url(#tri-blue)"/>
+<text x="996.0" y="738.0" font-size="11" font-weight="400" fill="#2F6F9E" text-anchor="middle" font-style="italic" stroke="#FBFAF8" stroke-width="5" paint-order="stroke" stroke-linejoin="round">hasUnit</text>
+<rect x="1160.0" y="866" width="200" height="48" rx="10" fill="#FFFFFF" stroke="#2F6F9E" stroke-width="2"/>
+<text x="1260.0" y="896" font-size="12.5" font-weight="700" fill="#2F6F9E" text-anchor="middle">ISA-5.1 / PI&amp;ID tag</text>
+<line x1="1160.0" y1="890" x2="832.0" y2="814" stroke="#2F6F9E" stroke-width="1.8" marker-end="url(#tri-blue)"/>
+<text x="996.0" y="842.0" font-size="11" font-weight="400" fill="#2F6F9E" text-anchor="middle" font-style="italic" stroke="#FBFAF8" stroke-width="5" paint-order="stroke" stroke-linejoin="round">semanticTag</text>
+<text x="58" y="987" font-size="12" font-weight="400" fill="#33404D" text-anchor="start" font-style="italic">Sub-model 2 answers “what contains what” — the Context Layer answers “what relates to what, and what does it mean”</text>
+<rect x="30" y="1065" width="1540" height="285" rx="10" fill="#FFFFFF" stroke="#2F6F9E" stroke-width="2.2"/>
+<text x="58" y="1103" font-size="20" font-weight="700" fill="#2F6F9E" text-anchor="start">Digital Twin — the AI-Side Mirror</text>
+<text x="58" y="1125" font-size="12.5" font-weight="400" fill="#5A6B7B" text-anchor="start">kept in sync by the telemetry envelope, at whatever rate the Cloud &amp; Analytics flag (Sub-model 3) allows</text>
+<rect x="100" y="1160" width="340" height="110" rx="10" fill="#FFFFFF" stroke="#1F3B57" stroke-width="2.2"/>
+<text x="270.0" y="1195" font-size="14.5" font-weight="700" fill="#1F3B57" text-anchor="middle">Physical Object</text>
+<rect x="242.0" y="1214.0" width="56" height="38" rx="6" fill="#FFFFFF" stroke="#2E7D4F" stroke-width="2"/>
+<text x="270.0" y="1238" font-size="12.5" font-weight="700" fill="#2E7D4F" text-anchor="middle" font-family="Consolas, Menlo, monospace">S</text>
+<text x="270.0" y="1265" font-size="11" font-weight="400" fill="#5A6B7B" text-anchor="middle" font-style="italic">PT-101 (Sub-model 1)</text>
+<rect x="1160" y="1160" width="340" height="110" rx="10" fill="#FFFFFF" stroke="#2F6F9E" stroke-width="2.4"/>
+<text x="1330.0" y="1195" font-size="14.5" font-weight="700" fill="#2F6F9E" text-anchor="middle">Digital Twin</text>
+<rect x="1302.0" y="1214.0" width="56" height="38" rx="6" fill="#FFFFFF" stroke="#2F6F9E" stroke-width="2"/>
+<text x="1330.0" y="1238" font-size="12.5" font-weight="700" fill="#2F6F9E" text-anchor="middle" font-family="Consolas, Menlo, monospace">S'</text>
+<text x="1330.0" y="1265" font-size="11" font-weight="400" fill="#5A6B7B" text-anchor="middle" font-style="italic">AI / Analytics Layer</text>
+<line x1="440" y1="1205" x2="730.0" y2="1205" stroke="#2F6F9E" stroke-width="2" marker-end="url(#tri-blue)"/>
+<line x1="870.0" y1="1225" x2="1160" y2="1225" stroke="#8FA0B3" stroke-width="1.6" stroke-dasharray="4,3"/>
+<rect x="730.0" y="1180" width="140" height="50" rx="10" fill="#FFFFFF" stroke="#2F6F9E" stroke-width="2"/>
+<text x="800.0" y="1205" font-size="11" font-weight="700" fill="#2F6F9E" text-anchor="middle">telemetry envelope</text>
+<text x="800.0" y="1223" font-size="10" font-weight="400" fill="#5A6B7B" text-anchor="middle">(Panel 1)</text>
+<text x="800.0" y="1257" font-size="10.5" font-weight="400" fill="#5A6B7B" text-anchor="middle" font-style="italic">queries flow back</text>
+<text x="58" y="1295" font-size="12" font-weight="400" fill="#33404D" text-anchor="start" font-style="italic">the twin is what an AI model actually queries — it never touches the physical Device directly</text>
+<text x="58" y="1317" font-size="12" font-weight="400" fill="#33404D" text-anchor="start" font-style="italic">the Twin only ever holds the current state — for everything the state WAS, see the Historian (Sub-model 14)</text>
+<rect x="30" y="1395" width="1540" height="110" rx="10" fill="#FFFFFF" stroke="#2E7D4F" stroke-width="2.2"/>
+<text x="58" y="1425" font-size="15" font-weight="700" fill="#2E7D4F" text-anchor="start">Closing the loop from Sub-model 4</text>
+<text x="58" y="1447" font-size="12.5" font-weight="400" fill="#33404D" text-anchor="start">collective status (“rollup”) was deliberately left out of the state model — formalized in Sub-model 9,</text>
+<text x="58" y="1467" font-size="12.5" font-weight="400" fill="#33404D" text-anchor="start">computed on the Digital Twin graph this layer maintains: worst-case tier, tier counts, and the full list of</text>
+<text x="58" y="1487" font-size="12.5" font-weight="400" fill="#33404D" text-anchor="start">contributors — not baked into LunexObject itself, and never overwriting an object's own state.</text>
+<line x1="60" y1="1545" x2="1540" y2="1545" stroke="#D6DEE7" stroke-width="1"/>
+<text x="60" y="1568" font-size="12" font-weight="400" fill="#5A6B7B" text-anchor="start" letter-spacing="1.6">LEGEND</text>
+<line x1="60" y1="1600" x2="106" y2="1600" stroke="#2F6F9E" stroke-width="2" marker-end="url(#tri-blue)"/>
+<text x="118" y="1605" font-size="13" font-weight="400" fill="#16202B" text-anchor="start">telemetry (physical → twin)</text>
+<line x1="320" y1="1600" x2="366" y2="1600" stroke="#8FA0B3" stroke-width="1.6" stroke-dasharray="4,3"/>
+<text x="378" y="1605" font-size="13" font-weight="400" fill="#16202B" text-anchor="start">queries / commands (twin → physical)</text>
+<line x1="660" y1="1600" x2="706" y2="1600" stroke="#2E7D4F" stroke-width="1.8" marker-end="url(#tri-navy)"/>
+<text x="718" y="1605" font-size="13" font-weight="400" fill="#16202B" text-anchor="start">semantic relationship (Context Layer)</text>
+</svg>

@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1520" width="1600" height="1520" font-family="Inter, Segoe UI, Helvetica Neue, Arial, sans-serif">
+<defs>
+  <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
+    <path d="M20 0H0V20" fill="none" stroke="#E6EBF0" stroke-width="1"/>
+  </pattern>
+  <pattern id="grid5" width="100" height="100" patternUnits="userSpaceOnUse">
+    <rect width="100" height="100" fill="url(#grid)"/>
+    <path d="M100 0H0V100" fill="none" stroke="#D6DEE7" stroke-width="1"/>
+  </pattern>
+  <marker id="tri-navy" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+    <path d="M0 0 L10 5 L0 10 Z" fill="#1F3B57"/>
+  </marker>
+  <marker id="tri-red" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse">
+    <path d="M0 0 L10 5 L0 10 Z" fill="#B3402F"/>
+  </marker>
+  <marker id="tri-gray" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+    <path d="M0 0 L10 5 L0 10 Z" fill="#8FA0B3"/>
+  </marker>
+</defs>
+
+<rect width="1600" height="1520" fill="#FBFAF8"/>
+<rect width="1600" height="1520" fill="url(#grid5)"/>
+
+<text x="60" y="56" font-size="14" font-weight="400" fill="#5A6B7B" text-anchor="start" letter-spacing="2.5">LUNEX — SUB-MODEL 13</text>
+<text x="60" y="86" font-size="26" font-weight="600" fill="#16202B" text-anchor="start">Situational Awareness</text>
+<text x="60" y="110" font-size="13" font-weight="400" fill="#5A6B7B" text-anchor="start">no new data — a navigation contract over Sub-models 7, 9 and 10, so the operator is never lost or digging</text>
+<rect x="30" y="145" width="1540" height="440" rx="10" fill="#FFFFFF" stroke="#2F6F9E" stroke-width="2.2"/>
+<text x="58" y="183" font-size="20" font-weight="700" fill="#2F6F9E" text-anchor="start">The Same Three Signals, at Every Level</text>
+<text x="58" y="205" font-size="12.5" font-weight="400" fill="#5A6B7B" text-anchor="start">own state · rollup badge · top alarm — identical shape from Realm down to Device (Sub-model 2)</text>
+<text x="60" y="234" font-size="10.5" font-weight="700" fill="#5A6B7B" text-anchor="start" letter-spacing="1">LEVEL</text>
+<text x="480" y="234" font-size="10.5" font-weight="700" fill="#5A6B7B" text-anchor="start" letter-spacing="1">OWN STATE</text>
+<text x="640" y="234" font-size="10.5" font-weight="700" fill="#5A6B7B" text-anchor="start" letter-spacing="1">ROLLUP</text>
+<text x="900" y="234" font-size="10.5" font-weight="700" fill="#5A6B7B" text-anchor="start" letter-spacing="1">TOP ALARM</text>
+<line x1="58" y1="246" x2="1542" y2="246" stroke="#D6DEE7" stroke-width="1"/>
+<text x="60" y="280" font-size="13.5" font-weight="700" fill="#16202B" text-anchor="start">Cell — Utilities</text>
+<rect x="480" y="260" width="100" height="30" rx="15" fill="#FFFFFF" stroke="#2E7D4F" stroke-width="1.8"/>
+<text x="530" y="280" font-size="11.5" font-weight="700" fill="#2E7D4F" text-anchor="middle">On</text>
+<circle cx="654" cy="274" r="14" fill="#B3402F" stroke="#FFFFFF" stroke-width="2"/>
+<text x="654" y="277.85" font-size="11" font-weight="700" fill="#FFFFFF" text-anchor="middle">0</text>
+<text x="678" y="280" font-size="11.5" font-weight="700" fill="#B3402F" text-anchor="start">Critical</text>
+<text x="900" y="280" font-size="12" font-weight="400" fill="#33404D" text-anchor="start" font-family="Consolas, Menlo, monospace">Pump-07: High Vibration</text>
+<line x1="58" y1="306" x2="1542" y2="306" stroke="#D6DEE7" stroke-width="1"/>
+<text x="60" y="358" font-size="13.5" font-weight="700" fill="#16202B" text-anchor="start">System — Boiler DCS</text>
+<rect x="480" y="338" width="100" height="30" rx="15" fill="#FFFFFF" stroke="#2E7D4F" stroke-width="1.8"/>
+<text x="530" y="358" font-size="11.5" font-weight="700" fill="#2E7D4F" text-anchor="middle">On</text>
+<circle cx="654" cy="352" r="14" fill="#B3402F" stroke="#FFFFFF" stroke-width="2"/>
+<text x="654" y="355.85" font-size="11" font-weight="700" fill="#FFFFFF" text-anchor="middle">0</text>
+<text x="678" y="358" font-size="11.5" font-weight="700" fill="#B3402F" text-anchor="start">Critical</text>
+<text x="900" y="358" font-size="12" font-weight="400" fill="#33404D" text-anchor="start" font-family="Consolas, Menlo, monospace">Pump-07: High Vibration</text>
+<line x1="58" y1="384" x2="1542" y2="384" stroke="#D6DEE7" stroke-width="1"/>
+<text x="60" y="436" font-size="13.5" font-weight="700" fill="#16202B" text-anchor="start">Assembly — Feed Pumps</text>
+<rect x="480" y="416" width="100" height="30" rx="15" fill="#FFFFFF" stroke="#1F3B57" stroke-width="1.8"/>
+<text x="530" y="436" font-size="11.5" font-weight="700" fill="#1F3B57" text-anchor="middle">Standby</text>
+<circle cx="654" cy="430" r="14" fill="#B3402F" stroke="#FFFFFF" stroke-width="2"/>
+<text x="654" y="433.85" font-size="11" font-weight="700" fill="#FFFFFF" text-anchor="middle">0</text>
+<text x="678" y="436" font-size="11.5" font-weight="700" fill="#B3402F" text-anchor="start">Critical</text>
+<text x="900" y="436" font-size="12" font-weight="400" fill="#33404D" text-anchor="start" font-family="Consolas, Menlo, monospace">Pump-07: High Vibration</text>
+<line x1="58" y1="462" x2="1542" y2="462" stroke="#D6DEE7" stroke-width="1"/>
+<text x="60" y="514" font-size="13.5" font-weight="700" fill="#16202B" text-anchor="start">Device — Pump-07</text>
+<rect x="480" y="494" width="100" height="30" rx="15" fill="#FFFFFF" stroke="#2F6F9E" stroke-width="1.8"/>
+<text x="530" y="514" font-size="11.5" font-weight="700" fill="#2F6F9E" text-anchor="middle">Inhibited</text>
+<circle cx="654" cy="508" r="14" fill="#B3402F" stroke="#FFFFFF" stroke-width="2"/>
+<text x="654" y="511.85" font-size="11" font-weight="700" fill="#FFFFFF" text-anchor="middle">0</text>
+<text x="678" y="514" font-size="11.5" font-weight="700" fill="#B3402F" text-anchor="start">Critical</text>
+<text x="900" y="514" font-size="12" font-weight="400" fill="#33404D" text-anchor="start" font-family="Consolas, Menlo, monospace">High Vibration (Priority 1)</text>
+<text x="58" y="550" font-size="12" font-weight="400" fill="#33404D" text-anchor="start" font-style="italic">same worst-case Pump-07 alarm is visible from the top of the hierarchy — the operator never wonders “is anything wrong?”</text>
+<rect x="30" y="635" width="1540" height="380" rx="10" fill="#FFFFFF" stroke="#2F6F9E" stroke-width="2.2"/>
+<text x="58" y="673" font-size="20" font-weight="700" fill="#2F6F9E" text-anchor="start">Jump to Worst — No Manual Digging Through Layers</text>
+<text x="58" y="695" font-size="12.5" font-weight="400" fill="#5A6B7B" text-anchor="start">one action follows the Rollup's own contributors path (Sub-model 9) straight to the cause</text>
+<rect x="55.0" y="771" width="130" height="48" rx="10" fill="#FFFFFF" stroke="#1F3B57" stroke-width="2.2"/>
+<text x="120.0" y="800" font-size="13" font-weight="700" fill="#1F3B57" text-anchor="middle">Cell</text>
+<line x1="185.0" y1="795" x2="380.0" y2="795" stroke="#8FA0B3" stroke-width="1.6" stroke-dasharray="3,3"/>
+<rect x="240.5" y="751.5" width="84.0" height="17.5" rx="3" fill="#FBFAF8" stroke="none" stroke-width="2"/>
+<text x="282.5" y="763" font-size="10" font-weight="400" fill="#5A6B7B" text-anchor="middle" font-style="italic">manual click</text>
+<rect x="380.0" y="771" width="130" height="48" rx="10" fill="#FFFFFF" stroke="#1F3B57" stroke-width="2.2"/>
+<text x="445.0" y="800" font-size="13" font-weight="700" fill="#1F3B57" text-anchor="middle">System</text>
+<line x1="510.0" y1="795" x2="705.0" y2="795" stroke="#8FA0B3" stroke-width="1.6" stroke-dasharray="3,3"/>
+<rect x="565.5" y="751.5" width="84.0" height="17.5" rx="3" fill="#FBFAF8" stroke="none" stroke-width="2"/>
+<text x="607.5" y="763" font-size="10" font-weight="400" fill="#5A6B7B" text-anchor="middle" font-style="italic">manual click</text>
+<rect x="705.0" y="771" width="130" height="48" rx="10" fill="#FFFFFF" stroke="#1F3B57" stroke-width="2.2"/>
+<text x="770.0" y="800" font-size="13" font-weight="700" fill="#1F3B57" text-anchor="middle">Assembly</text>
+<line x1="835.0" y1="795" x2="1030.0" y2="795" stroke="#8FA0B3" stroke-width="1.6" stroke-dasharray="3,3"/>
+<rect x="890.5" y="751.5" width="84.0" height="17.5" rx="3" fill="#FBFAF8" stroke="none" stroke-width="2"/>
+<text x="932.5" y="763" font-size="10" font-weight="400" fill="#5A6B7B" text-anchor="middle" font-style="italic">manual click</text>
+<rect x="1030.0" y="771" width="130" height="48" rx="10" fill="#FFFFFF" stroke="#1F3B57" stroke-width="2.2"/>
+<text x="1095.0" y="800" font-size="13" font-weight="700" fill="#1F3B57" text-anchor="middle">Device</text>
+<line x1="1160.0" y1="795" x2="1355.0" y2="795" stroke="#8FA0B3" stroke-width="1.6" stroke-dasharray="3,3"/>
+<rect x="1215.5" y="751.5" width="84.0" height="17.5" rx="3" fill="#FBFAF8" stroke="none" stroke-width="2"/>
+<text x="1257.5" y="763" font-size="10" font-weight="400" fill="#5A6B7B" text-anchor="middle" font-style="italic">manual click</text>
+<rect x="1355.0" y="771" width="130" height="48" rx="10" fill="#FFFFFF" stroke="#B3402F" stroke-width="2.2"/>
+<text x="1420.0" y="800" font-size="13" font-weight="700" fill="#B3402F" text-anchor="middle">Alarm</text>
+<path d="M 120 819 C 120 885, 1420.0 885, 1420.0 819" fill="none" stroke="#B3402F" stroke-width="2.4" marker-end="url(#tri-red)"/>
+<rect x="588.5" y="898.95" width="363.0" height="20.95" rx="3" fill="#FBFAF8" stroke="none" stroke-width="2"/>
+<text x="770.0" y="913" font-size="13" font-weight="700" fill="#B3402F" text-anchor="middle">jumpToWorst(node)  —  one action, same result</text>
+<text x="58" y="980" font-size="12" font-weight="400" fill="#33404D" text-anchor="start" font-style="italic">the shortcut and the manual path always land on the same Device/Alarm — it's a shortcut, not a different answer</text>
+<rect x="30" y="1065" width="1540" height="300" rx="10" fill="#FFFFFF" stroke="#2F6F9E" stroke-width="2.2"/>
+<text x="58" y="1103" font-size="20" font-weight="700" fill="#2F6F9E" text-anchor="start">Landed — the Right Information Is Already There</text>
+<text x="58" y="1125" font-size="12.5" font-weight="400" fill="#5A6B7B" text-anchor="start">reuses the Context Layer surfacing from Sub-model 11 — no separate hunt after arriving</text>
+<rect x="140" y="1215" width="240" height="80" rx="10" fill="#FFFFFF" stroke="#B3402F" stroke-width="2.4"/>
+<text x="260" y="1243" font-size="14.5" font-weight="700" fill="#B3402F" text-anchor="middle">Pump-07</text>
+<text x="260" y="1267" font-size="11.5" font-weight="400" fill="#33404D" text-anchor="middle">High Vibration · Priority 1</text>
+<rect x="760" y="1161" width="340" height="48" rx="10" fill="#FFFFFF" stroke="#2E7D4F" stroke-width="2"/>
+<text x="780" y="1191" font-size="13" font-weight="700" fill="#2E7D4F" text-anchor="start">trend, last 4h</text>
+<line x1="380" y1="1255" x2="756" y2="1185" stroke="#2E7D4F" stroke-width="1.8" marker-end="url(#tri-navy)"/>
+<rect x="760" y="1231" width="340" height="48" rx="10" fill="#FFFFFF" stroke="#2F6F9E" stroke-width="2"/>
+<text x="780" y="1261" font-size="13" font-weight="700" fill="#2F6F9E" text-anchor="start">ARP: corrective action</text>
+<line x1="380" y1="1255" x2="756" y2="1255" stroke="#2F6F9E" stroke-width="1.8" marker-end="url(#tri-navy)"/>
+<rect x="760" y="1301" width="340" height="48" rx="10" fill="#FFFFFF" stroke="#1F3B57" stroke-width="2"/>
+<text x="780" y="1331" font-size="13" font-weight="700" fill="#1F3B57" text-anchor="start">nearest Interlock: IL-014</text>
+<line x1="380" y1="1255" x2="756" y2="1325" stroke="#1F3B57" stroke-width="1.8" marker-end="url(#tri-navy)"/>
+<text x="58" y="1335" font-size="12" font-weight="400" fill="#33404D" text-anchor="start" font-style="italic">one screen: alarm, trend, procedure and nearest safeguard together — nothing else to click through</text>
+<line x1="60" y1="1405" x2="1540" y2="1405" stroke="#D6DEE7" stroke-width="1"/>
+<text x="60" y="1428" font-size="12" font-weight="400" fill="#5A6B7B" text-anchor="start" letter-spacing="1.6">LEGEND</text>
+<line x1="60" y1="1460" x2="106" y2="1460" stroke="#8FA0B3" stroke-width="1.6" stroke-dasharray="3,3"/>
+<text x="118" y="1465" font-size="13" font-weight="400" fill="#16202B" text-anchor="start">manual, layer-by-layer navigation</text>
+<line x1="430" y1="1460" x2="476" y2="1460" stroke="#B3402F" stroke-width="2.4" marker-end="url(#tri-red)"/>
+<text x="488" y="1465" font-size="13" font-weight="400" fill="#16202B" text-anchor="start">jumpToWorst() shortcut</text>
+<line x1="750" y1="1460" x2="796" y2="1460" stroke="#1F3B57" stroke-width="1.8" marker-end="url(#tri-navy)"/>
+<text x="808" y="1465" font-size="13" font-weight="400" fill="#16202B" text-anchor="start">context surfaced automatically</text>
+</svg>

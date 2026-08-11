@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1825" width="1600" height="1825" font-family="Inter, Segoe UI, Helvetica Neue, Arial, sans-serif">
+<defs>
+  <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
+    <path d="M20 0H0V20" fill="none" stroke="#E6EBF0" stroke-width="1"/>
+  </pattern>
+  <pattern id="grid5" width="100" height="100" patternUnits="userSpaceOnUse">
+    <rect width="100" height="100" fill="url(#grid)"/>
+    <path d="M100 0H0V100" fill="none" stroke="#D6DEE7" stroke-width="1"/>
+  </pattern>
+  <marker id="tri-navy" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+    <path d="M0 0 L10 5 L0 10 Z" fill="#1F3B57"/>
+  </marker>
+  <marker id="diamond-navy" viewBox="0 0 14 10" refX="0.5" refY="5" markerWidth="15" markerHeight="11" orient="auto-start-reverse">
+    <path d="M0 5 L7 0 L14 5 L7 10 Z" fill="#1F3B57"/>
+  </marker>
+</defs>
+
+<rect width="1600" height="1825" fill="#FBFAF8"/>
+<rect width="1600" height="1825" fill="url(#grid5)"/>
+
+<text x="60" y="56" font-size="14" font-weight="400" fill="#5A6B7B" text-anchor="start" letter-spacing="2.5">LUNEX — SUB-MODEL 9</text>
+<text x="60" y="86" font-size="26" font-weight="600" fill="#16202B" text-anchor="start">Collective Status (Rollup)</text>
+<text x="60" y="110" font-size="13" font-weight="400" fill="#5A6B7B" text-anchor="start">Deferred from Sub-model 4, resolved here — a computed view, not a new class (Sub-model 7 pattern)</text>
+<text x="58" y="183" font-size="20" font-weight="700" fill="#2F6F9E" text-anchor="start">Severity Tiers — Ranking the Sub-model 4 States</text>
+<text x="58" y="205" font-size="12.5" font-weight="400" fill="#5A6B7B" text-anchor="start">the state machine defines transitions, not severity — this adds the missing ranking</text>
+<rect x="30" y="145" width="1540" height="495" rx="10" fill="#FFFFFF" stroke="#2F6F9E" stroke-width="2.2"/>
+<text x="58" y="183" font-size="20" font-weight="700" fill="#2F6F9E" text-anchor="start">Severity Tiers — Ranking the Sub-model 4 States</text>
+<text x="58" y="205" font-size="12.5" font-weight="400" fill="#5A6B7B" text-anchor="start">the state machine defines transitions, not severity — this adds the missing ranking</text>
+<rect x="58" y="233" width="150" height="44" rx="8" fill="#FFFFFF" stroke="#B3402F" stroke-width="2.2"/>
+<text x="133" y="253" font-size="13" font-weight="700" fill="#B3402F" text-anchor="middle">Tier 0</text>
+<text x="133" y="271" font-size="11" font-weight="400" fill="#B3402F" text-anchor="middle">Critical</text>
+<rect x="240.0" y="239.0" width="228" height="32" rx="16.0" fill="#FFFFFF" stroke="#B3402F" stroke-width="1.8"/>
+<text x="354.0" y="260" font-size="12" font-weight="700" fill="#B3402F" text-anchor="middle">Emergency Stopping</text>
+<rect x="58" y="308" width="150" height="44" rx="8" fill="#FFFFFF" stroke="#2F6F9E" stroke-width="2.2"/>
+<text x="133" y="328" font-size="13" font-weight="700" fill="#2F6F9E" text-anchor="middle">Tier 1</text>
+<text x="133" y="346" font-size="11" font-weight="400" fill="#2F6F9E" text-anchor="middle">Restricted</text>
+<rect x="240.0" y="314.0" width="96" height="32" rx="16.0" fill="#FFFFFF" stroke="#2F6F9E" stroke-width="1.8"/>
+<text x="288.0" y="335" font-size="12" font-weight="700" fill="#2F6F9E" text-anchor="middle">Locked</text>
+<rect x="348.0" y="314.0" width="129" height="32" rx="16.0" fill="#FFFFFF" stroke="#2F6F9E" stroke-width="1.8"/>
+<text x="412.5" y="335" font-size="12" font-weight="700" fill="#2F6F9E" text-anchor="middle">Inhibited</text>
+<rect x="58" y="383" width="150" height="44" rx="8" fill="#FFFFFF" stroke="#5A6B7B" stroke-width="2.2"/>
+<text x="133" y="403" font-size="13" font-weight="700" fill="#5A6B7B" text-anchor="middle">Tier 2</text>
+<text x="133" y="421" font-size="11" font-weight="400" fill="#5A6B7B" text-anchor="middle">Transitioning</text>
+<rect x="240.0" y="389.0" width="129" height="32" rx="16.0" fill="#FFFFFF" stroke="#5A6B7B" stroke-width="1.8"/>
+<text x="304.5" y="410" font-size="12" font-weight="700" fill="#5A6B7B" text-anchor="middle">Unlocking</text>
+<rect x="381.0" y="389.0" width="107" height="32" rx="16.0" fill="#FFFFFF" stroke="#5A6B7B" stroke-width="1.8"/>
+<text x="434.5" y="410" font-size="12" font-weight="700" fill="#5A6B7B" text-anchor="middle">Locking</text>
+<rect x="500.0" y="389.0" width="118" height="32" rx="16.0" fill="#FFFFFF" stroke="#5A6B7B" stroke-width="1.8"/>
+<text x="559.0" y="410" font-size="12" font-weight="700" fill="#5A6B7B" text-anchor="middle">Enabling</text>
+<rect x="630.0" y="389.0" width="129" height="32" rx="16.0" fill="#FFFFFF" stroke="#5A6B7B" stroke-width="1.8"/>
+<text x="694.5" y="410" font-size="12" font-weight="700" fill="#5A6B7B" text-anchor="middle">Disabling</text>
+<rect x="771.0" y="389.0" width="118" height="32" rx="16.0" fill="#FFFFFF" stroke="#5A6B7B" stroke-width="1.8"/>
+<text x="830.0" y="410" font-size="12" font-weight="700" fill="#5A6B7B" text-anchor="middle">Starting</text>
+<rect x="901.0" y="389.0" width="140" height="32" rx="16.0" fill="#FFFFFF" stroke="#5A6B7B" stroke-width="1.8"/>
+<text x="971.0" y="410" font-size="12" font-weight="700" fill="#5A6B7B" text-anchor="middle">Inhibiting</text>
+<rect x="1053.0" y="389.0" width="118" height="32" rx="16.0" fill="#FFFFFF" stroke="#5A6B7B" stroke-width="1.8"/>
+<text x="1112.0" y="410" font-size="12" font-weight="700" fill="#5A6B7B" text-anchor="middle">Clearing</text>
+<rect x="1183.0" y="389.0" width="184" height="32" rx="16.0" fill="#FFFFFF" stroke="#5A6B7B" stroke-width="1.8"/>
+<text x="1275.0" y="410" font-size="12" font-weight="700" fill="#5A6B7B" text-anchor="middle">Quick Stopping</text>
+<rect x="240.0" y="429.0" width="239" height="32" rx="16.0" fill="#FFFFFF" stroke="#5A6B7B" stroke-width="1.8"/>
+<text x="359.5" y="450" font-size="12" font-weight="700" fill="#5A6B7B" text-anchor="middle">Controlled Stopping</text>
+<rect x="58" y="493" width="150" height="44" rx="8" fill="#FFFFFF" stroke="#2E7D4F" stroke-width="2.2"/>
+<text x="133" y="513" font-size="13" font-weight="700" fill="#2E7D4F" text-anchor="middle">Tier 3</text>
+<text x="133" y="531" font-size="11" font-weight="400" fill="#2E7D4F" text-anchor="middle">Nominal</text>
+<rect x="240.0" y="499.0" width="52" height="32" rx="16.0" fill="#FFFFFF" stroke="#2E7D4F" stroke-width="1.8"/>
+<text x="266.0" y="520" font-size="12" font-weight="700" fill="#2E7D4F" text-anchor="middle">On</text>
+<rect x="304.0" y="499.0" width="107" height="32" rx="16.0" fill="#FFFFFF" stroke="#2E7D4F" stroke-width="1.8"/>
+<text x="357.5" y="520" font-size="12" font-weight="700" fill="#2E7D4F" text-anchor="middle">Standby</text>
+<rect x="423.0" y="499.0" width="63" height="32" rx="16.0" fill="#FFFFFF" stroke="#2E7D4F" stroke-width="1.8"/>
+<text x="454.5" y="520" font-size="12" font-weight="700" fill="#2E7D4F" text-anchor="middle">Off</text>
+<text x="58" y="610" font-size="12" font-weight="400" fill="#33404D" text-anchor="start" font-style="italic">worstTier = the lowest tier index present anywhere below a node (0 is worst) — Off stays Tier 3, always</text>
+<rect x="30" y="690" width="1540" height="460" rx="10" fill="#FFFFFF" stroke="#2F6F9E" stroke-width="2.2"/>
+<text x="58" y="728" font-size="20" font-weight="700" fill="#2F6F9E" text-anchor="start">Rollup — a Computed View, Not a New Class</text>
+<text x="58" y="750" font-size="12.5" font-weight="400" fill="#5A6B7B" text-anchor="start">same pattern as the Sub-model 7 telemetry envelope — no new LunexObject subtype needed</text>
+<rect x="60" y="790" width="660" height="300" rx="8" fill="#FFFFFF" stroke="#1F3B57" stroke-width="2"/>
+<text x="80" y="824" font-size="13" font-weight="700" fill="#16202B" text-anchor="start" font-family="Consolas, Menlo, monospace">{</text>
+<text x="100" y="849" font-size="11.5" font-weight="400" fill="#2F6F9E" text-anchor="start" font-family="Consolas, Menlo, monospace">"subject": "lunex://.../Utilities"</text>
+<text x="100" y="873" font-size="11.5" font-weight="400" fill="#B3402F" text-anchor="start" font-family="Consolas, Menlo, monospace">"worstTier": 0</text>
+<text x="100" y="897" font-size="11.5" font-weight="400" fill="#B3402F" text-anchor="start" font-family="Consolas, Menlo, monospace">"worstState": "Emergency Stopping"</text>
+<text x="100" y="921" font-size="11.5" font-weight="400" fill="#33404D" text-anchor="start" font-family="Consolas, Menlo, monospace">"tierCounts": { "3": 3, "1": 1, "0": 1 }</text>
+<text x="100" y="945" font-size="11.5" font-weight="400" fill="#33404D" text-anchor="start" font-family="Consolas, Menlo, monospace">"contributors": [</text>
+<text x="100" y="969" font-size="11.5" font-weight="400" fill="#2F6F9E" text-anchor="start" font-family="Consolas, Menlo, monospace">{ "path": ".../Vessel-02", "state": "Inhibited" },</text>
+<text x="100" y="993" font-size="11.5" font-weight="400" fill="#B3402F" text-anchor="start" font-family="Consolas, Menlo, monospace">{ "path": ".../Pump-07", "state": "Emergency Stopping" }</text>
+<text x="100" y="1017" font-size="11.5" font-weight="400" fill="#33404D" text-anchor="start" font-family="Consolas, Menlo, monospace">]</text>
+<text x="100" y="1041" font-size="11.5" font-weight="400" fill="#33404D" text-anchor="start" font-family="Consolas, Menlo, monospace">"computedAt": "2026-08-09T14:32:05Z"</text>
+<text x="80" y="1065" font-size="13" font-weight="700" fill="#16202B" text-anchor="start" font-family="Consolas, Menlo, monospace">}</text>
+<text x="760" y="816" font-size="12.5" font-weight="700" fill="#16202B" text-anchor="start">this is exactly the multi-condition case</text>
+<text x="760" y="838" font-size="12" font-weight="400" fill="#33404D" text-anchor="start">from Sub-model 4 — an Inhibited Vessel</text>
+<text x="760" y="856" font-size="12" font-weight="400" fill="#33404D" text-anchor="start">and an Emergency Stopping Pump at the</text>
+<text x="760" y="874" font-size="12" font-weight="400" fill="#33404D" text-anchor="start">same time. Nothing is lost: the badge</text>
+<text x="760" y="892" font-size="12" font-weight="400" fill="#33404D" text-anchor="start">shows worstTier for a glance, but every</text>
+<text x="760" y="910" font-size="12" font-weight="400" fill="#33404D" text-anchor="start">contributor stays visible on demand.</text>
+<text x="58" y="1120" font-size="12" font-weight="400" fill="#33404D" text-anchor="start" font-style="italic">the subject's own state (LunexObject.state, Sub-model 1) is never touched by this — shown side by side, as agreed</text>
+<rect x="30" y="1200" width="1540" height="470" rx="10" fill="#FFFFFF" stroke="#2F6F9E" stroke-width="2.2"/>
+<text x="58" y="1238" font-size="20" font-weight="700" fill="#2F6F9E" text-anchor="start">Bubbling — Each Layer Aggregates Only Its Own Children</text>
+<text x="58" y="1260" font-size="12.5" font-weight="400" fill="#5A6B7B" text-anchor="start">a Cell never scans every Device below it — it reads its Assemblies' Rollups, already computed (Sub-model 2)</text>
+<text x="140" y="1320" font-size="10.5" font-weight="400" fill="#5A6B7B" text-anchor="middle" font-style="italic">Sensor</text>
+<rect x="116.0" y="1333.0" width="48" height="34" rx="6" fill="#FFFFFF" stroke="#2E7D4F" stroke-width="2"/>
+<text x="140" y="1355" font-size="12" font-weight="700" fill="#2E7D4F" text-anchor="middle" font-family="Consolas, Menlo, monospace">D</text>
+<circle cx="162" cy="1335" r="13" fill="#2E7D4F" stroke="#FFFFFF" stroke-width="2"/>
+<text x="162" y="1338.85" font-size="11" font-weight="700" fill="#FFFFFF" text-anchor="middle">3</text>
+<text x="270" y="1320" font-size="10.5" font-weight="400" fill="#5A6B7B" text-anchor="middle" font-style="italic">Sensor</text>
+<rect x="246.0" y="1333.0" width="48" height="34" rx="6" fill="#FFFFFF" stroke="#2E7D4F" stroke-width="2"/>
+<text x="270" y="1355" font-size="12" font-weight="700" fill="#2E7D4F" text-anchor="middle" font-family="Consolas, Menlo, monospace">D</text>
+<circle cx="292" cy="1335" r="13" fill="#2E7D4F" stroke="#FFFFFF" stroke-width="2"/>
+<text x="292" y="1338.85" font-size="11" font-weight="700" fill="#FFFFFF" text-anchor="middle">3</text>
+<text x="400" y="1320" font-size="10.5" font-weight="400" fill="#5A6B7B" text-anchor="middle" font-style="italic">Vessel</text>
+<rect x="376.0" y="1333.0" width="48" height="34" rx="6" fill="#FFFFFF" stroke="#2F6F9E" stroke-width="2"/>
+<text x="400" y="1355" font-size="12" font-weight="700" fill="#2F6F9E" text-anchor="middle" font-family="Consolas, Menlo, monospace">D</text>
+<circle cx="422" cy="1335" r="13" fill="#2F6F9E" stroke="#FFFFFF" stroke-width="2"/>
+<text x="422" y="1338.85" font-size="11" font-weight="700" fill="#FFFFFF" text-anchor="middle">1</text>
+<text x="530" y="1320" font-size="10.5" font-weight="400" fill="#5A6B7B" text-anchor="middle" font-style="italic">Actuator</text>
+<rect x="506.0" y="1333.0" width="48" height="34" rx="6" fill="#FFFFFF" stroke="#2E7D4F" stroke-width="2"/>
+<text x="530" y="1355" font-size="12" font-weight="700" fill="#2E7D4F" text-anchor="middle" font-family="Consolas, Menlo, monospace">D</text>
+<circle cx="552" cy="1335" r="13" fill="#2E7D4F" stroke="#FFFFFF" stroke-width="2"/>
+<text x="552" y="1338.85" font-size="11" font-weight="700" fill="#FFFFFF" text-anchor="middle">3</text>
+<text x="660" y="1320" font-size="10.5" font-weight="400" fill="#5A6B7B" text-anchor="middle" font-style="italic">Pump</text>
+<rect x="636.0" y="1333.0" width="48" height="34" rx="6" fill="#FFFFFF" stroke="#B3402F" stroke-width="2"/>
+<text x="660" y="1355" font-size="12" font-weight="700" fill="#B3402F" text-anchor="middle" font-family="Consolas, Menlo, monospace">D</text>
+<circle cx="682" cy="1335" r="13" fill="#B3402F" stroke="#FFFFFF" stroke-width="2"/>
+<text x="682" y="1338.85" font-size="11" font-weight="700" fill="#FFFFFF" text-anchor="middle">0</text>
+<text x="70" y="1292" font-size="12.5" font-weight="700" fill="#16202B" text-anchor="start">Devices</text>
+<line x1="270" y1="1448" x2="140" y2="1372" stroke="#1F3B57" stroke-width="1.6"/>
+<line x1="270" y1="1448" x2="270" y2="1372" stroke="#1F3B57" stroke-width="1.6"/>
+<line x1="660" y1="1448" x2="400" y2="1372" stroke="#1F3B57" stroke-width="1.6"/>
+<line x1="660" y1="1448" x2="530" y2="1372" stroke="#1F3B57" stroke-width="1.6"/>
+<line x1="660" y1="1448" x2="660" y2="1372" stroke="#1F3B57" stroke-width="1.6"/>
+<rect x="200" y="1448" width="140" height="44" rx="8" fill="#FFFFFF" stroke="#2E7D4F" stroke-width="2.2"/>
+<text x="270" y="1468" font-size="11.5" font-weight="700" fill="#16202B" text-anchor="middle">Assembly-01</text>
+<text x="270" y="1484" font-size="10.5" font-weight="700" fill="#2E7D4F" text-anchor="middle">Rollup: Tier 3</text>
+<rect x="590" y="1448" width="140" height="44" rx="8" fill="#FFFFFF" stroke="#B3402F" stroke-width="2.2"/>
+<text x="660" y="1468" font-size="11.5" font-weight="700" fill="#16202B" text-anchor="middle">Assembly-02</text>
+<text x="660" y="1484" font-size="10.5" font-weight="700" fill="#B3402F" text-anchor="middle">Rollup: Tier 0</text>
+<text x="110" y="1475" font-size="12.5" font-weight="700" fill="#16202B" text-anchor="start">Assemblies</text>
+<polygon points="262.5,1448 270,1442.5 277.5,1448 270,1453.5" fill="#1F3B57"/>
+<polygon points="652.5,1448 660,1442.5 667.5,1448 660,1453.5" fill="#1F3B57"/>
+<line x1="465.0" y1="1554" x2="270" y2="1492" stroke="#1F3B57" stroke-width="1.8"/>
+<line x1="465.0" y1="1554" x2="660" y2="1492" stroke="#1F3B57" stroke-width="1.8"/>
+<rect x="365.0" y="1554" width="200" height="52" rx="10" fill="#FFFFFF" stroke="#B3402F" stroke-width="2.6"/>
+<text x="465.0" y="1576" font-size="13.5" font-weight="700" fill="#16202B" text-anchor="middle">Cell — Utilities</text>
+<text x="465.0" y="1594" font-size="10.5" font-weight="700" fill="#B3402F" text-anchor="middle">Rollup: Tier 0 (from Assembly-02 only)</text>
+<polygon points="457.5,1554 465.0,1548.5 472.5,1554 465.0,1559.5" fill="#1F3B57"/>
+<text x="615.0" y="1585" font-size="12.5" font-weight="700" fill="#16202B" text-anchor="start">Cell</text>
+<text x="58" y="1625" font-size="12" font-weight="400" fill="#33404D" text-anchor="start" font-style="italic">the Cell never looked at the five Devices directly — it only compared two Assembly Rollups. That's the bubble.</text>
+<line x1="60" y1="1710" x2="1540" y2="1710" stroke="#D6DEE7" stroke-width="1"/>
+<text x="60" y="1733" font-size="12" font-weight="400" fill="#5A6B7B" text-anchor="start" letter-spacing="1.6">LEGEND</text>
+<circle cx="76" cy="1765" r="18" fill="#B3402F" stroke="#FFFFFF" stroke-width="2"/>
+<text x="76" y="1769.55" font-size="13" font-weight="700" fill="#FFFFFF" text-anchor="middle">0</text>
+<text x="102" y="1770" font-size="13" font-weight="400" fill="#16202B" text-anchor="start">Critical</text>
+<circle cx="220" cy="1765" r="18" fill="#2F6F9E" stroke="#FFFFFF" stroke-width="2"/>
+<text x="220" y="1769.55" font-size="13" font-weight="700" fill="#FFFFFF" text-anchor="middle">1</text>
+<text x="246" y="1770" font-size="13" font-weight="400" fill="#16202B" text-anchor="start">Restricted</text>
+<circle cx="390" cy="1765" r="18" fill="#5A6B7B" stroke="#FFFFFF" stroke-width="2"/>
+<text x="390" y="1769.55" font-size="13" font-weight="700" fill="#FFFFFF" text-anchor="middle">2</text>
+<text x="416" y="1770" font-size="13" font-weight="400" fill="#16202B" text-anchor="start">Transitioning</text>
+<circle cx="590" cy="1765" r="18" fill="#2E7D4F" stroke="#FFFFFF" stroke-width="2"/>
+<text x="590" y="1769.55" font-size="13" font-weight="700" fill="#FFFFFF" text-anchor="middle">3</text>
+<text x="616" y="1770" font-size="13" font-weight="400" fill="#16202B" text-anchor="start">Nominal</text>
+<line x1="770" y1="1765" x2="816" y2="1765" stroke="#1F3B57" stroke-width="2" marker-start="url(#diamond-navy)"/>
+<text x="828" y="1770" font-size="13" font-weight="400" fill="#16202B" text-anchor="start">rolls up into (worst tier only)</text>
+</svg>
