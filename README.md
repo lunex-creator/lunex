@@ -33,9 +33,9 @@ Sixteen sub-models, each a standalone SVG diagram, building from the base object
 | 15 | [Predictive Maintenance & Improvement](diagrams/lunex-predictive-model.svg) | `PredictedEvent`, `ImprovementRecommendation` (always requires human approval) |
 | 16 | [Closed-Loop AI Control](diagrams/lunex-ai-control-model.svg) | `AIControlUnit`, `operatingBounds`, Interlock override |
 
-A full narrative index with the reasoning behind each sub-model is in [`INDEX.md`](INDEX.md). The complete project history — every phase, every design decision, and why — is in [`docs/PROJECT-RECORD.md`](docs/PROJECT-RECORD.md).
+A full narrative index with the reasoning behind each sub-model is in [`INDEX.md`](INDEX.md). The complete written specification — glossary, standards cross-reference, and a full schema appendix — is [`LUNEX-Specification.md`](LUNEX-Specification.md) (also available as a formatted [PDF](LUNEX-Specification.pdf)). The complete project history — every phase, every design decision, and why — is in [`docs/PROJECT-RECORD.md`](docs/PROJECT-RECORD.md).
 
-Brand assets (logo, color palette) are in [`brand/`](brand/).
+Brand assets (logo, color palette) are in [`brand/`](brand/). The scripts that generate every diagram and the PDF from source are in [`tools/`](tools/) — LUNEX is meant to stay editable, not just readable.
 
 ---
 
@@ -54,8 +54,14 @@ Every naming decision in this model — `Realm`/`Domain` instead of `Enterprise`
 
 ## Contributing
 
-This is a one-person effort so far, and it shows — it needs outside scrutiny before anyone should call it a standard. If you work in OT, process safety, or industrial cybersecurity and see something wrong, missing, or overcomplicated: open an issue. Disagreement is more useful right now than agreement.
+This is a one-person effort so far, and it shows — it needs outside scrutiny before anyone should call it a standard. If you work in OT, process safety, or industrial cybersecurity and see something wrong, missing, or overcomplicated: say so in [Discussions](../../discussions), not Issues (Issues are for concrete bugs — a broken diagram, a build script that doesn't run). Disagreement is more useful right now than agreement. See [`CONTRIBUTING.md`](CONTRIBUTING.md) for how design questions get resolved here, and [`CODE_OF_CONDUCT.md`](CODE_OF_CONDUCT.md) for how we expect to disagree with each other.
+
+Changes are tracked in [`CHANGELOG.md`](CHANGELOG.md).
+
+## Citing LUNEX
+
+See [`CITATION.cff`](CITATION.cff), or use GitHub's "Cite this repository" button in the sidebar.
 
 ## Contact
 
-See [lunex.cloud](https://lunex.cloud).
+General: [info@lunex.cloud](mailto:info@lunex.cloud). Code of Conduct concerns: [conduct@lunex.cloud](mailto:conduct@lunex.cloud) (see [`CODE_OF_CONDUCT.md`](CODE_OF_CONDUCT.md)).
