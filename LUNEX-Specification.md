@@ -34,6 +34,7 @@ This is a **draft specification**, authored by a single contributor and not yet 
 19. [Sub-model 15 — Predictive Maintenance & Improvement](#19-sub-model-15--predictive-maintenance--improvement)
 20. [Sub-model 16 — Closed-Loop AI Control](#20-sub-model-16--closed-loop-ai-control)
 21. [References](#21-references)
+22. [Appendix A — Schema Reference](#appendix-a--schema-reference)
 
 ---
 
@@ -63,7 +64,7 @@ LUNEX does not replace IEC 61508/61511, IEC 62443, ISA-18.2, or IEC 60204-1 — 
 
 | Standard | What it defines | How LUNEX relates to it |
 |---|---|---|
-| **ISA-88 (S88)** | Batch process control structure (Process Cell, Unit, Equipment Module) | LUNEX's `Cell` (Sub-model 2) reuses S88's "Process Cell" concept directly. LUNEX's Assembly/Device/Component layers are a generalization of S88's structural pattern to non-batch processes. |
+| **ISA-88 (S88)** | Batch process control structure (Process Cell, Unit, Equipment Module) | LUNEX's `Cell` (Sub-model 2) reuses S88's "Process Cell" concept directly, and `System` is the equivalent of S88's "Unit" — a functional grouping within a Cell, not a control system (DCS/SCADA/PLC). LUNEX's Assembly/Device/Component layers are a generalization of S88's structural pattern to non-batch processes. |
 | **ISA-95 (S95)** | Enterprise-to-control hierarchy (Enterprise, Site, Area, Work Center) | LUNEX's `Area` (Sub-model 2) is S95's term, reused unchanged. `Realm`/`Domain`/`Location` replace S95's `Enterprise`/`Division`/`Site` — broadened beyond a single industrial plant, and chosen to enable the addressable namespace in Sub-model 7 (see Sub-model 8 for the full reasoning). |
 | **PackML (ISA-TR88.00.02)** | Machine state behavior for packaging equipment | LUNEX's Sub-model 4 state machine is a generalization of PackML's state pattern to any object class, not only packaging machines. |
 | **IEC 61508 / IEC 61511** | Functional safety, Safety Integrity Level (SIL), Safety Instrumented Function (SIF) | Reused **unchanged**. Sub-model 5 makes `Interlock` a first-class object specifically so it can carry the proof-test history IEC 61508/61511 require. A SIF is modeled as its own physically independent Assembly, per IEC 61511's independence requirement. |
@@ -115,6 +116,8 @@ Terms are listed alphabetically. Terms reused unchanged from an external standar
 
 **Cell** — A level in the Sub-model 2 hierarchy, reused from ISA-88's "Process Cell."
 
+**Class** — Attribute on `LunexObject`: a reference to the object's defining template in the organization's Inventory (Sub-model 1 §5.3), not a free-text string. Two objects share a `class` when instantiated from the same Inventory entry.
+
 **Cloud & Analytics** — A capability flag in Sub-model 3: whether an Assembly's Control Unit(s) stream telemetry to the AI/Analytics layer (Sub-model 7). Independent of wiring shape.
 
 **Component** — Abstract class (Sub-model 1) for parts of a Device that are not independently addressable (e.g., a digital input card).
@@ -127,7 +130,9 @@ Terms are listed alphabetically. Terms reused unchanged from an external standar
 
 **Control Unit** — One of the five universal device classes (Sub-model 1); performs logic/decision-making (PLC, DCS, microcontroller, and by extension `AIControlUnit`).
 
-**Device** — Abstract class (Sub-model 1) for any independently addressable, assembly-level unit; composes zero or more Components.
+**controlTarget** — Attribute on `AIControlUnit` (Sub-model 16): `PhysicalDevice | DigitalTwin`. Named distinctly from `Interlock.target` (same word would mean two different things on two different classes — see `target` below and Sub-model 8).
+
+**Device** — Abstract class (Sub-model 1) for any independently addressable, assembly-level unit; composes zero or more Components. Optionally carries `physicalRef` when its physical hardware is shared with other functionally distinct Devices.
 
 **Digital Twin** — The AI-side, queryable mirror of a physical object (Sub-model 7), kept in sync via the Telemetry Envelope. Holds only the *current* state — see Historian for historical state.
 
@@ -135,15 +140,19 @@ Terms are listed alphabetically. Terms reused unchanged from an external standar
 
 **Envelope** — See Telemetry Envelope.
 
-**GuidanceRecommendation** — A first-class `LunexObject` (Sub-model 12) holding a set of `ScenarioResult`s. `source` (later extended with a third value in Sub-model 15) indicates whether the guidance is `procedural`, `simulated`, or `predictive`.
+**GuidanceRecommendation** — A first-class `LunexObject` (Sub-model 12) holding a set of `ScenarioResult`s. `source` (later extended with a third value in Sub-model 15) indicates whether the guidance is `procedural`, `simulated`, or `predictive`. `state: Open | Applied | Dismissed | Expired` — overrides `methods()` with `apply()` / `dismiss()`; expires automatically as the process state it was generated against moves on.
 
 **goldenScenarioId** — Field on `GuidanceRecommendation`: the id of the recommended `ScenarioResult`, or `null` if the scenarios are equivalent and no single best option is being asserted.
+
+**Health** — Type of `LunexObject.health` (Sub-model 1): `{ score : 0-100, flags : string[] }`. Diagnostic condition, deliberately independent of `state` — an object can be `On` and simultaneously report degraded health.
 
 **Historian** — An append-only record (Sub-model 14) of every Telemetry Envelope ever emitted, alongside (not gating) the Digital Twin.
 
 **HistorianRecord** — One row in the Historian: path, timestamp, state, health, properties, and a reference to the `RetentionPolicy` governing its resolution.
 
 **High-Availability (HA)** — A capability flag in Sub-model 3: whether an Assembly's Control Unit(s) are deployed as an active/standby redundant pair. Independent of wiring shape.
+
+**id** — Attribute on `LunexObject` (Sub-model 1): the system-generated, permanent identifier. Never reused, never renamed. Every `Ref` field in this specification (`DeviceRef`, `AlarmRef`, `ZoneRef`, etc.) points to an `id`, not a `tag`.
 
 **Inhibited** — A Sub-model 4 state: Tier 1 (Restricted) per Sub-model 9. Reached from Standby (via Inhibiting) or from On (via Emergency Stopping). Requires an explicit Clear to leave.
 
@@ -165,11 +174,19 @@ Terms are listed alphabetically. Terms reused unchanged from an external standar
 
 **manualOverrideAvailable** — Field on `SimulationPolicy` and `RetentionPolicy`: always `true`, regardless of `automaticMode`. Manual triggering is universal, not exclusive to a specific mode.
 
-**operatingBounds** — Attribute on `AIControlUnit` (Sub-model 16): required whenever `target` is the physical Device; may be empty only when `target` is the Digital Twin, since an unbounded action there cannot cause real-world harm.
+**methods()** — Attribute on `LunexObject` (Sub-model 1 §5.2.1): a computed view, not a stored list — returns the Sub-model 4 transition-triggers valid from the object's current `state`, excluding `Complete`. Empty for any transient state. `Alarm`, `Interlock`, `GuidanceRecommendation`, `PredictedEvent`, and `ImprovementRecommendation` override it with their own trigger sets.
+
+**operatingBounds** — Attribute on `AIControlUnit` (Sub-model 16): required whenever `controlTarget` is the physical Device; may be empty only when `controlTarget` is the Digital Twin, since an unbounded action there cannot cause real-world harm.
+
+**parent** — Attribute on `LunexObject` (Sub-model 1): the immediate container in the Sub-model 2 containment chain. Distinct from `physicalRef` (shared hardware) and from any Sub-model 4 transition relationship — three separate kinds of "points to another object."
 
 **PredictedEvent** — A first-class `LunexObject` (Sub-model 15) representing a forward-looking claim derived from a Historian pattern. Raises into the ordinary Alarm system, tagged `PREDICTIVE`, rather than occupying a separate screen.
 
+**physicalRef** — Optional attribute on `Device` (Sub-model 1): `DeviceRef | ComponentRef`, points to the actual shared, serviceable unit — a Device for simple hardware, or a specific Component (e.g. one CPU in a multi-CPU rack) when the Device's internal structure means different functional roles are backed by different sub-parts. Also confirms Sub-model 3's Integrated topology when shared across an entire chain.
+
 **priority** — Attribute on `Alarm` (Sub-model 10): 1 (Critical) to 4 (Log Only), computed as severity × actionability.
+
+**properties** — Attribute on `LunexObject` (Sub-model 1): `Map<Key, Value>` — the object's own data, including the current output of any continuous operational functionality (Sub-model 1 §5.2.2). Specific to the object's `class`; not standardized in shape beyond the map itself.
 
 **Realm** — The root level of the Sub-model 2 hierarchy: the whole organization's namespace.
 
@@ -201,9 +218,13 @@ Terms are listed alphabetically. Terms reused unchanged from an external standar
 
 **Standby** — A Sub-model 4 state: Tier 3 (Nominal) per Sub-model 9. Never a target of an Interlock.
 
-**State** — The 14-value enumeration defined in Sub-model 4, shared by every `LunexObject` unless the object's class doesn't need a given branch.
+**State** — The 15-value enumeration defined in Sub-model 4 (5 stable, 10 transient), shared by every `LunexObject` unless the object's class doesn't need a given branch.
 
-**System** — A level in the Sub-model 2 hierarchy: one control system (DCS/SCADA/PLC).
+**System** — A level in the Sub-model 2 hierarchy: a functional unit within a Cell, equivalent to ISA-88's Unit. Not a control system (DCS/SCADA/PLC) — that would be a `Control Unit` (Sub-model 1) instance living inside this level.
+
+**tag** — Attribute on `LunexObject` (Sub-model 1): the human/engineering-facing label (e.g. `PT-101`). Unlike `id`, `tag` can be renamed during the object's life without breaking any reference, since references use `id`.
+
+**target** — Attribute on `Interlock` (Sub-model 5): `DeviceRef`, the Device the Interlock forces or blocks a transition on. Not to be confused with `AIControlUnit.controlTarget` (Sub-model 16) — deliberately a different name for a different meaning on a different class.
 
 **Telemetry Envelope** — The addressed, timestamped wrapper (Sub-model 7) around what `LunexObject` already exposes (class, state, health, properties). Streams to both the Digital Twin and the Historian.
 
@@ -212,6 +233,8 @@ Terms are listed alphabetically. Terms reused unchanged from an external standar
 **Transducer** — One of the five universal device classes (Sub-model 1); converts a raw sensor signal into a usable signal.
 
 **tierCounts** — Field on a `Rollup`: a count of descendants at each Tier, preserving multi-condition situations a single worst-case value would hide.
+
+**votingArchitecture** — Mandatory attribute on a SIF Assembly (Sub-model 5): `MooN` per layer (sensor, logicSolver, finalElement), reused unchanged from IEC 61508. Mandatory, unlike `physicalRef`, because an implicit default here would silently assert a SIL-relevant fact.
 
 **worstTier** — Field on a `Rollup`: the lowest (worst) Tier present anywhere beneath a node.
 
@@ -244,11 +267,70 @@ LunexObject {
 }
 ```
 
+- **`id`** — the system-generated, permanent identifier. Never reused, never renamed. This is what every `Ref` field elsewhere in this specification (`DeviceRef`, `AlarmRef`, `ZoneRef`, and so on) actually points to.
+- **`tag`** — the human/engineering-facing label (e.g. `PT-101`, `PressureLoop-3.CU`). Unlike `id`, `tag` can be renamed during the object's life (a re-tagging project, a loop renumbering) without breaking any reference, because references use `id`.
+- **`class`** — a reference to the object's defining template in the organization's Inventory (Sub-model 1 §5.3), not a free-text string. Two objects share a `class` when they were instantiated from the same Inventory entry.
+- **`parent`** — the immediate container in the Sub-model 2 containment chain (e.g. a `Device`'s `parent` is its `Assembly`). This is structural containment, not `physicalRef` (Sub-model 1's optional shared-hardware pointer) and not the Sub-model 4 state machine's own transition graph — three separate relationships that happen to all involve one object pointing at another.
+- **`health : Health`** — `{ score : 0-100, flags : string[] }`. Diagnostic condition, deliberately independent of `state`: an object can be `On` (Sub-model 4) and simultaneously report degraded `health` (e.g. a sensor drifting out of calibration) without that affecting which state-transitions are available.
+- **`properties`** — the object's own data: current value, unit, setpoint, whatever is specific to its `class`. This is also where continuous operational output lives (see §5.2.1 below).
+- **`methods()`** — see §5.2.1.
+
 `state` and `health` are deliberately separate: `state` is the Sub-model 4 operating mode; `health` is diagnostic condition, independent of mode.
+
+### 5.2.1 `methods()` — Derived from State, Not a Free List
+
+`methods()` is not an arbitrary, per-class method table. It is a **computed view**: the set of Sub-model 4 transition-triggers valid from the object's *current* `state`, minus `Complete` (which is an automatic, system-internal transition — never something a caller invokes). Calling `methods()` on an object in `Standby` and the same object in `On` returns two different, non-overlapping lists, because the underlying state machine (Sub-model 4) only exposes different outgoing edges from each.
+
+**Canonical trigger names**, taken directly from the Sub-model 4 transition labels already established:
+
+| From state | `methods()` returns |
+|---|---|
+| `Locked` | `unlock()` |
+| `Off` | `lock()`, `enable()` |
+| `Standby` | `start()`, `disable()`, `inhibit()` |
+| `Inhibited` | `clear()`, `disable()` |
+| `On` | `controlledStop()`, `quickStop()`, `emergencyStop()` |
+| any transient state (`Starting`, `Enabling`, `Disabling`, `Unlocking`, `Locking`, `Inhibiting`, `Clearing`, all three Stopping variants) | *(empty)* |
+
+The empty case for transient states is not an oversight — it follows directly from Sub-model 4's own graph, which was already drawn this way: while an object is completing its own transition, it accepts no new command until that transition reaches a stable state. This specification simply makes the rule explicit rather than leaving it implicit in the diagram.
+
+**Classes with their own state machine override `methods()` with their own trigger set**, rather than inheriting the Sub-model 4 list:
+
+| Class | Sub-model | Override triggers |
+|---|---|---|
+| `Alarm` | 10 | `acknowledge()`, `shelve()`, `operatorReset()`, `suppress()` / `unsuppress()`, `takeOutOfService()` / `returnToService()` |
+| `Interlock` | 5 | `clear()` (releases a tripped condition once the underlying cause is gone; distinct from the target Device's own `clear()`) |
+| `GuidanceRecommendation` | 12 | `apply()` (Open → Applied), `dismiss()` (Open → Dismissed). `Expired` happens automatically as the underlying process state moves on, never via a method call. |
+| `PredictedEvent` | 15 | `confirm()` (Open → Confirmed), `dismiss()` (Open → Dismissed). `Expired` is never a method call — it happens automatically once `predictedWindow` passes with no confirmation. |
+| `ImprovementRecommendation` | 15 | `startReview()` (Proposed → UnderReview), `approve()` / `reject()` (UnderReview → Approved / Rejected), `apply()` (Approved → Applied). No method ever skips `UnderReview` — see Sub-model 15 §19.2, `requiresApproval`. |
+| `AIControlUnit` | 16 | inherits the Sub-model 4 list unchanged — `enable()`/`disable()` are exactly `enable()`/`disable()` from the table above, since an AIControlUnit's own On/Off/Standby is the ordinary state machine, not a new one (Sub-model 16 §20.2) |
+
+### 5.2.2 Scope Boundary: Continuous Operational Functionality
+
+`methods()` covers discrete, externally-triggered state transitions. It deliberately does **not** cover continuous operational functionality — a PID loop recalculating every scan cycle, a Sensor sampling continuously, an AIControlUnit's own control algorithm running while it is `On`. This is not a gap; it is the same boundary this specification draws everywhere else: Sub-model 5 never specifies *how* a SIF computes its trip logic, only that it must; Sub-model 16 never specifies *which* algorithm an AIControlUnit runs, only its `objective` (intent, not implementation) and the governance around it. LUNEX is a structural and governance model, not a control-algorithm standard.
+
+What continuous functionality needs is already covered, without any new mechanism:
+
+| Need | Already covered by |
+|---|---|
+| The current output of that continuous functionality | `properties` (this section) |
+| Getting that output off the object | Telemetry Envelope (Sub-model 7) |
+| Whether it's allowed to run at all | `state` + Interlock (Sub-model 5) + `operatingBounds` (Sub-model 16) |
+| What it's trying to achieve, without prescribing how | `objective` (Sub-model 16, applicable to any Control Unit, not only `AIControlUnit`) |
 
 **`Device`** (abstract, extends `LunexObject`) — an independently addressable, assembly-level unit. Composes zero or more `Component`.
 
-**`Component`** (abstract, extends `LunexObject`) — a part of a Device that is *not* independently addressable (e.g., a digital input channel on a PLC card).
+```
+Device {
+  physicalRef : DeviceRef | ComponentRef | null
+}
+```
+
+`physicalRef` is optional — most Devices don't need it, and omitting it means the instance is assumed to be its own unique physical asset. It exists for the common case where one physical unit plays several distinct functional roles: a single PLC rack, for example, may be the Control Unit for three unrelated loops at once (`PressureLoop-3.CU`, `TempLoop-7.CU`, `MeshNode-B.CU` in a Mesh Assembly), each with its own `id`, `tag`, and `state`, all three pointing back to the same `physicalRef`. Conceptually this mirrors the Proxy/Flyweight pattern in OOP: several instances, each with their own identity and interface, sharing one underlying implementation they don't own. It also gives Sub-model 3's **Integrated** topology a checkable definition rather than an assumed one: when every role in one Assembly's chain (S→T→CU→SC→A) shares the same `physicalRef`, that *is* what Integrated means.
+
+`physicalRef` targets whichever granularity is actually the serviceable unit — not always the whole Device. A PLC rack with a single CPU is one shared asset, so `physicalRef` there points to the rack `Device` itself. A rack with **two independent CPUs** is not one shared asset — patching CPU-A never affects loops running on CPU-B — so `physicalRef` should point to the specific `Processor` `Component` (already a standard Component example, Sub-model 1 §5.2) rather than the rack. If `PressureLoop-3.CU` and `TempLoop-7.CU` both run on CPU-A while `MeshNode-B.CU` runs on CPU-B, the first two share one `physicalRef` and the third has a different one, even though all three physically live in the same rack. This works without any new rule: `Component` already carries its own `id` and `tag` (inherited from `LunexObject`) — "not independently addressable" (Sub-model 1 §5.2) describes network reachability, not identity, so a `Component` is just as valid a `physicalRef` target as a `Device`.
+
+**`Component`** (abstract, extends `LunexObject`) — a part of a Device that is *not* independently addressable (e.g., a digital input channel on a PLC card). Examples: Digital Input, Analog Output, PID-controller, Processor, Comms Module / Gateway.
 
 **Five universal device classes** (all extend `Device`), distinguished by composable function-interfaces rather than fixed categories:
 
@@ -280,10 +362,11 @@ Function-interfaces are composable, not exclusive — a class may implement more
 
 To model a new physical device:
 
-1. Identify its function(s) — Sensing, Converting, Controlling, Actuating — and pick the matching universal class(es). Most real devices need only one; an intelligent transmitter that also converts is the exception, not the rule.
+1. Identify its function(s) — Sensing, Converting, Controlling, Actuating — and pick the matching universal class(es). Most real devices need only one; an intelligent transmitter that also converts is the exception, not the rule. A variable-frequency or servo drive is a canonical multi-interface case: it is always both a `Control Unit` (it computes the output from setpoint and feedback) and a `Signal Converter` (it produces the variable-frequency power signal that drives the motor), and a `Transducer` too if its processed feedback is exposed externally rather than staying internal to its own loop.
 2. Decide whether it is independently addressable on the network (`Device`) or a sub-part of one (`Component`).
 3. Define it as a derived class in your organization's Inventory (a reusable template — see Sub-model 8's reasoning for why "Inventory" rather than "Library"), not as a one-off instance.
 4. Only introduce a new peer class (alongside Interlock, Zone, etc.) if the object genuinely needs its own identity, state, and audit trail independent of any Device — most new concerns should first be checked against whether they can be a `Component`, a `property`, or an `Assembly` capability flag instead.
+5. Set `physicalRef` only when it's actually needed — when one physical asset genuinely backs more than one functional tag. Don't set it by default; an unnecessary `physicalRef` implies a sharing relationship that doesn't exist and will mislead maintenance planning rather than help it.
 
 ---
 
@@ -310,7 +393,7 @@ Realm → Domain → Location → Area → Cell → System → Assembly → Devi
 | Location | L4 | plant, building, vessel, remote site |
 | Area | L3 | process area within Location (ISA-95 term, reused) |
 | Cell | L2/L3 | process cell (ISA-88 term, reused) |
-| System | L2 | one control system (DCS/SCADA/PLC) |
+| System | L2 | functional unit within a Cell (equivalent to ISA-88's Unit) |
 | Assembly | L1/L2 | topology pattern (Sub-model 3) |
 | Device | L1 | one of the five universal classes (Sub-model 1) |
 | Component | L0/L1 | not independently addressable |
@@ -320,7 +403,7 @@ Any level may be skipped when trivial (Domain is the most commonly skipped). Non
 **Addressable path**: every `LunexObject.id` is derivable from its position in this chain:
 
 ```
-lunex://AcmeCorp/Benelux/RotterdamPlant/Utilities/Boilerhouse/DCS-01/PressureLoop-3/PT-101
+lunex://AcmeCorp/Benelux/RotterdamPlant/Utilities/Boilerhouse/BoilerUnit-1/PressureLoop-3/PT-101
 ```
 
 `Component` appears in the path only when addressing an internal signal.
@@ -361,6 +444,8 @@ All four shapes include the full S→T→CU→SC→A chain — Transducers and S
 - **Cloud & Analytics** — Control Unit(s) stream telemetry to the AI/Analytics layer (Sub-model 7).
 
 An `AIControlUnit` (Sub-model 16) occupies a Control Unit slot in any of these shapes — most commonly Point-to-Point or Star — without requiring a new shape.
+
+**Integrated, made checkable**: "one physical unit" no longer has to be an assumption. When every role present in an Assembly's chain shares the same `Device.physicalRef` (Sub-model 1), that shared reference *is* the Integrated shape — a Mesh Assembly whose three nodes each happen to be their own separate hardware is not Integrated no matter how tightly they're networked; a Point-to-Point chain whose S/CU/A all resolve to one `physicalRef` is Integrated even if no one flagged it as such.
 
 ### 7.3 Application Guidance
 
@@ -432,6 +517,8 @@ Interlock {
 }
 ```
 
+`Interlock` overrides `methods()` (Sub-model 1 §5.2.1) rather than inheriting the standard Sub-model 4 trigger list: `clear()` — releases a tripped condition once the underlying cause is gone. This is the Interlock's own `clear()`, distinct from the *target* Device's own `clear()` trigger (which moves the target from Inhibited back to Standby once the Interlock permits it).
+
 **`lockType` and its target, by the object's current state** (this is the corrected, complete rule — see §9.4):
 
 | Current state | `lockType: inhibit` targets | `lockType: lock` targets |
@@ -444,6 +531,22 @@ Interlock {
 Both `lockType` values, when the current state is Off, converge on the same result: **Locked**. This is not two competing behaviors — it follows directly from the Sub-model 4 transition graph having no Off→Inhibited edge.
 
 **Safety Instrumented Function (SIF)**: modeled as an Assembly (Sub-model 3) with `independent: true` and a `SIL` rating as a property of the whole Assembly, not a single Device. Topology is Point-to-Point: Sensor (initiator) → Control Unit (logic solver, typically an SIS) → Actuator (final element). A SIF Assembly must never share a Control Unit with a BPCS Assembly.
+
+**`votingArchitecture`** — mandatory on every SIF Assembly:
+
+```
+SIF Assembly {
+  votingArchitecture : {
+    sensor         : MooN     (e.g. "2oo3")
+    logicSolver    : MooN     (e.g. "1oo1" or "1oo2")
+    finalElement   : MooN     (e.g. "1oo2")
+  }
+}
+```
+
+`MooN` is IEC 61508's own voting notation, reused unchanged. Distinct from Sub-model 3's `High-Availability` flag: HA is about uptime and applies to any Assembly, BPCS or SIF; `votingArchitecture` is about SIL integrity — it feeds the PFD calculation and applies only to a SIF. The two are independent and can both be present on the same Assembly for different reasons.
+
+`votingArchitecture` is **mandatory**, not optional like `physicalRef` (Sub-model 1) — the two fields look similar but follow opposite reasoning. Omitting `physicalRef` has a safe, harmless default (the instance is assumed to be its own unique asset). Omitting `votingArchitecture` has no safe default: an implicit `1oo1` would silently assert a SIL-relevant fact — no voting redundancy — that must never be assumed, only explicitly engineered and documented. This is the same principle already governing `AIControlUnit.operatingBounds` (Sub-model 16): mandatory wherever omission would silently carry a real-world consequence, optional only where omission is genuinely inert.
 
 **Stop categories** [IEC 60204-1], confirmed against Sub-model 4:
 
@@ -461,6 +564,7 @@ Quick and Controlled Stopping both return to Standby and are never used by an In
 2. Choose `lockType: inhibit` when the process should pause but logic can stay live (guard doors, process permissives); choose `lockType: lock` when a full lockout is required before restart (machine guarding, maintenance interlocks).
 3. Do not assume the target state from `lockType` alone — always resolve it against the table in §9.2 using the target Device's current state.
 4. Any SIF must be assigned to its own Assembly at the point of topology design (Sub-model 3), before any shared-Control-Unit decision is made elsewhere in the project.
+5. Set `votingArchitecture` for all three layers explicitly, even when a layer is genuinely `1oo1` — an unset layer is a missing engineering decision, not a valid "no vote needed" default. Voting can differ per layer (e.g. `2oo3` sensors feeding a `1oo1` logic solver and a `1oo2` final element) — this is normal, not an inconsistency to resolve.
 
 ### 9.4 Note on a corrected edge case
 
@@ -641,6 +745,7 @@ ISA-18.2 defines alarm management principles but does not provide an object mode
 Alarm {
   id            : string
   source        : DeviceRef
+  origin        : real-time | predictive   (Sub-model 15 — deliberately not named source, see Sub-model 8)
   condition     : string
   severity      : Tier (0-3)              (Sub-model 9)
   actionable    : bool                    (derived, see below)
@@ -648,10 +753,13 @@ Alarm {
   state         : AlarmState              (new value space, see below)
   resetMode     : auto | manual
   shelvedUntil  : timestamp
+  procedure     : AlarmResponseProcedureRef | null   (Sub-model 11)
 }
 ```
 
 **`actionable`** is derived automatically from the linked Interlock's state (Sub-model 5): `true` while the Interlock is Standby (not yet tripped), `false` once it has tripped to Inhibited/Locked. This is never a manually-set flag.
+
+**`origin`** distinguishes a real-time condition from a forward-looking one; a `PredictedEvent` (Sub-model 15) raises an Alarm with `origin: predictive`, visibly tagged `PREDICTIVE`, joining the same prioritization and screen as any other alarm. **`procedure`** references the `AlarmResponseProcedure` (Sub-model 11) for this alarm's condition type — `null` is valid for Priority 3/4 alarms, where an ARP is optional (Sub-model 11 §15.2).
 
 **Priority matrix** — severity × actionability, not severity alone:
 
@@ -737,6 +845,7 @@ GuidanceRecommendation {
   scenarios          : ScenarioResult[]
   goldenScenarioId   : string | null
   generatedAt        : timestamp
+  state              : Open | Applied | Dismissed | Expired
 }
 
 ScenarioResult {
@@ -749,6 +858,8 @@ ScenarioResult {
 ```
 
 `goldenScenarioId` may be `null` — equivalent options are a valid, honest outcome; the model does not force a single "best" recommendation when the simulation genuinely doesn't produce one.
+
+`state` follows the same shape as `PredictedEvent` (Sub-model 15): `GuidanceRecommendation` overrides `methods()` (Sub-model 1 §5.2.1) with `apply()` and `dismiss()`, both valid only from `Open`. `Expired` is never reached by a method call — a recommendation was generated against the process state *at that moment* (Sub-model 7's Digital Twin), and once enough time passes or the underlying context has visibly moved on, it expires automatically rather than staying presentable as if it were still current.
 
 Scenarios are tested on the Digital Twin (Sub-model 7), never the physical Device — a wrong scenario costs nothing.
 
@@ -878,7 +989,7 @@ PredictedEvent {
 
 A `PredictedEvent` **raises** into the ordinary Sub-model 10 `Alarm` system — `Alarm.origin: predictive`, visibly tagged `PREDICTIVE` — rather than occupying a separate maintenance-planning screen the operator must remember to check separately (this joins Sub-model 13's single situational-awareness picture, it doesn't sit beside it). `Alarm.origin` is deliberately not named `Alarm.source`, since that field already means "which Device" on the same class (see Sub-model 8).
 
-`state: Expired` matters specifically for Sub-model 14's Analytics: a prediction whose window passed without confirmation is exactly the data needed to evaluate how reliable predictions actually are.
+`state: Expired` matters specifically for Sub-model 14's Analytics: a prediction whose window passed without confirmation is exactly the data needed to evaluate how reliable predictions actually are. `PredictedEvent` overrides `methods()` (Sub-model 1 §5.2.1) with `confirm()` and `dismiss()`, both only valid from `Open`; `Expired` is never reached by a method call, only by the window passing unconfirmed.
 
 **`ImprovementRecommendation`** (extends `LunexObject`):
 
@@ -893,6 +1004,8 @@ ImprovementRecommendation {
   state               : Proposed | UnderReview | Approved | Rejected | Applied
 }
 ```
+
+`ImprovementRecommendation` overrides `methods()` with `startReview()`, `approve()` / `reject()`, and `apply()` — one method per arrow in the workflow below, with no method that skips a step.
 
 **Mandatory workflow, no shortcut**: Historian pattern → `ImprovementRecommendation` drafted → engineer review (always, no exception) → Applied or not, at the engineer's discretion — never the AI's. This holds even at `confidence: 1.0`. The distinction from Sub-model 12: a `ScenarioResult` can be shown to an operator directly because it only informs one decision in the moment; an `ImprovementRecommendation` changes how the plant runs going forward — a materially bigger decision that always requires human approval.
 
@@ -920,20 +1033,22 @@ Some AI models don't just recommend — they adjust the process directly, contin
 AIControlUnit extends ControlUnit {
   objective         : string
   operatingBounds   : { parameter, min, max }[]
-  target            : PhysicalDevice | DigitalTwin
+  controlTarget     : PhysicalDevice | DigitalTwin
   state             : State                          (Sub-model 4, unchanged)
   disabledBy        : OperatorRef | InterlockRef | null
   lastAction        : { setpoint, timestamp, withinBounds }
 }
 ```
 
+Named `controlTarget` rather than `target` specifically to avoid colliding with `Interlock.target` (Sub-model 5) — same word, different class, different meaning (an Interlock's `target` is the Device it forces a transition on; an AIControlUnit's `controlTarget` is what its output is routed to). See Sub-model 8 for the naming principle this follows.
+
 It occupies an ordinary Control Unit slot within a Point-to-Point or Star Assembly (Sub-model 3) — no new topology shape is required.
 
-**On/Off reuses the Sub-model 4 state machine, unmodified.** An Interlock (Sub-model 5) forces an `AIControlUnit` to Standby or Locked exactly as it would any other Device — including the corrected Off→Locked behavior (§9.4): from Off, an inhibit-type Interlock targets Locked directly, not Inhibited.
+**On/Off reuses the Sub-model 4 state machine, unmodified.** An Interlock (Sub-model 5) forces an `AIControlUnit` to Standby or Locked exactly as it would any other Device — including the corrected Off→Locked behavior (§9.4): from Off, an inhibit-type Interlock targets Locked directly, not Inhibited. Consequently, `AIControlUnit` does **not** override `methods()` (Sub-model 1 §5.2.1): `enable()`/`disable()`/`start()`/`emergencyStop()` and the rest are exactly the standard Sub-model 4 list, unlike `Alarm`, `Interlock`, `GuidanceRecommendation`, `PredictedEvent`, or `ImprovementRecommendation`, each of which defines its own trigger set. An AI performing closed-loop control is switched on and off the same way any Control Unit is.
 
 **`operatingBounds` governance**:
 
-| `target` | `operatingBounds` |
+| `controlTarget` | `operatingBounds` |
 |---|---|
 | PhysicalDevice | **Required.** A real setpoint has a real consequence; governance never allows unbounded operation here. |
 | DigitalTwin (Sub-model 7) | **May be empty.** The Twin absorbs the consequence — safe to test without limits. |
@@ -942,8 +1057,8 @@ An action outside `operatingBounds` is **clamped** — it never reaches the phys
 
 ### 20.3 Application Guidance
 
-1. Never deploy an `AIControlUnit` with `target: PhysicalDevice` and empty `operatingBounds` — this specification treats that configuration as invalid, not merely discouraged.
-2. Use `target: DigitalTwin` for all model testing and tuning before any production deployment against a physical target.
+1. Never deploy an `AIControlUnit` with `controlTarget: PhysicalDevice` and empty `operatingBounds` — this specification treats that configuration as invalid, not merely discouraged.
+2. Use `controlTarget: DigitalTwin` for all model testing and tuning before any production deployment against a physical target.
 3. Wire at least one Interlock to every production `AIControlUnit`, exactly as you would for any other Control Unit performing a comparable function — an AI performing closed-loop control is not exempt from the safety model.
 4. Treat repeated out-of-bounds attempts (visible via `ImprovementRecommendation` frequency) as a signal to review whether the objective or the bounds are miscalibrated — not as a reason to widen the bounds reflexively.
 
@@ -966,3 +1081,205 @@ An action outside `operatingBounds` is **clamped** — it never reaches the phys
 ---
 
 *This document is part of the LUNEX project. See `README.md` and `LICENSE` in the repository root, and [lunex.cloud](https://lunex.cloud).*
+
+---
+
+## Appendix A — Schema Reference
+
+Every class defined across the sixteen sub-models, collected here for lookup without paging back through each chapter. Attributes shown are exactly as specified in the relevant Sub-model section; this appendix adds nothing new; it only re-collects.
+
+**Sub-model 1 — Object / Class Model**
+
+```
+LunexObject {                          (abstract base — every object has this)
+  id            : string
+  tag           : string
+  class         : Class
+  parent        : LunexObject
+  state         : State                 (Sub-model 4)
+  health        : Health                { score: 0-100, flags: string[] }
+  properties    : Map<Key, Value>
+  methods()     : Procedure[]           (derived from state — Sub-model 1 §5.2.1)
+}
+
+Device extends LunexObject {           (abstract)
+  physicalRef : DeviceRef | ComponentRef | null
+}
+
+Component extends LunexObject {}       (abstract — not independently addressable)
+
+Sensor, Transducer, Control Unit, Signal Converter, Actuator
+  all extend Device, no additional attributes — distinguished by
+  function-interface (Sensing / Converting / Controlling / Actuating)
+```
+
+**Sub-model 5 — Safety**
+
+```
+Interlock extends LunexObject {
+  condition          : DeviceRef
+  action             : force | block
+  target             : DeviceRef
+  lockType           : inhibit | lock
+  proofTestHistory   : ProofTest[]
+}
+
+SIF Assembly {
+  independent          : true
+  votingArchitecture    : { sensor: MooN, logicSolver: MooN, finalElement: MooN }
+}
+```
+
+**Sub-model 6 — Security**
+
+```
+Zone extends LunexObject {
+  members                 : LunexObjectRef[]
+  securityLevelTarget     : SL-T (0-4)
+  securityLevelAchieved   : SL-A (0-4)
+  purdueLevel             : ref                (Sub-model 2)
+}
+
+Conduit extends LunexObject {
+  zoneA                   : ZoneRef
+  zoneB                   : ZoneRef
+  controlUnit             : DeviceRef           (Firewall / IDS)
+  securityLevelTarget     : SL-T (0-4)
+}
+```
+
+**Sub-model 9 — Collective Status**
+
+```
+Rollup {                               (computed view, not a stored class)
+  subject         : LunexObjectRef
+  worstTier       : 0-3
+  worstState      : State
+  tierCounts      : { "3": n, "1": n, "0": n, ... }
+  contributors    : [ {path, state}, ... ]
+  computedAt      : timestamp
+}
+```
+
+**Sub-model 10 — Alarm Management**
+
+```
+Alarm extends LunexObject {
+  source        : DeviceRef
+  origin        : real-time | predictive  (Sub-model 15)
+  condition     : string
+  severity      : Tier (0-3)              (Sub-model 9)
+  actionable    : bool                    (derived from linked Interlock's state)
+  priority      : 1-4                     (derived: severity × actionable)
+  state         : AlarmState              (own value space — Sub-model 10 §14.2)
+  resetMode     : auto | manual
+  shelvedUntil  : timestamp
+  procedure     : AlarmResponseProcedureRef | null   (Sub-model 11)
+}
+```
+
+**Sub-model 11 — Alarm Response Guidance**
+
+```
+AlarmResponseProcedure {
+  appliesTo               : AlarmType             (condition key)
+  probableCause           : string
+  consequenceIfIgnored    : string
+  correctiveAction        : string
+  escalation              : string
+  reference                : string                (SOP / document link)
+}
+```
+
+**Sub-model 12 — Scenario Simulation & Operator Guidance**
+
+```
+GuidanceRecommendation extends LunexObject {
+  context            : DeviceRef | AlarmRef
+  source             : procedural | simulated | predictive
+  scenarios          : ScenarioResult[]
+  goldenScenarioId   : string | null
+  generatedAt        : timestamp
+  state              : Open | Applied | Dismissed | Expired
+}
+
+ScenarioResult {
+  description           : string
+  predictedOutcome      : string
+  successProbability    : 0-1
+  isGolden              : bool
+}
+
+SimulationPolicy {
+  automaticMode            : always | risk-based | none
+  riskThreshold            : Tier (0-3)     (used when automaticMode: risk-based)
+  manualOverrideAvailable  : true            (always)
+}
+```
+
+**Sub-model 14 — Historian & Analytics**
+
+```
+HistorianRecord {
+  path, timestamp    (Sub-model 2/7)
+  state, health, properties
+  retention          : RetentionPolicyRef
+}
+
+RetentionPolicy {
+  automaticMode            : always | risk-based | none
+  riskThreshold            : Tier (0-3)
+  manualOverrideAvailable  : true
+}
+```
+
+**Sub-model 15 — Predictive Maintenance & Improvement**
+
+```
+PredictedEvent extends LunexObject {
+  subject               : DeviceRef
+  predictedCondition     : string
+  predictedWindow        : { from, to }
+  confidence              : 0-1
+  basis                   : string                (Historian pattern)
+  state                    : Open | Confirmed | Dismissed | Expired
+}
+
+ImprovementRecommendation extends LunexObject {
+  subject             : AssemblyRef | LunexObjectRef
+  pattern             : string             (what the Historian shows)
+  suggestedChange     : string
+  evidenceBasis       : string
+  requiresApproval    : true                (always — no false case)
+  state               : Proposed | UnderReview | Approved | Rejected | Applied
+}
+```
+
+**Sub-model 16 — Closed-Loop AI Control**
+
+```
+AIControlUnit extends ControlUnit {
+  objective         : string
+  operatingBounds   : { parameter, min, max }[]
+  controlTarget     : PhysicalDevice | DigitalTwin
+  disabledBy        : OperatorRef | InterlockRef | null
+  lastAction        : { setpoint, timestamp, withinBounds }
+}
+```
+
+**`methods()` quick reference** (Sub-model 1 §5.2.1)
+
+| State | Triggers |
+|---|---|
+| `Locked` | `unlock()` |
+| `Off` | `lock()`, `enable()` |
+| `Standby` | `start()`, `disable()`, `inhibit()` |
+| `Inhibited` | `clear()`, `disable()` |
+| `On` | `controlledStop()`, `quickStop()`, `emergencyStop()` |
+| any transient state | *(empty)* |
+| `Alarm` (override) | `acknowledge()`, `shelve()`, `operatorReset()`, `suppress()` / `unsuppress()`, `takeOutOfService()` / `returnToService()` |
+| `Interlock` (override) | `clear()` |
+| `GuidanceRecommendation` (override) | `apply()`, `dismiss()` |
+| `PredictedEvent` (override) | `confirm()`, `dismiss()` |
+| `ImprovementRecommendation` (override) | `startReview()`, `approve()`, `reject()`, `apply()` |
+
