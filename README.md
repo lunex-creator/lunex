@@ -33,7 +33,7 @@ Sixteen sub-models, each a standalone SVG diagram, building from the base object
 | 15 | [Predictive Maintenance & Improvement](diagrams/lunex-predictive-model.svg) | `PredictedEvent`, `ImprovementRecommendation` (always requires human approval) |
 | 16 | [Closed-Loop AI Control](diagrams/lunex-ai-control-model.svg) | `AIControlUnit`, `operatingBounds`, Interlock override |
 
-A full narrative index with the reasoning behind each sub-model is in [`INDEX.md`](INDEX.md).
+A full narrative index with the reasoning behind each sub-model is in [`INDEX.md`](INDEX.md). The complete project history — every phase, every design decision, and why — is in [`docs/PROJECT-RECORD.md`](docs/PROJECT-RECORD.md).
 
 Brand assets (logo, color palette) are in [`brand/`](brand/).
 
