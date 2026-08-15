@@ -1,0 +1,31 @@
+cff-version: 1.2.0
+message: "If you use LUNEX in your work, please cite it as below."
+title: "LUNEX: A Unified, Object-Oriented Reference Model for Operational Technology, Safety, Security, and AI"
+version: "0.1"
+date-released: 2026-08-15
+url: "https://lunex.cloud"
+repository-code: "https://github.com/lunex-creator/lunex"
+license: CC-BY-4.0
+type: software
+authors:
+  - family-names: "Smits"
+    given-names: "Sjaak"
+keywords:
+  - operational-technology
+  - industrial-automation
+  - functional-safety
+  - iec-61508
+  - iec-62443
+  - isa-88
+  - isa-95
+  - reference-model
+  - digital-twin
+  - alarm-management
+abstract: >
+  LUNEX is an open, object-oriented reference model spanning process
+  control, functional safety, industrial cybersecurity, alarm management,
+  and the AI/data layer in one consistent, addressable object model. It
+  reuses established vocabulary from ISA-88, ISA-95, PackML, IEC 61508/61511,
+  IEC 62443, and ISA-18.2 wherever those standards already define a concept
+  correctly, and introduces new structure only where no such definition
+  exists.
