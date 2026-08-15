@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 2256" width="1600" height="2256" font-family="Inter, Segoe UI, Helvetica Neue, Arial, sans-serif">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 2214" width="1600" height="2214" font-family="Inter, Segoe UI, Helvetica Neue, Arial, sans-serif">
 <defs>
   <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
     <path d="M20 0H0V20" fill="none" stroke="#E6EBF0" stroke-width="1"/>
@@ -13,13 +13,13 @@
   </marker>
 </defs>
 
-<rect width="1600" height="2256" fill="#FBFAF8"/>
-<rect width="1600" height="2256" fill="url(#grid5)"/>
+<rect width="1600" height="2214" fill="#FBFAF8"/>
+<rect width="1600" height="2214" fill="url(#grid5)"/>
 
 <text x="60" y="56" font-size="14" font-weight="400" fill="#5A6B7B" text-anchor="start" letter-spacing="2.5">LUNEX — SUB-MODEL 8</text>
 <text x="60" y="86" font-size="26" font-weight="600" fill="#16202B" text-anchor="start">Naming &amp; Terminology</text>
 <text x="60" y="110" font-size="13" font-weight="400" fill="#5A6B7B" text-anchor="start">A living register of every deliberate deviation from S88 / S95 / PackML — and why</text>
-<rect x="30" y="145" width="1540" height="658" rx="10" fill="#FFFFFF" stroke="#1F3B57" stroke-width="2.2"/>
+<rect x="30" y="145" width="1540" height="616" rx="10" fill="#FFFFFF" stroke="#1F3B57" stroke-width="2.2"/>
 <text x="58" y="179" font-size="18" font-weight="700" fill="#16202B" text-anchor="start">Renamed Terms</text>
 <text x="60" y="215" font-size="11" font-weight="700" fill="#5A6B7B" text-anchor="start" letter-spacing="1.2">LUNEX TERM</text>
 <text x="460" y="215" font-size="11" font-weight="700" fill="#5A6B7B" text-anchor="start" letter-spacing="1.2">AVOIDED TERM</text>
@@ -78,138 +78,134 @@
 <text x="460" y="757" font-size="12.5" font-weight="400" fill="#5A6B7B" text-anchor="start" text-decoration="line-through">physicalRef: DeviceRef only</text>
 <text x="860" y="757" font-size="12" font-weight="400" fill="#33404D" text-anchor="start">multi-CPU racks need Component granularity — Components already have id (Sub-model 1)</text>
 <text x="1500" y="757" font-size="12.5" font-weight="400" fill="#5A6B7B" text-anchor="end">1</text>
-<text x="60" y="799" font-size="13" font-weight="700" fill="#1F3B57" text-anchor="start" font-family="Consolas, Menlo, monospace">AIControlUnit.controlTarget</text>
-<text x="460" y="799" font-size="12.5" font-weight="400" fill="#5A6B7B" text-anchor="start" text-decoration="line-through">AIControlUnit.target</text>
-<text x="860" y="799" font-size="12" font-weight="400" fill="#33404D" text-anchor="start">would collide with Interlock.target (Sub-model 5) — same word, unrelated meaning on a different class</text>
-<text x="1500" y="799" font-size="12.5" font-weight="400" fill="#5A6B7B" text-anchor="end">16</text>
-<rect x="30" y="848" width="1540" height="328" rx="10" fill="#FFFFFF" stroke="#2E7D4F" stroke-width="2.2"/>
-<text x="58" y="882" font-size="18" font-weight="700" fill="#2E7D4F" text-anchor="start">Terms Deliberately Kept</text>
-<text x="58" y="904" font-size="12.5" font-weight="400" fill="#5A6B7B" text-anchor="start">renaming is not the default — these already fit LUNEX exactly as written in the source standard</text>
-<circle cx="70" cy="939" r="4" fill="#2E7D4F"/>
-<text x="84" y="944" font-size="13" font-weight="700" fill="#1F3B57" text-anchor="start" font-family="Consolas, Menlo, monospace">SIL / SIF</text>
-<text x="440" y="944" font-size="12.5" font-weight="400" fill="#33404D" text-anchor="start">IEC 61508 / 61511</text>
-<text x="1542" y="944" font-size="12.5" font-weight="400" fill="#5A6B7B" text-anchor="end">Sub-model 5</text>
-<circle cx="70" cy="977" r="4" fill="#2E7D4F"/>
-<text x="84" y="982" font-size="13" font-weight="700" fill="#1F3B57" text-anchor="start" font-family="Consolas, Menlo, monospace">SL / Zone / Conduit</text>
-<text x="440" y="982" font-size="12.5" font-weight="400" fill="#33404D" text-anchor="start">IEC 62443</text>
-<text x="1542" y="982" font-size="12.5" font-weight="400" fill="#5A6B7B" text-anchor="end">Sub-model 6</text>
-<circle cx="70" cy="1015" r="4" fill="#2E7D4F"/>
-<text x="84" y="1020" font-size="13" font-weight="700" fill="#1F3B57" text-anchor="start" font-family="Consolas, Menlo, monospace">Stop Categories 0 / 1 / 2</text>
-<text x="440" y="1020" font-size="12.5" font-weight="400" fill="#33404D" text-anchor="start">IEC 60204-1</text>
-<text x="1542" y="1020" font-size="12.5" font-weight="400" fill="#5A6B7B" text-anchor="end">Sub-model 4 / 5</text>
-<circle cx="70" cy="1053" r="4" fill="#2E7D4F"/>
-<text x="84" y="1058" font-size="13" font-weight="700" fill="#1F3B57" text-anchor="start" font-family="Consolas, Menlo, monospace">the state machine itself</text>
-<text x="440" y="1058" font-size="12.5" font-weight="400" fill="#33404D" text-anchor="start">PackML-style pattern</text>
-<text x="1542" y="1058" font-size="12.5" font-weight="400" fill="#5A6B7B" text-anchor="end">Sub-model 4</text>
-<circle cx="70" cy="1091" r="4" fill="#2E7D4F"/>
-<text x="84" y="1096" font-size="13" font-weight="700" fill="#1F3B57" text-anchor="start" font-family="Consolas, Menlo, monospace">Priority · Shelving · RTN</text>
-<text x="440" y="1096" font-size="12.5" font-weight="400" fill="#33404D" text-anchor="start">ISA-18.2</text>
-<text x="1542" y="1096" font-size="12.5" font-weight="400" fill="#5A6B7B" text-anchor="end">Sub-model 10 / 11</text>
-<circle cx="70" cy="1129" r="4" fill="#2E7D4F"/>
-<text x="84" y="1134" font-size="13" font-weight="700" fill="#1F3B57" text-anchor="start" font-family="Consolas, Menlo, monospace">System (= Unit)</text>
-<text x="440" y="1134" font-size="12.5" font-weight="400" fill="#33404D" text-anchor="start">ISA-88</text>
-<text x="1542" y="1134" font-size="12.5" font-weight="400" fill="#5A6B7B" text-anchor="end">Sub-model 2</text>
-<rect x="30" y="1221" width="1540" height="810" rx="10" fill="#FFFFFF" stroke="#2F6F9E" stroke-width="2.2"/>
-<text x="58" y="1255" font-size="18" font-weight="700" fill="#2F6F9E" text-anchor="start">New Vocabulary</text>
-<text x="58" y="1277" font-size="12.5" font-weight="400" fill="#5A6B7B" text-anchor="start">not renamed from anything — these concepts simply don't exist in PackML or S88</text>
-<rect x="58.0" y="1311" width="478.6666666666667" height="84" rx="8" fill="#FFFFFF" stroke="#2F6F9E" stroke-width="1.8"/>
-<text x="74.0" y="1337" font-size="13" font-weight="700" fill="#2F6F9E" text-anchor="start" font-family="Consolas, Menlo, monospace">LunexObject</text>
-<text x="522.6666666666667" y="1337" font-size="10.5" font-weight="400" fill="#5A6B7B" text-anchor="end">1</text>
-<text x="74.0" y="1359" font-size="11" font-weight="400" fill="#33404D" text-anchor="start">the abstract base class every object in</text>
-<text x="74.0" y="1376" font-size="11" font-weight="400" fill="#33404D" text-anchor="start">LUNEX inherits from</text>
-<rect x="560.6666666666667" y="1311" width="478.6666666666667" height="84" rx="8" fill="#FFFFFF" stroke="#2F6F9E" stroke-width="1.8"/>
-<text x="576.6666666666667" y="1337" font-size="13" font-weight="700" fill="#2F6F9E" text-anchor="start" font-family="Consolas, Menlo, monospace">Interlock</text>
-<text x="1025.3333333333335" y="1337" font-size="10.5" font-weight="400" fill="#5A6B7B" text-anchor="end">5</text>
-<text x="576.6666666666667" y="1359" font-size="11" font-weight="400" fill="#33404D" text-anchor="start">a first-class safety object with its own</text>
-<text x="576.6666666666667" y="1376" font-size="11" font-weight="400" fill="#33404D" text-anchor="start">id, state and proof-test history</text>
-<rect x="1063.3333333333335" y="1311" width="478.6666666666667" height="84" rx="8" fill="#FFFFFF" stroke="#2F6F9E" stroke-width="1.8"/>
-<text x="1079.3333333333335" y="1337" font-size="13" font-weight="700" fill="#2F6F9E" text-anchor="start" font-family="Consolas, Menlo, monospace">Zone</text>
-<text x="1528.0000000000002" y="1337" font-size="10.5" font-weight="400" fill="#5A6B7B" text-anchor="end">6</text>
-<text x="1079.3333333333335" y="1359" font-size="11" font-weight="400" fill="#33404D" text-anchor="start">a security grouping with a target and</text>
-<text x="1079.3333333333335" y="1376" font-size="11" font-weight="400" fill="#33404D" text-anchor="start">achieved Security Level</text>
-<rect x="58.0" y="1411" width="478.6666666666667" height="84" rx="8" fill="#FFFFFF" stroke="#2F6F9E" stroke-width="1.8"/>
-<text x="74.0" y="1437" font-size="13" font-weight="700" fill="#2F6F9E" text-anchor="start" font-family="Consolas, Menlo, monospace">Conduit</text>
-<text x="522.6666666666667" y="1437" font-size="10.5" font-weight="400" fill="#5A6B7B" text-anchor="end">6</text>
-<text x="74.0" y="1459" font-size="11" font-weight="400" fill="#33404D" text-anchor="start">the governed crossing point between two</text>
-<text x="74.0" y="1476" font-size="11" font-weight="400" fill="#33404D" text-anchor="start">Zones, where Firewall/IDS sits</text>
-<rect x="560.6666666666667" y="1411" width="478.6666666666667" height="84" rx="8" fill="#FFFFFF" stroke="#2F6F9E" stroke-width="1.8"/>
-<text x="576.6666666666667" y="1437" font-size="13" font-weight="700" fill="#2F6F9E" text-anchor="start" font-family="Consolas, Menlo, monospace">Digital Twin</text>
-<text x="1025.3333333333335" y="1437" font-size="10.5" font-weight="400" fill="#5A6B7B" text-anchor="end">7</text>
-<text x="576.6666666666667" y="1459" font-size="11" font-weight="400" fill="#33404D" text-anchor="start">the AI-side, queryable mirror of a</text>
-<text x="576.6666666666667" y="1476" font-size="11" font-weight="400" fill="#33404D" text-anchor="start">physical object</text>
-<rect x="1063.3333333333335" y="1411" width="478.6666666666667" height="84" rx="8" fill="#FFFFFF" stroke="#2F6F9E" stroke-width="1.8"/>
-<text x="1079.3333333333335" y="1437" font-size="13" font-weight="700" fill="#2F6F9E" text-anchor="start" font-family="Consolas, Menlo, monospace">Telemetry Envelope</text>
-<text x="1528.0000000000002" y="1437" font-size="10.5" font-weight="400" fill="#5A6B7B" text-anchor="end">7</text>
-<text x="1079.3333333333335" y="1459" font-size="11" font-weight="400" fill="#33404D" text-anchor="start">the addressed, timestamped wrapper every</text>
-<text x="1079.3333333333335" y="1476" font-size="11" font-weight="400" fill="#33404D" text-anchor="start">object streams out</text>
-<rect x="58.0" y="1511" width="478.6666666666667" height="84" rx="8" fill="#FFFFFF" stroke="#2F6F9E" stroke-width="1.8"/>
-<text x="74.0" y="1537" font-size="13" font-weight="700" fill="#2F6F9E" text-anchor="start" font-family="Consolas, Menlo, monospace">Context Layer</text>
-<text x="522.6666666666667" y="1537" font-size="10.5" font-weight="400" fill="#5A6B7B" text-anchor="end">7</text>
-<text x="74.0" y="1559" font-size="11" font-weight="400" fill="#33404D" text-anchor="start">semantic relationships an AI can</text>
-<text x="74.0" y="1576" font-size="11" font-weight="400" fill="#33404D" text-anchor="start">traverse, beyond the containment chain</text>
-<rect x="560.6666666666667" y="1511" width="478.6666666666667" height="84" rx="8" fill="#FFFFFF" stroke="#2F6F9E" stroke-width="1.8"/>
-<text x="576.6666666666667" y="1537" font-size="13" font-weight="700" fill="#2F6F9E" text-anchor="start" font-family="Consolas, Menlo, monospace">Tier / worstTier</text>
-<text x="1025.3333333333335" y="1537" font-size="10.5" font-weight="400" fill="#5A6B7B" text-anchor="end">9</text>
-<text x="576.6666666666667" y="1559" font-size="11" font-weight="400" fill="#33404D" text-anchor="start">the severity ranking the state machine</text>
-<text x="576.6666666666667" y="1576" font-size="11" font-weight="400" fill="#33404D" text-anchor="start">itself doesn't carry</text>
-<rect x="1063.3333333333335" y="1511" width="478.6666666666667" height="84" rx="8" fill="#FFFFFF" stroke="#2F6F9E" stroke-width="1.8"/>
-<text x="1079.3333333333335" y="1537" font-size="13" font-weight="700" fill="#2F6F9E" text-anchor="start" font-family="Consolas, Menlo, monospace">Rollup</text>
-<text x="1528.0000000000002" y="1537" font-size="10.5" font-weight="400" fill="#5A6B7B" text-anchor="end">9</text>
-<text x="1079.3333333333335" y="1559" font-size="11" font-weight="400" fill="#33404D" text-anchor="start">cross-object status aggregation,</text>
-<text x="1079.3333333333335" y="1576" font-size="11" font-weight="400" fill="#33404D" text-anchor="start">computed in the AI layer, not the object model</text>
-<rect x="58.0" y="1611" width="478.6666666666667" height="84" rx="8" fill="#FFFFFF" stroke="#2F6F9E" stroke-width="1.8"/>
-<text x="74.0" y="1637" font-size="13" font-weight="700" fill="#2F6F9E" text-anchor="start" font-family="Consolas, Menlo, monospace">Alarm</text>
-<text x="522.6666666666667" y="1637" font-size="10.5" font-weight="400" fill="#5A6B7B" text-anchor="end">10</text>
-<text x="74.0" y="1659" font-size="11" font-weight="400" fill="#33404D" text-anchor="start">priority = severity × actionability, not</text>
-<text x="74.0" y="1676" font-size="11" font-weight="400" fill="#33404D" text-anchor="start">severity alone</text>
-<rect x="560.6666666666667" y="1611" width="478.6666666666667" height="84" rx="8" fill="#FFFFFF" stroke="#2F6F9E" stroke-width="1.8"/>
-<text x="576.6666666666667" y="1637" font-size="13" font-weight="700" fill="#2F6F9E" text-anchor="start" font-family="Consolas, Menlo, monospace">Alarm Response Procedure</text>
-<text x="1025.3333333333335" y="1637" font-size="10.5" font-weight="400" fill="#5A6B7B" text-anchor="end">11</text>
-<text x="576.6666666666667" y="1659" font-size="11" font-weight="400" fill="#33404D" text-anchor="start">reusable, per alarm type — probable</text>
-<text x="576.6666666666667" y="1676" font-size="11" font-weight="400" fill="#33404D" text-anchor="start">cause through corrective action</text>
-<rect x="1063.3333333333335" y="1611" width="478.6666666666667" height="84" rx="8" fill="#FFFFFF" stroke="#2F6F9E" stroke-width="1.8"/>
-<text x="1079.3333333333335" y="1637" font-size="13" font-weight="700" fill="#2F6F9E" text-anchor="start" font-family="Consolas, Menlo, monospace">GuidanceRecommendation</text>
-<text x="1528.0000000000002" y="1637" font-size="10.5" font-weight="400" fill="#5A6B7B" text-anchor="end">12</text>
-<text x="1079.3333333333335" y="1659" font-size="11" font-weight="400" fill="#33404D" text-anchor="start">simulated scenarios from the Digital</text>
-<text x="1079.3333333333335" y="1676" font-size="11" font-weight="400" fill="#33404D" text-anchor="start">Twin, golden scenario optional</text>
-<rect x="58.0" y="1711" width="478.6666666666667" height="84" rx="8" fill="#FFFFFF" stroke="#2F6F9E" stroke-width="1.8"/>
-<text x="74.0" y="1737" font-size="13" font-weight="700" fill="#2F6F9E" text-anchor="start" font-family="Consolas, Menlo, monospace">SimulationPolicy</text>
-<text x="522.6666666666667" y="1737" font-size="10.5" font-weight="400" fill="#5A6B7B" text-anchor="end">12</text>
-<text x="74.0" y="1759" font-size="11" font-weight="400" fill="#33404D" text-anchor="start">always / risk-based / none +</text>
-<text x="74.0" y="1776" font-size="11" font-weight="400" fill="#33404D" text-anchor="start">manualOverrideAvailable — decided per Assembly</text>
-<rect x="560.6666666666667" y="1711" width="478.6666666666667" height="84" rx="8" fill="#FFFFFF" stroke="#2F6F9E" stroke-width="1.8"/>
-<text x="576.6666666666667" y="1737" font-size="13" font-weight="700" fill="#2F6F9E" text-anchor="start" font-family="Consolas, Menlo, monospace">jumpToWorst()</text>
-<text x="1025.3333333333335" y="1737" font-size="10.5" font-weight="400" fill="#5A6B7B" text-anchor="end">13</text>
-<text x="576.6666666666667" y="1759" font-size="11" font-weight="400" fill="#33404D" text-anchor="start">one action from any node straight to the</text>
-<text x="576.6666666666667" y="1776" font-size="11" font-weight="400" fill="#33404D" text-anchor="start">Device/Alarm causing it</text>
-<rect x="1063.3333333333335" y="1711" width="478.6666666666667" height="84" rx="8" fill="#FFFFFF" stroke="#2F6F9E" stroke-width="1.8"/>
-<text x="1079.3333333333335" y="1737" font-size="13" font-weight="700" fill="#2F6F9E" text-anchor="start" font-family="Consolas, Menlo, monospace">Historian</text>
-<text x="1528.0000000000002" y="1737" font-size="10.5" font-weight="400" fill="#5A6B7B" text-anchor="end">14</text>
-<text x="1079.3333333333335" y="1759" font-size="11" font-weight="400" fill="#33404D" text-anchor="start">append-only record of every state, ever</text>
-<text x="1079.3333333333335" y="1776" font-size="11" font-weight="400" fill="#33404D" text-anchor="start">— the Twin's other destination</text>
-<rect x="58.0" y="1811" width="478.6666666666667" height="84" rx="8" fill="#FFFFFF" stroke="#2F6F9E" stroke-width="1.8"/>
-<text x="74.0" y="1837" font-size="13" font-weight="700" fill="#2F6F9E" text-anchor="start" font-family="Consolas, Menlo, monospace">RetentionPolicy</text>
-<text x="522.6666666666667" y="1837" font-size="10.5" font-weight="400" fill="#5A6B7B" text-anchor="end">14</text>
-<text x="74.0" y="1859" font-size="11" font-weight="400" fill="#33404D" text-anchor="start">same shape as SimulationPolicy — always</text>
-<text x="74.0" y="1876" font-size="11" font-weight="400" fill="#33404D" text-anchor="start">/ risk-based / none, by design</text>
-<rect x="560.6666666666667" y="1811" width="478.6666666666667" height="84" rx="8" fill="#FFFFFF" stroke="#2F6F9E" stroke-width="1.8"/>
-<text x="576.6666666666667" y="1837" font-size="13" font-weight="700" fill="#2F6F9E" text-anchor="start" font-family="Consolas, Menlo, monospace">PredictedEvent</text>
-<text x="1025.3333333333335" y="1837" font-size="10.5" font-weight="400" fill="#5A6B7B" text-anchor="end">15</text>
-<text x="576.6666666666667" y="1859" font-size="11" font-weight="400" fill="#33404D" text-anchor="start">a forward-looking claim, raised into the</text>
-<text x="576.6666666666667" y="1876" font-size="11" font-weight="400" fill="#33404D" text-anchor="start">Alarm system tagged predictive</text>
-<rect x="1063.3333333333335" y="1811" width="478.6666666666667" height="84" rx="8" fill="#FFFFFF" stroke="#2F6F9E" stroke-width="1.8"/>
-<text x="1079.3333333333335" y="1837" font-size="13" font-weight="700" fill="#2F6F9E" text-anchor="start" font-family="Consolas, Menlo, monospace">ImprovementRecommendation</text>
-<text x="1528.0000000000002" y="1837" font-size="10.5" font-weight="400" fill="#5A6B7B" text-anchor="end">15</text>
-<text x="1079.3333333333335" y="1859" font-size="11" font-weight="400" fill="#33404D" text-anchor="start">always requires human approval — no</text>
-<text x="1079.3333333333335" y="1876" font-size="11" font-weight="400" fill="#33404D" text-anchor="start">confidence threshold skips it</text>
-<rect x="58.0" y="1911" width="478.6666666666667" height="84" rx="8" fill="#FFFFFF" stroke="#2F6F9E" stroke-width="1.8"/>
-<text x="74.0" y="1937" font-size="13" font-weight="700" fill="#2F6F9E" text-anchor="start" font-family="Consolas, Menlo, monospace">AIControlUnit</text>
-<text x="522.6666666666667" y="1937" font-size="10.5" font-weight="400" fill="#5A6B7B" text-anchor="end">16</text>
-<text x="74.0" y="1959" font-size="11" font-weight="400" fill="#33404D" text-anchor="start">a Control Unit subclass; Interlock</text>
-<text x="74.0" y="1976" font-size="11" font-weight="400" fill="#33404D" text-anchor="start">forces it exactly like any Device</text>
-<rect x="30" y="2076" width="1540" height="130" rx="10" fill="#FFFFFF" stroke="#1F3B57" stroke-width="2.4"/>
-<text x="58" y="2112" font-size="18" font-weight="700" fill="#1F3B57" text-anchor="start">The Naming Principle</text>
-<text x="58" y="2142" font-size="14" font-weight="600" fill="#16202B" text-anchor="start">Rename a term only when it already carries a conflicting meaning elsewhere in the model, or in</text>
-<text x="58" y="2164" font-size="14" font-weight="600" fill="#16202B" text-anchor="start">an adjacent standard LUNEX must interoperate with. Otherwise, reuse established vocabulary —</text>
-<text x="58" y="2186" font-size="14" font-weight="600" fill="#16202B" text-anchor="start">inventing a new word is not innovation if the old one wasn't actually broken.</text>
+<rect x="30" y="806" width="1540" height="328" rx="10" fill="#FFFFFF" stroke="#2E7D4F" stroke-width="2.2"/>
+<text x="58" y="840" font-size="18" font-weight="700" fill="#2E7D4F" text-anchor="start">Terms Deliberately Kept</text>
+<text x="58" y="862" font-size="12.5" font-weight="400" fill="#5A6B7B" text-anchor="start">renaming is not the default — these already fit LUNEX exactly as written in the source standard</text>
+<circle cx="70" cy="897" r="4" fill="#2E7D4F"/>
+<text x="84" y="902" font-size="13" font-weight="700" fill="#1F3B57" text-anchor="start" font-family="Consolas, Menlo, monospace">SIL / SIF</text>
+<text x="440" y="902" font-size="12.5" font-weight="400" fill="#33404D" text-anchor="start">IEC 61508 / 61511</text>
+<text x="1542" y="902" font-size="12.5" font-weight="400" fill="#5A6B7B" text-anchor="end">Sub-model 5</text>
+<circle cx="70" cy="935" r="4" fill="#2E7D4F"/>
+<text x="84" y="940" font-size="13" font-weight="700" fill="#1F3B57" text-anchor="start" font-family="Consolas, Menlo, monospace">SL / Zone / Conduit</text>
+<text x="440" y="940" font-size="12.5" font-weight="400" fill="#33404D" text-anchor="start">IEC 62443</text>
+<text x="1542" y="940" font-size="12.5" font-weight="400" fill="#5A6B7B" text-anchor="end">Sub-model 6</text>
+<circle cx="70" cy="973" r="4" fill="#2E7D4F"/>
+<text x="84" y="978" font-size="13" font-weight="700" fill="#1F3B57" text-anchor="start" font-family="Consolas, Menlo, monospace">Stop Categories 0 / 1 / 2</text>
+<text x="440" y="978" font-size="12.5" font-weight="400" fill="#33404D" text-anchor="start">IEC 60204-1</text>
+<text x="1542" y="978" font-size="12.5" font-weight="400" fill="#5A6B7B" text-anchor="end">Sub-model 4 / 5</text>
+<circle cx="70" cy="1011" r="4" fill="#2E7D4F"/>
+<text x="84" y="1016" font-size="13" font-weight="700" fill="#1F3B57" text-anchor="start" font-family="Consolas, Menlo, monospace">the state machine itself</text>
+<text x="440" y="1016" font-size="12.5" font-weight="400" fill="#33404D" text-anchor="start">PackML-style pattern</text>
+<text x="1542" y="1016" font-size="12.5" font-weight="400" fill="#5A6B7B" text-anchor="end">Sub-model 4</text>
+<circle cx="70" cy="1049" r="4" fill="#2E7D4F"/>
+<text x="84" y="1054" font-size="13" font-weight="700" fill="#1F3B57" text-anchor="start" font-family="Consolas, Menlo, monospace">Priority · Shelving · RTN</text>
+<text x="440" y="1054" font-size="12.5" font-weight="400" fill="#33404D" text-anchor="start">ISA-18.2</text>
+<text x="1542" y="1054" font-size="12.5" font-weight="400" fill="#5A6B7B" text-anchor="end">Sub-model 10 / 11</text>
+<circle cx="70" cy="1087" r="4" fill="#2E7D4F"/>
+<text x="84" y="1092" font-size="13" font-weight="700" fill="#1F3B57" text-anchor="start" font-family="Consolas, Menlo, monospace">System (= Unit)</text>
+<text x="440" y="1092" font-size="12.5" font-weight="400" fill="#33404D" text-anchor="start">ISA-88</text>
+<text x="1542" y="1092" font-size="12.5" font-weight="400" fill="#5A6B7B" text-anchor="end">Sub-model 2</text>
+<rect x="30" y="1179" width="1540" height="810" rx="10" fill="#FFFFFF" stroke="#2F6F9E" stroke-width="2.2"/>
+<text x="58" y="1213" font-size="18" font-weight="700" fill="#2F6F9E" text-anchor="start">New Vocabulary</text>
+<text x="58" y="1235" font-size="12.5" font-weight="400" fill="#5A6B7B" text-anchor="start">not renamed from anything — these concepts simply don't exist in PackML or S88</text>
+<rect x="58.0" y="1269" width="478.6666666666667" height="84" rx="8" fill="#FFFFFF" stroke="#2F6F9E" stroke-width="1.8"/>
+<text x="74.0" y="1295" font-size="13" font-weight="700" fill="#2F6F9E" text-anchor="start" font-family="Consolas, Menlo, monospace">LunexObject</text>
+<text x="522.6666666666667" y="1295" font-size="10.5" font-weight="400" fill="#5A6B7B" text-anchor="end">1</text>
+<text x="74.0" y="1317" font-size="11" font-weight="400" fill="#33404D" text-anchor="start">the abstract base class every object in</text>
+<text x="74.0" y="1334" font-size="11" font-weight="400" fill="#33404D" text-anchor="start">LUNEX inherits from</text>
+<rect x="560.6666666666667" y="1269" width="478.6666666666667" height="84" rx="8" fill="#FFFFFF" stroke="#2F6F9E" stroke-width="1.8"/>
+<text x="576.6666666666667" y="1295" font-size="13" font-weight="700" fill="#2F6F9E" text-anchor="start" font-family="Consolas, Menlo, monospace">Interlock</text>
+<text x="1025.3333333333335" y="1295" font-size="10.5" font-weight="400" fill="#5A6B7B" text-anchor="end">5</text>
+<text x="576.6666666666667" y="1317" font-size="11" font-weight="400" fill="#33404D" text-anchor="start">a first-class safety object with its own</text>
+<text x="576.6666666666667" y="1334" font-size="11" font-weight="400" fill="#33404D" text-anchor="start">id, state and proof-test history</text>
+<rect x="1063.3333333333335" y="1269" width="478.6666666666667" height="84" rx="8" fill="#FFFFFF" stroke="#2F6F9E" stroke-width="1.8"/>
+<text x="1079.3333333333335" y="1295" font-size="13" font-weight="700" fill="#2F6F9E" text-anchor="start" font-family="Consolas, Menlo, monospace">Zone</text>
+<text x="1528.0000000000002" y="1295" font-size="10.5" font-weight="400" fill="#5A6B7B" text-anchor="end">6</text>
+<text x="1079.3333333333335" y="1317" font-size="11" font-weight="400" fill="#33404D" text-anchor="start">a security grouping with a target and</text>
+<text x="1079.3333333333335" y="1334" font-size="11" font-weight="400" fill="#33404D" text-anchor="start">achieved Security Level</text>
+<rect x="58.0" y="1369" width="478.6666666666667" height="84" rx="8" fill="#FFFFFF" stroke="#2F6F9E" stroke-width="1.8"/>
+<text x="74.0" y="1395" font-size="13" font-weight="700" fill="#2F6F9E" text-anchor="start" font-family="Consolas, Menlo, monospace">Conduit</text>
+<text x="522.6666666666667" y="1395" font-size="10.5" font-weight="400" fill="#5A6B7B" text-anchor="end">6</text>
+<text x="74.0" y="1417" font-size="11" font-weight="400" fill="#33404D" text-anchor="start">the governed crossing point between two</text>
+<text x="74.0" y="1434" font-size="11" font-weight="400" fill="#33404D" text-anchor="start">Zones, where Firewall/IDS sits</text>
+<rect x="560.6666666666667" y="1369" width="478.6666666666667" height="84" rx="8" fill="#FFFFFF" stroke="#2F6F9E" stroke-width="1.8"/>
+<text x="576.6666666666667" y="1395" font-size="13" font-weight="700" fill="#2F6F9E" text-anchor="start" font-family="Consolas, Menlo, monospace">Digital Twin</text>
+<text x="1025.3333333333335" y="1395" font-size="10.5" font-weight="400" fill="#5A6B7B" text-anchor="end">7</text>
+<text x="576.6666666666667" y="1417" font-size="11" font-weight="400" fill="#33404D" text-anchor="start">the AI-side, queryable mirror of a</text>
+<text x="576.6666666666667" y="1434" font-size="11" font-weight="400" fill="#33404D" text-anchor="start">physical object</text>
+<rect x="1063.3333333333335" y="1369" width="478.6666666666667" height="84" rx="8" fill="#FFFFFF" stroke="#2F6F9E" stroke-width="1.8"/>
+<text x="1079.3333333333335" y="1395" font-size="13" font-weight="700" fill="#2F6F9E" text-anchor="start" font-family="Consolas, Menlo, monospace">Telemetry Envelope</text>
+<text x="1528.0000000000002" y="1395" font-size="10.5" font-weight="400" fill="#5A6B7B" text-anchor="end">7</text>
+<text x="1079.3333333333335" y="1417" font-size="11" font-weight="400" fill="#33404D" text-anchor="start">the addressed, timestamped wrapper every</text>
+<text x="1079.3333333333335" y="1434" font-size="11" font-weight="400" fill="#33404D" text-anchor="start">object streams out</text>
+<rect x="58.0" y="1469" width="478.6666666666667" height="84" rx="8" fill="#FFFFFF" stroke="#2F6F9E" stroke-width="1.8"/>
+<text x="74.0" y="1495" font-size="13" font-weight="700" fill="#2F6F9E" text-anchor="start" font-family="Consolas, Menlo, monospace">Context Layer</text>
+<text x="522.6666666666667" y="1495" font-size="10.5" font-weight="400" fill="#5A6B7B" text-anchor="end">7</text>
+<text x="74.0" y="1517" font-size="11" font-weight="400" fill="#33404D" text-anchor="start">semantic relationships an AI can</text>
+<text x="74.0" y="1534" font-size="11" font-weight="400" fill="#33404D" text-anchor="start">traverse, beyond the containment chain</text>
+<rect x="560.6666666666667" y="1469" width="478.6666666666667" height="84" rx="8" fill="#FFFFFF" stroke="#2F6F9E" stroke-width="1.8"/>
+<text x="576.6666666666667" y="1495" font-size="13" font-weight="700" fill="#2F6F9E" text-anchor="start" font-family="Consolas, Menlo, monospace">Tier / worstTier</text>
+<text x="1025.3333333333335" y="1495" font-size="10.5" font-weight="400" fill="#5A6B7B" text-anchor="end">9</text>
+<text x="576.6666666666667" y="1517" font-size="11" font-weight="400" fill="#33404D" text-anchor="start">the severity ranking the state machine</text>
+<text x="576.6666666666667" y="1534" font-size="11" font-weight="400" fill="#33404D" text-anchor="start">itself doesn't carry</text>
+<rect x="1063.3333333333335" y="1469" width="478.6666666666667" height="84" rx="8" fill="#FFFFFF" stroke="#2F6F9E" stroke-width="1.8"/>
+<text x="1079.3333333333335" y="1495" font-size="13" font-weight="700" fill="#2F6F9E" text-anchor="start" font-family="Consolas, Menlo, monospace">Rollup</text>
+<text x="1528.0000000000002" y="1495" font-size="10.5" font-weight="400" fill="#5A6B7B" text-anchor="end">9</text>
+<text x="1079.3333333333335" y="1517" font-size="11" font-weight="400" fill="#33404D" text-anchor="start">cross-object status aggregation,</text>
+<text x="1079.3333333333335" y="1534" font-size="11" font-weight="400" fill="#33404D" text-anchor="start">computed in the AI layer, not the object model</text>
+<rect x="58.0" y="1569" width="478.6666666666667" height="84" rx="8" fill="#FFFFFF" stroke="#2F6F9E" stroke-width="1.8"/>
+<text x="74.0" y="1595" font-size="13" font-weight="700" fill="#2F6F9E" text-anchor="start" font-family="Consolas, Menlo, monospace">Alarm</text>
+<text x="522.6666666666667" y="1595" font-size="10.5" font-weight="400" fill="#5A6B7B" text-anchor="end">10</text>
+<text x="74.0" y="1617" font-size="11" font-weight="400" fill="#33404D" text-anchor="start">priority = severity × actionability, not</text>
+<text x="74.0" y="1634" font-size="11" font-weight="400" fill="#33404D" text-anchor="start">severity alone</text>
+<rect x="560.6666666666667" y="1569" width="478.6666666666667" height="84" rx="8" fill="#FFFFFF" stroke="#2F6F9E" stroke-width="1.8"/>
+<text x="576.6666666666667" y="1595" font-size="13" font-weight="700" fill="#2F6F9E" text-anchor="start" font-family="Consolas, Menlo, monospace">Alarm Response Procedure</text>
+<text x="1025.3333333333335" y="1595" font-size="10.5" font-weight="400" fill="#5A6B7B" text-anchor="end">11</text>
+<text x="576.6666666666667" y="1617" font-size="11" font-weight="400" fill="#33404D" text-anchor="start">reusable, per alarm type — probable</text>
+<text x="576.6666666666667" y="1634" font-size="11" font-weight="400" fill="#33404D" text-anchor="start">cause through corrective action</text>
+<rect x="1063.3333333333335" y="1569" width="478.6666666666667" height="84" rx="8" fill="#FFFFFF" stroke="#2F6F9E" stroke-width="1.8"/>
+<text x="1079.3333333333335" y="1595" font-size="13" font-weight="700" fill="#2F6F9E" text-anchor="start" font-family="Consolas, Menlo, monospace">GuidanceRecommendation</text>
+<text x="1528.0000000000002" y="1595" font-size="10.5" font-weight="400" fill="#5A6B7B" text-anchor="end">12</text>
+<text x="1079.3333333333335" y="1617" font-size="11" font-weight="400" fill="#33404D" text-anchor="start">simulated scenarios from the Digital</text>
+<text x="1079.3333333333335" y="1634" font-size="11" font-weight="400" fill="#33404D" text-anchor="start">Twin, golden scenario optional</text>
+<rect x="58.0" y="1669" width="478.6666666666667" height="84" rx="8" fill="#FFFFFF" stroke="#2F6F9E" stroke-width="1.8"/>
+<text x="74.0" y="1695" font-size="13" font-weight="700" fill="#2F6F9E" text-anchor="start" font-family="Consolas, Menlo, monospace">SimulationPolicy</text>
+<text x="522.6666666666667" y="1695" font-size="10.5" font-weight="400" fill="#5A6B7B" text-anchor="end">12</text>
+<text x="74.0" y="1717" font-size="11" font-weight="400" fill="#33404D" text-anchor="start">always / risk-based / none +</text>
+<text x="74.0" y="1734" font-size="11" font-weight="400" fill="#33404D" text-anchor="start">manualOverrideAvailable — decided per Assembly</text>
+<rect x="560.6666666666667" y="1669" width="478.6666666666667" height="84" rx="8" fill="#FFFFFF" stroke="#2F6F9E" stroke-width="1.8"/>
+<text x="576.6666666666667" y="1695" font-size="13" font-weight="700" fill="#2F6F9E" text-anchor="start" font-family="Consolas, Menlo, monospace">jumpToWorst()</text>
+<text x="1025.3333333333335" y="1695" font-size="10.5" font-weight="400" fill="#5A6B7B" text-anchor="end">13</text>
+<text x="576.6666666666667" y="1717" font-size="11" font-weight="400" fill="#33404D" text-anchor="start">one action from any node straight to the</text>
+<text x="576.6666666666667" y="1734" font-size="11" font-weight="400" fill="#33404D" text-anchor="start">Device/Alarm causing it</text>
+<rect x="1063.3333333333335" y="1669" width="478.6666666666667" height="84" rx="8" fill="#FFFFFF" stroke="#2F6F9E" stroke-width="1.8"/>
+<text x="1079.3333333333335" y="1695" font-size="13" font-weight="700" fill="#2F6F9E" text-anchor="start" font-family="Consolas, Menlo, monospace">Historian</text>
+<text x="1528.0000000000002" y="1695" font-size="10.5" font-weight="400" fill="#5A6B7B" text-anchor="end">14</text>
+<text x="1079.3333333333335" y="1717" font-size="11" font-weight="400" fill="#33404D" text-anchor="start">append-only record of every state, ever</text>
+<text x="1079.3333333333335" y="1734" font-size="11" font-weight="400" fill="#33404D" text-anchor="start">— the Twin's other destination</text>
+<rect x="58.0" y="1769" width="478.6666666666667" height="84" rx="8" fill="#FFFFFF" stroke="#2F6F9E" stroke-width="1.8"/>
+<text x="74.0" y="1795" font-size="13" font-weight="700" fill="#2F6F9E" text-anchor="start" font-family="Consolas, Menlo, monospace">RetentionPolicy</text>
+<text x="522.6666666666667" y="1795" font-size="10.5" font-weight="400" fill="#5A6B7B" text-anchor="end">14</text>
+<text x="74.0" y="1817" font-size="11" font-weight="400" fill="#33404D" text-anchor="start">same shape as SimulationPolicy — always</text>
+<text x="74.0" y="1834" font-size="11" font-weight="400" fill="#33404D" text-anchor="start">/ risk-based / none, by design</text>
+<rect x="560.6666666666667" y="1769" width="478.6666666666667" height="84" rx="8" fill="#FFFFFF" stroke="#2F6F9E" stroke-width="1.8"/>
+<text x="576.6666666666667" y="1795" font-size="13" font-weight="700" fill="#2F6F9E" text-anchor="start" font-family="Consolas, Menlo, monospace">PredictedEvent</text>
+<text x="1025.3333333333335" y="1795" font-size="10.5" font-weight="400" fill="#5A6B7B" text-anchor="end">15</text>
+<text x="576.6666666666667" y="1817" font-size="11" font-weight="400" fill="#33404D" text-anchor="start">a forward-looking claim, raised into the</text>
+<text x="576.6666666666667" y="1834" font-size="11" font-weight="400" fill="#33404D" text-anchor="start">Alarm system tagged predictive</text>
+<rect x="1063.3333333333335" y="1769" width="478.6666666666667" height="84" rx="8" fill="#FFFFFF" stroke="#2F6F9E" stroke-width="1.8"/>
+<text x="1079.3333333333335" y="1795" font-size="13" font-weight="700" fill="#2F6F9E" text-anchor="start" font-family="Consolas, Menlo, monospace">ImprovementRecommendation</text>
+<text x="1528.0000000000002" y="1795" font-size="10.5" font-weight="400" fill="#5A6B7B" text-anchor="end">15</text>
+<text x="1079.3333333333335" y="1817" font-size="11" font-weight="400" fill="#33404D" text-anchor="start">always requires human approval — no</text>
+<text x="1079.3333333333335" y="1834" font-size="11" font-weight="400" fill="#33404D" text-anchor="start">confidence threshold skips it</text>
+<rect x="58.0" y="1869" width="478.6666666666667" height="84" rx="8" fill="#FFFFFF" stroke="#2F6F9E" stroke-width="1.8"/>
+<text x="74.0" y="1895" font-size="13" font-weight="700" fill="#2F6F9E" text-anchor="start" font-family="Consolas, Menlo, monospace">AIControlUnit</text>
+<text x="522.6666666666667" y="1895" font-size="10.5" font-weight="400" fill="#5A6B7B" text-anchor="end">16</text>
+<text x="74.0" y="1917" font-size="11" font-weight="400" fill="#33404D" text-anchor="start">a Control Unit subclass; Interlock</text>
+<text x="74.0" y="1934" font-size="11" font-weight="400" fill="#33404D" text-anchor="start">forces it exactly like any Device</text>
+<rect x="30" y="2034" width="1540" height="130" rx="10" fill="#FFFFFF" stroke="#1F3B57" stroke-width="2.4"/>
+<text x="58" y="2070" font-size="18" font-weight="700" fill="#1F3B57" text-anchor="start">The Naming Principle</text>
+<text x="58" y="2100" font-size="14" font-weight="600" fill="#16202B" text-anchor="start">Rename a term only when it already carries a conflicting meaning elsewhere in the model, or in</text>
+<text x="58" y="2122" font-size="14" font-weight="600" fill="#16202B" text-anchor="start">an adjacent standard LUNEX must interoperate with. Otherwise, reuse established vocabulary —</text>
+<text x="58" y="2144" font-size="14" font-weight="600" fill="#16202B" text-anchor="start">inventing a new word is not innovation if the old one wasn't actually broken.</text>
 </svg>
