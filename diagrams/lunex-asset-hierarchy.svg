@@ -52,7 +52,7 @@
 <text x="682.0" y="857.0" font-size="13" font-weight="700" fill="#FFFFFF" text-anchor="middle">L2/L3</text>
 <rect x="140" y="960" width="480" height="108" rx="12" fill="#FFFFFF" stroke="#1F3B57" stroke-width="2"/>
 <text x="164" y="994" font-size="19" font-weight="700" fill="#1F3B57" text-anchor="start">System</text>
-<text x="164" y="1018" font-size="12" font-weight="400" fill="#33404D" text-anchor="start">one control system (one DCS / SCADA / PLC system)</text>
+<text x="164" y="1018" font-size="12" font-weight="400" fill="#33404D" text-anchor="start">functional unit within a Cell — equivalent to ISA-88's Unit</text>
 <rect x="650" y="998.0" width="64" height="32" rx="16" fill="#1F3B57" stroke="none" stroke-width="2" fill-opacity="0.55"/>
 <text x="682.0" y="1019.0" font-size="13" font-weight="700" fill="#FFFFFF" text-anchor="middle">L2</text>
 <rect x="140" y="1122" width="480" height="108" rx="12" fill="#FFFFFF" stroke="#1F3B57" stroke-width="2"/>
@@ -90,7 +90,7 @@
 <text x="69" y="366.0" font-size="11.5" fill="#5A6B7B" font-style="italic" text-anchor="middle" transform="rotate(-90 69 366.0)">skip when trivial</text>
 <rect x="60" y="1624" width="1380" height="190" rx="12" fill="#FFFFFF" stroke="#5A6B7B" stroke-width="1.5"/>
 <text x="84" y="1654" font-size="12" font-weight="400" fill="#5A6B7B" text-anchor="start" letter-spacing="1.5">ADDRESSABLE PATH — EXAMPLE</text>
-<text x="84" y="1686" font-size="14.5" font-weight="600" fill="#16202B" text-anchor="start" font-family="Consolas, Menlo, monospace">lunex://AcmeCorp/Benelux/RotterdamPlant/Utilities/Boilerhouse/DCS-01/PressureLoop-3/PT-101</text>
+<text x="84" y="1686" font-size="14.5" font-weight="600" fill="#16202B" text-anchor="start" font-family="Consolas, Menlo, monospace">lunex://AcmeCorp/Benelux/RotterdamPlant/Utilities/Boilerhouse/BoilerUnit-1/PressureLoop-3/PT-101</text>
 <text x="84" y="1719" font-size="10.5" font-weight="400" fill="#5A6B7B" text-anchor="start" letter-spacing="0.5">Realm</text>
 <text x="84" y="1737" font-size="11" font-weight="400" fill="#33404D" text-anchor="start" font-family="Consolas, Menlo, monospace">AcmeCorp</text>
 <text x="250.5" y="1719" font-size="10.5" font-weight="400" fill="#5A6B7B" text-anchor="start" letter-spacing="0.5">Domain</text>
@@ -102,7 +102,7 @@
 <text x="750.0" y="1719" font-size="10.5" font-weight="400" fill="#5A6B7B" text-anchor="start" letter-spacing="0.5">Cell</text>
 <text x="750.0" y="1737" font-size="11" font-weight="400" fill="#33404D" text-anchor="start" font-family="Consolas, Menlo, monospace">Boilerhouse</text>
 <text x="916.5" y="1719" font-size="10.5" font-weight="400" fill="#5A6B7B" text-anchor="start" letter-spacing="0.5">System</text>
-<text x="916.5" y="1737" font-size="11" font-weight="400" fill="#33404D" text-anchor="start" font-family="Consolas, Menlo, monospace">DCS-01</text>
+<text x="916.5" y="1737" font-size="11" font-weight="400" fill="#33404D" text-anchor="start" font-family="Consolas, Menlo, monospace">BoilerUnit-1</text>
 <text x="1083.0" y="1719" font-size="10.5" font-weight="400" fill="#5A6B7B" text-anchor="start" letter-spacing="0.5">Assembly</text>
 <text x="1083.0" y="1737" font-size="11" font-weight="400" fill="#33404D" text-anchor="start" font-family="Consolas, Menlo, monospace">PressureLoop-3</text>
 <text x="1249.5" y="1719" font-size="10.5" font-weight="400" fill="#5A6B7B" text-anchor="start" letter-spacing="0.5">Device</text>
