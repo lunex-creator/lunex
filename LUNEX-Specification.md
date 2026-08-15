@@ -130,8 +130,6 @@ Terms are listed alphabetically. Terms reused unchanged from an external standar
 
 **Control Unit** — One of the five universal device classes (Sub-model 1); performs logic/decision-making (PLC, DCS, microcontroller, and by extension `AIControlUnit`).
 
-**controlTarget** — Attribute on `AIControlUnit` (Sub-model 16): `PhysicalDevice | DigitalTwin`. Named distinctly from `Interlock.target` (same word would mean two different things on two different classes — see `target` below and Sub-model 8).
-
 **Device** — Abstract class (Sub-model 1) for any independently addressable, assembly-level unit; composes zero or more Components. Optionally carries `physicalRef` when its physical hardware is shared with other functionally distinct Devices.
 
 **Digital Twin** — The AI-side, queryable mirror of a physical object (Sub-model 7), kept in sync via the Telemetry Envelope. Holds only the *current* state — see Historian for historical state.
@@ -176,7 +174,7 @@ Terms are listed alphabetically. Terms reused unchanged from an external standar
 
 **methods()** — Attribute on `LunexObject` (Sub-model 1 §5.2.1): a computed view, not a stored list — returns the Sub-model 4 transition-triggers valid from the object's current `state`, excluding `Complete`. Empty for any transient state. `Alarm`, `Interlock`, `GuidanceRecommendation`, `PredictedEvent`, and `ImprovementRecommendation` override it with their own trigger sets.
 
-**operatingBounds** — Attribute on `AIControlUnit` (Sub-model 16): required whenever `controlTarget` is the physical Device; may be empty only when `controlTarget` is the Digital Twin, since an unbounded action there cannot cause real-world harm.
+**operatingBounds** — Attribute on `AIControlUnit` (Sub-model 16): required whenever `target` is the physical Device; may be empty only when `target` is the Digital Twin, since an unbounded action there cannot cause real-world harm.
 
 **parent** — Attribute on `LunexObject` (Sub-model 1): the immediate container in the Sub-model 2 containment chain. Distinct from `physicalRef` (shared hardware) and from any Sub-model 4 transition relationship — three separate kinds of "points to another object."
 
@@ -224,7 +222,7 @@ Terms are listed alphabetically. Terms reused unchanged from an external standar
 
 **tag** — Attribute on `LunexObject` (Sub-model 1): the human/engineering-facing label (e.g. `PT-101`). Unlike `id`, `tag` can be renamed during the object's life without breaking any reference, since references use `id`.
 
-**target** — Attribute on `Interlock` (Sub-model 5): `DeviceRef`, the Device the Interlock forces or blocks a transition on. Not to be confused with `AIControlUnit.controlTarget` (Sub-model 16) — deliberately a different name for a different meaning on a different class.
+**target** — Attribute name reused across two classes with different meanings, the same way `state` is: on `Interlock` (Sub-model 5), `target : DeviceRef` is the Device the Interlock forces or blocks a transition on; on `AIControlUnit` (Sub-model 16), `target : PhysicalDevice | DigitalTwin` is what its output is routed to. No object is ever both classes at once, so the two meanings never collide in practice — documented here rather than resolved by renaming, consistent with how `Alarm.state`'s own value space coexists with `Interlock.state`'s reuse of the Sub-model 4 enum.
 
 **Telemetry Envelope** — The addressed, timestamped wrapper (Sub-model 7) around what `LunexObject` already exposes (class, state, health, properties). Streams to both the Digital Twin and the Historian.
 
@@ -1033,14 +1031,14 @@ Some AI models don't just recommend — they adjust the process directly, contin
 AIControlUnit extends ControlUnit {
   objective         : string
   operatingBounds   : { parameter, min, max }[]
-  controlTarget     : PhysicalDevice | DigitalTwin
+  target            : PhysicalDevice | DigitalTwin
   state             : State                          (Sub-model 4, unchanged)
   disabledBy        : OperatorRef | InterlockRef | null
   lastAction        : { setpoint, timestamp, withinBounds }
 }
 ```
 
-Named `controlTarget` rather than `target` specifically to avoid colliding with `Interlock.target` (Sub-model 5) — same word, different class, different meaning (an Interlock's `target` is the Device it forces a transition on; an AIControlUnit's `controlTarget` is what its output is routed to). See Sub-model 8 for the naming principle this follows.
+`target` here means something different from `Interlock.target` (Sub-model 5) — an Interlock's `target` is the Device it forces a transition on; an AIControlUnit's `target` is what its output is routed to. The two never collide in practice, since no object is ever both classes at once; this is the same pattern already established by `state`, which means something different on `Alarm` than on most other classes (Sub-model 8).
 
 It occupies an ordinary Control Unit slot within a Point-to-Point or Star Assembly (Sub-model 3) — no new topology shape is required.
 
@@ -1048,7 +1046,7 @@ It occupies an ordinary Control Unit slot within a Point-to-Point or Star Assemb
 
 **`operatingBounds` governance**:
 
-| `controlTarget` | `operatingBounds` |
+| `target` | `operatingBounds` |
 |---|---|
 | PhysicalDevice | **Required.** A real setpoint has a real consequence; governance never allows unbounded operation here. |
 | DigitalTwin (Sub-model 7) | **May be empty.** The Twin absorbs the consequence — safe to test without limits. |
@@ -1057,8 +1055,8 @@ An action outside `operatingBounds` is **clamped** — it never reaches the phys
 
 ### 20.3 Application Guidance
 
-1. Never deploy an `AIControlUnit` with `controlTarget: PhysicalDevice` and empty `operatingBounds` — this specification treats that configuration as invalid, not merely discouraged.
-2. Use `controlTarget: DigitalTwin` for all model testing and tuning before any production deployment against a physical target.
+1. Never deploy an `AIControlUnit` with `target: PhysicalDevice` and empty `operatingBounds` — this specification treats that configuration as invalid, not merely discouraged.
+2. Use `target: DigitalTwin` for all model testing and tuning before any production deployment against a physical target.
 3. Wire at least one Interlock to every production `AIControlUnit`, exactly as you would for any other Control Unit performing a comparable function — an AI performing closed-loop control is not exempt from the safety model.
 4. Treat repeated out-of-bounds attempts (visible via `ImprovementRecommendation` frequency) as a signal to review whether the objective or the bounds are miscalibrated — not as a reason to widen the bounds reflexively.
 
@@ -1261,7 +1259,7 @@ ImprovementRecommendation extends LunexObject {
 AIControlUnit extends ControlUnit {
   objective         : string
   operatingBounds   : { parameter, min, max }[]
-  controlTarget     : PhysicalDevice | DigitalTwin
+  target            : PhysicalDevice | DigitalTwin
   disabledBy        : OperatorRef | InterlockRef | null
   lastAction        : { setpoint, timestamp, withinBounds }
 }
