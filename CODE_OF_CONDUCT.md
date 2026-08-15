@@ -22,7 +22,7 @@ This applies within all project spaces — GitHub Issues, Discussions, Pull Requ
 
 ## Enforcement
 
-Instances of unacceptable behavior may be reported by opening a GitHub Discussion marked private (if available) or contacting the maintainer directly via the contact method listed on [lunex.cloud](https://lunex.cloud). All complaints will be reviewed and investigated, and will result in a response deemed necessary and appropriate to the circumstances. Maintainers are obligated to maintain confidentiality with regard to the reporter of an incident.
+Instances of unacceptable behavior may be reported privately by emailing **conduct@lunex.cloud**. All complaints will be reviewed and investigated, and will result in a response deemed necessary and appropriate to the circumstances. Maintainers are obligated to maintain confidentiality with regard to the reporter of an incident.
 
 Maintainers who do not follow or enforce this Code of Conduct in good faith may face temporary or permanent repercussions, as determined by other members of the project's leadership.
 
