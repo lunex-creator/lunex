@@ -1,0 +1,102 @@
+<defs>
+  <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
+    <path d="M20 0H0V20" fill="none" stroke="#E6EBF0" stroke-width="1"/>
+  </pattern>
+  <pattern id="grid5" width="100" height="100" patternUnits="userSpaceOnUse">
+    <rect width="100" height="100" fill="url(#grid)"/>
+    <path d="M100 0H0V100" fill="none" stroke="#D6DEE7" stroke-width="1"/>
+  </pattern>
+  <marker id="ah-green" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+    <path d="M0 0 L10 5 L0 10 z" fill="#2E7D4F"/></marker>
+  <marker id="ah-blue" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+    <path d="M0 0 L10 5 L0 10 z" fill="#2F6F9E"/></marker>
+  <marker id="ah-ink" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+    <path d="M0 0 L10 5 L0 10 z" fill="#16202B"/></marker>
+  <marker id="ah-red" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+    <path d="M0 0 L10 5 L0 10 z" fill="#B3402F"/></marker>
+</defs>
+<rect width="1280" height="1170" fill="#FBFAF8"/>
+<rect width="1280" height="1170" fill="url(#grid5)"/>
+<path d="M224.0 152.7 Q312.5 132.5 370.5 119.3" fill="none" stroke="#2E7D4F" stroke-width="2" marker-end="url(#ah-green)"/>
+<text x="308.2" y="153.9" font-size="14" font-weight="500" fill="#16202B" text-anchor="middle" stroke="#FBFAF8" stroke-width="5" paint-order="stroke" stroke-linejoin="round">Unlock</text>
+<path d="M543.5 118.3 Q612.5 132.5 717.4 154.1" fill="none" stroke="#2E7D4F" stroke-width="2" marker-end="url(#ah-green)"/>
+<text x="618.4" y="154.0" font-size="14" font-weight="500" fill="#16202B" text-anchor="middle" stroke="#FBFAF8" stroke-width="5" paint-order="stroke" stroke-linejoin="round">Complete</text>
+<path d="M715.8 177.0 Q612.5 200.0 540.1 216.1" fill="none" stroke="#2F6F9E" stroke-width="2" marker-end="url(#ah-blue)"/>
+<text x="617.0" y="188.6" font-size="14" font-weight="500" fill="#16202B" text-anchor="middle" stroke="#FBFAF8" stroke-width="5" paint-order="stroke" stroke-linejoin="round">Lock</text>
+<path d="M370.3 214.2 Q312.5 200.0 221.7 177.7" fill="none" stroke="#2F6F9E" stroke-width="2" marker-end="url(#ah-blue)"/>
+<text x="307.8" y="188.4" font-size="14" font-weight="500" fill="#16202B" text-anchor="middle" stroke="#FBFAF8" stroke-width="5" paint-order="stroke" stroke-linejoin="round">Complete</text>
+<path d="M817.8 186.1 Q922.5 232.5 1023.0 277.0" fill="none" stroke="#2E7D4F" stroke-width="2" marker-end="url(#ah-green)"/>
+<text x="927.5" y="223.3" font-size="14" font-weight="500" fill="#16202B" text-anchor="middle" stroke="#FBFAF8" stroke-width="5" paint-order="stroke" stroke-linejoin="round">Enable</text>
+<path d="M1044.8 324.3 Q922.5 422.5 805.3 516.6" fill="none" stroke="#2E7D4F" stroke-width="2" marker-end="url(#ah-green)"/>
+<text x="933.2" y="438.2" font-size="14" font-weight="500" fill="#16202B" text-anchor="middle" stroke="#FBFAF8" stroke-width="5" paint-order="stroke" stroke-linejoin="round">Complete</text>
+<path d="M732.4 515.8 Q626.7 433.6 522.4 398.0" fill="none" stroke="#2F6F9E" stroke-width="2" marker-end="url(#ah-blue)"/>
+<text x="634.2" y="437.0" font-size="14" font-weight="500" fill="#16202B" text-anchor="middle" stroke="#FBFAF8" stroke-width="5" paint-order="stroke" stroke-linejoin="round">Disable / Lock</text>
+<path d="M491.2 350.9 Q612.5 270.0 730.9 191.0" fill="none" stroke="#2F6F9E" stroke-width="2" marker-end="url(#ah-blue)"/>
+<text x="620.1" y="288.0" font-size="14" font-weight="500" fill="#16202B" text-anchor="middle" stroke="#FBFAF8" stroke-width="5" paint-order="stroke" stroke-linejoin="round">Complete</text>
+<path d="M813.1 570.4 Q922.5 635.0 1036.0 702.0" fill="none" stroke="#2E7D4F" stroke-width="2" marker-end="url(#ah-green)"/>
+<text x="931.1" y="627.7" font-size="14" font-weight="500" fill="#16202B" text-anchor="middle" stroke="#FBFAF8" stroke-width="5" paint-order="stroke" stroke-linejoin="round">Start</text>
+<path d="M1067.6 749.9 Q1042.5 835.0 1020.7 908.7" fill="none" stroke="#2E7D4F" stroke-width="2" marker-end="url(#ah-green)"/>
+<text x="997.3" y="837.2" font-size="14" font-weight="500" fill="#16202B" text-anchor="middle" stroke="#FBFAF8" stroke-width="5" paint-order="stroke" stroke-linejoin="round">Complete</text>
+<path d="M721.3 565.1 Q612.5 610.0 510.7 652.0" fill="none" stroke="#2F6F9E" stroke-width="2" marker-end="url(#ah-blue)"/>
+<text x="620.0" y="628.1" font-size="14" font-weight="500" fill="#16202B" text-anchor="middle" stroke="#FBFAF8" stroke-width="5" paint-order="stroke" stroke-linejoin="round">Inhibit</text>
+<path d="M368.6 655.2 Q302.5 640.0 203.7 617.3" fill="none" stroke="#2F6F9E" stroke-width="2" marker-end="url(#ah-blue)"/>
+<text x="291.0" y="657.7" font-size="14" font-weight="500" fill="#16202B" text-anchor="middle" stroke="#FBFAF8" stroke-width="5" paint-order="stroke" stroke-linejoin="round">Complete</text>
+<path d="M194.8 579.8 Q293.7 524.1 368.9 508.2" fill="none" stroke="#2E7D4F" stroke-width="2" marker-end="url(#ah-green)"/>
+<text x="282.5" y="525.0" font-size="14" font-weight="500" fill="#16202B" text-anchor="middle" stroke="#FBFAF8" stroke-width="5" paint-order="stroke" stroke-linejoin="round">Clear</text>
+<path d="M545.9 505.9 Q612.5 517.5 716.8 535.7" fill="none" stroke="#2E7D4F" stroke-width="2" marker-end="url(#ah-green)"/>
+<text x="624.5" y="509.4" font-size="14" font-weight="500" fill="#16202B" text-anchor="middle" stroke="#FBFAF8" stroke-width="5" paint-order="stroke" stroke-linejoin="round">Complete</text>
+<path d="M178.3 570.9 Q275.4 454.1 402.8 398.0" fill="none" stroke="#2F6F9E" stroke-width="2" marker-end="url(#ah-blue)"/>
+<text x="273.9" y="462.3" font-size="14" font-weight="500" fill="#16202B" text-anchor="middle" stroke="#FBFAF8" stroke-width="5" paint-order="stroke" stroke-linejoin="round">Disable / Lock</text>
+<path d="M960.2 926.1 Q865.0 890.0 802.5 866.3" fill="none" stroke="#2F6F9E" stroke-width="2" marker-end="url(#ah-blue)"/>
+<text x="867.9" y="912.1" font-size="14" font-weight="500" fill="#16202B" text-anchor="middle" stroke="#FBFAF8" stroke-width="5" paint-order="stroke" stroke-linejoin="round">Controlled stop</text>
+<path d="M726.0 800.0 Q745.0 690.0 763.7 581.8" fill="none" stroke="#2F6F9E" stroke-width="2" marker-end="url(#ah-blue)"/>
+<text x="790.9" y="695.4" font-size="14" font-weight="500" fill="#16202B" text-anchor="middle" stroke="#FBFAF8" stroke-width="5" paint-order="stroke" stroke-linejoin="round">Complete</text>
+<path d="M953.1 947.6 Q711.7 958.7 511.7 867.7" fill="none" stroke="#2F6F9E" stroke-width="2" marker-end="url(#ah-blue)"/>
+<text x="724.9" y="923.5" font-size="14" font-weight="500" fill="#16202B" text-anchor="middle" stroke="#FBFAF8" stroke-width="5" paint-order="stroke" stroke-linejoin="round">Quick stop</text>
+<path d="M479.1 800.7 Q605.0 690.0 736.6 574.4" fill="none" stroke="#2F6F9E" stroke-width="2" marker-end="url(#ah-blue)"/>
+<text x="596.5" y="682.5" font-size="14" font-weight="500" fill="#16202B" text-anchor="middle" stroke="#FBFAF8" stroke-width="5" paint-order="stroke" stroke-linejoin="round">Complete</text>
+<path d="M955.5 956.4 Q561.0 1038.8 216.5 868.0" fill="none" stroke="#B3402F" stroke-width="2" marker-end="url(#ah-red)"/>
+<text x="575.4" y="965.6" font-size="14" font-weight="500" fill="#16202B" text-anchor="middle" stroke="#FBFAF8" stroke-width="5" paint-order="stroke" stroke-linejoin="round">Emergency stop / Inhibit / Lock</text>
+<path d="M150.0 800.0 Q150.0 720.0 150.0 642.0" fill="none" stroke="#B3402F" stroke-width="2" marker-end="url(#ah-red)"/>
+<text x="104.0" y="725.5" font-size="14" font-weight="500" fill="#16202B" text-anchor="middle" stroke="#FBFAF8" stroke-width="5" paint-order="stroke" stroke-linejoin="round">Complete</text>
+<ellipse cx="170" cy="165" rx="55.0" ry="37.0" fill="none" stroke="#1F3B57" stroke-width="1" opacity="0.35"/>
+<ellipse cx="170" cy="165" rx="48.0" ry="30.0" fill="#1F3B57"/>
+<text x="170" y="171" font-size="19" font-weight="600" fill="#FFFFFF" text-anchor="middle">Locked</text>
+<ellipse cx="770" cy="165" rx="55.0" ry="37.0" fill="none" stroke="#1F3B57" stroke-width="1" opacity="0.35"/>
+<ellipse cx="770" cy="165" rx="48.0" ry="30.0" fill="#1F3B57"/>
+<text x="770" y="171" font-size="19" font-weight="600" fill="#FFFFFF" text-anchor="middle">Off</text>
+<ellipse cx="770" cy="545" rx="55.0" ry="37.0" fill="none" stroke="#1F3B57" stroke-width="1" opacity="0.35"/>
+<ellipse cx="770" cy="545" rx="48.0" ry="30.0" fill="#1F3B57"/>
+<text x="770" y="551" font-size="19" font-weight="600" fill="#FFFFFF" text-anchor="middle">Standby</text>
+<ellipse cx="150" cy="605" rx="57.0" ry="37.0" fill="none" stroke="#1F3B57" stroke-width="1" opacity="0.35"/>
+<ellipse cx="150" cy="605" rx="50.0" ry="30.0" fill="#1F3B57"/>
+<text x="150" y="611" font-size="19" font-weight="600" fill="#FFFFFF" text-anchor="middle">Inhibited</text>
+<ellipse cx="1010" cy="945" rx="55.0" ry="37.0" fill="none" stroke="#1F3B57" stroke-width="1" opacity="0.35"/>
+<ellipse cx="1010" cy="945" rx="48.0" ry="30.0" fill="#1F3B57"/>
+<text x="1010" y="951" font-size="19" font-weight="600" fill="#FFFFFF" text-anchor="middle">On</text>
+<rect x="360.0" y="77.0" width="190" height="46" rx="23.0" fill="#FFFFFF" stroke="#2E7D4F" stroke-width="2"/>
+<text x="455" y="106" font-size="17" font-weight="500" fill="#2E7D4F" text-anchor="middle">Unlocking</text>
+<rect x="360.0" y="212.0" width="190" height="46" rx="23.0" fill="#FFFFFF" stroke="#2F6F9E" stroke-width="2"/>
+<text x="455" y="241" font-size="17" font-weight="500" fill="#2F6F9E" text-anchor="middle">Locking</text>
+<rect x="980.0" y="277.0" width="190" height="46" rx="23.0" fill="#FFFFFF" stroke="#2E7D4F" stroke-width="2"/>
+<text x="1075" y="306" font-size="17" font-weight="500" fill="#2E7D4F" text-anchor="middle">Enabling</text>
+<rect x="360.0" y="352.0" width="190" height="46" rx="23.0" fill="#FFFFFF" stroke="#2F6F9E" stroke-width="2"/>
+<text x="455" y="381" font-size="17" font-weight="500" fill="#2F6F9E" text-anchor="middle">Disabling</text>
+<rect x="360.0" y="467.0" width="190" height="46" rx="23.0" fill="#FFFFFF" stroke="#2E7D4F" stroke-width="2"/>
+<text x="455" y="496" font-size="17" font-weight="500" fill="#2E7D4F" text-anchor="middle">Clearing</text>
+<rect x="360.0" y="652.0" width="190" height="46" rx="23.0" fill="#FFFFFF" stroke="#2F6F9E" stroke-width="2"/>
+<text x="455" y="681" font-size="17" font-weight="500" fill="#2F6F9E" text-anchor="middle">Inhibiting</text>
+<rect x="980.0" y="702.0" width="190" height="46" rx="23.0" fill="#FFFFFF" stroke="#2E7D4F" stroke-width="2"/>
+<text x="1075" y="731" font-size="17" font-weight="500" fill="#2E7D4F" text-anchor="middle">Starting</text>
+<rect x="45.0" y="802.0" width="210" height="66" rx="33.0" fill="#FFFFFF" stroke="#B3402F" stroke-width="2"/>
+<text x="150" y="833" font-size="17" font-weight="500" fill="#B3402F" text-anchor="middle">Emergency</text>
+<text x="150" y="855" font-size="17" font-weight="500" fill="#B3402F" text-anchor="middle">Stopping</text>
+<rect x="340.0" y="802.0" width="200" height="66" rx="33.0" fill="#FFFFFF" stroke="#2F6F9E" stroke-width="2"/>
+<text x="440" y="833" font-size="17" font-weight="500" fill="#2F6F9E" text-anchor="middle">Quick</text>
+<text x="440" y="855" font-size="17" font-weight="500" fill="#2F6F9E" text-anchor="middle">Stopping</text>
+<rect x="615.0" y="802.0" width="210" height="66" rx="33.0" fill="#FFFFFF" stroke="#2F6F9E" stroke-width="2"/>
+<text x="720" y="833" font-size="17" font-weight="500" fill="#2F6F9E" text-anchor="middle">Controlled</text>
+<text x="720" y="855" font-size="17" font-weight="500" fill="#2F6F9E" text-anchor="middle">Stopping</text>
+<circle cx="68" cy="165" r="9" fill="#16202B"/>
+<path d="M80 165 L113.0 165" fill="none" stroke="#16202B" stroke-width="2" marker-end="url(#ah-ink)"/>
+<text x="66" y="141" font-size="13" font-weight="500" fill="#16202B">Power-up</text>
