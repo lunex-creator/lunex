@@ -40,6 +40,8 @@ This is a **draft specification**, authored by a single contributor and not yet 
 
 ## 1. Introduction
 
+**LUNEX** — *Layered Unified Namespace for Entities & eXtensibility*. Every object in the model, physical or not, is an **Entity** (`LunexObject`, Sub-model 1); the **Namespace** is the addressable path every one of them resolves to (Sub-model 2); **Layered** describes the four-layer structure the sixteen sub-models are organized into (§3); **eXtensibility** is why a seventeenth sub-model could be added without disturbing the sixteen already here.
+
 ### 1.1 Why LUNEX exists
 
 Operational technology has no single reference model that spans its full breadth. PackML describes machine state behavior. ISA-88 describes batch process structure. ISA-95 describes the enterprise-to-control hierarchy. IEC 61508/61511 describe functional safety. IEC 62443 describes industrial cybersecurity. ISA-18.2 describes alarm management. Each is authoritative within its own scope, and each was written before the others, largely independent of them. An engineer building a modern OT system today must mentally stitch these together — and none of them anticipated the AI/data layer that is now a first-class part of the system, not an add-on.

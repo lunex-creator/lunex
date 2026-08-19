@@ -2,6 +2,8 @@
 
 **A unified, object-oriented reference model for OT, safety, security and AI — built to do what PackML and ISA-88 don't: cover the full stack from a single Sensor to the AI layer that predicts, recommends, and — with approval — acts on it, in one consistent object model.**
 
+*Layered Unified Namespace for Entities & eXtensibility* — Entity for `LunexObject` (Sub-model 1), Namespace for the addressable path every object resolves to (Sub-model 2), Layered for the four-layer structure below, eXtensibility for why a seventeenth sub-model could be added without disturbing the sixteen already here.
+
 This index brings together the sixteen sub-models developed so far. Sub-model 8 (Naming & Terminology) is the living glossary — consult it whenever a term's origin or reasoning is unclear.
 
 ---

@@ -2,6 +2,8 @@
 
 **A unified, object-oriented reference model for OT, safety, security and AI.**
 
+*Layered Unified Namespace for Entities & eXtensibility* — every object in the model, from a pressure sensor to an AI-generated recommendation, is an **Entity** (`LunexObject`); the **Namespace** is the addressable `lunex://Realm/.../Device` path every one of them lives at (Sub-model 2); **Layered** is the four-layer structure the sixteen sub-models are organized into; **eXtensibility** is why a new sub-model can be added without breaking the ones already there.
+
 LUNEX covers what PackML and ISA-88 don't try to: one consistent object model spanning process control, safety instrumentation, cybersecurity (IEC 62443), alarm management (ISA-18.2), and the AI/data layer — from a single Sensor up to the closed-loop AI model that adjusts the process daily.
 
 🌐 **[lunex.cloud](https://lunex.cloud)**
