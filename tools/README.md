@@ -17,6 +17,8 @@ Each script writes its output SVG to the current working directory — run them 
 
 **One shared dependency**: `build_state.py`, `build_safety.py`, and `build_ai_control.py` all read `state_machine_fragment.svg` (included in this folder) — the Sub-model 4 state machine is drawn once and transplanted into all three diagrams, so a correction to the state machine only ever needs to happen in one place. Copy `state_machine_fragment.svg` alongside whichever script you're running.
 
+> **`state_machine_fragment.svg` is not a standalone SVG document — don't open it directly.** It has no `<svg>` root element on purpose: the three scripts above read it as a plain text string and paste it inside their *own* `<svg>`/`<g>` context. If you open it directly in a browser, image viewer, or XML validator, you'll get a parse error ("extra content at the end of the document" or similar) — that's expected, not a bug. Wrapping it in its own `<svg>` tag to "fix" this would break the transform/coordinate system in all three scripts that consume it, since a nested `<svg>` behaves differently from the `<g>` they currently paste it into. If you need to preview it in isolation, wrap a copy — never the original — in a throwaway `<svg viewBox="0 0 1280 1170">...</svg>` shell.
+
 `check_crossings.py` is a standalone QA utility — point it at a generated SVG to detect line/box overlaps missed by eye:
 
 ```bash
