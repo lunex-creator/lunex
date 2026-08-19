@@ -114,6 +114,12 @@ Directly asked whether introducing two terms (`target` and `controlTarget`) had 
 
 ---
 
+### Phase 10 — Naming the Name: `LUNEX` as a Backronym
+
+Asked directly what `LUNEX` could plausibly stand for, several options were considered before settling on one that describes what the model actually does rather than being chosen first and fitted to the model afterward: **Layered Unified Namespace for Entities & eXtensibility**. The first draft used "Equipment" in place of "Entities" and was corrected immediately: `LunexObject` (Sub-model 1) — the base class everything in the model inherits from — includes non-physical peers (`Alarm`, `Interlock`, `Zone`, `GuidanceRecommendation`, `PredictedEvent`, `ImprovementRecommendation`) that are not equipment in any normal sense. "Entities" matches the actual scope of Sub-model 1; "Equipment" would have silently narrowed it. Recorded in `README.md`, `LUNEX-Specification.md` §1, and `INDEX.md`.
+
+---
+
 ## Part 2 — Decisions Register
 
 Organized by topic. Each entry: the question or trigger that prompted the decision → what was decided → why. Cross-referenced to the sub-model and section where it now lives in `LUNEX-Specification.md`.
@@ -178,6 +184,7 @@ Organized by topic. Each entry: the question or trigger that prompted the decisi
 |---|---|---|
 | When should a term be renamed from its source-standard original? | Only when it already carries a conflicting meaning elsewhere in the model, or in an adjacent standard LUNEX must interoperate with | The one-sentence naming principle every other renaming decision in this log was tested against. |
 | Where do naming corrections get recorded? | Sub-model 8's "Renamed Terms" register, permanently, including corrections discovered after the fact | The register's stated value is being complete, not just eventually correct — silently fixing a name without logging it would defeat its purpose. |
+| What does the name `LUNEX` itself stand for? | *Layered Unified Namespace for Entities & eXtensibility* | "Entities," not "Equipment" — `LunexObject` (Sub-model 1) includes non-physical peers (`Alarm`, `Interlock`, `Zone`, etc.), so "Equipment" would have silently narrowed the backronym below the model's actual scope. |
 
 ### Publishing & Governance
 
