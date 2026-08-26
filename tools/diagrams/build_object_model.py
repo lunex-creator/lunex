@@ -228,14 +228,14 @@ rrect(lo2_x, lo2_y, lo2_w, lo2_h, stroke=NAVY, sw=2, rx=8)
 text(850, lo2_y+24, "LunexObject", size=14, weight=700, fill=NAVY, anchor="middle")
 text(850, lo2_y+42, "\u00ababstract\u00bb", size=10.5, fill=SOFT, anchor="middle", style="italic")
 
-peer_names = ["Interlock", "Zone", "Conduit", "Alarm", "GuidanceRecommendation", "PredictedEvent", "ImprovementRecommendation"]
-peer_sm = ["5", "6", "6", "10", "12", "15", "15"]
-peer_desc = ["forces/blocks a", "security grouping,", "governed crossing", "priority = severity", "simulated scenarios,", "a forward-looking", "always requires"]
-peer_desc2 = ["transition", "target/achieved SL", "between two Zones", "\u00d7 actionable", "golden optional", "claim, raised into Alarm", "human approval"]
+peer_names = ["Interlock", "Zone", "Conduit", "Alarm", "GuidanceRecommendation", "PredictedEvent", "ImprovementRecommendation", "Operator"]
+peer_sm = ["5", "6", "6", "10", "12", "15", "15", "1"]
+peer_desc = ["forces/blocks a", "security grouping,", "governed crossing", "priority = severity", "simulated scenarios,", "a forward-looking", "always requires", "resolves"]
+peer_desc2 = ["transition", "target/achieved SL", "between two Zones", "\u00d7 actionable", "golden optional", "claim, raised into Alarm", "human approval", "OperatorRef elsewhere"]
 
 n_peer = len(peer_names)
-peer_box_w = 215
-peer_gap = 12
+peer_box_w = 190
+peer_gap = 10
 total_peer_w = n_peer*peer_box_w + (n_peer-1)*peer_gap
 start_x = 850 - total_peer_w/2
 peer_centers = [start_x + i*(peer_box_w+peer_gap) + peer_box_w/2 for i in range(n_peer)]
@@ -256,7 +256,7 @@ for cx, name, sm, d1, d2 in zip(peer_centers, peer_names, peer_sm, peer_desc, pe
     text(cx, peer_row_y+66, d2, size=10, fill=MUTED, anchor="middle")
     text(cx+peer_box_w/2-10, peer_row_y+90, "Sub-model " + sm, size=9.5, fill=SOFT, anchor="end")
 
-text(60, peer_row_y+peer_box_h+32, "each peer follows the pattern set by Interlock (Sub-model 5): its own id, its own state, and a reference back to the Device it concerns", size=12, fill=MUTED, style="italic")
+text(60, peer_row_y+peer_box_h+32, "most peers follow the pattern set by Interlock (Sub-model 5): their own id, own state, and a reference back to the Device they concern \u2014 Operator is the exception, minimal by design (Sub-model 1 \u00a75.2)", size=12, fill=MUTED, style="italic")
 text(60, peer_row_y+peer_box_h+54, "PredictedEvent.state: Open | Confirmed | Dismissed | Expired \u00b7 ImprovementRecommendation.state: Proposed | UnderReview | Approved | Rejected | Applied", size=11.5, fill=SOFT, style="italic", family="Consolas, Menlo, monospace")
 
 # ============================================================

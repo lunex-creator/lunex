@@ -140,6 +140,7 @@ print("part2 ok", p2_y+p2_h)
 p3_y = p2_y + p2_h + 45
 newterms = [
     ("LunexObject", "the abstract base class every object in LUNEX inherits from", "1"),
+    ("Operator", "resolves OperatorRef \u2014 identity + role, deliberately not a permissions system", "1"),
     ("Interlock", "a first-class safety object with its own id, state and proof-test history", "5"),
     ("Zone", "a security grouping with a target and achieved Security Level", "6"),
     ("Conduit", "the governed crossing point between two Zones, where Firewall/IDS sits", "6"),
@@ -163,7 +164,7 @@ cols = 3
 card_w = (W - 60 - 56 - 2*24) / 3
 card_h = 84
 row_gap = 16
-rows_n = 7
+rows_n = -(-len(newterms) // cols)  # ceiling division — always matches the actual item count
 p3_h = 90 + rows_n*(card_h+row_gap) + 20
 rrect(30, p3_y, W-60, p3_h, stroke=BLUE, sw=2.2)
 text(58, p3_y+34, "New Vocabulary", size=18, weight=700, fill=BLUE)
