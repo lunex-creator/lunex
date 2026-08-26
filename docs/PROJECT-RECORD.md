@@ -120,6 +120,14 @@ Asked directly what `LUNEX` could plausibly stand for, several options were cons
 
 ---
 
+### Phase 11 — A Concrete Gap Closed: `Operator`
+
+Asked whether any future sub-models were needed, the honest answer led first to auditing what already existed rather than proposing something new: a grep across the specification for every `*Ref` type found that `OperatorRef` (used twice, in `AIControlUnit.disabledBy`) was the only one that never resolved to an actual defined class — every other `*Ref` type had a real class behind it. `Operator` was added as an eighth peer of `Device` in Sub-model 1, deliberately minimal (`role : string`) — it records identity and capacity, not permissions. A full role-based access model was explicitly considered and deliberately deferred as a separate, future concern rather than folded into this fix, consistent with how the model has drawn this same "structure now, mechanism later" boundary everywhere else (e.g. `objective` on `AIControlUnit` describing intent without prescribing an algorithm). Two candidate future sub-models were also discussed and intentionally *not* built yet — ISA-88 Recipe/Batch Execution and Management of Change (MOC) — both flagged as natural extensions given what LUNEX already cites or partially implies, but held back pending real external feedback rather than spun up speculatively.
+
+While implementing `Operator`, a second, unrelated latent bug was caught and fixed in passing: Sub-model 8's diagram script computed its "New Vocabulary" panel height from a hardcoded row count (`rows_n = 7`) rather than the actual number of entries, which happened to still be correct by coincidence right up until this addition. Changed to a computed ceiling-division so a future addition to that list can never silently overflow the panel.
+
+---
+
 ## Part 2 — Decisions Register
 
 Organized by topic. Each entry: the question or trigger that prompted the decision → what was decided → why. Cross-referenced to the sub-model and section where it now lives in `LUNEX-Specification.md`.
@@ -135,6 +143,7 @@ Organized by topic. Each entry: the question or trigger that prompted the decisi
 | Where does continuous functionality (a PID loop, continuous sampling) belong, if not in `methods()`? | Explicitly out of scope for `methods()` — lives in `properties`, exposed via the Telemetry Envelope, governed by `state` + Interlock + `operatingBounds` | Matches the boundary already drawn everywhere else in LUNEX: the model specifies structure and governance, never control algorithms. Sub-model 1 §5.2.2 |
 | Is a frequency/servo drive one class or several? | Canonical example of a multi-interface device: always both `Control Unit` and `Signal Converter`, optionally `Transducer` too | Function-interfaces are composable, not exclusive — this was already the rule, the drive is just the clearest real-world illustration of it. Sub-model 1 §5.3 |
 | Does `id` differ from `tag`? | Yes: `id` is permanent and what every `Ref` field points to; `tag` is the human-facing label and may be renamed without breaking references | Re-tagging projects and loop renumbering happen in real plants; references must survive them. Sub-model 1 §5.2 |
+| What does `OperatorRef` (used by `AIControlUnit.disabledBy`) actually resolve to? | A new peer class, `Operator extends LunexObject { role : string }` — the eighth peer of `Device`/`Component` | Found via an audit of every `*Ref` type in the specification: the only one with no defined class behind it. Deliberately minimal — identity and capacity, not a permissions system, which is left as a genuinely separate, future concern. Sub-model 1 §5.2 |
 
 ### Asset Hierarchy
 
