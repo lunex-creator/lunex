@@ -178,6 +178,8 @@ Terms are listed alphabetically. Terms reused unchanged from an external standar
 
 **operatingBounds** — Attribute on `AIControlUnit` (Sub-model 16): required whenever `target` is the physical Device; may be empty only when `target` is the Digital Twin, since an unbounded action there cannot cause real-world harm.
 
+**Operator** — A first-class `LunexObject` peer (Sub-model 1): `role : string`. Deliberately minimal — records identity and capacity, not permissions; resolves `OperatorRef` wherever it's used elsewhere in the model.
+
 **parent** — Attribute on `LunexObject` (Sub-model 1): the immediate container in the Sub-model 2 containment chain. Distinct from `physicalRef` (shared hardware) and from any Sub-model 4 transition relationship — three separate kinds of "points to another object."
 
 **PredictedEvent** — A first-class `LunexObject` (Sub-model 15) representing a forward-looking claim derived from a Historian pattern. Raises into the ordinary Alarm system, tagged `PREDICTIVE`, rather than occupying a separate screen.
@@ -344,7 +346,7 @@ Device {
 
 Function-interfaces are composable, not exclusive — a class may implement more than one. This is why an IoT-capable smart device is not a sixth class: it is an existing class (e.g. `Sensor`) plus a `Comms Module` `Component`, or a fully-Integrated topology (Sub-model 3).
 
-**Seven peers of `Device`/`Component`**, added by later sub-models, each extending `LunexObject` directly (not `Device`):
+**Eight peers of `Device`/`Component`**, added by later sub-models, each extending `LunexObject` directly (not `Device`):
 
 | Peer | Sub-model | Summary |
 |---|---|---|
@@ -355,6 +357,17 @@ Function-interfaces are composable, not exclusive — a class may implement more
 | `GuidanceRecommendation` | 12 | A set of simulated scenarios |
 | `PredictedEvent` | 15 | A forward-looking claim, raised into Alarm |
 | `ImprovementRecommendation` | 15 | Always requires human approval |
+| `Operator` | 1 | A human referenced by `OperatorRef` elsewhere in the model |
+
+**`Operator`** closes a gap the model had without formalizing: `OperatorRef` is used elsewhere (`AIControlUnit.disabledBy`, Sub-model 16) as if it resolved to something, but nothing ever defined what. It is deliberately minimal:
+
+```
+Operator extends LunexObject {
+  role : string   (e.g. "Control Room Operator", "Safety Engineer", "Maintenance Engineer")
+}
+```
+
+`role` is a plain descriptive string, not a permissions or access-control system — LUNEX records *who* took an action (via `id`, inherited from `LunexObject`) and *in what capacity* (`role`), not *what they were authorized to do*. A full role-based access model is a genuinely separate concern from object structure and is intentionally left for a future sub-model, not bolted on here to close this gap. Every other place in this specification that refers informally to "the operator" (acknowledging an alarm, approving an `ImprovementRecommendation`, applying a `GuidanceRecommendation`) is not retroactively required to hold a formal `OperatorRef` — that reference is only mandatory where a schema explicitly types a field as `OperatorRef`, as `AIControlUnit.disabledBy` already does.
 
 **Color/marking convention** (used consistently across all sub-model diagrams): a derived class marked red-and-bold is safety-related (SIL/Interlock); marked blue-and-bold is security-related (IEC 62443).
 
@@ -1040,7 +1053,7 @@ AIControlUnit extends ControlUnit {
 }
 ```
 
-`target` here means something different from `Interlock.target` (Sub-model 5) — an Interlock's `target` is the Device it forces a transition on; an AIControlUnit's `target` is what its output is routed to. The two never collide in practice, since no object is ever both classes at once; this is the same pattern already established by `state`, which means something different on `Alarm` than on most other classes (Sub-model 8).
+`target` here means something different from `Interlock.target` (Sub-model 5) — an Interlock's `target` is the Device it forces a transition on; an AIControlUnit's `target` is what its output is routed to. The two never collide in practice, since no object is ever both classes at once; this is the same pattern already established by `state`, which means something different on `Alarm` than on most other classes (Sub-model 8). `disabledBy` resolves `OperatorRef` to a first-class `Operator` (Sub-model 1 §5.2).
 
 It occupies an ordinary Control Unit slot within a Point-to-Point or Star Assembly (Sub-model 3) — no new topology shape is required.
 
@@ -1111,6 +1124,10 @@ Component extends LunexObject {}       (abstract — not independently addressab
 Sensor, Transducer, Control Unit, Signal Converter, Actuator
   all extend Device, no additional attributes — distinguished by
   function-interface (Sensing / Converting / Controlling / Actuating)
+
+Operator extends LunexObject {
+  role : string   (e.g. "Control Room Operator", "Safety Engineer")
+}
 ```
 
 **Sub-model 5 — Safety**
