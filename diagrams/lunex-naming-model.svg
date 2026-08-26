@@ -114,95 +114,100 @@
 <text x="74.0" y="1317" font-size="11" font-weight="400" fill="#33404D" text-anchor="start">the abstract base class every object in</text>
 <text x="74.0" y="1334" font-size="11" font-weight="400" fill="#33404D" text-anchor="start">LUNEX inherits from</text>
 <rect x="560.6666666666667" y="1269" width="478.6666666666667" height="84" rx="8" fill="#FFFFFF" stroke="#2F6F9E" stroke-width="1.8"/>
-<text x="576.6666666666667" y="1295" font-size="13" font-weight="700" fill="#2F6F9E" text-anchor="start" font-family="Consolas, Menlo, monospace">Interlock</text>
-<text x="1025.3333333333335" y="1295" font-size="10.5" font-weight="400" fill="#5A6B7B" text-anchor="end">5</text>
-<text x="576.6666666666667" y="1317" font-size="11" font-weight="400" fill="#33404D" text-anchor="start">a first-class safety object with its own</text>
-<text x="576.6666666666667" y="1334" font-size="11" font-weight="400" fill="#33404D" text-anchor="start">id, state and proof-test history</text>
+<text x="576.6666666666667" y="1295" font-size="13" font-weight="700" fill="#2F6F9E" text-anchor="start" font-family="Consolas, Menlo, monospace">Operator</text>
+<text x="1025.3333333333335" y="1295" font-size="10.5" font-weight="400" fill="#5A6B7B" text-anchor="end">1</text>
+<text x="576.6666666666667" y="1317" font-size="11" font-weight="400" fill="#33404D" text-anchor="start">resolves OperatorRef — identity + role,</text>
+<text x="576.6666666666667" y="1334" font-size="11" font-weight="400" fill="#33404D" text-anchor="start">deliberately not a permissions system</text>
 <rect x="1063.3333333333335" y="1269" width="478.6666666666667" height="84" rx="8" fill="#FFFFFF" stroke="#2F6F9E" stroke-width="1.8"/>
-<text x="1079.3333333333335" y="1295" font-size="13" font-weight="700" fill="#2F6F9E" text-anchor="start" font-family="Consolas, Menlo, monospace">Zone</text>
-<text x="1528.0000000000002" y="1295" font-size="10.5" font-weight="400" fill="#5A6B7B" text-anchor="end">6</text>
-<text x="1079.3333333333335" y="1317" font-size="11" font-weight="400" fill="#33404D" text-anchor="start">a security grouping with a target and</text>
-<text x="1079.3333333333335" y="1334" font-size="11" font-weight="400" fill="#33404D" text-anchor="start">achieved Security Level</text>
+<text x="1079.3333333333335" y="1295" font-size="13" font-weight="700" fill="#2F6F9E" text-anchor="start" font-family="Consolas, Menlo, monospace">Interlock</text>
+<text x="1528.0000000000002" y="1295" font-size="10.5" font-weight="400" fill="#5A6B7B" text-anchor="end">5</text>
+<text x="1079.3333333333335" y="1317" font-size="11" font-weight="400" fill="#33404D" text-anchor="start">a first-class safety object with its own</text>
+<text x="1079.3333333333335" y="1334" font-size="11" font-weight="400" fill="#33404D" text-anchor="start">id, state and proof-test history</text>
 <rect x="58.0" y="1369" width="478.6666666666667" height="84" rx="8" fill="#FFFFFF" stroke="#2F6F9E" stroke-width="1.8"/>
-<text x="74.0" y="1395" font-size="13" font-weight="700" fill="#2F6F9E" text-anchor="start" font-family="Consolas, Menlo, monospace">Conduit</text>
+<text x="74.0" y="1395" font-size="13" font-weight="700" fill="#2F6F9E" text-anchor="start" font-family="Consolas, Menlo, monospace">Zone</text>
 <text x="522.6666666666667" y="1395" font-size="10.5" font-weight="400" fill="#5A6B7B" text-anchor="end">6</text>
-<text x="74.0" y="1417" font-size="11" font-weight="400" fill="#33404D" text-anchor="start">the governed crossing point between two</text>
-<text x="74.0" y="1434" font-size="11" font-weight="400" fill="#33404D" text-anchor="start">Zones, where Firewall/IDS sits</text>
+<text x="74.0" y="1417" font-size="11" font-weight="400" fill="#33404D" text-anchor="start">a security grouping with a target and</text>
+<text x="74.0" y="1434" font-size="11" font-weight="400" fill="#33404D" text-anchor="start">achieved Security Level</text>
 <rect x="560.6666666666667" y="1369" width="478.6666666666667" height="84" rx="8" fill="#FFFFFF" stroke="#2F6F9E" stroke-width="1.8"/>
-<text x="576.6666666666667" y="1395" font-size="13" font-weight="700" fill="#2F6F9E" text-anchor="start" font-family="Consolas, Menlo, monospace">Digital Twin</text>
-<text x="1025.3333333333335" y="1395" font-size="10.5" font-weight="400" fill="#5A6B7B" text-anchor="end">7</text>
-<text x="576.6666666666667" y="1417" font-size="11" font-weight="400" fill="#33404D" text-anchor="start">the AI-side, queryable mirror of a</text>
-<text x="576.6666666666667" y="1434" font-size="11" font-weight="400" fill="#33404D" text-anchor="start">physical object</text>
+<text x="576.6666666666667" y="1395" font-size="13" font-weight="700" fill="#2F6F9E" text-anchor="start" font-family="Consolas, Menlo, monospace">Conduit</text>
+<text x="1025.3333333333335" y="1395" font-size="10.5" font-weight="400" fill="#5A6B7B" text-anchor="end">6</text>
+<text x="576.6666666666667" y="1417" font-size="11" font-weight="400" fill="#33404D" text-anchor="start">the governed crossing point between two</text>
+<text x="576.6666666666667" y="1434" font-size="11" font-weight="400" fill="#33404D" text-anchor="start">Zones, where Firewall/IDS sits</text>
 <rect x="1063.3333333333335" y="1369" width="478.6666666666667" height="84" rx="8" fill="#FFFFFF" stroke="#2F6F9E" stroke-width="1.8"/>
-<text x="1079.3333333333335" y="1395" font-size="13" font-weight="700" fill="#2F6F9E" text-anchor="start" font-family="Consolas, Menlo, monospace">Telemetry Envelope</text>
+<text x="1079.3333333333335" y="1395" font-size="13" font-weight="700" fill="#2F6F9E" text-anchor="start" font-family="Consolas, Menlo, monospace">Digital Twin</text>
 <text x="1528.0000000000002" y="1395" font-size="10.5" font-weight="400" fill="#5A6B7B" text-anchor="end">7</text>
-<text x="1079.3333333333335" y="1417" font-size="11" font-weight="400" fill="#33404D" text-anchor="start">the addressed, timestamped wrapper every</text>
-<text x="1079.3333333333335" y="1434" font-size="11" font-weight="400" fill="#33404D" text-anchor="start">object streams out</text>
+<text x="1079.3333333333335" y="1417" font-size="11" font-weight="400" fill="#33404D" text-anchor="start">the AI-side, queryable mirror of a</text>
+<text x="1079.3333333333335" y="1434" font-size="11" font-weight="400" fill="#33404D" text-anchor="start">physical object</text>
 <rect x="58.0" y="1469" width="478.6666666666667" height="84" rx="8" fill="#FFFFFF" stroke="#2F6F9E" stroke-width="1.8"/>
-<text x="74.0" y="1495" font-size="13" font-weight="700" fill="#2F6F9E" text-anchor="start" font-family="Consolas, Menlo, monospace">Context Layer</text>
+<text x="74.0" y="1495" font-size="13" font-weight="700" fill="#2F6F9E" text-anchor="start" font-family="Consolas, Menlo, monospace">Telemetry Envelope</text>
 <text x="522.6666666666667" y="1495" font-size="10.5" font-weight="400" fill="#5A6B7B" text-anchor="end">7</text>
-<text x="74.0" y="1517" font-size="11" font-weight="400" fill="#33404D" text-anchor="start">semantic relationships an AI can</text>
-<text x="74.0" y="1534" font-size="11" font-weight="400" fill="#33404D" text-anchor="start">traverse, beyond the containment chain</text>
+<text x="74.0" y="1517" font-size="11" font-weight="400" fill="#33404D" text-anchor="start">the addressed, timestamped wrapper every</text>
+<text x="74.0" y="1534" font-size="11" font-weight="400" fill="#33404D" text-anchor="start">object streams out</text>
 <rect x="560.6666666666667" y="1469" width="478.6666666666667" height="84" rx="8" fill="#FFFFFF" stroke="#2F6F9E" stroke-width="1.8"/>
-<text x="576.6666666666667" y="1495" font-size="13" font-weight="700" fill="#2F6F9E" text-anchor="start" font-family="Consolas, Menlo, monospace">Tier / worstTier</text>
-<text x="1025.3333333333335" y="1495" font-size="10.5" font-weight="400" fill="#5A6B7B" text-anchor="end">9</text>
-<text x="576.6666666666667" y="1517" font-size="11" font-weight="400" fill="#33404D" text-anchor="start">the severity ranking the state machine</text>
-<text x="576.6666666666667" y="1534" font-size="11" font-weight="400" fill="#33404D" text-anchor="start">itself doesn't carry</text>
+<text x="576.6666666666667" y="1495" font-size="13" font-weight="700" fill="#2F6F9E" text-anchor="start" font-family="Consolas, Menlo, monospace">Context Layer</text>
+<text x="1025.3333333333335" y="1495" font-size="10.5" font-weight="400" fill="#5A6B7B" text-anchor="end">7</text>
+<text x="576.6666666666667" y="1517" font-size="11" font-weight="400" fill="#33404D" text-anchor="start">semantic relationships an AI can</text>
+<text x="576.6666666666667" y="1534" font-size="11" font-weight="400" fill="#33404D" text-anchor="start">traverse, beyond the containment chain</text>
 <rect x="1063.3333333333335" y="1469" width="478.6666666666667" height="84" rx="8" fill="#FFFFFF" stroke="#2F6F9E" stroke-width="1.8"/>
-<text x="1079.3333333333335" y="1495" font-size="13" font-weight="700" fill="#2F6F9E" text-anchor="start" font-family="Consolas, Menlo, monospace">Rollup</text>
+<text x="1079.3333333333335" y="1495" font-size="13" font-weight="700" fill="#2F6F9E" text-anchor="start" font-family="Consolas, Menlo, monospace">Tier / worstTier</text>
 <text x="1528.0000000000002" y="1495" font-size="10.5" font-weight="400" fill="#5A6B7B" text-anchor="end">9</text>
-<text x="1079.3333333333335" y="1517" font-size="11" font-weight="400" fill="#33404D" text-anchor="start">cross-object status aggregation,</text>
-<text x="1079.3333333333335" y="1534" font-size="11" font-weight="400" fill="#33404D" text-anchor="start">computed in the AI layer, not the object model</text>
+<text x="1079.3333333333335" y="1517" font-size="11" font-weight="400" fill="#33404D" text-anchor="start">the severity ranking the state machine</text>
+<text x="1079.3333333333335" y="1534" font-size="11" font-weight="400" fill="#33404D" text-anchor="start">itself doesn't carry</text>
 <rect x="58.0" y="1569" width="478.6666666666667" height="84" rx="8" fill="#FFFFFF" stroke="#2F6F9E" stroke-width="1.8"/>
-<text x="74.0" y="1595" font-size="13" font-weight="700" fill="#2F6F9E" text-anchor="start" font-family="Consolas, Menlo, monospace">Alarm</text>
-<text x="522.6666666666667" y="1595" font-size="10.5" font-weight="400" fill="#5A6B7B" text-anchor="end">10</text>
-<text x="74.0" y="1617" font-size="11" font-weight="400" fill="#33404D" text-anchor="start">priority = severity × actionability, not</text>
-<text x="74.0" y="1634" font-size="11" font-weight="400" fill="#33404D" text-anchor="start">severity alone</text>
+<text x="74.0" y="1595" font-size="13" font-weight="700" fill="#2F6F9E" text-anchor="start" font-family="Consolas, Menlo, monospace">Rollup</text>
+<text x="522.6666666666667" y="1595" font-size="10.5" font-weight="400" fill="#5A6B7B" text-anchor="end">9</text>
+<text x="74.0" y="1617" font-size="11" font-weight="400" fill="#33404D" text-anchor="start">cross-object status aggregation,</text>
+<text x="74.0" y="1634" font-size="11" font-weight="400" fill="#33404D" text-anchor="start">computed in the AI layer, not the object model</text>
 <rect x="560.6666666666667" y="1569" width="478.6666666666667" height="84" rx="8" fill="#FFFFFF" stroke="#2F6F9E" stroke-width="1.8"/>
-<text x="576.6666666666667" y="1595" font-size="13" font-weight="700" fill="#2F6F9E" text-anchor="start" font-family="Consolas, Menlo, monospace">Alarm Response Procedure</text>
-<text x="1025.3333333333335" y="1595" font-size="10.5" font-weight="400" fill="#5A6B7B" text-anchor="end">11</text>
-<text x="576.6666666666667" y="1617" font-size="11" font-weight="400" fill="#33404D" text-anchor="start">reusable, per alarm type — probable</text>
-<text x="576.6666666666667" y="1634" font-size="11" font-weight="400" fill="#33404D" text-anchor="start">cause through corrective action</text>
+<text x="576.6666666666667" y="1595" font-size="13" font-weight="700" fill="#2F6F9E" text-anchor="start" font-family="Consolas, Menlo, monospace">Alarm</text>
+<text x="1025.3333333333335" y="1595" font-size="10.5" font-weight="400" fill="#5A6B7B" text-anchor="end">10</text>
+<text x="576.6666666666667" y="1617" font-size="11" font-weight="400" fill="#33404D" text-anchor="start">priority = severity × actionability, not</text>
+<text x="576.6666666666667" y="1634" font-size="11" font-weight="400" fill="#33404D" text-anchor="start">severity alone</text>
 <rect x="1063.3333333333335" y="1569" width="478.6666666666667" height="84" rx="8" fill="#FFFFFF" stroke="#2F6F9E" stroke-width="1.8"/>
-<text x="1079.3333333333335" y="1595" font-size="13" font-weight="700" fill="#2F6F9E" text-anchor="start" font-family="Consolas, Menlo, monospace">GuidanceRecommendation</text>
-<text x="1528.0000000000002" y="1595" font-size="10.5" font-weight="400" fill="#5A6B7B" text-anchor="end">12</text>
-<text x="1079.3333333333335" y="1617" font-size="11" font-weight="400" fill="#33404D" text-anchor="start">simulated scenarios from the Digital</text>
-<text x="1079.3333333333335" y="1634" font-size="11" font-weight="400" fill="#33404D" text-anchor="start">Twin, golden scenario optional</text>
+<text x="1079.3333333333335" y="1595" font-size="13" font-weight="700" fill="#2F6F9E" text-anchor="start" font-family="Consolas, Menlo, monospace">Alarm Response Procedure</text>
+<text x="1528.0000000000002" y="1595" font-size="10.5" font-weight="400" fill="#5A6B7B" text-anchor="end">11</text>
+<text x="1079.3333333333335" y="1617" font-size="11" font-weight="400" fill="#33404D" text-anchor="start">reusable, per alarm type — probable</text>
+<text x="1079.3333333333335" y="1634" font-size="11" font-weight="400" fill="#33404D" text-anchor="start">cause through corrective action</text>
 <rect x="58.0" y="1669" width="478.6666666666667" height="84" rx="8" fill="#FFFFFF" stroke="#2F6F9E" stroke-width="1.8"/>
-<text x="74.0" y="1695" font-size="13" font-weight="700" fill="#2F6F9E" text-anchor="start" font-family="Consolas, Menlo, monospace">SimulationPolicy</text>
+<text x="74.0" y="1695" font-size="13" font-weight="700" fill="#2F6F9E" text-anchor="start" font-family="Consolas, Menlo, monospace">GuidanceRecommendation</text>
 <text x="522.6666666666667" y="1695" font-size="10.5" font-weight="400" fill="#5A6B7B" text-anchor="end">12</text>
-<text x="74.0" y="1717" font-size="11" font-weight="400" fill="#33404D" text-anchor="start">always / risk-based / none +</text>
-<text x="74.0" y="1734" font-size="11" font-weight="400" fill="#33404D" text-anchor="start">manualOverrideAvailable — decided per Assembly</text>
+<text x="74.0" y="1717" font-size="11" font-weight="400" fill="#33404D" text-anchor="start">simulated scenarios from the Digital</text>
+<text x="74.0" y="1734" font-size="11" font-weight="400" fill="#33404D" text-anchor="start">Twin, golden scenario optional</text>
 <rect x="560.6666666666667" y="1669" width="478.6666666666667" height="84" rx="8" fill="#FFFFFF" stroke="#2F6F9E" stroke-width="1.8"/>
-<text x="576.6666666666667" y="1695" font-size="13" font-weight="700" fill="#2F6F9E" text-anchor="start" font-family="Consolas, Menlo, monospace">jumpToWorst()</text>
-<text x="1025.3333333333335" y="1695" font-size="10.5" font-weight="400" fill="#5A6B7B" text-anchor="end">13</text>
-<text x="576.6666666666667" y="1717" font-size="11" font-weight="400" fill="#33404D" text-anchor="start">one action from any node straight to the</text>
-<text x="576.6666666666667" y="1734" font-size="11" font-weight="400" fill="#33404D" text-anchor="start">Device/Alarm causing it</text>
+<text x="576.6666666666667" y="1695" font-size="13" font-weight="700" fill="#2F6F9E" text-anchor="start" font-family="Consolas, Menlo, monospace">SimulationPolicy</text>
+<text x="1025.3333333333335" y="1695" font-size="10.5" font-weight="400" fill="#5A6B7B" text-anchor="end">12</text>
+<text x="576.6666666666667" y="1717" font-size="11" font-weight="400" fill="#33404D" text-anchor="start">always / risk-based / none +</text>
+<text x="576.6666666666667" y="1734" font-size="11" font-weight="400" fill="#33404D" text-anchor="start">manualOverrideAvailable — decided per Assembly</text>
 <rect x="1063.3333333333335" y="1669" width="478.6666666666667" height="84" rx="8" fill="#FFFFFF" stroke="#2F6F9E" stroke-width="1.8"/>
-<text x="1079.3333333333335" y="1695" font-size="13" font-weight="700" fill="#2F6F9E" text-anchor="start" font-family="Consolas, Menlo, monospace">Historian</text>
-<text x="1528.0000000000002" y="1695" font-size="10.5" font-weight="400" fill="#5A6B7B" text-anchor="end">14</text>
-<text x="1079.3333333333335" y="1717" font-size="11" font-weight="400" fill="#33404D" text-anchor="start">append-only record of every state, ever</text>
-<text x="1079.3333333333335" y="1734" font-size="11" font-weight="400" fill="#33404D" text-anchor="start">— the Twin's other destination</text>
+<text x="1079.3333333333335" y="1695" font-size="13" font-weight="700" fill="#2F6F9E" text-anchor="start" font-family="Consolas, Menlo, monospace">jumpToWorst()</text>
+<text x="1528.0000000000002" y="1695" font-size="10.5" font-weight="400" fill="#5A6B7B" text-anchor="end">13</text>
+<text x="1079.3333333333335" y="1717" font-size="11" font-weight="400" fill="#33404D" text-anchor="start">one action from any node straight to the</text>
+<text x="1079.3333333333335" y="1734" font-size="11" font-weight="400" fill="#33404D" text-anchor="start">Device/Alarm causing it</text>
 <rect x="58.0" y="1769" width="478.6666666666667" height="84" rx="8" fill="#FFFFFF" stroke="#2F6F9E" stroke-width="1.8"/>
-<text x="74.0" y="1795" font-size="13" font-weight="700" fill="#2F6F9E" text-anchor="start" font-family="Consolas, Menlo, monospace">RetentionPolicy</text>
+<text x="74.0" y="1795" font-size="13" font-weight="700" fill="#2F6F9E" text-anchor="start" font-family="Consolas, Menlo, monospace">Historian</text>
 <text x="522.6666666666667" y="1795" font-size="10.5" font-weight="400" fill="#5A6B7B" text-anchor="end">14</text>
-<text x="74.0" y="1817" font-size="11" font-weight="400" fill="#33404D" text-anchor="start">same shape as SimulationPolicy — always</text>
-<text x="74.0" y="1834" font-size="11" font-weight="400" fill="#33404D" text-anchor="start">/ risk-based / none, by design</text>
+<text x="74.0" y="1817" font-size="11" font-weight="400" fill="#33404D" text-anchor="start">append-only record of every state, ever</text>
+<text x="74.0" y="1834" font-size="11" font-weight="400" fill="#33404D" text-anchor="start">— the Twin's other destination</text>
 <rect x="560.6666666666667" y="1769" width="478.6666666666667" height="84" rx="8" fill="#FFFFFF" stroke="#2F6F9E" stroke-width="1.8"/>
-<text x="576.6666666666667" y="1795" font-size="13" font-weight="700" fill="#2F6F9E" text-anchor="start" font-family="Consolas, Menlo, monospace">PredictedEvent</text>
-<text x="1025.3333333333335" y="1795" font-size="10.5" font-weight="400" fill="#5A6B7B" text-anchor="end">15</text>
-<text x="576.6666666666667" y="1817" font-size="11" font-weight="400" fill="#33404D" text-anchor="start">a forward-looking claim, raised into the</text>
-<text x="576.6666666666667" y="1834" font-size="11" font-weight="400" fill="#33404D" text-anchor="start">Alarm system tagged predictive</text>
+<text x="576.6666666666667" y="1795" font-size="13" font-weight="700" fill="#2F6F9E" text-anchor="start" font-family="Consolas, Menlo, monospace">RetentionPolicy</text>
+<text x="1025.3333333333335" y="1795" font-size="10.5" font-weight="400" fill="#5A6B7B" text-anchor="end">14</text>
+<text x="576.6666666666667" y="1817" font-size="11" font-weight="400" fill="#33404D" text-anchor="start">same shape as SimulationPolicy — always</text>
+<text x="576.6666666666667" y="1834" font-size="11" font-weight="400" fill="#33404D" text-anchor="start">/ risk-based / none, by design</text>
 <rect x="1063.3333333333335" y="1769" width="478.6666666666667" height="84" rx="8" fill="#FFFFFF" stroke="#2F6F9E" stroke-width="1.8"/>
-<text x="1079.3333333333335" y="1795" font-size="13" font-weight="700" fill="#2F6F9E" text-anchor="start" font-family="Consolas, Menlo, monospace">ImprovementRecommendation</text>
+<text x="1079.3333333333335" y="1795" font-size="13" font-weight="700" fill="#2F6F9E" text-anchor="start" font-family="Consolas, Menlo, monospace">PredictedEvent</text>
 <text x="1528.0000000000002" y="1795" font-size="10.5" font-weight="400" fill="#5A6B7B" text-anchor="end">15</text>
-<text x="1079.3333333333335" y="1817" font-size="11" font-weight="400" fill="#33404D" text-anchor="start">always requires human approval — no</text>
-<text x="1079.3333333333335" y="1834" font-size="11" font-weight="400" fill="#33404D" text-anchor="start">confidence threshold skips it</text>
+<text x="1079.3333333333335" y="1817" font-size="11" font-weight="400" fill="#33404D" text-anchor="start">a forward-looking claim, raised into the</text>
+<text x="1079.3333333333335" y="1834" font-size="11" font-weight="400" fill="#33404D" text-anchor="start">Alarm system tagged predictive</text>
 <rect x="58.0" y="1869" width="478.6666666666667" height="84" rx="8" fill="#FFFFFF" stroke="#2F6F9E" stroke-width="1.8"/>
-<text x="74.0" y="1895" font-size="13" font-weight="700" fill="#2F6F9E" text-anchor="start" font-family="Consolas, Menlo, monospace">AIControlUnit</text>
-<text x="522.6666666666667" y="1895" font-size="10.5" font-weight="400" fill="#5A6B7B" text-anchor="end">16</text>
-<text x="74.0" y="1917" font-size="11" font-weight="400" fill="#33404D" text-anchor="start">a Control Unit subclass; Interlock</text>
-<text x="74.0" y="1934" font-size="11" font-weight="400" fill="#33404D" text-anchor="start">forces it exactly like any Device</text>
+<text x="74.0" y="1895" font-size="13" font-weight="700" fill="#2F6F9E" text-anchor="start" font-family="Consolas, Menlo, monospace">ImprovementRecommendation</text>
+<text x="522.6666666666667" y="1895" font-size="10.5" font-weight="400" fill="#5A6B7B" text-anchor="end">15</text>
+<text x="74.0" y="1917" font-size="11" font-weight="400" fill="#33404D" text-anchor="start">always requires human approval — no</text>
+<text x="74.0" y="1934" font-size="11" font-weight="400" fill="#33404D" text-anchor="start">confidence threshold skips it</text>
+<rect x="560.6666666666667" y="1869" width="478.6666666666667" height="84" rx="8" fill="#FFFFFF" stroke="#2F6F9E" stroke-width="1.8"/>
+<text x="576.6666666666667" y="1895" font-size="13" font-weight="700" fill="#2F6F9E" text-anchor="start" font-family="Consolas, Menlo, monospace">AIControlUnit</text>
+<text x="1025.3333333333335" y="1895" font-size="10.5" font-weight="400" fill="#5A6B7B" text-anchor="end">16</text>
+<text x="576.6666666666667" y="1917" font-size="11" font-weight="400" fill="#33404D" text-anchor="start">a Control Unit subclass; Interlock</text>
+<text x="576.6666666666667" y="1934" font-size="11" font-weight="400" fill="#33404D" text-anchor="start">forces it exactly like any Device</text>
 <rect x="30" y="2034" width="1540" height="130" rx="10" fill="#FFFFFF" stroke="#1F3B57" stroke-width="2.4"/>
 <text x="58" y="2070" font-size="18" font-weight="700" fill="#1F3B57" text-anchor="start">The Naming Principle</text>
 <text x="58" y="2100" font-size="14" font-weight="600" fill="#16202B" text-anchor="start">Rename a term only when it already carries a conflicting meaning elsewhere in the model, or in</text>
