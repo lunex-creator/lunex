@@ -66,4 +66,4 @@ See [`CITATION.cff`](CITATION.cff), or use GitHub's "Cite this repository" butto
 
 ## Contact
 
-General: [info@lunex.cloud](mailto:info@lunex.cloud). Code of Conduct concerns: [conduct@lunex.cloud](mailto:conduct@lunex.cloud) (see [`CODE_OF_CONDUCT.md`](CODE_OF_CONDUCT.md)).
+General: [info@lunex.cloud](mailto:info@lunex.cloud). Code of Conduct concerns: [conduct@lunex.cloud](mailto:conduct@lunex.cloud) (see [`CODE_OF_CONDUCT.md`](CODE_OF_CONDUCT.md)). Security issues in `tools/`: see [`SECURITY.md`](SECURITY.md) — please report privately, not as a public Issue.
