@@ -132,6 +132,8 @@ Terms are listed alphabetically. Terms reused unchanged from an external standar
 
 **Control Unit** — One of the five universal device classes (Sub-model 1); performs logic/decision-making (PLC, DCS, microcontroller, and by extension `AIControlUnit`).
 
+**coordinates** — Optional attribute on `LunexObject` (Sub-model 1): `{ lat, lon } | null`. On the base class, not only on `Location`, since individual objects within one Location can be genuinely distributed (a pipeline's valves, a wind farm's turbines). Omitting it is a safe default, the same as omitting `physicalRef` — not an assertion of anything.
+
 **Device** — Abstract class (Sub-model 1) for any independently addressable, assembly-level unit; composes zero or more Components. Optionally carries `physicalRef` when its physical hardware is shared with other functionally distinct Devices.
 
 **Digital Twin** — The AI-side, queryable mirror of a physical object (Sub-model 7), kept in sync via the Telemetry Envelope. Holds only the *current* state — see Historian for historical state.
@@ -182,7 +184,7 @@ Terms are listed alphabetically. Terms reused unchanged from an external standar
 
 **parent** — Attribute on `LunexObject` (Sub-model 1): the immediate container in the Sub-model 2 containment chain. Distinct from `physicalRef` (shared hardware) and from any Sub-model 4 transition relationship — three separate kinds of "points to another object."
 
-**PredictedEvent** — A first-class `LunexObject` (Sub-model 15) representing a forward-looking claim derived from a Historian pattern. Raises into the ordinary Alarm system, tagged `PREDICTIVE`, rather than occupying a separate screen.
+**PredictedEvent** — A first-class `LunexObject` (Sub-model 15) representing a forward-looking claim, either `internal-pattern` (Historian-derived, predictive maintenance) or `external-forecast` (e.g. weather, energy price — predictive analytics more broadly), distinguished by `basisType`. Raises into the ordinary Alarm system, tagged `PREDICTIVE`, rather than occupying a separate screen.
 
 **physicalRef** — Optional attribute on `Device` (Sub-model 1): `DeviceRef | ComponentRef`, points to the actual shared, serviceable unit — a Device for simple hardware, or a specific Component (e.g. one CPU in a multi-CPU rack) when the Device's internal structure means different functional roles are backed by different sub-parts. Also confirms Sub-model 3's Integrated topology when shared across an entire chain.
 
@@ -264,6 +266,7 @@ LunexObject {
   parent        : LunexObject
   state         : State                 (Sub-model 4)
   health        : Health
+  coordinates   : { lat, lon } | null
   properties    : Map<Key, Value>
   methods()     : Procedure[]
 }
@@ -274,6 +277,7 @@ LunexObject {
 - **`class`** — a reference to the object's defining template in the organization's Inventory (Sub-model 1 §5.3), not a free-text string. Two objects share a `class` when they were instantiated from the same Inventory entry.
 - **`parent`** — the immediate container in the Sub-model 2 containment chain (e.g. a `Device`'s `parent` is its `Assembly`). This is structural containment, not `physicalRef` (Sub-model 1's optional shared-hardware pointer) and not the Sub-model 4 state machine's own transition graph — three separate relationships that happen to all involve one object pointing at another.
 - **`health : Health`** — `{ score : 0-100, flags : string[] }`. Diagnostic condition, deliberately independent of `state`: an object can be `On` (Sub-model 4) and simultaneously report degraded `health` (e.g. a sensor drifting out of calibration) without that affecting which state-transitions are available.
+- **`coordinates`** — optional geographic position, `{ lat, lon } | null`. Deliberately on `LunexObject` itself rather than only on `Location` (Sub-model 2): a Location's coordinates cover "where the site is," but individual objects within one Location can be genuinely kilometers apart — a pipeline's valves, a wind farm's turbines, a solar array's inverters. Omitting `coordinates` has the same safe default as omitting `physicalRef`: the object is simply not geo-located, not an assertion of anything. Most objects will never set this — it exists for the minority that are usefully mapped individually rather than as one dot per site.
 - **`properties`** — the object's own data: current value, unit, setpoint, whatever is specific to its `class`. This is also where continuous operational output lives (see §5.2.1 below).
 - **`methods()`** — see §5.2.1.
 
@@ -411,7 +415,7 @@ Realm → Domain → Location → Area → Cell → System → Assembly → Devi
 | Device | L1 | one of the five universal classes (Sub-model 1) |
 | Component | L0/L1 | not independently addressable |
 
-Any level may be skipped when trivial (Domain is the most commonly skipped). Non-production concerns (utilities, safety, IoT) use the same `Area` level as production — there is no separate branch.
+Any level may be skipped when trivial (Domain is the most commonly skipped). Non-production concerns (utilities, safety, IoT) use the same `Area` level as production — there is no separate branch. Every level in this chain is addressable the same way a `Device` is, so `LunexObject.coordinates` (Sub-model 1 §5.2) applies here too — a `Location` can carry the site's own coordinates without needing a separate field, and any object beneath it (a remote valve, a distributed turbine) can independently set its own when the site-level coordinate isn't precise enough.
 
 **Addressable path**: every `LunexObject.id` is derivable from its position in this chain:
 
@@ -980,7 +984,7 @@ Example: with `automaticMode: risk-based` and `riskThreshold: Tier 1` — normal
 
 ### 19.1 Purpose
 
-Once a Historian exists, trend-based prediction becomes possible — not just "what is happening" or "what would happen if," but "what is likely to happen, unprompted." This introduces two distinct needs: surfacing a prediction to an operator without creating a second alarm-like system to monitor, and turning a detected pattern into a suggested configuration change without ever letting AI confidence substitute for human judgment.
+Once a Historian exists, trend-based prediction becomes possible — not just "what is happening" or "what would happen if," but "what is likely to happen, unprompted." Trend extrapolation from internal history is one source of that — the original motivation for this sub-model — but not the only one: a forecast can equally come from outside the plant entirely (a weather forecast driving an anticipatory setpoint change, an energy-price forecast driving a load-shift). Both are handled by the same object, distinguished by where the forecast actually comes from. This introduces two distinct needs: surfacing a prediction to an operator without creating a second alarm-like system to monitor, and turning a detected pattern into a suggested configuration change without ever letting AI confidence substitute for human judgment.
 
 ### 19.2 Technical Description
 
@@ -995,14 +999,17 @@ PredictedEvent {
   predictedCondition     : string
   predictedWindow        : { from, to }
   confidence              : 0-1
-  basis                   : string                (Historian pattern)
+  basisType               : internal-pattern | external-forecast
+  basis                   : string                (Historian pattern description, or the external source itself)
   state                    : Open | Confirmed | Dismissed | Expired
 }
 ```
 
+`basisType` distinguishes **predictive maintenance** — `internal-pattern`, extrapolated from the Historian, e.g. "bearing wear predicted in 3–4 weeks" — from the broader category of **predictive analytics**: `external-forecast`, driven by a source outside the plant entirely, e.g. "solar output predicted to drop for the next 4 hours" (weather forecast) or "load shift recommended overnight" (energy-price forecast). Predictive maintenance is a subset of predictive analytics, not a synonym for it — this sub-model's name reflects the case it was originally built for; `basisType` makes the broader case equally first-class rather than requiring a second mechanism. An `external-forecast` `PredictedEvent` does not require a Historian at all — only `internal-pattern` does.
+
 A `PredictedEvent` **raises** into the ordinary Sub-model 10 `Alarm` system — `Alarm.origin: predictive`, visibly tagged `PREDICTIVE` — rather than occupying a separate maintenance-planning screen the operator must remember to check separately (this joins Sub-model 13's single situational-awareness picture, it doesn't sit beside it). `Alarm.origin` is deliberately not named `Alarm.source`, since that field already means "which Device" on the same class (see Sub-model 8).
 
-`state: Expired` matters specifically for Sub-model 14's Analytics: a prediction whose window passed without confirmation is exactly the data needed to evaluate how reliable predictions actually are. `PredictedEvent` overrides `methods()` (Sub-model 1 §5.2.1) with `confirm()` and `dismiss()`, both only valid from `Open`; `Expired` is never reached by a method call, only by the window passing unconfirmed.
+`state: Expired` matters specifically for Sub-model 14's Analytics: a prediction whose window passed without confirmation is exactly the data needed to evaluate how reliable predictions actually are — for both `basisType` values equally. `PredictedEvent` overrides `methods()` (Sub-model 1 §5.2.1) with `confirm()` and `dismiss()`, both only valid from `Open`; `Expired` is never reached by a method call, only by the window passing unconfirmed.
 
 **`ImprovementRecommendation`** (extends `LunexObject`):
 
@@ -1111,6 +1118,7 @@ LunexObject {                          (abstract base — every object has this)
   parent        : LunexObject
   state         : State                 (Sub-model 4)
   health        : Health                { score: 0-100, flags: string[] }
+  coordinates   : { lat, lon } | null
   properties    : Map<Key, Value>
   methods()     : Procedure[]           (derived from state — Sub-model 1 §5.2.1)
 }
@@ -1258,7 +1266,8 @@ PredictedEvent extends LunexObject {
   predictedCondition     : string
   predictedWindow        : { from, to }
   confidence              : 0-1
-  basis                   : string                (Historian pattern)
+  basisType               : internal-pattern | external-forecast
+  basis                   : string                (Historian pattern, or the external source)
   state                    : Open | Confirmed | Dismissed | Expired
 }
 

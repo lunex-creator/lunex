@@ -32,7 +32,7 @@ Sixteen sub-models, each a standalone SVG diagram, building from the base object
 | 12 | [Scenario Simulation & Operator Guidance](diagrams/lunex-scenario-model.svg) | `GuidanceRecommendation`, `SimulationPolicy` |
 | 13 | [Situational Awareness](diagrams/lunex-sa-model.svg) | Navigation contract: same signals at every level, `jumpToWorst()` |
 | 14 | [Historian & Analytics](diagrams/lunex-historian-model.svg) | Append-only history, `RetentionPolicy`, ISA-18.2 alarm performance metrics |
-| 15 | [Predictive Maintenance & Improvement](diagrams/lunex-predictive-model.svg) | `PredictedEvent`, `ImprovementRecommendation` (always requires human approval) |
+| 15 | [Predictive Maintenance & Improvement](diagrams/lunex-predictive-model.svg) | `PredictedEvent` (internal + external-forecast), `ImprovementRecommendation` (always requires human approval) |
 | 16 | [Closed-Loop AI Control](diagrams/lunex-ai-control-model.svg) | `AIControlUnit`, `operatingBounds`, Interlock override |
 
 A full narrative index with the reasoning behind each sub-model is in [`INDEX.md`](INDEX.md). The complete written specification — glossary, standards cross-reference, and a full schema appendix — is [`LUNEX-Specification.md`](LUNEX-Specification.md) (also available as a formatted [PDF](LUNEX-Specification.pdf)). The complete project history — every phase, every design decision, and why — is in [`docs/PROJECT-RECORD.md`](docs/PROJECT-RECORD.md).
