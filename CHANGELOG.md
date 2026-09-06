@@ -24,6 +24,11 @@ Initial public draft. Sixteen sub-models, full specification, glossary, and Appe
 - `votingArchitecture` (IEC 61508 MooN notation) added to SIF Assemblies, mandatory per layer (sensor / logic solver / final element) — distinct from Sub-model 3's `High-Availability` flag, which is about uptime, not SIL integrity.
 - `Appendix A — Schema Reference`, collecting every class's schema from all sixteen sub-models in one place.
 - Multi-interface device example (VFD/servo drive: simultaneously `Control Unit` and `Signal Converter`) added to Sub-model 1.
+- `Operator` added as an eighth peer of `Device`/`Component` (`Operator extends LunexObject { role : string }`) — resolves `OperatorRef`, used by `AIControlUnit.disabledBy` but previously never defined anywhere. Deliberately minimal: identity and capacity, not a permissions system.
+- `PredictedEvent.basisType : internal-pattern | external-forecast` — makes explicit that predictive maintenance (Historian-derived) is one case of the broader predictive analytics category, not a synonym for it. An `external-forecast` prediction (e.g. weather, energy price) doesn't require a Historian to exist at all.
+- `LunexObject.coordinates : { lat, lon } | null` — optional geographic position, on the base class rather than only `Location` (Sub-model 2), since individual objects within one Location can be genuinely distributed (a pipeline's valves, a wind farm's turbines).
+- The backronym **Layered Unified Namespace for Entities & eXtensibility** adopted and documented in `README.md`, `LUNEX-Specification.md` §1, and `INDEX.md`.
+- `SECURITY.md`, GitHub issue templates (bug report, documentation correction), and a pull request template added to the repository.
 
 ### Changed
 
