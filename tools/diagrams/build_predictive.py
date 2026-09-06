@@ -103,12 +103,12 @@ text(58, p1_y+275, "one Operator Guidance Panel (Sub-model 12) still shows all t
 # Panel 2: PredictedEvent — flows into the Alarm system
 # ============================================================
 p2_y = p1_y + p1_h + 50
-p2_h = 430
+p2_h = 530
 rrect(30, p2_y, W-60, p2_h, stroke=GREEN, sw=2.2)
 text(58, p2_y+38, "PredictedEvent \u2014 Joins the Alarm System, Doesn't Sit Beside It", size=20, weight=700, fill=GREEN)
 text(58, p2_y+60, "one situational-awareness picture (Sub-model 13) \u2014 not a second screen the operator has to remember to check", size=12.5, fill=SOFT)
 
-pe_x, pe_y, pe_w, pe_h = 60, p2_y+100, 480, 260
+pe_x, pe_y, pe_w, pe_h = 60, p2_y+100, 480, 300
 rrect(pe_x, pe_y, pe_w, pe_h, stroke=NAVY, sw=2, rx=8)
 text(pe_x+18, pe_y+28, "PredictedEvent", size=13.5, weight=700, fill=GREEN)
 text(pe_x+18, pe_y+46, "extends LunexObject (Sub-model 1)", size=10, fill=SOFT, style="italic")
@@ -118,13 +118,16 @@ peattrs = [
     "+ predictedCondition : string",
     "+ predictedWindow : {from, to}",
     "+ confidence : 0\u20131",
-    "+ basis : string  (Historian pattern)",
+    "+ basisType : internal-pattern |",
+    "  external-forecast",
+    "+ basis : string",
     "+ state : Open | Confirmed |",
     "  Dismissed | Expired",
 ]
 ay = pe_y+70
 for a in peattrs:
-    text(pe_x+18, ay, a, size=12, fill=MUTED, family="Consolas, Menlo, monospace")
+    col = GREEN if "basisType" in a or a.startswith("  external") else MUTED
+    text(pe_x+18, ay, a, size=12, fill=col, family="Consolas, Menlo, monospace", weight=700 if col==GREEN else 400)
     ay += 24
 
 ar_x, ar_y, ar_w, ar_h = 620, p2_y+100, 460, 210
@@ -142,8 +145,8 @@ for a in aattrs:
     text(ar_x+18, ay, a, size=12, fill=MUTED, family="Consolas, Menlo, monospace")
     ay += 24
 
-line(pe_x+pe_w, pe_y+pe_h/2, ar_x, ar_y+ar_h/2, stroke=GREEN, sw=2, marker_end="tri-green")
-text((pe_x+pe_w+ar_x)/2, pe_y+pe_h/2-14, "raises", size=12, fill=GREEN, weight=700, style="italic", anchor="middle")
+line(pe_x+pe_w, pe_y+120, ar_x, ar_y+ar_h/2, stroke=GREEN, sw=2, marker_end="tri-green")
+text((pe_x+pe_w+ar_x)/2, pe_y+120-14, "raises", size=12, fill=GREEN, weight=700, style="italic", anchor="middle")
 
 badge_x, badge_y = 1195, p2_y+150
 rrect(badge_x-90, badge_y-20, 180, 40, rx=20, stroke=GREEN, sw=2, fill="#FFFFFF")
@@ -151,7 +154,9 @@ text(badge_x, badge_y+5, "PREDICTIVE", size=12.5, weight=700, fill=GREEN, anchor
 text(badge_x, badge_y+38, "visible tag, so the operator", size=11, fill=SOFT, anchor="middle", style="italic")
 text(badge_x, badge_y+56, "never confuses \u201cwill\u201d with \u201cis\u201d", size=11, fill=SOFT, anchor="middle", style="italic")
 
-text(58, p2_y+405, "example: bearing wear predicted in 3\u20136 weeks \u2192 Priority 2 alarm, tagged predictive, same screen as real-time alarms", size=12, fill=MUTED, style="italic")
+text(58, p2_y+430, "predictive maintenance (internal-pattern): bearing wear predicted in 3\u20136 weeks \u2192 Priority 2 alarm, tagged predictive", size=12, fill=MUTED, style="italic")
+text(58, p2_y+452, "predictive analytics (external-forecast): solar output predicted to drop for 4 hours \u2192 same Alarm mechanism, same screen, different basisType", size=12, fill=MUTED, style="italic")
+text(58, p2_y+474, "predictive maintenance is one case of the broader predictive analytics category \u2014 basisType keeps both first-class, not a second mechanism for the external case", size=11.5, fill=SOFT, style="italic")
 
 with open("./lunex-predictive-model.svg.partial", "w") as f:
     f.write("placeholder")

@@ -67,7 +67,7 @@ text(60, 86, "Object / Class Model", size=26, weight=600, fill=INK)
 text(60, 110, "Base class, function interfaces, five universal classes and derived types", size=13, fill=SOFT)
 
 # ---------- LunexObject ----------
-lx, ly, lw, lh = 650, 140, 400, 250
+lx, ly, lw, lh = 650, 140, 400, 270
 rrect(lx, ly, lw, lh, stroke=NAVY, sw=2.5)
 cx_lunex = lx + lw/2
 text(cx_lunex, 172, "LunexObject", size=21, weight=700, fill=NAVY, anchor="middle")
@@ -75,7 +75,8 @@ text(cx_lunex, 192, "«abstract base class»", size=12, fill=SOFT, anchor="middl
 line(lx+15, 202, lx+lw-15, 202, stroke=LINE, sw=1)
 attrs = [
     "+ id : string", "+ tag : string", "+ class : Class", "+ parent : LunexObject",
-    "+ state : State", "+ health : Health", "+ properties : Map<Key,Value>", "+ methods() : Procedure[]",
+    "+ state : State", "+ health : Health", "+ coordinates : {lat,lon}|null",
+    "+ properties : Map<Key,Value>", "+ methods() : Procedure[]",
 ]
 ay = 222
 for a in attrs:
