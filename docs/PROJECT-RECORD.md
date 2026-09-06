@@ -128,6 +128,20 @@ While implementing `Operator`, a second, unrelated latent bug was caught and fix
 
 ---
 
+### Phase 12 — Predictive Maintenance Is Not Predictive Analytics
+
+Prompted by a direct comparison against an unrelated grid/utility architecture diagram (IEC 61850/CIM), the underlying distinction turned out to matter regardless of that comparison's own relevance: predictive maintenance (internal, Historian-derived) is one case of the broader category of predictive analytics, which also covers predictions driven by sources entirely external to the plant — a weather forecast informing an anticipatory setpoint change, an energy-price forecast informing a load shift. Sub-model 15's `PredictedEvent.basis` was, on inspection, explicitly typed as `string (Historian pattern)` only — it structurally could not represent an external-forecast-driven prediction. Resolved by adding `basisType: internal-pattern | external-forecast`, making both cases first-class under the same object rather than requiring a second mechanism for the external case. The sub-model's title was deliberately left unchanged (it names its two classes, `PredictedEvent` and `ImprovementRecommendation`, not the full scope of predictive analytics) — only the field's own type was too narrow, not the sub-model's boundary.
+
+The same IEC 61850/CIM comparison surfaced two more terms worth checking against LUNEX directly: "Mapping" and "Semantic Annotation." "Semantic Annotation" turned out to already be fully covered — it's exactly what Sub-model 7's Context Layer `semanticTag` already does, just different vocabulary for the same idea, no gap. "Mapping" (a formal LunexObject-to-external-information-model mapping, e.g. to OPC UA's) is genuinely absent, but deliberately so: Sub-model 2 §2's standards table already states LUNEX "does not mandate OPC UA; it deliberately stays protocol-agnostic," and a concrete mapping would work against that choice by tying the object model to one specific protocol. Added to the same deferred list as Recipe/Batch and MOC, as a candidate optional appendix (not a core specification change) rather than something to build now: **Appendix C — Protocol Mapping Guidance (e.g. LunexObject → OPC UA Information Model)**.
+
+---
+
+### Phase 13 — `coordinates`: a Third, Unrelated Sense of "Mapping"
+
+A follow-up question about "mapping" turned out to mean something else entirely — not protocol/schema mapping, but literal geographic location per object. Unlike the protocol-mapping question, this one was a genuine, immediately fixable gap with no competing design principle to weigh against it: no object anywhere in the model could carry a coordinate. Resolved by adding `coordinates : { lat, lon } | null` to `LunexObject` itself (Sub-model 1 §5.2) — deliberately on the base class rather than only on `Location` (Sub-model 2), after weighing both: a site-level coordinate on `Location` covers most cases, but individual objects within one Location can be genuinely kilometers apart (a pipeline's valves, a wind farm's turbines, a distributed solar array) — exactly the kind of asset the IEC 61850/CIM comparison that started this whole line of questioning was actually about. Optional, following the same reasoning as `physicalRef`: omission is a safe default (the object simply isn't geo-located), not a silent assertion, unlike `votingArchitecture`'s mandatory case.
+
+---
+
 ## Part 2 — Decisions Register
 
 Organized by topic. Each entry: the question or trigger that prompted the decision → what was decided → why. Cross-referenced to the sub-model and section where it now lives in `LUNEX-Specification.md`.
@@ -144,6 +158,7 @@ Organized by topic. Each entry: the question or trigger that prompted the decisi
 | Is a frequency/servo drive one class or several? | Canonical example of a multi-interface device: always both `Control Unit` and `Signal Converter`, optionally `Transducer` too | Function-interfaces are composable, not exclusive — this was already the rule, the drive is just the clearest real-world illustration of it. Sub-model 1 §5.3 |
 | Does `id` differ from `tag`? | Yes: `id` is permanent and what every `Ref` field points to; `tag` is the human-facing label and may be renamed without breaking references | Re-tagging projects and loop renumbering happen in real plants; references must survive them. Sub-model 1 §5.2 |
 | What does `OperatorRef` (used by `AIControlUnit.disabledBy`) actually resolve to? | A new peer class, `Operator extends LunexObject { role : string }` — the eighth peer of `Device`/`Component` | Found via an audit of every `*Ref` type in the specification: the only one with no defined class behind it. Deliberately minimal — identity and capacity, not a permissions system, which is left as a genuinely separate, future concern. Sub-model 1 §5.2 |
+| Can any object carry a geographic position? | Yes — `LunexObject.coordinates : { lat, lon } \| null`, on the base class | Placed on `LunexObject` rather than only `Location` (Sub-model 2) because individual objects within one Location can be genuinely distributed (a pipeline's valves, a wind farm's turbines). Optional with a safe default, like `physicalRef` — not mandatory like `votingArchitecture`. Sub-model 1 §5.2 |
 
 ### Asset Hierarchy
 
@@ -177,6 +192,7 @@ Organized by topic. Each entry: the question or trigger that prompted the decisi
 | Does `RetentionPolicy` (Sub-model 14) need a different shape than `SimulationPolicy`? | No — deliberately identical shape | Both are "big-data cost vs. detail" trade-offs; one mental model serves both. |
 | Does a `GuidanceRecommendation` need its own lifecycle, like a `PredictedEvent` does? | Yes — `state: Open \| Applied \| Dismissed \| Expired`, with `apply()`/`dismiss()` as `methods()` overrides | A recommendation is generated against a specific process-state snapshot and goes stale the same way a prediction does. |
 | Can an `ImprovementRecommendation` ever be auto-applied at high confidence? | No — `requiresApproval: true`, fixed, no false case, even at `confidence: 1.0` | It changes how the plant runs going forward, a materially bigger decision than a single `ScenarioResult` shown in the moment. |
+| Is "predictive maintenance" the same thing as "predictive analytics"? | No — predictive maintenance is one case of the broader predictive analytics category. `PredictedEvent` gained `basisType: internal-pattern \| external-forecast` to make both first-class | `basis` was previously typed as `string (Historian pattern)` only — it couldn't represent a prediction driven by an external source (weather forecast, energy price) with nothing to do with the Historian. An `external-forecast` `PredictedEvent` doesn't require a Historian to exist at all; `internal-pattern` does. Sub-model 15 §19.2 |
 
 ### AI Governance (Sub-model 16)
 
