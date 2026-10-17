@@ -1,8 +1,8 @@
 cff-version: 1.2.0
 message: "If you use LUNEX in your work, please cite it as below."
 title: "LUNEX: A Unified, Object-Oriented Reference Model for Operational Technology, Safety, Security, and AI"
-version: "0.1"
-date-released: 2026-08-15
+version: "0.2"
+date-released: 2026-10-17
 url: "https://lunex.cloud"
 repository-code: "https://github.com/lunex-creator/lunex"
 license: CC-BY-4.0

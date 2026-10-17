@@ -2,38 +2,65 @@
 
 **A unified, object-oriented reference model for OT, safety, security and AI.**
 
-*Layered Unified Namespace for Entities & eXtensibility* — every object in the model, from a pressure sensor to an AI-generated recommendation, is an **Entity** (`LunexObject`); the **Namespace** is the addressable `lunex://Realm/.../Device` path every one of them lives at (Sub-model 2); **Layered** is the four-layer structure the sixteen sub-models are organized into; **eXtensibility** is why a new sub-model can be added without breaking the ones already there.
+*Layered Unified Namespace for Entities & eXtensibility* — every object in the model, from a pressure sensor to an AI-generated recommendation, is an **Entity** (`LunexObject`); the **Namespace** is the addressable `lunex://Realm/.../Device` path every one of them lives at (Sub-model 2); **Layered** is the five-band structure the twenty-one sub-models are organized into; **eXtensibility** is why a new sub-model can be added without breaking the ones already there — this version added five (Recipe & Execution, Identity & Access Management, Vulnerability & Patch Management, Security Incident Response, Management of Change) to the original sixteen without disturbing any of them.
 
 LUNEX covers what PackML and ISA-88 don't try to: one consistent object model spanning process control, safety instrumentation, cybersecurity (IEC 62443), alarm management (ISA-18.2), and the AI/data layer — from a single Sensor up to the closed-loop AI model that adjusts the process daily.
 
 🌐 **[lunex.cloud](https://lunex.cloud)**
 
-> **Status: early draft (v0.1).** This is a proposal, not an established standard. It has not been reviewed by an independent working group. Feedback, criticism, and pull requests are actively welcome — see [Contributing](#contributing).
+> **Status: early draft (v0.2).** This is a proposal, not an established standard. It has not been reviewed by an independent working group. Feedback, criticism, and pull requests are actively welcome — see [Contributing](#contributing).
 
 ---
 
 ## What's here
 
-Sixteen sub-models, each a standalone SVG diagram, building from the base object system up through operator-facing and autonomous capability:
+Twenty-one sub-models, each a standalone SVG diagram, organized into five bands — building from the base object system up through operator-facing and autonomous capability:
+
+### Foundation (1–5)
 
 | # | Sub-model | Covers |
 |---|---|---|
-| 1 | [Object / Class Model](diagrams/lunex-object-model.svg) | `LunexObject`, five universal device classes, function-interfaces |
+| 1 | [Object / Class Model](diagrams/lunex-object-model.svg) | `LunexObject` (incl. `owner`), five universal device classes, function-interfaces, the thirteen peer classes |
 | 2 | [Asset Hierarchy / Namespace](diagrams/lunex-asset-hierarchy.svg) | Realm → Domain → Location → Area → Cell → System → Assembly → Device → Component, mapped to Purdue |
 | 3 | [Topology Model](diagrams/lunex-topology-model.svg) | Integrated / Point-to-Point / Star / Mesh wiring, HA and Cloud & Analytics flags |
 | 4 | [Behavioral / State Model](diagrams/lunex-state-model.svg) | The universal state machine behind `LunexObject.state` |
-| 5 | [Safety](diagrams/lunex-safety-model.svg) | `Interlock` as a first-class object, SIF Assemblies, IEC 60204-1 stop categories |
-| 6 | [Security](diagrams/lunex-security-model.svg) | `Zone` / `Conduit`, IEC 62443 |
-| 7 | [Data / AI Layer](diagrams/lunex-data-ai-model.svg) | Telemetry Envelope, Context Layer, Digital Twin |
-| 8 | [Naming & Terminology](diagrams/lunex-naming-model.svg) | Living register of every deliberate naming decision, and why |
-| 9 | [Collective Status (Rollup)](diagrams/lunex-rollup-model.svg) | Severity Tiers, Rollup, Bubbling |
-| 10 | [Alarm Management](diagrams/lunex-alarm-model.svg) | ISA-18.2-based `Alarm`, priority = severity × actionability |
-| 11 | [Alarm Response Guidance](diagrams/lunex-arp-model.svg) | Reusable `AlarmResponseProcedure` per alarm type |
-| 12 | [Scenario Simulation & Operator Guidance](diagrams/lunex-scenario-model.svg) | `GuidanceRecommendation`, `SimulationPolicy` |
-| 13 | [Situational Awareness](diagrams/lunex-sa-model.svg) | Navigation contract: same signals at every level, `jumpToWorst()` |
-| 14 | [Historian & Analytics](diagrams/lunex-historian-model.svg) | Append-only history, `RetentionPolicy`, ISA-18.2 alarm performance metrics |
-| 15 | [Predictive Maintenance & Improvement](diagrams/lunex-predictive-model.svg) | `PredictedEvent` (internal + external-forecast), `ImprovementRecommendation` (always requires human approval) |
-| 16 | [Closed-Loop AI Control](diagrams/lunex-ai-control-model.svg) | `AIControlUnit`, `operatingBounds`, Interlock override |
+| 5 | [Recipe & Execution Model](diagrams/lunex-recipe-execution-model.svg) | ISA-88-derived `Recipe`/`RecipeElement`, `RecipeExecution` reusing Sub-model 4's state machine directly |
+
+### Safety & Security (6–10)
+
+| # | Sub-model | Covers |
+|---|---|---|
+| 6 | [Safety](diagrams/lunex-safety-model.svg) | `Interlock`, SIF Assemblies (`silTarget`/`silAchieved`/`pfdAvg`/`pfh`), machine safety (ISO 13849-1/IEC 62061), `SafeMotionFunction` (IEC 61800-5-2) |
+| 7 | [Security Zones & Conduits](diagrams/lunex-security-model.svg) | `Zone` / `Conduit`, IEC 62443 |
+| 8 | [Identity & Access Management](diagrams/lunex-iam-model.svg) | `Identity`, `Role`, `Permission`, `AccessGrant` — who may do what, to which object |
+| 9 | [Vulnerability & Patch Management](diagrams/lunex-vulnerability-model.svg) | `Vulnerability` (CVE/CVSS), `PatchRecord`, governed via `ChangeRequest` |
+| 10 | [Security Incident Response](diagrams/lunex-security-incident-model.svg) | `SecurityIncident` — peer of `Alarm`, `Detected → Contained → Eradicated → Recovered → Closed` [NIST CSF] |
+
+### Cross-cutting (11–13)
+
+| # | Sub-model | Covers |
+|---|---|---|
+| 11 | [Data / AI Layer](diagrams/lunex-data-ai-model.svg) | Telemetry Envelope, Context Layer, Digital Twin |
+| 12 | [Naming & Terminology](diagrams/lunex-naming-model.svg) | Living register of every deliberate naming decision, and why — plus the UCUM units convention |
+| 13 | [Management of Change](diagrams/lunex-moc-model.svg) | `ChangeRequest`, `Approval`, `VersionRecord`, and `ChangePolicy` — one governed approval workflow generalizing five previously ad hoc ones |
+
+### Operator capability (14–18)
+
+| # | Sub-model | Covers |
+|---|---|---|
+| 14 | [Collective Status (Rollup)](diagrams/lunex-rollup-model.svg) | Severity Tiers, Rollup, Bubbling |
+| 15 | [Alarm Management](diagrams/lunex-alarm-model.svg) | ISA-18.2-based `Alarm`, priority = severity × actionability |
+| 16 | [Alarm Response Guidance](diagrams/lunex-arp-model.svg) | Reusable `AlarmResponseProcedure` per alarm type |
+| 17 | [Scenario Simulation & Operator Guidance](diagrams/lunex-scenario-model.svg) | `GuidanceRecommendation`, `SimulationPolicy` |
+| 18 | [Situational Awareness](diagrams/lunex-sa-model.svg) | Navigation contract: same signals at every level, `jumpToWorst()` |
+
+### Autonomous layer (19–21)
+
+| # | Sub-model | Covers |
+|---|---|---|
+| 19 | [Historian & Analytics](diagrams/lunex-historian-model.svg) | Append-only history, `RetentionPolicy`, ISA-18.2 alarm performance metrics, `VersionRecord` baselines |
+| 20 | [Predictive Maintenance & Improvement](diagrams/lunex-predictive-model.svg) | `PredictedEvent` (internal + external-forecast), `ImprovementRecommendation` (always requires human approval) |
+| 21 | [Closed-Loop AI Control](diagrams/lunex-ai-control-model.svg) | `AIControlUnit`, `operatingBounds`, Interlock override |
 
 A full narrative index with the reasoning behind each sub-model is in [`INDEX.md`](INDEX.md). The complete written specification — glossary, standards cross-reference, and a full schema appendix — is [`LUNEX-Specification.md`](LUNEX-Specification.md) (also available as a formatted [PDF](LUNEX-Specification.pdf)). The complete project history — every phase, every design decision, and why — is in [`docs/PROJECT-RECORD.md`](docs/PROJECT-RECORD.md).
 
@@ -45,7 +72,7 @@ Brand assets (logo, color palette) are in [`brand/`](brand/). The scripts that g
 
 > Rename a term only when it already carries a conflicting meaning elsewhere in the model, or in an adjacent standard LUNEX must interoperate with. Otherwise, reuse established vocabulary.
 
-Every naming decision in this model — `Realm`/`Domain` instead of `Enterprise`/`Division`, `Point-to-Point`/`Star`/`Mesh` instead of PackML's terms, `Envelope` instead of `Container`, and more — is tested against this one sentence and documented in Sub-model 8.
+Every naming decision in this model — `Realm`/`Domain` instead of `Enterprise`/`Division`, `Point-to-Point`/`Star`/`Mesh` instead of PackML's terms, `Envelope` instead of `Container`, and more — is tested against this one sentence and documented in Sub-model 12 (Naming & Terminology).
 
 ---
 

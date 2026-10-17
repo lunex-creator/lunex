@@ -22,4 +22,4 @@ Please allow a reasonable amount of time for a fix before any public disclosure.
 
 ## Supported Versions
 
-LUNEX is pre-1.0 (currently v0.1, draft). There is no long-term-support version — only the current `main` branch is maintained. Fixes land there; there is no backporting policy yet.
+LUNEX is pre-1.0 (currently v0.2, draft). There is no long-term-support version — only the current `main` branch is maintained. Fixes land there; there is no backporting policy yet.
