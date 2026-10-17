@@ -22,6 +22,7 @@ def rrect(x, y, w, h, rx=12, fill="#FFFFFF", stroke=NAVY, sw=2, dash=None, opaci
     parts.append(f'<rect x="{x}" y="{y}" width="{w}" height="{h}" rx="{rx}" fill="{fill}" stroke="{stroke}" stroke-width="{sw}"{d}{o}/>')
 
 def text(x, y, s, size=13, weight=400, fill=INK, anchor="start", style="normal", family=None, spacing=None):
+    s = (len(s) - len(s.lstrip(' '))) * '\u00a0' + s.lstrip(' ')   # keep leading indentation visible in SVG
     fam = f' font-family="{family}"' if family else ""
     sp = f' letter-spacing="{spacing}"' if spacing else ""
     it = f' font-style="{style}"' if style != "normal" else ""
@@ -77,7 +78,7 @@ levels = [
     ("Cell", "L2/L3", "process cell within an Area", False, None),
     ("System", "L2", "functional unit within a Cell \u2014 equivalent to ISA-88's Unit", False, None),
     ("Assembly", "L1/L2", "functional device group \u2192 see Sub-model 3 (topology patterns)", False, None),
-    ("Device", "L1", "Sensor / Transducer / Control Unit / Signal Converter / Actuator \u2192 see Sub-model 1", False, None),
+    ("Device", "L1", "Sensor, Transducer, ControlUnit, SignalConverter, Actuator \u2014 Sub-model 1", False, None),
     ("Component", "L0/L1", "not independently addressable \u2192 see Sub-model 1", False, None),
 ]
 
@@ -129,7 +130,7 @@ ex_y = chain_bottom + 70
 ex_x, ex_w = 60, W - 120
 rrect(ex_x, ex_y, ex_w, 190, stroke=SOFT, sw=1.5, fill="#FFFFFF")
 text(ex_x+24, ex_y+30, "ADDRESSABLE PATH \u2014 EXAMPLE", size=12, fill=SOFT, spacing="1.5")
-text(ex_x+24, ex_y+62, "lunex://AcmeCorp/Benelux/RotterdamPlant/Utilities/Boilerhouse/BoilerUnit-1/PressureLoop-3/PT-101",
+text(ex_x+24, ex_y+62, "lunex://AcmeCorp/Benelux/Rotterdam/Utilities/Boilerhouse/Boiler-1/Loop-3/PT-101",
      size=14.5, fill=INK, family="Consolas, Menlo, monospace", weight=600)
 
 seg_labels = ["Realm", "Domain", "Location", "Area", "Cell", "System", "Assembly", "Device"]

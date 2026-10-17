@@ -21,6 +21,7 @@ def rrect(x, y, w, h, rx=10, fill="#FFFFFF", stroke=NAVY, sw=2, dash=None):
     parts.append(f'<rect x="{x}" y="{y}" width="{w}" height="{h}" rx="{rx}" fill="{fill}" stroke="{stroke}" stroke-width="{sw}"{d}/>')
 
 def text(x, y, s, size=13, weight=400, fill=INK, anchor="start", style="normal", family=None, spacing=None):
+    s = (len(s) - len(s.lstrip(' '))) * '\u00a0' + s.lstrip(' ')   # keep leading indentation visible in SVG
     fam = f' font-family="{family}"' if family else ""
     sp = f' letter-spacing="{spacing}"' if spacing else ""
     it = f' font-style="{style}"' if style != "normal" else ""
@@ -73,9 +74,9 @@ head = f'''<svg xmlns="http://www.w3.org/2000/svg" font-family="Inter, Segoe UI,
 parts.append(head)
 BG_INSERT_INDEX = len(parts)
 
-text(60, 56, "LUNEX — SUB-MODEL 14", size=14, fill=SOFT, spacing="2.5")
+text(60, 56, "LUNEX — SUB-MODEL 19", size=14, fill=SOFT, spacing="2.5")
 text(60, 86, "Historian & Analytics", size=26, weight=600, fill=INK)
-text(60, 110, "what the state WAS, not just what it IS \u2014 the retrospective half of Sub-model 7", size=13, fill=SOFT)
+text(60, 110, "what the state WAS, not just what it IS \u2014 the retrospective half of Sub-model 11", size=13, fill=SOFT)
 
 # ============================================================
 # Panel 1: Historian — append-only, the Twin's other destination
@@ -84,7 +85,7 @@ p1_y = 145
 p1_h = 330
 rrect(30, p1_y, W-60, p1_h, stroke=BLUE, sw=2.2)
 text(58, p1_y+38, "Historian \u2014 Append-Only, Not Overwritten", size=20, weight=700, fill=BLUE)
-text(58, p1_y+60, "same Telemetry Envelope (Sub-model 7), two destinations \u2014 one overwrites, one never does", size=12.5, fill=SOFT)
+text(58, p1_y+60, "same Telemetry Envelope (Sub-model 11), two destinations \u2014 one overwrites, one never does", size=12.5, fill=SOFT)
 
 src_x, src_y = 260, p1_y+190
 rrect(src_x-110, src_y-30, 220, 60, rx=10, stroke=NAVY, sw=2.2, fill="#FFFFFF")
@@ -106,7 +107,7 @@ line(src_x+110, src_y+14, hist_x-140, hist_y, stroke=GREEN, sw=1.8, marker_end="
 sx2, sy2 = 1120, p1_y+190
 rrect(sx2-140, sy2-70, 340, 200, rx=10, stroke=NAVY, sw=2, fill="#FFFFFF")
 text(sx2, sy2-40, "HistorianRecord", size=13.5, weight=700, fill=NAVY, anchor="middle")
-hattrs = ["path, timestamp  (Sub-model 2/7)", "state, health, properties", "retention : RetentionPolicyRef"]
+hattrs = ["path, timestamp  (Sub-model 2/11)", "state, health, properties", "retention : RetentionPolicyRef"]
 hy = sy2-14
 for a in hattrs:
     text(sx2-120, hy, "+ "+a, size=11.5, fill=MUTED, family="Consolas, Menlo, monospace")
@@ -117,7 +118,7 @@ text(sx2-120, hy+32, "whatever resolution the policy sets", size=11, fill=SOFT, 
 text(58, p1_y+300, "the Historian never blocks or slows the Twin \u2014 it observes the same stream, it doesn't gate it", size=12, fill=MUTED, style="italic")
 
 # ============================================================
-# Panel 2: RetentionPolicy — mirrors SimulationPolicy (Sub-model 12)
+# Panel 2: RetentionPolicy — mirrors SimulationPolicy (Sub-model 17)
 # ============================================================
 p2_y = p1_y + p1_h + 50
 p2_h = 560
@@ -141,7 +142,7 @@ for (name, col, l1, l2), x in zip(policies, cols3):
 
 mid_x = cols3[1] + col_w3/2
 text(mid_x, pol_y+128, "RetentionPolicy.automaticMode", size=11, weight=700, fill=BLUE, anchor="middle", family="Consolas, Menlo, monospace")
-text(mid_x, pol_y+144, "reuses the severity tiers \u2014 same field as Sub-model 12", size=11, fill=SOFT, style="italic", anchor="middle")
+text(mid_x, pol_y+144, "reuses the severity tiers \u2014 same field as Sub-model 17", size=11, fill=SOFT, style="italic", anchor="middle")
 
 override_y = pol_y + 168
 rrect(60, override_y, W-120, 46, rx=10, stroke=GREEN, sw=2, fill="#FFFFFF")
@@ -151,10 +152,10 @@ ex_y = override_y + 76
 rrect(60, ex_y, W-120, 130, rx=10, stroke=NAVY, sw=2, fill="#FFFFFF")
 text(84, ex_y+30, "example: Assembly \u201cReactor Feed\u201d, RetentionPolicy.automaticMode = risk-based, riskThreshold = Tier 1", size=13, weight=700, fill=INK)
 text(84, ex_y+58, "\u2022 normal telemetry, worstTier stays 3 \u2192 downsampled after 24h (1-minute averages, kept 1 year)", size=12, fill=MUTED)
-text(84, ex_y+80, "\u2022 a contributor to a Tier \u2264 1 rollup, or the source of a Priority 1/2 alarm (Sub-model 9/10) \u2192", size=12, fill=MUTED)
+text(84, ex_y+80, "\u2022 a contributor to a Tier \u2264 1 rollup, or the source of a Priority 1/2 alarm (Sub-model 14/15) \u2192", size=12, fill=MUTED)
 text(84, ex_y+100, "  kept at full raw resolution, indefinitely \u2014 exactly the data an investigation will need", size=12, fill=MUTED)
 
-text(58, ex_y+160, "same policy shape as Sub-model 12 by design \u2014 one mental model for \u201cwhen does this get the expensive treatment\u201d", size=12, fill=MUTED, style="italic")
+text(58, ex_y+160, "same policy shape as Sub-model 17 by design \u2014 one mental model for \u201cwhen does this get the expensive treatment\u201d", size=12, fill=MUTED, style="italic")
 
 with open("./lunex-historian-model.svg.partial", "w") as f:
     f.write("placeholder")
@@ -167,7 +168,7 @@ p3_y = p2_y + p2_h + 50
 p3_h = 480
 rrect(30, p3_y, W-60, p3_h, stroke=BLUE, sw=2.2)
 text(58, p3_y+38, "Analytics \u2014 Descriptive, Not Predictive", size=20, weight=700, fill=BLUE)
-text(58, p3_y+60, "deliberately distinct from Sub-model 12 \u2014 this looks back at the Historian, that looks forward on the Twin", size=12.5, fill=SOFT)
+text(58, p3_y+60, "deliberately distinct from Sub-model 17 \u2014 this looks back at the Historian, that looks forward on the Twin", size=12.5, fill=SOFT)
 
 colw = (W-60-80-60)/2
 ax = 60
@@ -181,7 +182,7 @@ text(ax+24, by3+78, "what happened, how often,", size=12, fill=MUTED)
 text(ax+24, by3+96, "how this alarm/loop performs", size=12, fill=MUTED)
 
 rrect(sx3, by3, colw, 110, stroke=SOFT, sw=2, fill="#FFFFFF")
-text(sx3+24, by3+30, "Scenario Simulation (Sub-model 12)", size=14, weight=700, fill=SOFT)
+text(sx3+24, by3+30, "Scenario Simulation (Sub-model 17)", size=14, weight=700, fill=SOFT)
 text(sx3+24, by3+52, "source: Digital Twin, predictive", size=11.5, fill=SOFT, style="italic", family="Consolas, Menlo, monospace")
 text(sx3+24, by3+78, "what would happen if \u2014", size=12, fill=MUTED)
 text(sx3+24, by3+96, "before the operator acts", size=12, fill=MUTED)
@@ -192,8 +193,8 @@ text(84, metrics_y+30, "ISA-18.2 requires alarm performance metrics \u2014 impos
 metrics = [
     "alarms per hour, per operator position \u2014 industry benchmark: < 6/hour average, < 2/10min in upset",
     "\u201cbad actors\u201d \u2014 the small set of alarm types generating a disproportionate share of all activations",
-    "average time-to-acknowledge, by Priority (Sub-model 10) \u2014 is Priority 1 actually acknowledged fastest?",
-    "stale alarms \u2014 Shelved (Sub-model 10) instances approaching shelvedUntil expiry, not yet resolved",
+    "average time-to-acknowledge, by Priority (Sub-model 15) \u2014 is Priority 1 actually acknowledged fastest?",
+    "stale alarms \u2014 Shelved (Sub-model 15) instances approaching shelvedUntil expiry, not yet resolved",
 ]
 my = metrics_y+56
 for m in metrics:

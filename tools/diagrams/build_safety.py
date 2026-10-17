@@ -21,6 +21,7 @@ def rrect(x, y, w, h, rx=10, fill="#FFFFFF", stroke=NAVY, sw=2, dash=None):
     parts.append(f'<rect x="{x}" y="{y}" width="{w}" height="{h}" rx="{rx}" fill="{fill}" stroke="{stroke}" stroke-width="{sw}"{d}/>')
 
 def text(x, y, s, size=13, weight=400, fill=INK, anchor="start", style="normal", family=None, spacing=None):
+    s = (len(s) - len(s.lstrip(' '))) * '\u00a0' + s.lstrip(' ')   # keep leading indentation visible in SVG
     fam = f' font-family="{family}"' if family else ""
     sp = f' letter-spacing="{spacing}"' if spacing else ""
     it = f' font-style="{style}"' if style != "normal" else ""
@@ -65,7 +66,7 @@ head = f'''<svg xmlns="http://www.w3.org/2000/svg" font-family="Inter, Segoe UI,
 parts.append(head)
 BG_INSERT_INDEX = len(parts)
 
-text(60, 56, "LUNEX — SUB-MODEL 5", size=14, fill=SOFT, spacing="2.5")
+text(60, 56, "LUNEX — SUB-MODEL 6", size=14, fill=SOFT, spacing="2.5")
 text(60, 86, "Safety", size=26, weight=600, fill=INK)
 text(60, 110, "Cross-cutting safety properties and mechanisms on top of Sub-models 1\u20134 \u2014 no new class tree", size=13, fill=SOFT)
 
@@ -146,7 +147,7 @@ for i in range(4):
 
 rrect(sif_x, by, col_w, 172, stroke=RED, sw=2.4)
 text(sif_x+20, by+28, "SIF Assembly", size=15, weight=700, fill=RED)
-text(sif_x+20, by+46, "independent: true \u00b7 SIL 2", size=11.5, fill=RED, weight=700, style="italic")
+text(sif_x+20, by+46, "independent: true \u00b7 silTarget/silAchieved: SIL 2", size=11, fill=RED, weight=700, style="italic")
 sseq = [("S", GREEN, "initiator", "2oo3"), ("SIS", RED, "logic solver", "1oo1"), ("A", GREEN, "final element", "1oo2")]
 sx0 = sif_x + 70
 sstep = (col_w-140)/2
@@ -164,22 +165,23 @@ mid_y = by+75
 parts.append(f'<circle cx="{mid_x}" cy="{mid_y}" r="20" fill="#FFFFFF" stroke="{RED}" stroke-width="2.6"/>')
 line(mid_x-12, mid_y-12, mid_x+12, mid_y+12, stroke=RED, sw=2.6)
 text(mid_x, mid_y+42, "no shared", size=11, fill=RED, weight=700, anchor="middle")
-text(mid_x, mid_y+58, "Control Unit", size=11, fill=RED, weight=700, anchor="middle")
+text(mid_x, mid_y+58, "ControlUnit", size=11, fill=RED, weight=700, anchor="middle")
 
-text(58, p2_y+308, "SIL is a property of the SIF Assembly as a whole, not of a single Device inside it \u2014 votingArchitecture (MooN, IEC 61508) is mandatory per layer, unlike physicalRef (Sub-model 1)", size=12.5, fill=MUTED, style="italic")
+text(58, p2_y+306, "SIL is a property of the SIF Assembly as a whole, not of a single Device inside it \u2014 votingArchitecture (MooN, IEC 61508) is mandatory per layer, unlike physicalRef (Sub-model 1)", size=12.3, fill=MUTED, style="italic")
+text(58, p2_y+325, "silAchieved is calculated from pfdAvg (low-demand) or pfh (high-demand/continuous) \u2014 mutually exclusive, and never asserted without that calculation behind it", size=12.3, fill=MUTED, style="italic")
 
 # ============================================================
 # Panel 3: Interlock Paths — overlaid on the real Sub-model 4 machine
 # ============================================================
-p3_y = p2_y + p2_h + 50
-p3_h = 1040
+p3_y = p2_y + p2_h + 36
+p3_h = 770
 rrect(30, p3_y, W-60, p3_h, stroke=RED, sw=2.2)
 text(58, p3_y+38, "Interlock Paths on the Sub-model 4 State Machine", size=20, weight=700, fill=RED)
 text(58, p3_y+60, "only two lockTypes exist \u2014 each one is an existing transition path, never an arbitrary jump", size=12.5, fill=SOFT)
 
 with open("state_machine_fragment.svg", encoding="utf-8") as f:
     fragment3 = f.read()
-S3, TX3, TY3 = 0.72, 70, p3_y+95
+S3, TX3, TY3 = 0.555, 70, p3_y+95
 parts.append(f'<g transform="translate({TX3},{TY3}) scale({S3})">')
 parts.append(fragment3)
 
@@ -208,25 +210,36 @@ parts.append('</g>')
 
 diagram_bottom = TY3 + 1000*S3
 
-# in-panel legend for the two path colors
-lg_y = diagram_bottom + 30
-line(70, lg_y, 130, lg_y, stroke=INHIBIT_COL, sw=8, dash=None)
-text(144, lg_y+5, "lockType: inhibit \u2014 path to Inhibited", size=13, fill=INK, weight=600)
-line(70, lg_y+30, 130, lg_y+30, stroke=LOCK_COL, sw=8)
-text(144, lg_y+35, "lockType: lock \u2014 path to Locked (continues past Inhibited)", size=13, fill=INK, weight=600)
+# in-panel legend and notes: right-hand column, beside the (narrower) state machine
+rx0 = 860
+lg_y = TY3 + 30
+line(rx0, lg_y, rx0+60, lg_y, stroke=INHIBIT_COL, sw=8, dash=None)
+text(rx0+74, lg_y+5, "lockType: inhibit \u2014 path to Inhibited", size=13, fill=INK, weight=600)
+line(rx0, lg_y+30, rx0+60, lg_y+30, stroke=LOCK_COL, sw=8)
+text(rx0+74, lg_y+35, "lockType: lock \u2014 path to Locked (continues past Inhibited)", size=13, fill=INK, weight=600)
 
-note_y2 = lg_y + 70
-text(58, note_y2, "from On, both lockTypes always route through Emergency Stopping (Category 0) \u2014", size=12.5, fill=MUTED, style="italic")
-text(58, note_y2+20, "Quick/Controlled Stopping return to Standby and are not safety-relevant paths, so an", size=12.5, fill=MUTED, style="italic")
-text(58, note_y2+40, "interlock never uses them. lock reuses the inhibit path from On, then continues to Locked.", size=12.5, fill=MUTED, style="italic")
-text(58, note_y2+64, "from Off, Inhibited is unreachable \u2014 an inhibit-type interlock uses the lock path's final leg", size=12.5, fill=MUTED, style="italic")
-text(58, note_y2+84, "(Off \u2192 Locking \u2192 Locked) directly, rather than blocking Enabling and waiting (Sub-model 16)", size=12.5, fill=MUTED, style="italic")
+note_y2 = lg_y + 90
+notes = [
+    "from On, both lockTypes always route through",
+    "Emergency Stopping (Category 0) \u2014 Quick/Controlled",
+    "Stopping return to Standby and are not safety-relevant",
+    "paths, so an interlock never uses them. lock reuses the",
+    "inhibit path from On, then continues to Locked.",
+    "",
+    "from Off, Inhibited is unreachable \u2014 an inhibit-type",
+    "interlock uses the lock path's final leg",
+    "(Off \u2192 Locking \u2192 Locked) directly, rather than blocking",
+    "Enabling and waiting (Sub-model 21).",
+]
+for i, n in enumerate(notes):
+    if n:
+        text(rx0, note_y2 + i*19, n, size=12.3, fill=MUTED, style="italic")
 
 # ============================================================
 # Panel 4: Stop categories — confirming Sub-model 4 against IEC 60204-1
 # ============================================================
-p4_y = p3_y + p3_h + 50
-p4_h = 190
+p4_y = p3_y + p3_h + 24
+p4_h = 175
 rrect(30, p4_y, W-60, p4_h, stroke=NAVY, sw=2.2)
 text(58, p4_y+38, "Stop Categories \u2014 Confirmed Against IEC 60204-1", size=20, weight=700, fill=NAVY)
 text(58, p4_y+60, "the three stop states from Sub-model 4 map directly \u2014 no change needed", size=12.5, fill=SOFT)
@@ -237,7 +250,7 @@ rows = [
     ("Emergency Stopping", "Category 0", "power removed immediately"),
 ]
 rx0 = 58
-ry0 = p4_y + 92
+ry0 = p4_y + 86
 col1, col2, col3 = 0, 330, 560
 for i, (a, b, c) in enumerate(rows):
     yy = ry0 + i*30
@@ -247,9 +260,55 @@ for i, (a, b, c) in enumerate(rows):
     text(rx0+col3, yy, c, size=12.5, fill=MUTED)
 
 # ============================================================
+# Panel 5: Machine Safety (ISO 13849-1 / IEC 62061) and Safe Motion (IEC 61800-5-2)
+# ============================================================
+p5_y = p4_y + p4_h + 22
+p5_h = 280
+rrect(30, p5_y, W-60, p5_h, stroke=RED, sw=2.2)
+text(58, p5_y+38, "Machine Safety and Safe Motion — Extending Interlock Beyond IEC 61508/61511", size=20, weight=700, fill=RED)
+text(58, p5_y+60, "safetyStandard picks which rating system an Interlock was engineered against; SafeMotionFunction is reused unchanged from IEC 61800-5-2", size=12.3, fill=SOFT)
+
+msx, msy, msw, msh = 58, p5_y+92, 700, 168
+rrect(msx, msy, msw, msh, stroke=NAVY, sw=2.2, rx=8)
+text(msx+16, msy+24, "Interlock — machine-safety fields", size=13.5, weight=700, fill=NAVY)
+ms_attrs = [
+    "+ safetyStandard : IEC61508-SIL |",
+    "    ISO13849-PL | IEC62061-SIL",
+    "+ performanceLevel : a|b|c|d|e | null",
+    "+ architectureCategory : B|1|2|3|4|null",
+]
+ay = msy+48
+for a in ms_attrs:
+    text(msx+16, ay, a, size=10.8, fill=MUTED, family="Consolas, Menlo, monospace")
+    ay += 18
+text(msx+16, msy+msh-38, "performanceLevel/architectureCategory set only when", size=10.3, fill=SOFT, style="italic")
+text(msx+16, msy+msh-23, "safetyStandard: ISO13849-PL — never alongside", size=10.3, fill=SOFT, style="italic")
+text(msx+16, msy+msh-8, "silTarget/silAchieved on the same Interlock.", size=10.3, fill=SOFT, style="italic")
+
+smx, smy, smw, smh = 838, p5_y+92, 700, 168
+rrect(smx, smy, smw, smh, stroke=RED, sw=2.2, rx=8)
+text(smx+16, smy+24, "SafeMotionFunction [IEC 61800-5-2]", size=13.5, weight=700, fill=RED)
+sm_attrs = [
+    "+ device : DeviceRef",
+    "+ supportedFunctions : (STO | SS1 | SS2 |",
+    "    SOS | SLS | SDI | SLP)[]",
+    "+ stoCategory : Category (0-2)",
+]
+ay = smy+48
+for a in sm_attrs:
+    text(smx+16, ay, a, size=10.8, fill=MUTED, family="Consolas, Menlo, monospace")
+    ay += 18
+text(smx+16, smy+smh-38, "a property set, not a peer class — lives on the", size=10.3, fill=SOFT, style="italic")
+text(smx+16, smy+smh-23, "canonical VFD/Servo Drive Device (Sub-model 1 §5.3),", size=10.3, fill=SOFT, style="italic")
+text(smx+16, smy+smh-8, "always both ControlUnit and SignalConverter.", size=10.3, fill=SOFT, style="italic")
+
+line(msx+msw, msy+36, smx, smy+36, stroke=GRAY_DASH, sw=1.6, dash="4,4")
+text((msx+msw+smx)/2, msy+28, "independent", size=10, fill=SOFT, anchor="middle", style="italic")
+
+# ============================================================
 # Legend
 # ============================================================
-leg_y = p4_y + p4_h + 55
+leg_y = p5_y + p5_h + 40
 line(60, leg_y-15, W-60, leg_y-15, stroke=LINE, sw=1)
 text(60, leg_y+8, "LEGEND", size=12, fill=SOFT, spacing="1.6")
 
@@ -264,7 +323,7 @@ parts.append(f'<circle cx="900" cy="{ly2}" r="13" fill="#FFFFFF" stroke="{RED}" 
 line(900-8, ly2-8, 900+8, ly2+8, stroke=RED, sw=2)
 text(922, ly2+5, "physical independence required", size=13, fill=INK)
 
-final_h = int(ly2 + 60)
+final_h = int(ly2 + 45)
 parts.append("</svg>")
 
 svg_body = "\n".join(parts)

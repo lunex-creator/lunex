@@ -21,6 +21,7 @@ def rrect(x, y, w, h, rx=12, fill="#FFFFFF", stroke=NAVY, sw=2, dash=None):
     parts.append(f'<rect x="{x}" y="{y}" width="{w}" height="{h}" rx="{rx}" fill="{fill}" stroke="{stroke}" stroke-width="{sw}"{d}/>')
 
 def text(x, y, s, size=13, weight=400, fill=INK, anchor="start", style="normal", family=None, spacing=None):
+    s = (len(s) - len(s.lstrip(' '))) * '\u00a0' + s.lstrip(' ')   # keep leading indentation visible in SVG
     fam = f' font-family="{family}"' if family else ""
     sp = f' letter-spacing="{spacing}"' if spacing else ""
     it = f' font-style="{style}"' if style != "normal" else ""
@@ -76,7 +77,7 @@ line(lx+15, 202, lx+lw-15, 202, stroke=LINE, sw=1)
 attrs = [
     "+ id : string", "+ tag : string", "+ class : Class", "+ parent : LunexObject",
     "+ state : State", "+ health : Health", "+ coordinates : {lat,lon}|null",
-    "+ properties : Map<Key,Value>", "+ methods() : Procedure[]",
+    "+ properties : Map<Key,Value>", "+ owner : RoleRef|null", "+ methods() : Procedure[]",
 ]
 ay = 222
 for a in attrs:
@@ -127,12 +128,12 @@ comp_card_bottom = ccy + cch
 row_y, row_h = 740, 100
 centers = [230, 540, 850, 1160, 1470]
 box_w = 220
-names = ["Sensor", "Transducer", "Control Unit", "Signal Converter", "Actuator"]
+names = ["Sensor", "Transducer", "ControlUnit", "SignalConverter", "Actuator"]
 func_of = {
     "Sensor": ("Sensing", GREEN),
     "Transducer": ("Converting", BLUE),
-    "Control Unit": ("Controlling", NAVY),
-    "Signal Converter": ("Converting", BLUE),
+    "ControlUnit": ("Controlling", NAVY),
+    "SignalConverter": ("Converting", BLUE),
     "Actuator": ("Actuating", GREEN),
 }
 
@@ -140,7 +141,7 @@ box_coords = {}
 # spread arrival points across Device's bottom edge, in the same left-to-right
 # order as the source boxes, so the five inheritance lines fan out without crossing
 arrival_xs = [dx + dw*0.09, dx + dw*0.30, dx + dw*0.5, dx + dw*0.70, dx + dw*0.91]
-lollipop_side = {"Sensor": -1, "Transducer": -1, "Control Unit": 1, "Signal Converter": 1, "Actuator": 1}
+lollipop_side = {"Sensor": -1, "Transducer": -1, "ControlUnit": 1, "SignalConverter": 1, "Actuator": 1}
 
 for cx, name, arrival_x in zip(centers, names, arrival_xs):
     bx = cx - box_w/2
@@ -154,7 +155,7 @@ for cx, name, arrival_x in zip(centers, names, arrival_xs):
         path(f"M {cx} {row_y} L 1280 732 L {arrival_x} {dy+dh}", stroke=NAVY, sw=1.8, marker_end="tri-hollow")
     else:
         path(f"M {cx} {row_y} L {arrival_x} {dy+dh}", stroke=NAVY, sw=1.8, marker_end="tri-hollow")
-    lp_x = cx + 70*lollipop_side[name]
+    lp_x = cx + (88 if name == "Actuator" else 70*lollipop_side[name])
     lp_y = row_y - 46
     func, col = func_of[name]
     line(lp_x, row_y, lp_x, lp_y+9, stroke=col, sw=2)
@@ -166,8 +167,8 @@ card_y = row_y + row_h + 40
 derived = {
     "Sensor": ["Load Cell", "Encoder", "Pressure Sensor", "Temperature Sensor", "Energy Meter", ("E-stop Button", "safety")],
     "Transducer": ["4-20mA Transmitter", "Signal Amplifier"],
-    "Control Unit": ["PLC", "DCS", "Microcontroller", "AIControlUnit", "VFD / Servo Drive *", ("Safety PLC / SIS", "safety"), ("Firewall / IDS", "security")],
-    "Signal Converter": ["Relay", "Soft Starter", "Solenoid Driver", "3/2-way Pilot", "VFD / Servo Drive *"],
+    "ControlUnit": ["PLC", "DCS", "Microcontroller", "AIControlUnit", "VFD / Servo Drive *", ("Safety PLC / SIS", "safety"), ("Firewall / IDS", "security")],
+    "SignalConverter": ["Relay", "Soft Starter", "Solenoid Driver", "3/2-way Pilot", "VFD / Servo Drive *"],
     "Actuator": ["Valve", "Motor", "Heater", "Pump", ("Shutdown Valve", "safety")],
 }
 card_bottom_max = card_y
@@ -217,7 +218,7 @@ text(60, ly2+68, "* VFD / Servo Drive appears under both classes \u2014 one phys
 # ============================================================
 # Cross-cutting peers of Device & Component, added by later sub-models
 # ============================================================
-sec_y = ly2 + 110
+sec_y = ly2 + 90
 line(60, sec_y-20, 1640, sec_y-20, stroke=LINE, sw=1)
 text(60, sec_y+10, "Peers of Device & Component \u2014 Added by Later Sub-models", size=19, weight=700, fill=INK)
 text(60, sec_y+32, "same base class, same rules \u2014 none of these needed a new class tree of their own", size=12.5, fill=SOFT)
@@ -229,59 +230,72 @@ rrect(lo2_x, lo2_y, lo2_w, lo2_h, stroke=NAVY, sw=2, rx=8)
 text(850, lo2_y+24, "LunexObject", size=14, weight=700, fill=NAVY, anchor="middle")
 text(850, lo2_y+42, "\u00ababstract\u00bb", size=10.5, fill=SOFT, anchor="middle", style="italic")
 
-peer_names = ["Interlock", "Zone", "Conduit", "Alarm", "GuidanceRecommendation", "PredictedEvent", "ImprovementRecommendation", "Operator"]
-peer_sm = ["5", "6", "6", "10", "12", "15", "15", "1"]
-peer_desc = ["forces/blocks a", "security grouping,", "governed crossing", "priority = severity", "simulated scenarios,", "a forward-looking", "always requires", "resolves"]
-peer_desc2 = ["transition", "target/achieved SL", "between two Zones", "\u00d7 actionable", "golden optional", "claim, raised into Alarm", "human approval", "OperatorRef elsewhere"]
+# Row 1: nine peers; row 2: the four added alongside the security/governance sub-models.
+# Both rows are centered so the LunexObject trunk at x=850 lands in a box GAP, not a box.
+row1_names = ["RecipeExecution", "Interlock", "Zone", "Conduit", "Alarm", "GuidanceRecommendation", "PredictedEvent", "ImprovementRecommendation"]
+row1_sm   = ["5", "6", "7", "7", "15", "17", "20", "20"]
+row1_d1   = ["one execution of", "forces/blocks a", "security grouping,", "governed crossing", "priority = severity", "simulated scenarios,", "a forward-looking", "always requires"]
+row1_d2   = ["a Recipe", "a transition", "target/achieved SL", "between two Zones", "\u00d7 actionable", "golden optional", "claim, raised into Alarm", "human approval"]
 
-n_peer = len(peer_names)
-peer_box_w = 190
-peer_gap = 10
-total_peer_w = n_peer*peer_box_w + (n_peer-1)*peer_gap
-start_x = 850 - total_peer_w/2
-peer_centers = [start_x + i*(peer_box_w+peer_gap) + peer_box_w/2 for i in range(n_peer)]
+row2_names = ["Operator", "Identity", "SecurityIncident", "ChangeRequest", "ChangePolicy"]
+row2_sm   = ["1", "8", "10", "13", "13"]
+row2_d1   = ["resolves", "human or non-human", "cybersecurity event,", "governed approval", "standing approval rule,"]
+row2_d2   = ["OperatorRef elsewhere", "actor, acts on the model", "own lifecycle, peer of Alarm", "workflow for any object", "a ChangeRequest resolves against"]
 
-bus_y = lo2_y + lo2_h + 40
-peer_row_y = bus_y + 55
-peer_box_h = 100
+def peer_row(names, sms, d1s, d2s, box_w, box_h, bus_y, font_sz=11):
+    n = len(names)
+    gap = 10
+    total_w = n*box_w + (n-1)*gap
+    centers = [850 - total_w/2 + i*(box_w+gap) + box_w/2 for i in range(n)]
+    if n % 2 == 1:
+        centers = [c + (box_w+gap)/2 for c in centers]
+    row_y = bus_y + 42
+    line(centers[0], bus_y, centers[-1], bus_y, stroke=NAVY, sw=1.6)
+    for cx, name, sm, d1, d2 in zip(centers, names, sms, d1s, d2s):
+        bx = cx - box_w/2
+        line(cx, bus_y, cx, row_y, stroke=NAVY, sw=1.6)
+        rrect(bx, row_y, box_w, box_h, stroke=RED, sw=2, rx=8)
+        text(cx, row_y+24, name, size=font_sz, weight=700, fill=RED, anchor="middle", family="Consolas, Menlo, monospace")
+        text(cx, row_y+46, d1, size=10, fill=MUTED, anchor="middle")
+        text(cx, row_y+61, d2, size=10, fill=MUTED, anchor="middle")
+        text(cx+box_w/2-10, row_y+box_h-10, "Sub-model " + sm, size=9.5, fill=SOFT, anchor="end")
+    return row_y + box_h, centers
 
-line(850, lo2_y+lo2_h, 850, bus_y, stroke=NAVY, sw=2, marker_end="tri-hollow")
-line(peer_centers[0], bus_y, peer_centers[-1], bus_y, stroke=NAVY, sw=1.6)
+bus1_y = lo2_y + lo2_h + 28
+peer_box_h = 88
+line(850, lo2_y+lo2_h, 850, bus1_y, stroke=NAVY, sw=2, marker_end="tri-hollow")
+row1_bottom, row1_centers = peer_row(row1_names, row1_sm, row1_d1, row1_d2, 184, peer_box_h, bus1_y, font_sz=10.3)
 
-for cx, name, sm, d1, d2 in zip(peer_centers, peer_names, peer_sm, peer_desc, peer_desc2):
-    bx = cx - peer_box_w/2
-    line(cx, bus_y, cx, peer_row_y, stroke=NAVY, sw=1.6)
-    rrect(bx, peer_row_y, peer_box_w, peer_box_h, stroke=RED, sw=2, rx=8)
-    text(cx, peer_row_y+26, name, size=11, weight=700, fill=RED, anchor="middle", family="Consolas, Menlo, monospace")
-    text(cx, peer_row_y+50, d1, size=10, fill=MUTED, anchor="middle")
-    text(cx, peer_row_y+66, d2, size=10, fill=MUTED, anchor="middle")
-    text(cx+peer_box_w/2-10, peer_row_y+90, "Sub-model " + sm, size=9.5, fill=SOFT, anchor="end")
+bus2_y = row1_bottom + 46
+line(850, bus1_y, 850, bus2_y, stroke=NAVY, sw=1.6, dash="4,4")
+row2_bottom, row2_centers = peer_row(row2_names, row2_sm, row2_d1, row2_d2, 230, peer_box_h, bus2_y, font_sz=12)
 
-text(60, peer_row_y+peer_box_h+32, "most peers follow the pattern set by Interlock (Sub-model 5): their own id, own state, and a reference back to the Device they concern \u2014 Operator is the exception, minimal by design (Sub-model 1 \u00a75.2)", size=12, fill=MUTED, style="italic")
-text(60, peer_row_y+peer_box_h+54, "PredictedEvent.state: Open | Confirmed | Dismissed | Expired \u00b7 ImprovementRecommendation.state: Proposed | UnderReview | Approved | Rejected | Applied", size=11.5, fill=SOFT, style="italic", family="Consolas, Menlo, monospace")
+text(60, row2_bottom+26, "most peers follow the pattern set by Interlock (Sub-model 6): their own id, own state, and a reference back to the object they concern \u2014 Operator is the exception, minimal by design (Sub-model 1 \u00a75.2)", size=12, fill=MUTED, style="italic")
+text(60, row2_bottom+46, "PredictedEvent.state: Open|Confirmed|Dismissed|Expired \u00b7 ImprovementRecommendation.state: Proposed|UnderReview|Approved|Rejected|Applied \u00b7 ChangeRequest/SecurityIncident: own lifecycles (Sub-model 13/10)", size=11.3, fill=SOFT, style="italic", family="Consolas, Menlo, monospace")
+peer_section_bottom = row2_bottom + 46
 
 # ============================================================
 # New panel: physicalRef — functional identity vs shared physical hardware
 # ============================================================
-p3_y = peer_row_y + peer_box_h + 100
+p3_y = peer_section_bottom + 55
 line(60, p3_y-20, 1640, p3_y-20, stroke=LINE, sw=1)
 text(60, p3_y+10, "physicalRef \u2014 One Physical Asset, Many Functional Roles", size=19, weight=700, fill=INK)
 text(60, p3_y+32, "optional on Device \u2014 targets whichever unit is actually shared: the Device itself, or one Component inside it", size=12.5, fill=SOFT)
 
 attr_x, attr_y, attr_w = 60, p3_y+62, 640
-rrect(attr_x, attr_y, attr_w, 74, stroke=NAVY, sw=2, rx=8)
+rrect(attr_x, attr_y, attr_w, 82, stroke=NAVY, sw=2, rx=8)
 text(attr_x+18, attr_y+28, "Device {", size=13, fill=MUTED, family="Consolas, Menlo, monospace")
 text(attr_x+18, attr_y+50, "  physicalRef : DeviceRef | ComponentRef | null", size=12, fill=RED, weight=700, family="Consolas, Menlo, monospace")
 text(attr_x+18, attr_y+68, "}", size=13, fill=MUTED, family="Consolas, Menlo, monospace")
 
 oop_x = attr_x + attr_w + 40
-rrect(oop_x, attr_y, 940, 74, stroke=BLUE, sw=1.6, rx=8, fill="#FFFFFF")
+rrect(oop_x, attr_y, 900, 82, stroke=BLUE, sw=1.6, rx=8, fill="#FFFFFF")
 text(oop_x+18, attr_y+22, "cf. OOP: the Proxy / Flyweight pattern \u2014 several instances, each with their own identity, sharing one implementation", size=11.5, fill=MUTED, style="italic")
 text(oop_x+18, attr_y+40, "single-CPU rack \u2192 physicalRef targets the Device itself, one shared asset for every role", size=11.5, fill=MUTED, style="italic")
 text(oop_x+18, attr_y+58, "omitted \u2192 the instance is assumed to be its own unique physical device", size=11.5, fill=SOFT, style="italic")
 
 # one combined illustration: a rack with two independent CPU components
-rack_x, rack_y, rack_w, rack_h = 610, attr_y+74+40, 480, 110
+rack_x, rack_y, rack_w, rack_h = 610, attr_y+82+28, 480, 110
 rrect(rack_x, rack_y, rack_w, rack_h, stroke=SOFT, sw=1.6, rx=8, dash="5,4")
 text(rack_x+rack_w/2, rack_y+20, "Device: PLC-Rack-04", size=12, weight=700, fill=SOFT, anchor="middle", family="Consolas, Menlo, monospace")
 
@@ -294,7 +308,7 @@ for cx, label in [(cpuA_x, "CPU-A : Processor"), (cpuB_x, "CPU-B : Processor")]:
     text(cx+cpu_w/2, cpu_y+22, label, size=11, weight=700, fill=NAVY, anchor="middle", family="Consolas, Menlo, monospace")
     text(cx+cpu_w/2, cpu_y+40, "\u00ababstract\u00bb Component", size=9, fill=SOFT, anchor="middle", style="italic")
 
-tag2_y = rack_y + rack_h + 55
+tag2_y = rack_y + rack_h + 42
 tag2_positions = [
     ("PressureLoop-3.CU", 200, cpuA_x+cpu_w/2, "physicalRef \u2192 CPU-A"),
     ("TempLoop-7.CU", 780, cpuA_x+cpu_w/2, "physicalRef \u2192 CPU-A"),
@@ -310,12 +324,12 @@ for label, x, target_x, sublabel in tag2_positions:
 text(60, tag2_y+72, "multi-CPU rack \u2192 physicalRef targets the specific Processor Component: two loops share CPU-A (patching it affects both together), one runs on independent CPU-B", size=12, fill=MUTED, style="italic")
 text(60, tag2_y+92, "each Processor Component still has its own id (Sub-model 1) \u2014 \u201cnot independently addressable\u201d means not reachable directly on the network, not \u201cwithout identity\u201d", size=11.5, fill=SOFT, style="italic")
 
-integ_y = tag2_y + 128
+integ_y = tag2_y + 108
 rrect(60, integ_y, 1580, 60, stroke=GREEN, sw=2, rx=8, fill="#FFFFFF")
 text(84, integ_y+24, "confirms Sub-model 3's Integrated shape:", size=13, weight=700, fill=GREEN)
 text(84, integ_y+44, "when every role in one Assembly's chain (S\u2192T\u2192CU\u2192SC\u2192A) shares the same physicalRef, that IS what \u201cIntegrated\u201d means \u2014 now checkable, not just assumed", size=11.5, fill=MUTED)
 
-final_h = int(integ_y + 60 + 55)
+final_h = int(integ_y + 60 + 40)
 parts.append("</svg>")
 
 svg = "\n".join(parts)

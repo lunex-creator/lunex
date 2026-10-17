@@ -21,6 +21,7 @@ def rrect(x, y, w, h, rx=10, fill="#FFFFFF", stroke=NAVY, sw=2, dash=None):
     parts.append(f'<rect x="{x}" y="{y}" width="{w}" height="{h}" rx="{rx}" fill="{fill}" stroke="{stroke}" stroke-width="{sw}"{d}/>')
 
 def text(x, y, s, size=13, weight=400, fill=INK, anchor="start", style="normal", family=None, spacing=None):
+    s = (len(s) - len(s.lstrip(' '))) * '\u00a0' + s.lstrip(' ')   # keep leading indentation visible in SVG
     fam = f' font-family="{family}"' if family else ""
     sp = f' letter-spacing="{spacing}"' if spacing else ""
     it = f' font-style="{style}"' if style != "normal" else ""
@@ -140,7 +141,7 @@ oos_y = panel_y + panel_h + 40
 rrect(30, oos_y, W-60, 84, rx=10, stroke=GRAY_DASH, sw=1.6, dash="6,4", fill="#FFFFFF")
 text(54, oos_y+30, "Out of scope here: collective status across the hierarchy.", size=13, fill=SOFT, weight=600, style="italic")
 text(54, oos_y+52, "A child can carry more than one condition at once (e.g. Inhibited and Emergency Stopping", size=12.5, fill=SOFT, style="italic")
-text(54, oos_y+70, "together) \u2014 that is not a simple worst-case reduction and is described in Sub-model 9 (Collective Status / Rollup).", size=12.5, fill=SOFT, style="italic")
+text(54, oos_y+70, "together) \u2014 that is not a simple worst-case reduction and is described in Sub-model 14 (Collective Status / Rollup).", size=12.5, fill=SOFT, style="italic")
 
 # ============================================================
 # Formal link note

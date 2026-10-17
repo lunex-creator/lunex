@@ -21,6 +21,7 @@ def rrect(x, y, w, h, rx=10, fill="#FFFFFF", stroke=NAVY, sw=2, dash=None):
     parts.append(f'<rect x="{x}" y="{y}" width="{w}" height="{h}" rx="{rx}" fill="{fill}" stroke="{stroke}" stroke-width="{sw}"{d}/>')
 
 def text(x, y, s, size=13, weight=400, fill=INK, anchor="start", style="normal", family=None, spacing=None):
+    s = (len(s) - len(s.lstrip(' '))) * '\u00a0' + s.lstrip(' ')   # keep leading indentation visible in SVG
     fam = f' font-family="{family}"' if family else ""
     sp = f' letter-spacing="{spacing}"' if spacing else ""
     it = f' font-style="{style}"' if style != "normal" else ""
@@ -80,9 +81,9 @@ head = f'''<svg xmlns="http://www.w3.org/2000/svg" font-family="Inter, Segoe UI,
 parts.append(head)
 BG_INSERT_INDEX = len(parts)
 
-text(60, 56, "LUNEX — SUB-MODEL 12", size=14, fill=SOFT, spacing="2.5")
+text(60, 56, "LUNEX — SUB-MODEL 17", size=14, fill=SOFT, spacing="2.5")
 text(60, 86, "Scenario Simulation & Operator Guidance", size=26, weight=600, fill=INK)
-text(60, 110, "AI-driven, not just alarm-triggered \u2014 tested on the Digital Twin (Sub-model 7) before the operator ever sees it", size=13, fill=SOFT)
+text(60, 110, "AI-driven, not just alarm-triggered \u2014 tested on the Digital Twin (Sub-model 11) before the operator ever sees it", size=13, fill=SOFT)
 
 # ============================================================
 # Panel 1: GuidanceRecommendation & ScenarioResult
@@ -128,7 +129,7 @@ for a in sattrs:
 line(gx+gw, gy+gh/2, sx, sy+sh_/2, stroke=NAVY, sw=1.8, marker_start="diamond-navy")
 text((gx+gw+sx)/2, gy+gh/2-10, "0..*", size=11.5, fill=SOFT, style="italic", anchor="middle")
 
-text(58, p1_y+350, "tested on the Digital Twin, not the physical Device \u2014 a wrong scenario costs nothing (Sub-model 7)", size=12, fill=MUTED, style="italic")
+text(58, p1_y+350, "tested on the Digital Twin, not the physical Device \u2014 a wrong scenario costs nothing (Sub-model 11)", size=12, fill=MUTED, style="italic")
 
 # ============================================================
 # Panel 2: Two sources, one operator screen
@@ -145,7 +146,7 @@ sim_x = arp_x + colw + 60
 by = p2_y+100
 
 rrect(arp_x, by, colw, 130, stroke=SOFT, sw=2, fill="#FFFFFF")
-text(arp_x+24, by+30, "ARP (Sub-model 11)", size=14.5, weight=700, fill=SOFT)
+text(arp_x+24, by+30, "ARP (Sub-model 16)", size=14.5, weight=700, fill=SOFT)
 text(arp_x+24, by+52, "source: procedural", size=11.5, fill=SOFT, style="italic", family="Consolas, Menlo, monospace")
 text(arp_x+24, by+80, "static, engineer-written \u2014", size=12, fill=MUTED)
 text(arp_x+24, by+100, "same text every time", size=12, fill=MUTED)
@@ -185,7 +186,7 @@ col_w3 = (W-60-80-40)/3
 cols3 = [60, 60+col_w3+20, 60+2*(col_w3+20)]
 policies = [
     ("always", GREEN, "every operator action is simulated first", "highest assurance, highest compute cost"),
-    ("risk-based", BLUE, "simulated only if predicted worst-case", "\u2265 Tier 1 (Sub-model 9) \u2014 the middle ground"),
+    ("risk-based", BLUE, "simulated only if predicted worst-case", "\u2265 Tier 1 (Sub-model 14) \u2014 the middle ground"),
     ("none", SOFT, "no automatic trigger \u2014 relies entirely on", "manualOverrideAvailable below"),
 ]
 for (name, col, l1, l2), x in zip(policies, cols3):
@@ -209,7 +210,7 @@ text(84, ex_y+58, "\u2022 setpoint nudge within normal band \u2192 predicted wor
 text(84, ex_y+80, "\u2022 setpoint change approaching an Interlock's trip point \u2192 predicted worst-case reaches Tier 1 \u2192", size=12, fill=MUTED)
 text(84, ex_y+100, "  simulation runs automatically, operator sees scenarios before confirming", size=12, fill=MUTED)
 
-text(58, ex_y+160, "Priority 1/2 alarms (Sub-model 10) are always simulated \u2014 actionable + high severity already implies the threshold is met", size=12, fill=MUTED, style="italic")
+text(58, ex_y+160, "Priority 1/2 alarms (Sub-model 15) are always simulated \u2014 actionable + high severity already implies the threshold is met", size=12, fill=MUTED, style="italic")
 
 # ============================================================
 # Legend

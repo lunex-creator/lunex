@@ -21,6 +21,7 @@ def rrect(x, y, w, h, rx=10, fill="#FFFFFF", stroke=NAVY, sw=2, dash=None):
     parts.append(f'<rect x="{x}" y="{y}" width="{w}" height="{h}" rx="{rx}" fill="{fill}" stroke="{stroke}" stroke-width="{sw}"{d}/>')
 
 def text(x, y, s, size=13, weight=400, fill=INK, anchor="start", style="normal", family=None, spacing=None, halo=False):
+    s = (len(s) - len(s.lstrip(' '))) * '\u00a0' + s.lstrip(' ')   # keep leading indentation visible in SVG
     fam = f' font-family="{family}"' if family else ""
     sp = f' letter-spacing="{spacing}"' if spacing else ""
     it = f' font-style="{style}"' if style != "normal" else ""
@@ -81,17 +82,17 @@ head = f'''<svg xmlns="http://www.w3.org/2000/svg" font-family="Inter, Segoe UI,
 parts.append(head)
 BG_INSERT_INDEX = len(parts)
 
-text(60, 56, "LUNEX — SUB-MODEL 11", size=14, fill=SOFT, spacing="2.5")
+text(60, 56, "LUNEX — SUB-MODEL 16", size=14, fill=SOFT, spacing="2.5")
 text(60, 86, "Alarm Response Guidance", size=26, weight=600, fill=INK)
-text(60, 110, "ISA-18.2 response procedures \u2014 actionable (Sub-model 10) says the operator CAN act; this says HOW", size=13, fill=SOFT)
+text(60, 110, "ISA-18.2 response procedures \u2014 actionable (Sub-model 15) says the operator CAN act; this says HOW", size=13, fill=SOFT)
 
 # ============================================================
-# Panel 1: Alarm Response Procedure — a reusable template
+# Panel 1: AlarmResponseProcedure — a reusable template
 # ============================================================
 p1_y = 145
 p1_h = 400
 rrect(30, p1_y, W-60, p1_h, stroke=BLUE, sw=2.2)
-text(58, p1_y+38, "Alarm Response Procedure (ARP) \u2014 a Reusable Template", size=20, weight=700, fill=BLUE)
+text(58, p1_y+38, "AlarmResponseProcedure (ARP) \u2014 a Reusable Template", size=20, weight=700, fill=BLUE)
 text(58, p1_y+60, "tied to the alarm TYPE, not to each Alarm instance \u2014 same template pattern as the Inventory (Sub-model 1)", size=12.5, fill=SOFT)
 
 at_x, at_y, at_w, at_h = 60, p1_y+100, 620, 220
@@ -133,13 +134,13 @@ text(al_x0, al_y-45, "3 alarms of the same type", size=12, weight=700, fill=SOFT
 text(58, p1_y+370, "one ARP serves every alarm of that type \u2014 not duplicated per instance, and updated in exactly one place", size=12, fill=MUTED, style="italic")
 
 # ============================================================
-# Panel 2: Mandatory for Priority 1/2 (Sub-model 10)
+# Panel 2: Mandatory for Priority 1/2 (Sub-model 15)
 # ============================================================
 p2_y = p1_y + p1_h + 50
 p2_h = 340
 rrect(30, p2_y, W-60, p2_h, stroke=BLUE, sw=2.2)
 text(58, p2_y+38, "Mandatory Where It Matters", size=20, weight=700, fill=BLUE)
-text(58, p2_y+60, "reuses the Priority Matrix from Sub-model 10 \u2014 no new severity scale invented", size=12.5, fill=SOFT)
+text(58, p2_y+60, "reuses the Priority Matrix from Sub-model 15 \u2014 no new severity scale invented", size=12.5, fill=SOFT)
 
 gx, gy = 340, p2_y+110
 cell_w, cell_h = 420, 90
@@ -165,13 +166,13 @@ with open("./lunex-arp-model.svg.partial", "w") as f:
 print("part2 ok")
 
 # ============================================================
-# Panel 3: Context at the moment it matters — reusing Sub-model 7
+# Panel 3: Context at the moment it matters — reusing Sub-model 11
 # ============================================================
 p3_y = p2_y + p2_h + 50
 p3_h = 380
 rrect(30, p3_y, W-60, p3_h, stroke=BLUE, sw=2.2)
 text(58, p3_y+38, "Context at the Moment It Matters", size=20, weight=700, fill=BLUE)
-text(58, p3_y+60, "no new data source \u2014 the alarm screen surfaces relationships the Context Layer (Sub-model 7) already has", size=12.5, fill=SOFT)
+text(58, p3_y+60, "no new data source \u2014 the alarm screen surfaces relationships the Context Layer (Sub-model 11) already has", size=12.5, fill=SOFT)
 
 acx, acy = 260, p3_y+200
 rrect(acx-110, acy-40, 220, 80, rx=10, stroke=RED, sw=2.4, fill="#FFFFFF")

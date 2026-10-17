@@ -21,6 +21,7 @@ def rrect(x, y, w, h, rx=10, fill="#FFFFFF", stroke=NAVY, sw=2, dash=None):
     parts.append(f'<rect x="{x}" y="{y}" width="{w}" height="{h}" rx="{rx}" fill="{fill}" stroke="{stroke}" stroke-width="{sw}"{d}/>')
 
 def text(x, y, s, size=13, weight=400, fill=INK, anchor="start", style="normal", family=None, spacing=None):
+    s = (len(s) - len(s.lstrip(' '))) * '\u00a0' + s.lstrip(' ')   # keep leading indentation visible in SVG
     fam = f' font-family="{family}"' if family else ""
     sp = f' letter-spacing="{spacing}"' if spacing else ""
     it = f' font-style="{style}"' if style != "normal" else ""
@@ -72,28 +73,28 @@ head = f'''<svg xmlns="http://www.w3.org/2000/svg" font-family="Inter, Segoe UI,
 parts.append(head)
 BG_INSERT_INDEX = len(parts)
 
-text(60, 56, "LUNEX — SUB-MODEL 16", size=14, fill=SOFT, spacing="2.5")
+text(60, 56, "LUNEX — SUB-MODEL 21", size=14, fill=SOFT, spacing="2.5")
 text(60, 86, "Closed-Loop AI Control", size=26, weight=600, fill=INK)
 text(60, 110, "an AI model that adjusts the process daily, treated as an Assembly \u2014 almost nothing here is new", size=13, fill=SOFT)
 
 # ============================================================
-# Panel 1: AIControlUnit — a Control Unit subclass, in an Assembly
+# Panel 1: AIControlUnit — a ControlUnit subclass, in an Assembly
 # ============================================================
 p1_y = 145
 p1_h = 330
 rrect(30, p1_y, W-60, p1_h, stroke=BLUE, sw=2.2)
-text(58, p1_y+38, "AIControlUnit \u2014 a Control Unit Subclass, Not a New Branch", size=20, weight=700, fill=BLUE)
+text(58, p1_y+38, "AIControlUnit \u2014 a ControlUnit Subclass, Not a New Branch", size=20, weight=700, fill=BLUE)
 text(58, p1_y+60, "sits in a Point-to-Point or Star Assembly (Sub-model 3) exactly like a PLC would", size=12.5, fill=SOFT)
 
 cu_x, cu_y, cu_w, cu_h = 90, p1_y+100, 220, 56
 rrect(cu_x, cu_y, cu_w, cu_h, stroke=NAVY, sw=2, rx=8)
-text(cu_x+cu_w/2, cu_y+24, "Control Unit", size=13.5, weight=700, fill=NAVY, anchor="middle")
+text(cu_x+cu_w/2, cu_y+24, "ControlUnit", size=13.5, weight=700, fill=NAVY, anchor="middle")
 text(cu_x+cu_w/2, cu_y+42, "extends Device (Sub-model 1)", size=10, fill=SOFT, anchor="middle", style="italic")
 
 ai_x, ai_y, ai_w, ai_h = 90, p1_y+195, 220, 60
 rrect(ai_x, ai_y, ai_w, ai_h, stroke=BLUE, sw=2.4, rx=8)
 text(ai_x+ai_w/2, ai_y+26, "AIControlUnit", size=14.5, weight=700, fill=BLUE, anchor="middle")
-text(ai_x+ai_w/2, ai_y+46, "extends Control Unit", size=10.5, fill=SOFT, anchor="middle", style="italic")
+text(ai_x+ai_w/2, ai_y+46, "extends ControlUnit", size=10.5, fill=SOFT, anchor="middle", style="italic")
 path(f"M {ai_x+ai_w/2} {ai_y} L {cu_x+cu_w/2} {cu_y+cu_h}", stroke=NAVY, sw=2, marker_end="tri-hollow")
 
 at_x, at_y, at_w, at_h = 400, p1_y+100, 560, 190
@@ -124,7 +125,7 @@ for i, s in enumerate(seq):
 text(seq_x0+1.5*step, seq_y-40, "an ordinary Point-to-Point Assembly", size=11.5, fill=SOFT, style="italic", anchor="middle")
 text(seq_x0+1.5*step, seq_y+45, "\u2014 the AI just occupies the CU slot", size=11.5, fill=SOFT, style="italic", anchor="middle")
 
-text(58, p1_y+300, "no new topology, no new hierarchy level \u2014 an AIControlUnit is deployed exactly like any other Control Unit", size=12, fill=MUTED, style="italic")
+text(58, p1_y+300, "no new topology, no new hierarchy level \u2014 an AIControlUnit is deployed exactly like any other ControlUnit", size=12, fill=MUTED, style="italic")
 
 # ============================================================
 # Panel 2: On/Off — the real Sub-model 4 machine, transplanted (not reinvented)
@@ -178,7 +179,7 @@ text(118, leg16_y+5, "leads to Inhibited (from Standby or On)", size=13, fill=IN
 line(500, leg16_y, 546, leg16_y, stroke=RED, sw=8)
 text(558, leg16_y+5, "leads to Locked (from Standby, Inhibited \u2014 or directly from Off)", size=13, fill=INK)
 
-text(58, leg16_y+45, "same highlighted paths as Sub-model 5 \u2014 this diagram is transplanted, not redrawn, so it cannot drift out of sync", size=12, fill=MUTED, style="italic")
+text(58, leg16_y+45, "same highlighted paths as Sub-model 6 \u2014 this diagram is transplanted, not redrawn, so it cannot drift out of sync", size=12, fill=MUTED, style="italic")
 
 with open("./lunex-ai-control-model.svg.partial", "w") as f:
     f.write("placeholder")
@@ -205,7 +206,7 @@ text(bx1+24, by4+82, "a real setpoint, a real consequence \u2014", size=12, fill
 text(bx1+24, by4+100, "governance never allows unbounded here", size=12, fill=MUTED)
 
 rrect(bx2, by4, colw4, 130, stroke=GREEN, sw=2.2, fill="#FFFFFF")
-text(bx2+24, by4+32, "target: DigitalTwin (Sub-model 7)", size=14.5, weight=700, fill=GREEN)
+text(bx2+24, by4+32, "target: DigitalTwin (Sub-model 11)", size=14.5, weight=700, fill=GREEN)
 text(bx2+24, by4+56, "operatingBounds may be empty", size=12, weight=700, fill=GREEN, family="Consolas, Menlo, monospace")
 text(bx2+24, by4+82, "the twin absorbs the consequence \u2014", size=12, fill=MUTED)
 text(bx2+24, by4+100, "safe to test without limits", size=12, fill=MUTED)
@@ -215,7 +216,7 @@ fy = by4 + 210
 steps4 = [
     ("AI wants setpoint", NAVY, "outside operatingBounds"),
     ("action clamped", RED, "never reaches the Device"),
-    ("ImprovementRecommendation", RED, "raised (Sub-model 15)"),
+    ("ImprovementRecommendation", RED, "raised (Sub-model 20)"),
     ("engineer reviews bounds", BLUE, "always \u2014 no exception"),
 ]
 fx0 = 60
@@ -228,7 +229,7 @@ for i, (lab, col, sub) in enumerate(steps4):
     if i < 3:
         line(x+fw4, fy+37, x+fw4+26, fy+37, stroke=NAVY, sw=1.8, marker_end="tri-navy")
 
-text(58, p3_y+400, "the bound itself may turn out to be wrong \u2014 but that's a human decision (Sub-model 15), never a silent auto-widen", size=12, fill=MUTED, style="italic")
+text(58, p3_y+400, "the bound itself may turn out to be wrong \u2014 but that's a human decision (Sub-model 20), never a silent auto-widen", size=12, fill=MUTED, style="italic")
 
 # ============================================================
 # Legend

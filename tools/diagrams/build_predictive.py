@@ -21,6 +21,7 @@ def rrect(x, y, w, h, rx=10, fill="#FFFFFF", stroke=NAVY, sw=2, dash=None):
     parts.append(f'<rect x="{x}" y="{y}" width="{w}" height="{h}" rx="{rx}" fill="{fill}" stroke="{stroke}" stroke-width="{sw}"{d}/>')
 
 def text(x, y, s, size=13, weight=400, fill=INK, anchor="start", style="normal", family=None, spacing=None):
+    s = (len(s) - len(s.lstrip(' '))) * '\u00a0' + s.lstrip(' ')   # keep leading indentation visible in SVG
     fam = f' font-family="{family}"' if family else ""
     sp = f' letter-spacing="{spacing}"' if spacing else ""
     it = f' font-style="{style}"' if style != "normal" else ""
@@ -71,9 +72,9 @@ head = f'''<svg xmlns="http://www.w3.org/2000/svg" font-family="Inter, Segoe UI,
 parts.append(head)
 BG_INSERT_INDEX = len(parts)
 
-text(60, 56, "LUNEX — SUB-MODEL 15", size=14, fill=SOFT, spacing="2.5")
+text(60, 56, "LUNEX — SUB-MODEL 20", size=14, fill=SOFT, spacing="2.5")
 text(60, 86, "Predictive Maintenance & Improvement", size=26, weight=600, fill=INK)
-text(60, 110, "a third guidance source, built on the Historian (Sub-model 14) \u2014 trend-based, not real-time or procedural", size=13, fill=SOFT)
+text(60, 110, "a third guidance source, built on the Historian (Sub-model 19) \u2014 trend-based, not real-time or procedural", size=13, fill=SOFT)
 
 # ============================================================
 # Panel 1: Three sources now, not two
@@ -82,14 +83,14 @@ p1_y = 145
 p1_h = 300
 rrect(30, p1_y, W-60, p1_h, stroke=BLUE, sw=2.2)
 text(58, p1_y+38, "GuidanceRecommendation.source \u2014 a Third Value", size=20, weight=700, fill=BLUE)
-text(58, p1_y+60, "same field as Sub-model 12, no new schema \u2014 procedural | simulated | now also predictive", size=12.5, fill=SOFT)
+text(58, p1_y+60, "same field as Sub-model 17, no new schema \u2014 procedural | simulated | now also predictive", size=12.5, fill=SOFT)
 
 colw3 = (W-60-80-40)/3
 xs3 = [60, 60+colw3+20, 60+2*(colw3+20)]
 srcs = [
-    ("procedural", SOFT, "ARP (Sub-model 11)", "static, engineer-written"),
-    ("simulated", BLUE, "Digital Twin (Sub-model 7)", "live, current state"),
-    ("predictive", GREEN, "Historian (Sub-model 14)", "trend-based, forward-looking"),
+    ("procedural", SOFT, "ARP (Sub-model 16)", "static, engineer-written"),
+    ("simulated", BLUE, "Digital Twin (Sub-model 11)", "live, current state"),
+    ("predictive", GREEN, "Historian (Sub-model 19)", "trend-based, forward-looking"),
 ]
 for (name, col, sub, desc), x in zip(srcs, xs3):
     rrect(x, p1_y+100, colw3, 150, rx=10, stroke=col, sw=2.4, fill="#FFFFFF")
@@ -97,7 +98,7 @@ for (name, col, sub, desc), x in zip(srcs, xs3):
     text(x+18, p1_y+158, sub, size=11.5, fill=SOFT, style="italic")
     text(x+18, p1_y+186, desc, size=12, fill=MUTED)
 
-text(58, p1_y+275, "one Operator Guidance Panel (Sub-model 12) still shows all three \u2014 the source label tells the operator which kind of claim it is", size=12, fill=MUTED, style="italic")
+text(58, p1_y+275, "one Operator Guidance Panel (Sub-model 17) still shows all three \u2014 the source label tells the operator which kind of claim it is", size=12, fill=MUTED, style="italic")
 
 # ============================================================
 # Panel 2: PredictedEvent — flows into the Alarm system
@@ -106,7 +107,7 @@ p2_y = p1_y + p1_h + 50
 p2_h = 530
 rrect(30, p2_y, W-60, p2_h, stroke=GREEN, sw=2.2)
 text(58, p2_y+38, "PredictedEvent \u2014 Joins the Alarm System, Doesn't Sit Beside It", size=20, weight=700, fill=GREEN)
-text(58, p2_y+60, "one situational-awareness picture (Sub-model 13) \u2014 not a second screen the operator has to remember to check", size=12.5, fill=SOFT)
+text(58, p2_y+60, "one situational-awareness picture (Sub-model 18) \u2014 not a second screen the operator has to remember to check", size=12.5, fill=SOFT)
 
 pe_x, pe_y, pe_w, pe_h = 60, p2_y+100, 480, 300
 rrect(pe_x, pe_y, pe_w, pe_h, stroke=NAVY, sw=2, rx=8)
@@ -138,15 +139,15 @@ aattrs = [
     "+ condition : ref \u2192 PredictedEvent",
     "+ actionable : true  (maintenance can act)",
     "+ priority : from severity \u00d7 actionable",
-    "  (Sub-model 10, unchanged)",
+    "  (Sub-model 15, unchanged)",
 ]
 ay = ar_y+54
 for a in aattrs:
     text(ar_x+18, ay, a, size=12, fill=MUTED, family="Consolas, Menlo, monospace")
     ay += 24
 
-line(pe_x+pe_w, pe_y+120, ar_x, ar_y+ar_h/2, stroke=GREEN, sw=2, marker_end="tri-green")
-text((pe_x+pe_w+ar_x)/2, pe_y+120-14, "raises", size=12, fill=GREEN, weight=700, style="italic", anchor="middle")
+line(pe_x+pe_w, ar_y+ar_h/2, ar_x, ar_y+ar_h/2, stroke=GREEN, sw=2, marker_end="tri-green")
+text((pe_x+pe_w+ar_x)/2, ar_y+ar_h/2-10, "raises", size=12, fill=GREEN, weight=700, style="italic", anchor="middle")
 
 badge_x, badge_y = 1195, p2_y+150
 rrect(badge_x-90, badge_y-20, 180, 40, rx=20, stroke=GREEN, sw=2, fill="#FFFFFF")
@@ -169,7 +170,7 @@ p3_y = p2_y + p2_h + 50
 p3_h = 430
 rrect(30, p3_y, W-60, p3_h, stroke=RED, sw=2.2)
 text(58, p3_y+38, "ImprovementRecommendation \u2014 Always Requires Approval", size=20, weight=700, fill=RED)
-text(58, p3_y+60, "not a policy choice like Sub-model 12/14 \u2014 a fixed rule, with no false-case, by design", size=12.5, fill=SOFT)
+text(58, p3_y+60, "not a policy choice like Sub-model 17/19 \u2014 a fixed rule, with no false-case, by design", size=12.5, fill=SOFT)
 
 ir_x, ir_y, ir_w, ir_h = 60, p3_y+100, 560, 270
 rrect(ir_x, ir_y, ir_w, ir_h, stroke=NAVY, sw=2, rx=8)
@@ -204,13 +205,13 @@ step_w = fw/4 - 20
 for i, (lab, col, sub) in enumerate(steps):
     x = fx0 + i*(step_w+26)
     rrect(x, fy0, step_w, 70, rx=10, stroke=col, sw=2.2, fill="#FFFFFF")
-    text(x+step_w/2, fy0+28, lab, size=11.5, weight=700, fill=col, anchor="middle")
+    text(x+step_w/2, fy0+28, lab, size=10, weight=700, fill=col, anchor="middle")
     text(x+step_w/2, fy0+48, sub, size=9.5, fill=SOFT, anchor="middle", style="italic")
     if i < 3:
         line(x+step_w, fy0+35, x+step_w+26, fy0+35, stroke=NAVY, sw=1.8, marker_end="tri-navy")
 
 text(fx0, fy0+110, "no shortcut from step 2 to step 4 \u2014 not even at confidence = 1.0", size=12, fill=RED, weight=600, style="italic")
-text(fx0, fy0+130, "contrast with Sub-model 12: a Scenario can be shown to an operator directly; an", size=11.5, fill=MUTED)
+text(fx0, fy0+130, "contrast with Sub-model 17: a Scenario can be shown to an operator directly; an", size=11.5, fill=MUTED)
 text(fx0, fy0+148, "ImprovementRecommendation changes how the plant runs \u2014 a materially bigger decision", size=11.5, fill=MUTED)
 
 text(58, p3_y+400, "the Historian finds the pattern and the AI drafts the suggestion \u2014 neither one ever touches the configuration", size=12, fill=MUTED, style="italic")

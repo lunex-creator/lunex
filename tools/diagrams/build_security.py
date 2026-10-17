@@ -21,6 +21,7 @@ def rrect(x, y, w, h, rx=10, fill="#FFFFFF", stroke=NAVY, sw=2, dash=None):
     parts.append(f'<rect x="{x}" y="{y}" width="{w}" height="{h}" rx="{rx}" fill="{fill}" stroke="{stroke}" stroke-width="{sw}"{d}/>')
 
 def text(x, y, s, size=13, weight=400, fill=INK, anchor="start", style="normal", family=None, spacing=None):
+    s = (len(s) - len(s.lstrip(' '))) * '\u00a0' + s.lstrip(' ')   # keep leading indentation visible in SVG
     fam = f' font-family="{family}"' if family else ""
     sp = f' letter-spacing="{spacing}"' if spacing else ""
     it = f' font-style="{style}"' if style != "normal" else ""
@@ -68,8 +69,8 @@ head = f'''<svg xmlns="http://www.w3.org/2000/svg" font-family="Inter, Segoe UI,
 parts.append(head)
 BG_INSERT_INDEX = len(parts)
 
-text(60, 56, "LUNEX — SUB-MODEL 6", size=14, fill=SOFT, spacing="2.5")
-text(60, 86, "Security", size=26, weight=600, fill=INK)
+text(60, 56, "LUNEX — SUB-MODEL 7", size=14, fill=SOFT, spacing="2.5")
+text(60, 86, "Security Zones & Conduits", size=26, weight=600, fill=INK)
 text(60, 110, "IEC 62443 zones and conduits, mapped onto Sub-models 1\u20132 \u2014 Zone is now exclusively the security term", size=13, fill=SOFT)
 
 # ============================================================
@@ -79,30 +80,30 @@ p1_y = 145
 p1_h = 330
 rrect(30, p1_y, W-60, p1_h, stroke=BLUE, sw=2.2)
 text(58, p1_y+38, "Zone & Conduit \u2014 First-Class LunexObjects", size=20, weight=700, fill=BLUE)
-text(58, p1_y+60, "same pattern as Interlock (Sub-model 5): peers of Device and Component, not subtypes", size=12.5, fill=SOFT)
+text(58, p1_y+60, "same pattern as Interlock (Sub-model 6): peers of Device and Component, not subtypes", size=12.5, fill=SOFT)
 
-lo_x, lo_y, lo_w, lo_h = 90, p1_y+100, 220, 50
+lo_x, lo_y, lo_w, lo_h = 70, p1_y+100, 260, 50
 rrect(lo_x, lo_y, lo_w, lo_h, stroke=NAVY, sw=2, rx=8)
 text(lo_x+lo_w/2, lo_y+22, "LunexObject", size=13.5, weight=700, fill=NAVY, anchor="middle")
 text(lo_x+lo_w/2, lo_y+40, "\u00ababstract\u00bb", size=10.5, fill=SOFT, anchor="middle", style="italic")
 
-zn_x, zn_y, zn_w, zn_h = 90, p1_y+195, 100, 60
+zn_x, zn_y, zn_w, zn_h = 70, p1_y+195, 110, 60
 rrect(zn_x, zn_y, zn_w, zn_h, stroke=BLUE, sw=2.4, rx=8)
 text(zn_x+zn_w/2, zn_y+26, "Zone", size=14, weight=700, fill=BLUE, anchor="middle")
-text(zn_x+zn_w/2, zn_y+46, "extends", size=9.5, fill=SOFT, anchor="middle", style="italic")
+text(zn_x+zn_w/2, zn_y+46, "extends", size=10.5, fill=SOFT, anchor="middle", style="italic")
 
-cn_x, cn_y, cn_w, cn_h = 210, p1_y+195, 100, 60
+cn_x, cn_y, cn_w, cn_h = 220, p1_y+195, 110, 60
 rrect(cn_x, cn_y, cn_w, cn_h, stroke=BLUE, sw=2.4, rx=8)
 text(cn_x+cn_w/2, cn_y+26, "Conduit", size=13, weight=700, fill=BLUE, anchor="middle")
-text(cn_x+cn_w/2, cn_y+46, "extends", size=9.5, fill=SOFT, anchor="middle", style="italic")
+text(cn_x+cn_w/2, cn_y+46, "extends", size=10.5, fill=SOFT, anchor="middle", style="italic")
 
-path(f"M {zn_x+zn_w/2} {zn_y} L {lo_x+lo_w/2-18} {lo_y+lo_h}", stroke=NAVY, sw=2, marker_end="tri-hollow")
-path(f"M {cn_x+cn_w/2} {cn_y} L {lo_x+lo_w/2+18} {lo_y+lo_h}", stroke=NAVY, sw=2, marker_end="tri-hollow")
+path(f"M {zn_x+zn_w/2} {zn_y} L {lo_x+lo_w/2-45} {lo_y+lo_h}", stroke=NAVY, sw=2, marker_end="tri-hollow")
+path(f"M {cn_x+cn_w/2} {cn_y} L {lo_x+lo_w/2+45} {lo_y+lo_h}", stroke=NAVY, sw=2, marker_end="tri-hollow")
 
 text(zn_x, zn_y+zn_h+26, "peer of Device, Component and", size=11.5, fill=SOFT, style="italic")
-text(zn_x, zn_y+zn_h+44, "Interlock (Sub-models 1, 5)", size=11.5, fill=SOFT, style="italic")
+text(zn_x, zn_y+zn_h+44, "Interlock (Sub-models 1, 6)", size=11.5, fill=SOFT, style="italic")
 
-za_x, za_y, za_w, za_h = 380, p1_y+100, 260, 195
+za_x, za_y, za_w, za_h = 380, p1_y+100, 310, 195
 rrect(za_x, za_y, za_w, za_h, stroke=NAVY, sw=2, rx=8)
 text(za_x+16, za_y+26, "Zone", size=14, weight=700, fill=BLUE)
 zattrs = [
@@ -117,7 +118,7 @@ for a in zattrs:
     text(za_x+16, ay, a, size=11.5, fill=MUTED, family="Consolas, Menlo, monospace")
     ay += 24
 
-ca_x, ca_y, ca_w, ca_h = 660, p1_y+100, 280, 195
+ca_x, ca_y, ca_w, ca_h = 710, p1_y+100, 310, 195
 rrect(ca_x, ca_y, ca_w, ca_h, stroke=NAVY, sw=2, rx=8)
 text(ca_x+16, ca_y+26, "Conduit", size=14, weight=700, fill=BLUE)
 cattrs = [
@@ -173,8 +174,8 @@ zone_defs = [
     ("Field Zone", "SL-T 3", 7, 8, RED),
 ]
 for name, slt, i0, i1, col in zone_defs:
-    bx0 = lv_xs[i0]
-    bx1 = lv_xs[i1] + lv_w
+    bx0 = lv_xs[i0] + (16 if i0 > 0 else 0)
+    bx1 = lv_xs[i1] + lv_w - (16 if i1 < n-1 else 0)
     by = lv_y - 55
     rrect(bx0, by, bx1-bx0, 34, rx=8, stroke=col, sw=2.2, fill="#FFFFFF")
     text((bx0+bx1)/2, by+16, name, size=12, weight=700, fill=col, anchor="middle")
@@ -191,7 +192,7 @@ for k in range(len(zone_defs)-1):
     parts.append(f'<circle cx="{bx}" cy="{by}" r="13" fill="#FFFFFF" stroke="{BLUE}" stroke-width="2.2"/>')
     text(bx, by+4, "FW", size=9.5, weight=700, fill=BLUE, anchor="middle")
 
-text(58, p2_y+300, "FW = Firewall / IDS Control Unit sitting on the Conduit between two Zones (Sub-model 1)", size=12, fill=MUTED, style="italic")
+text(58, p2_y+300, "FW = Firewall / IDS ControlUnit sitting on the Conduit between two Zones (Sub-model 1)", size=12, fill=MUTED, style="italic")
 text(58, p2_y+320, "zone boundaries are illustrative \u2014 real deployments vary; membership is what the Zone object defines, not position alone", size=12, fill=MUTED, style="italic")
 
 with open("./lunex-security-model.svg.partial", "w") as f:
@@ -199,13 +200,13 @@ with open("./lunex-security-model.svg.partial", "w") as f:
 print("part2 ok")
 
 # ============================================================
-# Panel 3: Conduit detail — contrasted with Sub-model 5's independence rule
+# Panel 3: Conduit detail — contrasted with Sub-model 6's independence rule
 # ============================================================
 p3_y = p2_y + p2_h + 50
 p3_h = 320
 rrect(30, p3_y, W-60, p3_h, stroke=BLUE, sw=2.2)
 text(58, p3_y+38, "Conduit Detail \u2014 Where Firewall / IDS Lives", size=20, weight=700, fill=BLUE)
-text(58, p3_y+60, "a controlled crossing point between two Zones, not a shared Control Unit", size=12.5, fill=SOFT)
+text(58, p3_y+60, "a controlled crossing point between two Zones, not a shared ControlUnit", size=12.5, fill=SOFT)
 
 zA_x, zA_w = 90, 380
 zB_x, zB_w = W-90-380, 380
@@ -228,11 +229,11 @@ line(zA_x+zA_w-32, fw_y, mid_cx-60, fw_y, stroke=BLUE, sw=2, marker_end="tri-blu
 line(mid_cx+60, fw_y, zB_x+32, fw_y, stroke=BLUE, sw=2, marker_end="tri-blue")
 rrect(mid_cx-60, fw_y-30, 120, 60, rx=10, stroke=BLUE, sw=2.6, fill="#FFFFFF")
 text(mid_cx, fw_y-6, "Firewall / IDS", size=12.5, weight=700, fill=BLUE, anchor="middle")
-text(mid_cx, fw_y+13, "Control Unit", size=11, fill=SOFT, anchor="middle")
+text(mid_cx, fw_y+13, "ControlUnit", size=11, fill=SOFT, anchor="middle")
 text(mid_cx, fw_y+48, "Conduit \u00b7 SL-T 2", size=11.5, fill=BLUE, weight=700, anchor="middle")
 
-text(58, p3_y+280, "contrast with Sub-model 5: there, a shared Control Unit between BPCS and SIF was forbidden.", size=12.5, fill=MUTED, style="italic")
-text(58, p3_y+298, "here, a Control Unit governing the crossing is the entire point \u2014 different rule, different context.", size=12.5, fill=MUTED, style="italic")
+text(58, p3_y+280, "contrast with Sub-model 6: there, a shared ControlUnit between BPCS and SIF was forbidden.", size=12.5, fill=MUTED, style="italic")
+text(58, p3_y+298, "here, a ControlUnit governing the crossing is the entire point \u2014 different rule, different context.", size=12.5, fill=MUTED, style="italic")
 
 # ============================================================
 # Legend

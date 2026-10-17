@@ -21,6 +21,7 @@ def rrect(x, y, w, h, rx=10, fill="#FFFFFF", stroke=NAVY, sw=2, dash=None):
     parts.append(f'<rect x="{x}" y="{y}" width="{w}" height="{h}" rx="{rx}" fill="{fill}" stroke="{stroke}" stroke-width="{sw}"{d}/>')
 
 def text(x, y, s, size=13, weight=400, fill=INK, anchor="start", style="normal", family=None, spacing=None, halo=False):
+    s = (len(s) - len(s.lstrip(' '))) * '\u00a0' + s.lstrip(' ')   # keep leading indentation visible in SVG
     fam = f' font-family="{family}"' if family else ""
     sp = f' letter-spacing="{spacing}"' if spacing else ""
     it = f' font-style="{style}"' if style != "normal" else ""
@@ -66,7 +67,7 @@ head = f'''<svg xmlns="http://www.w3.org/2000/svg" font-family="Inter, Segoe UI,
 parts.append(head)
 BG_INSERT_INDEX = len(parts)
 
-text(60, 56, "LUNEX — SUB-MODEL 10", size=14, fill=SOFT, spacing="2.5")
+text(60, 56, "LUNEX — SUB-MODEL 15", size=14, fill=SOFT, spacing="2.5")
 text(60, 86, "Alarm Management", size=26, weight=600, fill=INK)
 text(60, 110, "ISA-18.2-based \u2014 priority is severity \u00d7 actionability, not severity alone", size=13, fill=SOFT)
 
@@ -96,7 +97,7 @@ attrs = [
     ("+ id : string", MUTED),
     ("+ source : DeviceRef", MUTED),
     ("+ condition : string", MUTED),
-    ("+ severity : Tier (0\u20133, Sub-model 9)", BLUE),
+    ("+ severity : Tier (0\u20133, Sub-model 14)", BLUE),
     ("+ actionable : bool  \u2190 derived, Panel 3", GREEN),
     ("+ priority : 1\u20134  \u2190 derived, Panel 2", RED),
     ("+ state : AlarmState (new, Panel 4)", NAVY),
@@ -108,7 +109,7 @@ for a, col in attrs:
     text(at_x+18, ay, a, size=12, fill=col, family="Consolas, Menlo, monospace")
     ay += 24
 
-text(58, p1_y+372, "priority and actionable are computed, not set by hand \u2014 same discipline as Sub-model 7/9's derived views", size=12, fill=MUTED, style="italic")
+text(58, p1_y+372, "priority and actionable are computed, not set by hand \u2014 same discipline as Sub-model 11/14's derived views", size=12, fill=MUTED, style="italic")
 
 # ============================================================
 # Panel 2: Priority Matrix — severity × actionability
@@ -124,7 +125,7 @@ cell_w, cell_h = 420, 100
 cells = [
     ("Priority 1 \u2014 Critical", "operator can still prevent escalation", RED, 0, 0),
     ("Priority 2 \u2014 High", "operator can still act, lower severity", BLUE, 1, 0),
-    ("Priority 3 \u2014 Informational", "already handled (e.g. by an Interlock) \u2014 Sub-model 5", SOFT, 0, 1),
+    ("Priority 3 \u2014 Informational", "already handled (e.g. by an Interlock) \u2014 Sub-model 6", SOFT, 0, 1),
     ("Priority 4 \u2014 Log Only", "already handled, low severity", GRAY_DASH, 1, 1),
 ]
 for label, sub, col, cx_i, cy_i in cells:
@@ -153,7 +154,7 @@ p3_y = p2_y + p2_h + 50
 p3_h = 260
 rrect(30, p3_y, W-60, p3_h, stroke=RED, sw=2.2)
 text(58, p3_y+38, "actionable \u2014 Derived Automatically from Interlock State", size=20, weight=700, fill=RED)
-text(58, p3_y+60, "not a manual flag \u2014 it follows the linked Interlock's state (Sub-model 5), so it can't be left wrong", size=12.5, fill=SOFT)
+text(58, p3_y+60, "not a manual flag \u2014 it follows the linked Interlock's state (Sub-model 6), so it can't be left wrong", size=12.5, fill=SOFT)
 
 ex_y = p3_y + 160
 # example A

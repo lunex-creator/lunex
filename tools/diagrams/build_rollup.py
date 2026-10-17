@@ -21,6 +21,7 @@ def rrect(x, y, w, h, rx=10, fill="#FFFFFF", stroke=NAVY, sw=2, dash=None):
     parts.append(f'<rect x="{x}" y="{y}" width="{w}" height="{h}" rx="{rx}" fill="{fill}" stroke="{stroke}" stroke-width="{sw}"{d}/>')
 
 def text(x, y, s, size=13, weight=400, fill=INK, anchor="start", style="normal", family=None, spacing=None, halo=False):
+    s = (len(s) - len(s.lstrip(' '))) * '\u00a0' + s.lstrip(' ')   # keep leading indentation visible in SVG
     fam = f' font-family="{family}"' if family else ""
     sp = f' letter-spacing="{spacing}"' if spacing else ""
     it = f' font-style="{style}"' if style != "normal" else ""
@@ -64,9 +65,9 @@ head = f'''<svg xmlns="http://www.w3.org/2000/svg" font-family="Inter, Segoe UI,
 parts.append(head)
 BG_INSERT_INDEX = len(parts)
 
-text(60, 56, "LUNEX — SUB-MODEL 9", size=14, fill=SOFT, spacing="2.5")
+text(60, 56, "LUNEX — SUB-MODEL 14", size=14, fill=SOFT, spacing="2.5")
 text(60, 86, "Collective Status (Rollup)", size=26, weight=600, fill=INK)
-text(60, 110, "Deferred from Sub-model 4, resolved here \u2014 a computed view, not a new class (Sub-model 7 pattern)", size=13, fill=SOFT)
+text(60, 110, "Deferred from Sub-model 4, resolved here \u2014 a computed view, not a new class (Sub-model 11 pattern)", size=13, fill=SOFT)
 
 # ============================================================
 # Panel 1: Severity tiers over the Sub-model 4 states
@@ -128,7 +129,7 @@ p2_y = p1_y + p1_h + 50
 p2_h = 460
 rrect(30, p2_y, W-60, p2_h, stroke=BLUE, sw=2.2)
 text(58, p2_y+38, "Rollup \u2014 a Computed View, Not a New Class", size=20, weight=700, fill=BLUE)
-text(58, p2_y+60, "same pattern as the Sub-model 7 telemetry envelope \u2014 no new LunexObject subtype needed", size=12.5, fill=SOFT)
+text(58, p2_y+60, "same pattern as the Sub-model 11 telemetry envelope \u2014 no new LunexObject subtype needed", size=12.5, fill=SOFT)
 
 jx, jy, jw, jh = 60, p2_y+100, 660, 300
 rrect(jx, jy, jw, jh, stroke=NAVY, sw=2, rx=8, fill="#FFFFFF")

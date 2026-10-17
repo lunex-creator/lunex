@@ -21,6 +21,7 @@ def rrect(x, y, w, h, rx=10, fill="#FFFFFF", stroke=NAVY, sw=2, dash=None):
     parts.append(f'<rect x="{x}" y="{y}" width="{w}" height="{h}" rx="{rx}" fill="{fill}" stroke="{stroke}" stroke-width="{sw}"{d}/>')
 
 def text(x, y, s, size=13, weight=400, fill=INK, anchor="start", style="normal", family=None, spacing=None, halo=False):
+    s = (len(s) - len(s.lstrip(' '))) * '\u00a0' + s.lstrip(' ')   # keep leading indentation visible in SVG
     fam = f' font-family="{family}"' if family else ""
     sp = f' letter-spacing="{spacing}"' if spacing else ""
     it = f' font-style="{style}"' if style != "normal" else ""
@@ -66,7 +67,7 @@ head = f'''<svg xmlns="http://www.w3.org/2000/svg" font-family="Inter, Segoe UI,
 parts.append(head)
 BG_INSERT_INDEX = len(parts)
 
-text(60, 56, "LUNEX — SUB-MODEL 7", size=14, fill=SOFT, spacing="2.5")
+text(60, 56, "LUNEX — SUB-MODEL 11", size=14, fill=SOFT, spacing="2.5")
 text(60, 86, "Data / AI Layer", size=26, weight=600, fill=INK)
 text(60, 110, "The layer PackML and S88 don't have \u2014 telemetry with meaning attached, ready for AI consumption", size=13, fill=SOFT)
 
@@ -111,7 +112,7 @@ for k, note in annos:
     text(anno_x+80, ay2, note, size=12, fill=MUTED)
     ay2 += 34
 
-text(58, p1_y+382, "same envelope for a Sensor, a Firewall/IDS or an Interlock \u2014 one shape, every class (Sub-models 1, 5, 6)", size=12, fill=MUTED, style="italic")
+text(58, p1_y+382, "same envelope for a Sensor, a Firewall/IDS or an Interlock \u2014 one shape, every class (Sub-models 1, 6, 7)", size=12, fill=MUTED, style="italic")
 
 # ============================================================
 # Panel 2: Context Layer — semantic relationships beyond containment
@@ -181,7 +182,7 @@ text(midx3, ty3+8, "(Panel 1)", size=10, fill=SOFT, anchor="middle")
 text(midx3, ty3+42, "queries flow back", size=10.5, fill=SOFT, style="italic", anchor="middle")
 
 text(58, p3_y+230, "the twin is what an AI model actually queries \u2014 it never touches the physical Device directly", size=12, fill=MUTED, style="italic")
-text(58, p3_y+252, "the Twin only ever holds the current state \u2014 for everything the state WAS, see the Historian (Sub-model 14)", size=12, fill=MUTED, style="italic")
+text(58, p3_y+252, "the Twin only ever holds the current state \u2014 for everything the state WAS, see the Historian (Sub-model 19)", size=12, fill=MUTED, style="italic")
 
 # ============================================================
 # Closing note: resolving the Sub-model 4 rollup deferral
@@ -190,7 +191,7 @@ p4_y = p3_y + p3_h + 45
 p4_h = 110
 rrect(30, p4_y, W-60, p4_h, stroke=GREEN, sw=2.2)
 text(58, p4_y+30, "Closing the loop from Sub-model 4", size=15, weight=700, fill=GREEN)
-text(58, p4_y+52, "collective status (\u201crollup\u201d) was deliberately left out of the state model \u2014 formalized in Sub-model 9,", size=12.5, fill=MUTED)
+text(58, p4_y+52, "collective status (\u201crollup\u201d) was deliberately left out of the state model \u2014 formalized in Sub-model 14,", size=12.5, fill=MUTED)
 text(58, p4_y+72, "computed on the Digital Twin graph this layer maintains: worst-case tier, tier counts, and the full list of", size=12.5, fill=MUTED)
 text(58, p4_y+92, "contributors \u2014 not baked into LunexObject itself, and never overwriting an object's own state.", size=12.5, fill=MUTED)
 

@@ -21,6 +21,7 @@ def rrect(x, y, w, h, rx=10, fill="#FFFFFF", stroke=NAVY, sw=2, dash=None):
     parts.append(f'<rect x="{x}" y="{y}" width="{w}" height="{h}" rx="{rx}" fill="{fill}" stroke="{stroke}" stroke-width="{sw}"{d}/>')
 
 def text(x, y, s, size=13, weight=400, fill=INK, anchor="start", style="normal", family=None, spacing=None):
+    s = (len(s) - len(s.lstrip(' '))) * '\u00a0' + s.lstrip(' ')   # keep leading indentation visible in SVG
     fam = f' font-family="{family}"' if family else ""
     sp = f' letter-spacing="{spacing}"' if spacing else ""
     it = f' font-style="{style}"' if style != "normal" else ""
@@ -77,9 +78,9 @@ head = f'''<svg xmlns="http://www.w3.org/2000/svg" font-family="Inter, Segoe UI,
 parts.append(head)
 BG_INSERT_INDEX = len(parts)
 
-text(60, 56, "LUNEX — SUB-MODEL 13", size=14, fill=SOFT, spacing="2.5")
+text(60, 56, "LUNEX — SUB-MODEL 18", size=14, fill=SOFT, spacing="2.5")
 text(60, 86, "Situational Awareness", size=26, weight=600, fill=INK)
-text(60, 110, "no new data \u2014 a navigation contract over Sub-models 7, 9 and 10, so the operator is never lost or digging", size=13, fill=SOFT)
+text(60, 110, "no new data \u2014 a navigation contract over Sub-models 11, 14 and 15, so the operator is never lost or digging", size=13, fill=SOFT)
 
 with open("./lunex-sa-model.svg.partial", "w") as f:
     f.write("placeholder")
@@ -129,7 +130,7 @@ p2_y = p1_y + p1_h + 50
 p2_h = 380
 rrect(30, p2_y, W-60, p2_h, stroke=BLUE, sw=2.2)
 text(58, p2_y+38, "Jump to Worst \u2014 No Manual Digging Through Layers", size=20, weight=700, fill=BLUE)
-text(58, p2_y+60, "one action follows the Rollup's own contributors path (Sub-model 9) straight to the cause", size=12.5, fill=SOFT)
+text(58, p2_y+60, "one action follows the Rollup's own contributors path (Sub-model 14) straight to the cause", size=12.5, fill=SOFT)
 
 chain = ["Cell", "System", "Assembly", "Device", "Alarm"]
 n = len(chain)
@@ -163,7 +164,7 @@ p3_y = p2_y + p2_h + 50
 p3_h = 300
 rrect(30, p3_y, W-60, p3_h, stroke=BLUE, sw=2.2)
 text(58, p3_y+38, "Landed \u2014 the Right Information Is Already There", size=20, weight=700, fill=BLUE)
-text(58, p3_y+60, "reuses the Context Layer surfacing from Sub-model 11 \u2014 no separate hunt after arriving", size=12.5, fill=SOFT)
+text(58, p3_y+60, "reuses the Context Layer surfacing from Sub-model 16 \u2014 no separate hunt after arriving", size=12.5, fill=SOFT)
 
 acx, acy = 260, p3_y+190
 rrect(acx-120, acy-40, 240, 80, rx=10, stroke=RED, sw=2.4, fill="#FFFFFF")

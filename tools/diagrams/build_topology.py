@@ -21,6 +21,7 @@ def rrect(x, y, w, h, rx=10, fill="#FFFFFF", stroke=NAVY, sw=2, dash=None):
     parts.append(f'<rect x="{x}" y="{y}" width="{w}" height="{h}" rx="{rx}" fill="{fill}" stroke="{stroke}" stroke-width="{sw}"{d}/>')
 
 def text(x, y, s, size=13, weight=400, fill=INK, anchor="start", style="normal", family=None, spacing=None):
+    s = (len(s) - len(s.lstrip(' '))) * '\u00a0' + s.lstrip(' ')   # keep leading indentation visible in SVG
     fam = f' font-family="{family}"' if family else ""
     sp = f' letter-spacing="{spacing}"' if spacing else ""
     it = f' font-style="{style}"' if style != "normal" else ""
@@ -114,7 +115,7 @@ for i in (1, 2):
     p2 = seq_pts[i+1]
     midx = (p1[0]+p2[0])/2
     path(f"M {p1[0]+10} {p1[1]-20} Q {midx} {p1[1]-42}, {p2[0]-10} {p2[1]-20}", stroke=GRAY_DASH, sw=1.6, dash="4,3", marker_end="tri-gray")
-text(cx1+24, card_y+205, "feedback \u2014 only between Control Units", size=11.5, fill=SOFT, style="italic")
+text(cx1+24, card_y+205, "feedback \u2014 only between ControlUnits", size=11.5, fill=SOFT, style="italic")
 text(cx1+24, card_y+265, "straight 1:1 chain, each stage wired to", size=12.5, fill=MUTED)
 text(cx1+24, card_y+283, "its neighbor only \u2014 no shared stage", size=12.5, fill=MUTED)
 text(cx1+24, card_y+310, "the simplest multi-device pattern", size=12, fill=SOFT, style="italic")
@@ -144,7 +145,7 @@ for (cx_, cy_), (ax, ay) in zip(sc_pts, a_pts):
     line(center[0]+27, center[1]+yoff, cx_-25, cy_, stroke=NAVY, sw=1.7, marker_end="tri-navy")
     line(cx_+25, cy_, ax-25, ay, stroke=NAVY, sw=1.7, marker_end="tri-navy")
 text(cx2+24, card_y+265, "several sensors and actuators share", size=12.5, fill=MUTED)
-text(cx2+24, card_y+283, "one Control Unit", size=12.5, fill=MUTED)
+text(cx2+24, card_y+283, "one ControlUnit", size=12.5, fill=MUTED)
 text(cx2+24, card_y+310, "fan-in / fan-out", size=12, fill=SOFT, style="italic")
 
 # ---------- Card 3: Mesh ----------
@@ -170,7 +171,7 @@ line(s_top[0]+21, s_top[1], t_top[0]-21, t_top[1], stroke=NAVY, sw=1.6, marker_e
 line(t_top[0]+21, t_top[1], top[0]-27, top[1]-10, stroke=NAVY, sw=1.6, marker_end="tri-navy")
 line(top[0]+27, top[1]-10, sc_top[0]-21, sc_top[1], stroke=NAVY, sw=1.6, marker_end="tri-navy")
 line(sc_top[0]+21, sc_top[1], a_top[0]-21, a_top[1], stroke=NAVY, sw=1.6, marker_end="tri-navy")
-text(cx3+24, card_y+287, "networked Control Units, each with", size=12.5, fill=MUTED)
+text(cx3+24, card_y+287, "networked ControlUnits, each with", size=12.5, fill=MUTED)
 text(cx3+24, card_y+305, "its own I/O (shown once, for clarity)", size=12.5, fill=MUTED)
 text(cx3+24, card_y+325, "peer-to-peer network", size=12, fill=SOFT, style="italic")
 
@@ -194,7 +195,7 @@ path(f"M {panel_xB+panel_w/2} {bracket_y} L {panel_xB+panel_w/2} {panel_y}", str
 # ---------- Panel A: High-Availability ----------
 rrect(panel_xA, panel_y, panel_w, panel_h, stroke=GREEN, sw=2.2)
 text(panel_xA+28, panel_y+38, "High-Availability", size=20, weight=700, fill=GREEN)
-text(panel_xA+28, panel_y+60, "any Control Unit, in any shape above, deployed as a redundant pair", size=12.5, fill=SOFT)
+text(panel_xA+28, panel_y+60, "any ControlUnit, in any shape above, deployed as a redundant pair", size=12.5, fill=SOFT)
 
 dcx = panel_xA + panel_w/2
 dcy = panel_y + 165
@@ -233,7 +234,7 @@ text(panel_xA+28, panel_y+388, "the shape above (Point-to-Point, Star or Mesh) i
 # ---------- Panel B: Cloud & Analytics ----------
 rrect(panel_xB, panel_y, panel_w, panel_h, stroke=BLUE, sw=2.2)
 text(panel_xB+28, panel_y+38, "Cloud & Analytics", size=20, weight=700, fill=BLUE)
-text(panel_xB+28, panel_y+60, "any Control Unit, in any shape above, streams telemetry upward", size=12.5, fill=SOFT)
+text(panel_xB+28, panel_y+60, "any ControlUnit, in any shape above, streams telemetry upward", size=12.5, fill=SOFT)
 
 bcx = panel_xB + panel_w/2
 cu_gnd = (bcx, panel_y+290)
@@ -244,7 +245,7 @@ text(cu_gnd[0], cu_gnd[1]+34, "any shape above", size=11, fill=SOFT, style="ital
 
 rrect(bcx-190, cloud_box_y, 380, 66, rx=20, stroke=BLUE, sw=2.4)
 text(bcx, cloud_box_y+28, "AI / Analytics Layer", size=16, weight=700, fill=BLUE, anchor="middle")
-text(bcx, cloud_box_y+48, "Sub-model 7", size=11, fill=SOFT, anchor="middle")
+text(bcx, cloud_box_y+48, "Sub-model 11", size=11, fill=SOFT, anchor="middle")
 
 path(f"M {bcx} {cu_gnd[1]-22} L {bcx} {cloud_box_y+66+10}", stroke=BLUE, sw=2, dash="2,6", marker_end="tri-navy")
 for t in (0.28, 0.52, 0.76):
@@ -275,7 +276,7 @@ text(60, leg_y+8, "LEGEND", size=12, fill=SOFT, spacing="1.6")
 
 ly2 = leg_y + 40
 lx = 60
-for lab, name in [("S", "Sensor"), ("T", "Transducer"), ("CU", "Control Unit"), ("SC", "Signal Converter"), ("A", "Actuator")]:
+for lab, name in [("S", "Sensor"), ("T", "Transducer"), ("CU", "ControlUnit"), ("SC", "SignalConverter"), ("A", "Actuator")]:
     mini_box(lx+24, ly2, lab, func_col[lab], w=44, h=30)
     text(lx+56, ly2+5, name, size=12.5, fill=INK)
     lx += 56 + 12*len(name) + 40
