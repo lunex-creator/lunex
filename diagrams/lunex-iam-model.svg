@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1135" width="1600" height="1135" font-family="Inter, Segoe UI, Helvetica Neue, Arial, sans-serif">
+<defs>
+  <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
+    <path d="M20 0H0V20" fill="none" stroke="#E6EBF0" stroke-width="1"/>
+  </pattern>
+  <pattern id="grid5" width="100" height="100" patternUnits="userSpaceOnUse">
+    <rect width="100" height="100" fill="url(#grid)"/>
+    <path d="M100 0H0V100" fill="none" stroke="#D6DEE7" stroke-width="1"/>
+  </pattern>
+  <marker id="tri-navy" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+    <path d="M0 0 L10 5 L0 10 Z" fill="#1F3B57"/>
+  </marker>
+  <marker id="tri-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+    <path d="M0 0 L10 5 L0 10 Z" fill="#2F6F9E"/>
+  </marker>
+  <marker id="diamond-navy" viewBox="0 0 12 12" refX="1" refY="6" markerWidth="11" markerHeight="11" orient="auto-start-reverse">
+    <path d="M6 0 L12 6 L6 12 L0 6 Z" fill="#1F3B57"/>
+  </marker>
+</defs>
+
+<rect width="1600" height="1135" fill="#FBFAF8"/>
+<rect width="1600" height="1135" fill="url(#grid5)"/>
+
+<text x="60" y="56" font-size="14" font-weight="400" fill="#5A6B7B" text-anchor="start" letter-spacing="2.5">LUNEX — SUB-MODEL 8</text>
+<text x="60" y="86" font-size="26" font-weight="600" fill="#16202B" text-anchor="start">Identity &amp; Access Management (IAM)</text>
+<text x="60" y="110" font-size="13" font-weight="400" fill="#5A6B7B" text-anchor="start">Who may do what, to which object — IEC 62443-3-3 SR 1.x / SR 2.x, with no model representation until now</text>
+<rect x="30" y="145" width="1540" height="400" rx="10" fill="#FFFFFF" stroke="#2F6F9E" stroke-width="2.2"/>
+<text x="58" y="183" font-size="20" font-weight="700" fill="#2F6F9E" text-anchor="start">The Chain — Identity Is Who, AccessGrant Is Where It Applies</text>
+<text x="58" y="205" font-size="12.5" font-weight="400" fill="#5A6B7B" text-anchor="start">A Role is a reusable template; an AccessGrant is the scoped, time-bounded binding that actually grants it</text>
+<rect x="137.5" y="275" width="290" height="96" rx="8" fill="#FFFFFF" stroke="#1F3B57" stroke-width="2"/>
+<text x="282.5" y="313" font-size="16" font-weight="700" fill="#1F3B57" text-anchor="middle">Identity</text>
+<text x="282.5" y="335" font-size="11" font-weight="400" fill="#5A6B7B" text-anchor="middle" font-style="italic">human | service-account</text>
+<line x1="427.5" y1="323.0" x2="482.5" y2="323.0" stroke="#1F3B57" stroke-width="2" marker-end="url(#tri-navy)"/>
+<rect x="482.5" y="275" width="290" height="96" rx="8" fill="#FFFFFF" stroke="#B3402F" stroke-width="2.4"/>
+<text x="627.5" y="313" font-size="16" font-weight="700" fill="#B3402F" text-anchor="middle">AccessGrant</text>
+<text x="627.5" y="335" font-size="11" font-weight="400" fill="#5A6B7B" text-anchor="middle" font-style="italic">scoped + time-bounded</text>
+<line x1="772.5" y1="323.0" x2="827.5" y2="323.0" stroke="#1F3B57" stroke-width="2" marker-end="url(#tri-navy)"/>
+<rect x="827.5" y="275" width="290" height="96" rx="8" fill="#FFFFFF" stroke="#1F3B57" stroke-width="2"/>
+<text x="972.5" y="313" font-size="16" font-weight="700" fill="#1F3B57" text-anchor="middle">Role</text>
+<text x="972.5" y="335" font-size="11" font-weight="400" fill="#5A6B7B" text-anchor="middle" font-style="italic">reusable template</text>
+<line x1="1117.5" y1="323.0" x2="1172.5" y2="323.0" stroke="#1F3B57" stroke-width="2" marker-end="url(#tri-navy)"/>
+<rect x="1172.5" y="275" width="290" height="96" rx="8" fill="#FFFFFF" stroke="#1F3B57" stroke-width="2"/>
+<text x="1317.5" y="313" font-size="16" font-weight="700" fill="#1F3B57" text-anchor="middle">Permission</text>
+<text x="1317.5" y="335" font-size="11" font-weight="400" fill="#5A6B7B" text-anchor="middle" font-style="italic">action + scope</text>
+<text x="282.5" y="403" font-size="11.5" font-weight="400" fill="#33404D" text-anchor="middle" font-style="italic">a specific actor —</text>
+<text x="282.5" y="421" font-size="11.5" font-weight="400" fill="#33404D" text-anchor="middle" font-style="italic">human or non-human</text>
+<text x="627.5" y="403" font-size="11.5" font-weight="400" fill="#33404D" text-anchor="middle" font-style="italic">the binding: grantedAt,</text>
+<text x="627.5" y="421" font-size="11.5" font-weight="400" fill="#33404D" text-anchor="middle" font-style="italic">expiresAt, and a scope</text>
+<text x="972.5" y="403" font-size="11.5" font-weight="400" fill="#33404D" text-anchor="middle" font-style="italic">held by the AccessGrant,</text>
+<text x="972.5" y="421" font-size="11.5" font-weight="400" fill="#33404D" text-anchor="middle" font-style="italic">resolved by MOC's RoleRef</text>
+<text x="1317.5" y="403" font-size="11.5" font-weight="400" fill="#33404D" text-anchor="middle" font-style="italic">view|operate|configure|approve,</text>
+<text x="1317.5" y="421" font-size="11.5" font-weight="400" fill="#33404D" text-anchor="middle" font-style="italic">scoped to an instance or a Class</text>
+<rect x="58" y="466" width="1484" height="58" rx="8" fill="#FFFFFF" stroke="#8FA0B3" stroke-width="1.6" stroke-dasharray="4,4"/>
+<text x="80" y="490" font-size="12" font-weight="400" fill="#33404D" text-anchor="start" font-style="italic">Operator (Sub-model 1) ≠ Identity: Operator records job title and capacity for display/audit; Identity is the broader,</text>
+<text x="80" y="508" font-size="12" font-weight="400" fill="#33404D" text-anchor="start" font-style="italic">permissions-capable actor. Identity.operator links the two when an Identity represents a specific named Operator.</text>
+<rect x="30" y="595" width="1540" height="385" rx="10" fill="#FFFFFF" stroke="#2F6F9E" stroke-width="2.2"/>
+<text x="58" y="633" font-size="20" font-weight="700" fill="#2F6F9E" text-anchor="start">Schema — Identity, Role, Permission, AccessGrant</text>
+<text x="58" y="655" font-size="12.5" font-weight="400" fill="#5A6B7B" text-anchor="start">Least-privilege, reused from standard RBAC practice rather than invented</text>
+<rect x="58" y="690" width="340" height="150" rx="8" fill="#FFFFFF" stroke="#B3402F" stroke-width="2.2"/>
+<text x="74" y="716" font-size="14.5" font-weight="700" fill="#B3402F" text-anchor="start">Identity</text>
+<text x="74" y="734" font-size="10.5" font-weight="400" fill="#5A6B7B" text-anchor="start" font-style="italic">extends LunexObject</text>
+<text x="74" y="756" font-size="10.8" font-weight="400" fill="#33404D" text-anchor="start" font-family="Consolas, Menlo, monospace">+ identityType : human | service-account</text>
+<text x="74" y="775.5" font-size="10.8" font-weight="400" fill="#33404D" text-anchor="start" font-family="Consolas, Menlo, monospace">+ credentialRef : string</text>
+<text x="74" y="795.0" font-size="10.8" font-weight="400" fill="#33404D" text-anchor="start" font-family="Consolas, Menlo, monospace">+ operator : OperatorRef | null</text>
+<rect x="448" y="690" width="320" height="150" rx="8" fill="#FFFFFF" stroke="#1F3B57" stroke-width="2.2"/>
+<text x="464" y="716" font-size="14.5" font-weight="700" fill="#1F3B57" text-anchor="start">AccessGrant</text>
+<text x="464" y="740" font-size="10.8" font-weight="400" fill="#33404D" text-anchor="start" font-family="Consolas, Menlo, monospace">+ identity : IdentityRef</text>
+<text x="464" y="759.5" font-size="10.8" font-weight="400" fill="#33404D" text-anchor="start" font-family="Consolas, Menlo, monospace">+ role : RoleRef</text>
+<text x="464" y="779.0" font-size="10.8" font-weight="400" fill="#33404D" text-anchor="start" font-family="Consolas, Menlo, monospace">+ scope : LunexObjectRef</text>
+<text x="464" y="798.5" font-size="10.8" font-weight="400" fill="#33404D" text-anchor="start" font-family="Consolas, Menlo, monospace">+ grantedAt : timestamp</text>
+<text x="464" y="818.0" font-size="10.8" font-weight="400" fill="#33404D" text-anchor="start" font-family="Consolas, Menlo, monospace">+ expiresAt : timestamp | null</text>
+<rect x="818" y="690" width="390" height="75" rx="8" fill="#FFFFFF" stroke="#1F3B57" stroke-width="2.2"/>
+<text x="834" y="716" font-size="14.5" font-weight="700" fill="#1F3B57" text-anchor="start">Role</text>
+<text x="834" y="740" font-size="10.8" font-weight="400" fill="#33404D" text-anchor="start" font-family="Consolas, Menlo, monospace">+ permissions : PermissionRef[]</text>
+<rect x="818" y="810" width="390" height="95" rx="8" fill="#FFFFFF" stroke="#1F3B57" stroke-width="2.2"/>
+<text x="834" y="836" font-size="14.5" font-weight="700" fill="#1F3B57" text-anchor="start">Permission</text>
+<text x="834" y="860" font-size="10.8" font-weight="400" fill="#33404D" text-anchor="start" font-family="Consolas, Menlo, monospace">+ action : view | operate | configure | approve</text>
+<text x="834" y="879.5" font-size="10.8" font-weight="400" fill="#33404D" text-anchor="start" font-family="Consolas, Menlo, monospace">+ scope : LunexObjectRef | ClassRef</text>
+<line x1="398" y1="740" x2="448" y2="740" stroke="#1F3B57" stroke-width="1.8" marker-end="url(#tri-navy)"/>
+<line x1="768" y1="740" x2="818" y2="740" stroke="#1F3B57" stroke-width="1.8" marker-end="url(#tri-navy)"/>
+<line x1="1013.0" y1="765" x2="1013.0" y2="810" stroke="#1F3B57" stroke-width="1.8" marker-end="url(#tri-navy)"/>
+<rect x="1258" y="690" width="282" height="215" rx="8" fill="#FFFFFF" stroke="#2E7D4F" stroke-width="2.2" stroke-dasharray="5,4"/>
+<text x="1399.0" y="720" font-size="13.5" font-weight="700" fill="#2E7D4F" text-anchor="middle">MOC (Sub-model 13)</text>
+<text x="1272" y="748" font-size="10.5" font-weight="400" fill="#33404D" text-anchor="start" font-family="Consolas, Menlo, monospace">ChangeRequest.requiredApprovals</text>
+<text x="1272" y="764" font-size="10.5" font-weight="400" fill="#33404D" text-anchor="start" font-family="Consolas, Menlo, monospace">  : RoleRef[]</text>
+<text x="1272" y="794" font-size="10.5" font-weight="400" fill="#33404D" text-anchor="start" font-family="Consolas, Menlo, monospace">ChangePolicy.appliesTo and</text>
+<text x="1272" y="810" font-size="10.5" font-weight="400" fill="#33404D" text-anchor="start" font-family="Consolas, Menlo, monospace">LunexObject.owner also resolve</text>
+<text x="1272" y="826" font-size="10.5" font-weight="400" fill="#33404D" text-anchor="start" font-family="Consolas, Menlo, monospace">through RoleRef</text>
+<text x="1272" y="858" font-size="10.5" font-weight="400" fill="#5A6B7B" text-anchor="start" font-style="italic">an approval role is meaningless</text>
+<text x="1272" y="875" font-size="10.5" font-weight="400" fill="#5A6B7B" text-anchor="start" font-style="italic">without something that says</text>
+<text x="1272" y="892" font-size="10.5" font-weight="400" fill="#5A6B7B" text-anchor="start" font-style="italic">who holds it.</text>
+<line x1="1208" y1="727.5" x2="1258" y2="727.5" stroke="#2E7D4F" stroke-width="1.8" marker-end="url(#tri-navy)" stroke-dasharray="4,4"/>
+<text x="58" y="950" font-size="12" font-weight="400" fill="#33404D" text-anchor="start" font-style="italic">AccessGrant.scope narrows a Role's permissions to a specific part of the model — the Role is reusable, the AccessGrant is where it actually applies.</text>
+<line x1="60" y1="1020" x2="1540" y2="1020" stroke="#D6DEE7" stroke-width="1"/>
+<text x="60" y="1043" font-size="12" font-weight="400" fill="#5A6B7B" text-anchor="start" letter-spacing="1.6">LEGEND</text>
+<line x1="60" y1="1075" x2="106" y2="1075" stroke="#1F3B57" stroke-width="2" marker-end="url(#tri-navy)"/>
+<text x="118" y="1080" font-size="13" font-weight="400" fill="#16202B" text-anchor="start">resolves to / schema reference</text>
+<line x1="400" y1="1075" x2="446" y2="1075" stroke="#2E7D4F" stroke-width="2" marker-end="url(#tri-navy)" stroke-dasharray="4,4"/>
+<text x="458" y="1080" font-size="13" font-weight="400" fill="#16202B" text-anchor="start">referenced by Sub-model 13 (MOC)</text>
+<rect x="820" y="1061" width="28" height="28" rx="6" fill="#FFFFFF" stroke="#B3402F" stroke-width="2.2"/>
+<text x="862" y="1080" font-size="13" font-weight="400" fill="#16202B" text-anchor="start">security-related (IEC 62443)</text>
+</svg>

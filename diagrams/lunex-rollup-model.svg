@@ -11,7 +11,7 @@
   <marker id="tri-navy" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
     <path d="M0 0 L10 5 L0 10 Z" fill="#1F3B57"/>
   </marker>
-  <marker id="diamond-navy" viewBox="0 0 14 10" refX="0.5" refY="5" markerWidth="15" markerHeight="11" orient="auto-start-reverse">
+  <marker id="diamond-navy" viewBox="0 0 14 10" refX="13.5" refY="5" markerWidth="15" markerHeight="11" orient="auto-start-reverse">
     <path d="M0 5 L7 0 L14 5 L7 10 Z" fill="#1F3B57"/>
   </marker>
 </defs>
@@ -19,9 +19,9 @@
 <rect width="1600" height="1825" fill="#FBFAF8"/>
 <rect width="1600" height="1825" fill="url(#grid5)"/>
 
-<text x="60" y="56" font-size="14" font-weight="400" fill="#5A6B7B" text-anchor="start" letter-spacing="2.5">LUNEX — SUB-MODEL 9</text>
+<text x="60" y="56" font-size="14" font-weight="400" fill="#5A6B7B" text-anchor="start" letter-spacing="2.5">LUNEX — SUB-MODEL 14</text>
 <text x="60" y="86" font-size="26" font-weight="600" fill="#16202B" text-anchor="start">Collective Status (Rollup)</text>
-<text x="60" y="110" font-size="13" font-weight="400" fill="#5A6B7B" text-anchor="start">Deferred from Sub-model 4, resolved here — a computed view, not a new class (Sub-model 7 pattern)</text>
+<text x="60" y="110" font-size="13" font-weight="400" fill="#5A6B7B" text-anchor="start">Deferred from Sub-model 4, resolved here — a computed view, not a new class (Sub-model 11 pattern)</text>
 <text x="58" y="183" font-size="20" font-weight="700" fill="#2F6F9E" text-anchor="start">Severity Tiers — Ranking the Sub-model 4 States</text>
 <text x="58" y="205" font-size="12.5" font-weight="400" fill="#5A6B7B" text-anchor="start">the state machine defines transitions, not severity — this adds the missing ranking</text>
 <rect x="30" y="145" width="1540" height="495" rx="10" fill="#FFFFFF" stroke="#2F6F9E" stroke-width="2.2"/>
@@ -72,7 +72,7 @@
 <text x="58" y="610" font-size="12" font-weight="400" fill="#33404D" text-anchor="start" font-style="italic">worstTier = the lowest tier index present anywhere below a node (0 is worst) — Off stays Tier 3, always</text>
 <rect x="30" y="690" width="1540" height="460" rx="10" fill="#FFFFFF" stroke="#2F6F9E" stroke-width="2.2"/>
 <text x="58" y="728" font-size="20" font-weight="700" fill="#2F6F9E" text-anchor="start">Rollup — a Computed View, Not a New Class</text>
-<text x="58" y="750" font-size="12.5" font-weight="400" fill="#5A6B7B" text-anchor="start">same pattern as the Sub-model 7 telemetry envelope — no new LunexObject subtype needed</text>
+<text x="58" y="750" font-size="12.5" font-weight="400" fill="#5A6B7B" text-anchor="start">same pattern as the Sub-model 11 telemetry envelope — no new LunexObject subtype needed</text>
 <rect x="60" y="790" width="660" height="300" rx="8" fill="#FFFFFF" stroke="#1F3B57" stroke-width="2"/>
 <text x="80" y="824" font-size="13" font-weight="700" fill="#16202B" text-anchor="start" font-family="Consolas, Menlo, monospace">{</text>
 <text x="100" y="849" font-size="11.5" font-weight="400" fill="#2F6F9E" text-anchor="start" font-family="Consolas, Menlo, monospace">"subject": "lunex://.../Utilities"</text>
@@ -137,7 +137,7 @@
 <polygon points="652.5,1448 660,1442.5 667.5,1448 660,1453.5" fill="#1F3B57"/>
 <line x1="465.0" y1="1554" x2="270" y2="1492" stroke="#1F3B57" stroke-width="1.8"/>
 <line x1="465.0" y1="1554" x2="660" y2="1492" stroke="#1F3B57" stroke-width="1.8"/>
-<rect x="365.0" y="1554" width="200" height="52" rx="10" fill="#FFFFFF" stroke="#B3402F" stroke-width="2.6"/>
+<rect x="340.0" y="1554" width="250" height="52" rx="10" fill="#FFFFFF" stroke="#B3402F" stroke-width="2.6"/>
 <text x="465.0" y="1576" font-size="13.5" font-weight="700" fill="#16202B" text-anchor="middle">Cell — Utilities</text>
 <text x="465.0" y="1594" font-size="10.5" font-weight="700" fill="#B3402F" text-anchor="middle">Rollup: Tier 0 (from Assembly-02 only)</text>
 <polygon points="457.5,1554 465.0,1548.5 472.5,1554 465.0,1559.5" fill="#1F3B57"/>

@@ -22,9 +22,9 @@
 <rect width="1600" height="1520" fill="#FBFAF8"/>
 <rect width="1600" height="1520" fill="url(#grid5)"/>
 
-<text x="60" y="56" font-size="14" font-weight="400" fill="#5A6B7B" text-anchor="start" letter-spacing="2.5">LUNEX — SUB-MODEL 13</text>
+<text x="60" y="56" font-size="14" font-weight="400" fill="#5A6B7B" text-anchor="start" letter-spacing="2.5">LUNEX — SUB-MODEL 18</text>
 <text x="60" y="86" font-size="26" font-weight="600" fill="#16202B" text-anchor="start">Situational Awareness</text>
-<text x="60" y="110" font-size="13" font-weight="400" fill="#5A6B7B" text-anchor="start">no new data — a navigation contract over Sub-models 7, 9 and 10, so the operator is never lost or digging</text>
+<text x="60" y="110" font-size="13" font-weight="400" fill="#5A6B7B" text-anchor="start">no new data — a navigation contract over Sub-models 11, 14 and 15, so the operator is never lost or digging</text>
 <rect x="30" y="145" width="1540" height="440" rx="10" fill="#FFFFFF" stroke="#2F6F9E" stroke-width="2.2"/>
 <text x="58" y="183" font-size="20" font-weight="700" fill="#2F6F9E" text-anchor="start">The Same Three Signals, at Every Level</text>
 <text x="58" y="205" font-size="12.5" font-weight="400" fill="#5A6B7B" text-anchor="start">own state · rollup badge · top alarm — identical shape from Realm down to Device (Sub-model 2)</text>
@@ -67,7 +67,7 @@
 <text x="58" y="550" font-size="12" font-weight="400" fill="#33404D" text-anchor="start" font-style="italic">same worst-case Pump-07 alarm is visible from the top of the hierarchy — the operator never wonders “is anything wrong?”</text>
 <rect x="30" y="635" width="1540" height="380" rx="10" fill="#FFFFFF" stroke="#2F6F9E" stroke-width="2.2"/>
 <text x="58" y="673" font-size="20" font-weight="700" fill="#2F6F9E" text-anchor="start">Jump to Worst — No Manual Digging Through Layers</text>
-<text x="58" y="695" font-size="12.5" font-weight="400" fill="#5A6B7B" text-anchor="start">one action follows the Rollup's own contributors path (Sub-model 9) straight to the cause</text>
+<text x="58" y="695" font-size="12.5" font-weight="400" fill="#5A6B7B" text-anchor="start">one action follows the Rollup's own contributors path (Sub-model 14) straight to the cause</text>
 <rect x="55.0" y="771" width="130" height="48" rx="10" fill="#FFFFFF" stroke="#1F3B57" stroke-width="2.2"/>
 <text x="120.0" y="800" font-size="13" font-weight="700" fill="#1F3B57" text-anchor="middle">Cell</text>
 <line x1="185.0" y1="795" x2="380.0" y2="795" stroke="#8FA0B3" stroke-width="1.6" stroke-dasharray="3,3"/>
@@ -96,7 +96,7 @@
 <text x="58" y="980" font-size="12" font-weight="400" fill="#33404D" text-anchor="start" font-style="italic">the shortcut and the manual path always land on the same Device/Alarm — it's a shortcut, not a different answer</text>
 <rect x="30" y="1065" width="1540" height="300" rx="10" fill="#FFFFFF" stroke="#2F6F9E" stroke-width="2.2"/>
 <text x="58" y="1103" font-size="20" font-weight="700" fill="#2F6F9E" text-anchor="start">Landed — the Right Information Is Already There</text>
-<text x="58" y="1125" font-size="12.5" font-weight="400" fill="#5A6B7B" text-anchor="start">reuses the Context Layer surfacing from Sub-model 11 — no separate hunt after arriving</text>
+<text x="58" y="1125" font-size="12.5" font-weight="400" fill="#5A6B7B" text-anchor="start">reuses the Context Layer surfacing from Sub-model 16 — no separate hunt after arriving</text>
 <rect x="140" y="1215" width="240" height="80" rx="10" fill="#FFFFFF" stroke="#B3402F" stroke-width="2.4"/>
 <text x="260" y="1243" font-size="14.5" font-weight="700" fill="#B3402F" text-anchor="middle">Pump-07</text>
 <text x="260" y="1267" font-size="11.5" font-weight="400" fill="#33404D" text-anchor="middle">High Vibration · Priority 1</text>

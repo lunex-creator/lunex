@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1480" width="1600" height="1480" font-family="Inter, Segoe UI, Helvetica Neue, Arial, sans-serif">
+<defs>
+  <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
+    <path d="M20 0H0V20" fill="none" stroke="#E6EBF0" stroke-width="1"/>
+  </pattern>
+  <pattern id="grid5" width="100" height="100" patternUnits="userSpaceOnUse">
+    <rect width="100" height="100" fill="url(#grid)"/>
+    <path d="M100 0H0V100" fill="none" stroke="#D6DEE7" stroke-width="1"/>
+  </pattern>
+  <marker id="tri-navy" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+    <path d="M0 0 L10 5 L0 10 Z" fill="#1F3B57"/>
+  </marker>
+  <marker id="tri-red" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+    <path d="M0 0 L10 5 L0 10 Z" fill="#B3402F"/>
+  </marker>
+  <marker id="tri-green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+    <path d="M0 0 L10 5 L0 10 Z" fill="#2E7D4F"/>
+  </marker>
+</defs>
+
+<rect width="1600" height="1480" fill="#FBFAF8"/>
+<rect width="1600" height="1480" fill="url(#grid5)"/>
+
+<text x="60" y="56" font-size="14" font-weight="400" fill="#5A6B7B" text-anchor="start" letter-spacing="2.5">LUNEX — SUB-MODEL 10</text>
+<text x="60" y="86" font-size="26" font-weight="600" fill="#16202B" text-anchor="start">Security Incident Response</text>
+<text x="60" y="110" font-size="12.8" font-weight="400" fill="#5A6B7B" text-anchor="start">NIST CSF Respond/Recover and IEC 62443-2-1 incident response — a cybersecurity event is not a process alarm, even when the same signal triggers both</text>
+<rect x="30" y="145" width="1540" height="460" rx="10" fill="#FFFFFF" stroke="#2F6F9E" stroke-width="2.2"/>
+<text x="58" y="183" font-size="20" font-weight="700" fill="#2F6F9E" text-anchor="start">Peer of Alarm, Not a Subtype — Two Different Questions</text>
+<text x="58" y="205" font-size="12.5" font-weight="400" fill="#5A6B7B" text-anchor="start">The same underlying event can raise both, because each answers something the other doesn't</text>
+<rect x="700" y="250" width="200" height="50" rx="8" fill="#FFFFFF" stroke="#1F3B57" stroke-width="2"/>
+<text x="800.0" y="282" font-size="13.5" font-weight="700" fill="#1F3B57" text-anchor="middle">LunexObject</text>
+<text x="800.0" y="234" font-size="11.5" font-weight="400" fill="#5A6B7B" text-anchor="middle" font-style="italic">peers — both extend LunexObject directly, neither is a subclass of the other</text>
+<rect x="420" y="360" width="350" height="110" rx="8" fill="#FFFFFF" stroke="#1F3B57" stroke-width="2.2"/>
+<text x="595.0" y="390" font-size="16" font-weight="700" fill="#1F3B57" text-anchor="middle">Alarm</text>
+<text x="595.0" y="412" font-size="10.5" font-weight="400" fill="#5A6B7B" text-anchor="middle" font-style="italic">Sub-model 15</text>
+<text x="595.0" y="436" font-size="11" font-weight="400" fill="#33404D" text-anchor="middle">“does an operator need to act</text>
+<text x="595.0" y="454" font-size="11" font-weight="400" fill="#33404D" text-anchor="middle">on a process condition?”</text>
+<rect x="830" y="360" width="350" height="110" rx="8" fill="#FFFFFF" stroke="#B3402F" stroke-width="2.4"/>
+<text x="1005.0" y="390" font-size="16" font-weight="700" fill="#B3402F" text-anchor="middle">SecurityIncident</text>
+<text x="1005.0" y="412" font-size="10.5" font-weight="400" fill="#5A6B7B" text-anchor="middle" font-style="italic">Sub-model 10</text>
+<text x="1005.0" y="436" font-size="11" font-weight="400" fill="#33404D" text-anchor="middle">“is this a cybersecurity event,</text>
+<text x="1005.0" y="454" font-size="11" font-weight="400" fill="#33404D" text-anchor="middle">and where are we in containing it?”</text>
+<path d="M 595.0 360 L 760.0 300" fill="none" stroke="#1F3B57" stroke-width="2"/>
+<path d="M 1005.0 360 L 840.0 300" fill="none" stroke="#B3402F" stroke-width="2"/>
+<rect x="58" y="520" width="1484" height="60" rx="8" fill="#FFFFFF" stroke="#8FA0B3" stroke-width="1.6" stroke-dasharray="4,4"/>
+<text x="80" y="544" font-size="12" font-weight="400" fill="#33404D" text-anchor="start" font-style="italic">detectedVia : ZoneRef | ConduitRef | DeviceRef — a Sub-model 7 anomaly or an Identity/AccessGrant violation (Sub-model 8),</text>
+<text x="80" y="564" font-size="12" font-weight="400" fill="#33404D" text-anchor="start" font-style="italic">which may or may not be the same underlying signal an Alarm (Sub-model 15) was also raised from.</text>
+<rect x="30" y="655" width="1540" height="290" rx="10" fill="#FFFFFF" stroke="#2F6F9E" stroke-width="2.2"/>
+<text x="58" y="693" font-size="20" font-weight="700" fill="#2F6F9E" text-anchor="start">SecurityIncident.state — Its Own Value Space [NIST CSF Respond/Recover]</text>
+<text x="58" y="715" font-size="12.5" font-weight="400" fill="#5A6B7B" text-anchor="start">A third, distinct kind of question — not a restatement of Alarm.state or the Sub-model 4 object-behavior states</text>
+<rect x="95.0" y="783" width="250" height="44" rx="22" fill="#FFFFFF" stroke="#1F3B57" stroke-width="2.2"/>
+<text x="220.0" y="811" font-size="13.5" font-weight="700" fill="#1F3B57" text-anchor="middle">Detected</text>
+<line x1="345.0" y1="805" x2="385.0" y2="805" stroke="#1F3B57" stroke-width="2" marker-end="url(#tri-navy)"/>
+<text x="365.0" y="773" font-size="10.5" font-weight="400" fill="#5A6B7B" text-anchor="middle" font-style="italic" font-family="Consolas, Menlo, monospace">contain()</text>
+<rect x="385.0" y="783" width="250" height="44" rx="22" fill="#FFFFFF" stroke="#1F3B57" stroke-width="2.2"/>
+<text x="510.0" y="811" font-size="13.5" font-weight="700" fill="#1F3B57" text-anchor="middle">Contained</text>
+<line x1="635.0" y1="805" x2="675.0" y2="805" stroke="#1F3B57" stroke-width="2" marker-end="url(#tri-navy)"/>
+<text x="655.0" y="773" font-size="10.5" font-weight="400" fill="#5A6B7B" text-anchor="middle" font-style="italic" font-family="Consolas, Menlo, monospace">eradicate()</text>
+<rect x="675.0" y="783" width="250" height="44" rx="22" fill="#FFFFFF" stroke="#1F3B57" stroke-width="2.2"/>
+<text x="800.0" y="811" font-size="13.5" font-weight="700" fill="#1F3B57" text-anchor="middle">Eradicated</text>
+<line x1="925.0" y1="805" x2="965.0" y2="805" stroke="#1F3B57" stroke-width="2" marker-end="url(#tri-navy)"/>
+<text x="945.0" y="773" font-size="10.5" font-weight="400" fill="#5A6B7B" text-anchor="middle" font-style="italic" font-family="Consolas, Menlo, monospace">recover()</text>
+<rect x="965.0" y="783" width="250" height="44" rx="22" fill="#FFFFFF" stroke="#1F3B57" stroke-width="2.2"/>
+<text x="1090.0" y="811" font-size="13.5" font-weight="700" fill="#1F3B57" text-anchor="middle">Recovered</text>
+<line x1="1215.0" y1="805" x2="1255.0" y2="805" stroke="#1F3B57" stroke-width="2" marker-end="url(#tri-navy)"/>
+<text x="1235.0" y="773" font-size="10.5" font-weight="400" fill="#5A6B7B" text-anchor="middle" font-style="italic" font-family="Consolas, Menlo, monospace">close()</text>
+<rect x="1255.0" y="783" width="250" height="44" rx="22" fill="#FFFFFF" stroke="#2E7D4F" stroke-width="2.2"/>
+<text x="1380.0" y="811" font-size="13.5" font-weight="700" fill="#2E7D4F" text-anchor="middle">Closed</text>
+<text x="220.0" y="745" font-size="10.5" font-weight="400" fill="#5A6B7B" text-anchor="middle" font-style="italic">raised automatically — never a manual method call</text>
+<text x="220.0" y="855" font-size="10.5" font-weight="400" fill="#33404D" text-anchor="middle" font-style="italic">isolated: typically a Conduit restriction (Sub-model 7)</text>
+<text x="510.0" y="855" font-size="10.5" font-weight="400" fill="#33404D" text-anchor="middle" font-style="italic">root cause removed</text>
+<text x="800.0" y="855" font-size="10.5" font-weight="400" fill="#33404D" text-anchor="middle" font-style="italic">normal operation restored</text>
+<text x="1090.0" y="855" font-size="10.5" font-weight="400" fill="#33404D" text-anchor="middle" font-style="italic">always requires a lessons-learned note</text>
+<text x="58" y="915" font-size="12" font-weight="400" fill="#33404D" text-anchor="start" font-style="italic">severity : Tier (0-3) reuses Sub-model 14's scale directly — every risk judgment in LUNEX speaks the same vocabulary</text>
+<rect x="30" y="995" width="1540" height="330" rx="10" fill="#FFFFFF" stroke="#2F6F9E" stroke-width="2.2"/>
+<text x="58" y="1033" font-size="20" font-weight="700" fill="#2F6F9E" text-anchor="start">Schema — SecurityIncident and Its Link to Remediation</text>
+<text x="58" y="1055" font-size="12.3" font-weight="400" fill="#5A6B7B" text-anchor="start">SecurityIncident tracks the response workflow; ChangeRequest tracks what was actually changed as a result — never merged into one object</text>
+<rect x="58" y="1095" width="600" height="190" rx="8" fill="#FFFFFF" stroke="#B3402F" stroke-width="2.4"/>
+<text x="74" y="1123" font-size="15" font-weight="700" fill="#B3402F" text-anchor="start">SecurityIncident</text>
+<text x="74" y="1141" font-size="10.5" font-weight="400" fill="#5A6B7B" text-anchor="start" font-style="italic">extends LunexObject</text>
+<text x="74" y="1165" font-size="10.8" font-weight="400" fill="#33404D" text-anchor="start" font-family="Consolas, Menlo, monospace">+ detectedVia : ZoneRef | ConduitRef | DeviceRef</text>
+<text x="74" y="1185" font-size="10.8" font-weight="400" fill="#33404D" text-anchor="start" font-family="Consolas, Menlo, monospace">+ severity : Tier (0-3)  (Sub-model 14)</text>
+<text x="74" y="1205" font-size="10.8" font-weight="400" fill="#33404D" text-anchor="start" font-family="Consolas, Menlo, monospace">+ relatedChange : ChangeRequestRef | null</text>
+<text x="74" y="1225" font-size="10.8" font-weight="400" fill="#33404D" text-anchor="start" font-family="Consolas, Menlo, monospace">+ state : Detected | Contained | Eradicated |</text>
+<text x="74" y="1245" font-size="10.8" font-weight="400" fill="#33404D" text-anchor="start" font-family="Consolas, Menlo, monospace">          Recovered | Closed  (own value space)</text>
+<rect x="1010" y="1110.0" width="490" height="160" rx="30" fill="#FFFFFF" stroke="#2E7D4F" stroke-width="2.2" stroke-dasharray="5,4"/>
+<text x="1255.0" y="1146.0" font-size="13" font-weight="700" fill="#2E7D4F" text-anchor="middle">ChangeRequest (Sub-model 13)</text>
+<text x="1255.0" y="1172.0" font-size="11" font-weight="400" fill="#33404D" text-anchor="middle">raised only when remediation changes</text>
+<text x="1255.0" y="1190.0" font-size="11" font-weight="400" fill="#33404D" text-anchor="middle">plant configuration — not for</text>
+<text x="1255.0" y="1208.0" font-size="11" font-weight="400" fill="#33404D" text-anchor="middle">containment alone</text>
+<text x="1255.0" y="1234.0" font-size="10.5" font-weight="400" fill="#5A6B7B" text-anchor="middle" font-style="italic">the same separation MOC draws for a Recipe parameter</text>
+<text x="1255.0" y="1250.0" font-size="10.5" font-weight="400" fill="#5A6B7B" text-anchor="middle" font-style="italic">change and the approval that authorized it</text>
+<line x1="658" y1="1190.0" x2="1010" y2="1190.0" stroke="#2E7D4F" stroke-width="1.8" marker-end="url(#tri-green)" stroke-dasharray="4,4"/>
+<text x="834.0" y="1178.0" font-size="10.5" font-weight="400" fill="#5A6B7B" text-anchor="middle" font-style="italic">relatedChange</text>
+<line x1="60" y1="1365" x2="1540" y2="1365" stroke="#D6DEE7" stroke-width="1"/>
+<text x="60" y="1388" font-size="12" font-weight="400" fill="#5A6B7B" text-anchor="start" letter-spacing="1.6">LEGEND</text>
+<line x1="60" y1="1420" x2="106" y2="1420" stroke="#1F3B57" stroke-width="2" marker-end="url(#tri-navy)"/>
+<text x="118" y="1425" font-size="13" font-weight="400" fill="#16202B" text-anchor="start">lifecycle transition</text>
+<line x1="360" y1="1420" x2="406" y2="1420" stroke="#2E7D4F" stroke-width="1.8" marker-end="url(#tri-green)" stroke-dasharray="4,4"/>
+<text x="418" y="1425" font-size="13" font-weight="400" fill="#16202B" text-anchor="start">relatedChange reference (optional)</text>
+<rect x="760" y="1406" width="28" height="28" rx="6" fill="#FFFFFF" stroke="#B3402F" stroke-width="2.2"/>
+<text x="802" y="1425" font-size="13" font-weight="400" fill="#16202B" text-anchor="start">security-related (IEC 62443 / NIST CSF)</text>
+</svg>

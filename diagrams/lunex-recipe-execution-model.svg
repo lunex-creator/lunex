@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1280" width="1600" height="1280" font-family="Inter, Segoe UI, Helvetica Neue, Arial, sans-serif">
+<defs>
+  <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
+    <path d="M20 0H0V20" fill="none" stroke="#E6EBF0" stroke-width="1"/>
+  </pattern>
+  <pattern id="grid5" width="100" height="100" patternUnits="userSpaceOnUse">
+    <rect width="100" height="100" fill="url(#grid)"/>
+    <path d="M100 0H0V100" fill="none" stroke="#D6DEE7" stroke-width="1"/>
+  </pattern>
+  <marker id="tri-navy" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+    <path d="M0 0 L10 5 L0 10 Z" fill="#1F3B57"/>
+  </marker>
+  <marker id="tri-hollow" viewBox="0 0 12 12" refX="11" refY="6" markerWidth="11" markerHeight="11" orient="auto-start-reverse">
+    <path d="M0 0 L12 6 L0 12 Z" fill="#FFFFFF" stroke="#1F3B57" stroke-width="1.4"/>
+  </marker>
+  <marker id="tri-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+    <path d="M0 0 L10 5 L0 10 Z" fill="#2F6F9E"/>
+  </marker>
+</defs>
+
+<rect width="1600" height="1280" fill="#FBFAF8"/>
+<rect width="1600" height="1280" fill="url(#grid5)"/>
+
+<text x="60" y="56" font-size="14" font-weight="400" fill="#5A6B7B" text-anchor="start" letter-spacing="2.5">LUNEX — SUB-MODEL 5</text>
+<text x="60" y="86" font-size="26" font-weight="600" fill="#16202B" text-anchor="start">Recipe &amp; Execution Model</text>
+<text x="60" y="110" font-size="13" font-weight="400" fill="#5A6B7B" text-anchor="start">ISA-88's structure with self-describing names, laid over Sub-model 2 (where) and Sub-model 4 (state) — no new state machine</text>
+<rect x="30" y="145" width="1540" height="475" rx="10" fill="#FFFFFF" stroke="#2F6F9E" stroke-width="2.2"/>
+<text x="58" y="183" font-size="20" font-weight="700" fill="#2F6F9E" text-anchor="start">Recipe — a Template, Refined Step by Step via derivedFrom</text>
+<text x="58" y="205" font-size="12.5" font-weight="400" fill="#5A6B7B" text-anchor="start">Recipe.recipeLevel: each recipe refines the one in its derivedFrom link (ISA-88: General → Site → Master → Control)</text>
+<rect x="220.0" y="255" width="260" height="56" rx="8" fill="#FFFFFF" stroke="#5A6B7B" stroke-width="2.2"/>
+<text x="350.0" y="279" font-size="14" font-weight="700" fill="#5A6B7B" text-anchor="middle">product</text>
+<text x="350.0" y="299" font-size="10.5" font-weight="400" fill="#5A6B7B" text-anchor="middle" font-style="italic">the product, independent of any plant</text>
+<line x1="480.0" y1="283" x2="520.0" y2="283" stroke="#1F3B57" stroke-width="2" marker-end="url(#tri-navy)"/>
+<rect x="520.0" y="255" width="260" height="56" rx="8" fill="#FFFFFF" stroke="#2F6F9E" stroke-width="2.2"/>
+<text x="650.0" y="279" font-size="14" font-weight="700" fill="#2F6F9E" text-anchor="middle">location</text>
+<text x="650.0" y="299" font-size="10.5" font-weight="400" fill="#5A6B7B" text-anchor="middle" font-style="italic">adapted to one Location</text>
+<line x1="780.0" y1="283" x2="820.0" y2="283" stroke="#1F3B57" stroke-width="2" marker-end="url(#tri-navy)"/>
+<rect x="820.0" y="255" width="260" height="56" rx="8" fill="#FFFFFF" stroke="#1F3B57" stroke-width="2.2"/>
+<text x="950.0" y="279" font-size="14" font-weight="700" fill="#1F3B57" text-anchor="middle">equipment</text>
+<text x="950.0" y="299" font-size="10.5" font-weight="400" fill="#5A6B7B" text-anchor="middle" font-style="italic">fixed to specific equipment</text>
+<line x1="1080.0" y1="283" x2="1120.0" y2="283" stroke="#1F3B57" stroke-width="2" marker-end="url(#tri-navy)"/>
+<rect x="1120.0" y="255" width="260" height="56" rx="8" fill="#FFFFFF" stroke="#B3402F" stroke-width="2.2"/>
+<text x="1250.0" y="279" font-size="14" font-weight="700" fill="#B3402F" text-anchor="middle">execution</text>
+<text x="1250.0" y="299" font-size="10.5" font-weight="400" fill="#5A6B7B" text-anchor="middle" font-style="italic">baseline of one execution</text>
+<text x="1080.0" y="345" font-size="12" font-weight="400" fill="#33404D" text-anchor="end" font-style="italic">execution = equipment + resolved run-time parameters — recorded in RecipeExecution.parameterValues</text>
+<text x="58" y="405" font-size="15" font-weight="700" fill="#16202B" text-anchor="start">RecipeElement — Steps Named by the Asset Level They Run On (Recipe.structure)</text>
+<rect x="58" y="435" width="230" height="62" rx="8" fill="#FFFFFF" stroke="#1F3B57" stroke-width="2"/>
+<text x="173" y="460" font-size="13" font-weight="700" fill="#1F3B57" text-anchor="middle" font-family="Consolas, Menlo, monospace">runsOn: area</text>
+<text x="173" y="478" font-size="10.5" font-weight="400" fill="#5A6B7B" text-anchor="middle" font-style="italic">multi-cell recipe  ·  not in ISA-88</text>
+<line x1="288" y1="466" x2="338" y2="466" stroke="#1F3B57" stroke-width="2" marker-end="url(#tri-navy)"/>
+<rect x="338" y="435" width="230" height="62" rx="8" fill="#FFFFFF" stroke="#1F3B57" stroke-width="2"/>
+<text x="453" y="460" font-size="13" font-weight="700" fill="#1F3B57" text-anchor="middle" font-family="Consolas, Menlo, monospace">runsOn: cell</text>
+<text x="453" y="478" font-size="10.5" font-weight="400" fill="#5A6B7B" text-anchor="middle" font-style="italic">whole process  ·  ISA-88: procedure</text>
+<line x1="568" y1="466" x2="618" y2="466" stroke="#1F3B57" stroke-width="2" marker-end="url(#tri-navy)"/>
+<rect x="618" y="435" width="230" height="62" rx="8" fill="#FFFFFF" stroke="#1F3B57" stroke-width="2"/>
+<text x="733" y="460" font-size="13" font-weight="700" fill="#1F3B57" text-anchor="middle" font-family="Consolas, Menlo, monospace">runsOn: system</text>
+<text x="733" y="478" font-size="10.5" font-weight="400" fill="#5A6B7B" text-anchor="middle" font-style="italic">one functional unit  ·  ISA-88: unit procedure</text>
+<line x1="848" y1="466" x2="898" y2="466" stroke="#1F3B57" stroke-width="2" marker-end="url(#tri-navy)"/>
+<rect x="898" y="435" width="230" height="62" rx="8" fill="#FFFFFF" stroke="#B3402F" stroke-width="2"/>
+<text x="1013" y="460" font-size="13" font-weight="700" fill="#B3402F" text-anchor="middle" font-family="Consolas, Menlo, monospace">runsOn: assembly</text>
+<text x="1013" y="478" font-size="10.5" font-weight="400" fill="#5A6B7B" text-anchor="middle" font-style="italic">coordinated devices  ·  ISA-88: operation</text>
+<text x="1013" y="517" font-size="11.5" font-weight="400" fill="#B3402F" text-anchor="middle" font-style="italic">leaf — no children</text>
+<text x="58" y="517" font-size="12" font-weight="400" fill="#33404D" text-anchor="start" font-style="italic">a child always runs on a lower level than its parent; any level may be skipped  ·  childOrder: sequence | parallel</text>
+<text x="58" y="539" font-size="12" font-weight="400" fill="#33404D" text-anchor="start" font-style="italic">No element for Device — a Device has its own Sub-model 4 state; an assembly element commands it and waits for that state</text>
+<text x="58" y="561" font-size="12" font-weight="400" fill="#33404D" text-anchor="start" font-style="italic">target (AreaRef … AssemblyRef | null) is bound at equipment level; equipmentClass (ClassRef) filters before that</text>
+<text x="58" y="597" font-size="12" font-weight="400" fill="#33404D" text-anchor="start" font-style="italic">Recipe.goldenExecution → the known-good reference RecipeExecution  ·  Recipe.basedOnExecution → provenance of a recipe promoted from a tuned RecipeExecution (after approval, Sub-model 13)</text>
+<rect x="30" y="670" width="1540" height="455" rx="10" fill="#FFFFFF" stroke="#2F6F9E" stroke-width="2.2"/>
+<text x="58" y="708" font-size="20" font-weight="700" fill="#2F6F9E" text-anchor="start">RecipeExecution — One Execution, Reusing Sub-model 4 Directly</text>
+<text x="58" y="730" font-size="12.5" font-weight="400" fill="#5A6B7B" text-anchor="start">PackML's states already ARE recipe-execution states — Sub-model 4 said so from the start; no override needed</text>
+<rect x="60" y="770" width="420" height="280" rx="8" fill="#FFFFFF" stroke="#B3402F" stroke-width="2.4"/>
+<text x="76" y="798" font-size="15" font-weight="700" fill="#B3402F" text-anchor="start">RecipeExecution</text>
+<text x="76" y="816" font-size="10.5" font-weight="400" fill="#5A6B7B" text-anchor="start" font-style="italic">extends LunexObject</text>
+<text x="76" y="840" font-size="11.3" font-weight="400" fill="#33404D" text-anchor="start" font-family="Consolas, Menlo, monospace">+ recipe : RecipeRef</text>
+<text x="76" y="862" font-size="11.3" font-weight="400" fill="#33404D" text-anchor="start" font-family="Consolas, Menlo, monospace">+ equipment : AreaRef | CellRef | SystemRef</text>
+<text x="76" y="884" font-size="11.3" font-weight="400" fill="#33404D" text-anchor="start" font-family="Consolas, Menlo, monospace">+ currentSteps : RecipeElementRef[]</text>
+<text x="76" y="906" font-size="11.3" font-weight="400" fill="#33404D" text-anchor="start" font-family="Consolas, Menlo, monospace">+ parameterValues : Map&lt;string,value&gt;</text>
+<text x="76" y="928" font-size="11.3" font-weight="400" fill="#33404D" text-anchor="start" font-family="Consolas, Menlo, monospace">+ adjustments : ParameterAdjustment[]</text>
+<text x="76" y="950" font-size="11.3" font-weight="400" fill="#33404D" text-anchor="start" font-family="Consolas, Menlo, monospace">+ startTime / endTime : timestamp</text>
+<text x="76" y="972" font-size="11.3" font-weight="400" fill="#33404D" text-anchor="start" font-family="Consolas, Menlo, monospace">+ quantityTarget : quantity | null</text>
+<text x="76" y="994" font-size="11.3" font-weight="400" fill="#33404D" text-anchor="start" font-family="Consolas, Menlo, monospace">+ genealogy : RecipeExecutionRef[]  (optional)</text>
+<text x="76" y="1016" font-size="11.3" font-weight="400" fill="#33404D" text-anchor="start" font-family="Consolas, Menlo, monospace">+ state : State  (Sub-model 4 — reused)</text>
+<rect x="560" y="770" width="460" height="250" rx="8" fill="#FFFFFF" stroke="#1F3B57" stroke-width="2" stroke-dasharray="5,4"/>
+<text x="576" y="798" font-size="13.5" font-weight="700" fill="#1F3B57" text-anchor="start">Sub-model 4 state machine</text>
+<rect x="595.0" y="832" width="110" height="36" rx="18" fill="#FFFFFF" stroke="#5A6B7B" stroke-width="2"/>
+<text x="650" y="854.0" font-size="11.5" font-weight="700" fill="#5A6B7B" text-anchor="middle">Standby</text>
+<rect x="735.0" y="832" width="110" height="36" rx="18" fill="#FFFFFF" stroke="#2F6F9E" stroke-width="2"/>
+<text x="790" y="854.0" font-size="11.5" font-weight="700" fill="#2F6F9E" text-anchor="middle">Starting</text>
+<rect x="875.0" y="832" width="110" height="36" rx="18" fill="#FFFFFF" stroke="#2E7D4F" stroke-width="2"/>
+<text x="930" y="854.0" font-size="11.5" font-weight="700" fill="#2E7D4F" text-anchor="middle">On</text>
+<rect x="595.0" y="908" width="110" height="36" rx="18" fill="#FFFFFF" stroke="#5A6B7B" stroke-width="2"/>
+<text x="650" y="930.0" font-size="11.5" font-weight="700" fill="#5A6B7B" text-anchor="middle">Standby</text>
+<rect x="855.0" y="908" width="150" height="36" rx="18" fill="#FFFFFF" stroke="#2F6F9E" stroke-width="2"/>
+<text x="930" y="930.0" font-size="11.5" font-weight="700" fill="#2F6F9E" text-anchor="middle">Controlled Stopping</text>
+<line x1="705.0" y1="850.0" x2="733.0" y2="850.0" stroke="#1F3B57" stroke-width="1.8" marker-end="url(#tri-navy)"/>
+<line x1="845.0" y1="850.0" x2="873.0" y2="850.0" stroke="#1F3B57" stroke-width="1.8" marker-end="url(#tri-navy)"/>
+<line x1="930" y1="868" x2="930" y2="906" stroke="#1F3B57" stroke-width="1.8" marker-end="url(#tri-navy)"/>
+<line x1="855" y1="926.0" x2="707.0" y2="926.0" stroke="#1F3B57" stroke-width="1.8" marker-end="url(#tri-navy)"/>
+<text x="922" y="892.0" font-size="10.5" font-weight="400" fill="#5A6B7B" text-anchor="end" font-style="italic">Controlled stop</text>
+<text x="790" y="918.0" font-size="10.5" font-weight="400" fill="#5A6B7B" text-anchor="middle" font-style="italic">Complete</text>
+<text x="576" y="975" font-size="11.5" font-weight="400" fill="#33404D" text-anchor="start" font-style="italic">no RecipeExecution-specific state value is ever introduced —</text>
+<text x="576" y="993" font-size="11.5" font-weight="400" fill="#33404D" text-anchor="start" font-style="italic">unlike Alarm (Sub-model 15), which genuinely needed one.</text>
+<text x="58" y="1089" font-size="12.5" font-weight="400" fill="#33404D" text-anchor="start" font-style="italic">methods() on RecipeExecution: no override — it returns exactly the standard Sub-model 4 trigger list for its current state (Appendix A)</text>
+<line x1="60" y1="1165" x2="1540" y2="1165" stroke="#D6DEE7" stroke-width="1"/>
+<text x="60" y="1188" font-size="12" font-weight="400" fill="#5A6B7B" text-anchor="start" letter-spacing="1.6">LEGEND</text>
+<line x1="60" y1="1220" x2="106" y2="1220" stroke="#1F3B57" stroke-width="2" marker-end="url(#tri-navy)"/>
+<text x="118" y="1225" font-size="13" font-weight="400" fill="#16202B" text-anchor="start">narrows into / proceeds to</text>
+<rect x="380" y="1206" width="36" height="28" rx="6" fill="#FFFFFF" stroke="#B3402F" stroke-width="2"/>
+<text x="396" y="1225" font-size="11" font-weight="400" fill="#16202B" text-anchor="middle"></text>
+<text x="425" y="1225" font-size="13" font-weight="400" fill="#16202B" text-anchor="start">assembly element — the only leaf in RecipeElement</text>
+</svg>

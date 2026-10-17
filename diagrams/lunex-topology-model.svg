@@ -53,7 +53,7 @@
 <text x="768" y="305" font-size="12.5" font-weight="700" fill="#2E7D4F" text-anchor="middle" font-family="Consolas, Menlo, monospace">A</text>
 <path d="M 574 280 Q 598.0 258, 622 280" fill="none" stroke="#8FA0B3" stroke-width="1.6" marker-end="url(#tri-gray)" stroke-dasharray="4,3"/>
 <path d="M 642 280 Q 666.0 258, 690 280" fill="none" stroke="#8FA0B3" stroke-width="1.6" marker-end="url(#tri-gray)" stroke-dasharray="4,3"/>
-<text x="474" y="355" font-size="11.5" font-weight="400" fill="#5A6B7B" text-anchor="start" font-style="italic">feedback — only between Control Units</text>
+<text x="474" y="355" font-size="11.5" font-weight="400" fill="#5A6B7B" text-anchor="start" font-style="italic">feedback — only between ControlUnit objects</text>
 <text x="474" y="415" font-size="12.5" font-weight="400" fill="#33404D" text-anchor="start">straight 1:1 chain, each stage wired to</text>
 <text x="474" y="433" font-size="12.5" font-weight="400" fill="#33404D" text-anchor="start">its neighbor only — no shared stage</text>
 <text x="474" y="460" font-size="12" font-weight="400" fill="#5A6B7B" text-anchor="start" font-style="italic">the simplest multi-device pattern</text>
@@ -86,7 +86,7 @@
 <line x1="1087.0" y1="326" x2="1121" y2="360" stroke="#1F3B57" stroke-width="1.7" marker-end="url(#tri-navy)"/>
 <line x1="1171" y1="360" x2="1183" y2="360" stroke="#1F3B57" stroke-width="1.7" marker-end="url(#tri-navy)"/>
 <text x="894" y="415" font-size="12.5" font-weight="400" fill="#33404D" text-anchor="start">several sensors and actuators share</text>
-<text x="894" y="433" font-size="12.5" font-weight="400" fill="#33404D" text-anchor="start">one Control Unit</text>
+<text x="894" y="433" font-size="12.5" font-weight="400" fill="#33404D" text-anchor="start">one ControlUnit</text>
 <text x="894" y="460" font-size="12" font-weight="400" fill="#5A6B7B" text-anchor="start" font-style="italic">fan-in / fan-out</text>
 <rect x="1290" y="150" width="380" height="340" rx="10" fill="#FFFFFF" stroke="#1F3B57" stroke-width="2.2"/>
 <text x="1314" y="186" font-size="19" font-weight="700" fill="#1F3B57" text-anchor="start">Mesh</text>
@@ -111,7 +111,7 @@
 <line x1="1411.0" y1="292" x2="1453.0" y2="290" stroke="#1F3B57" stroke-width="1.6" marker-end="url(#tri-navy)"/>
 <line x1="1507.0" y1="290" x2="1549.0" y2="292" stroke="#1F3B57" stroke-width="1.6" marker-end="url(#tri-navy)"/>
 <line x1="1591.0" y1="292" x2="1614.0" y2="292" stroke="#1F3B57" stroke-width="1.6" marker-end="url(#tri-navy)"/>
-<text x="1314" y="437" font-size="12.5" font-weight="400" fill="#33404D" text-anchor="start">networked Control Units, each with</text>
+<text x="1314" y="437" font-size="12.5" font-weight="400" fill="#33404D" text-anchor="start">networked ControlUnit objects, each with</text>
 <text x="1314" y="455" font-size="12.5" font-weight="400" fill="#33404D" text-anchor="start">its own I/O (shown once, for clarity)</text>
 <text x="1314" y="475" font-size="12" font-weight="400" fill="#5A6B7B" text-anchor="start" font-style="italic">peer-to-peer network</text>
 <path d="M 50 525 L 1650 525" fill="none" stroke="#8FA0B3" stroke-width="1.6" stroke-dasharray="5,4"/>
@@ -124,7 +124,7 @@
 <path d="M 1270.0 525 L 1270.0 555" fill="none" stroke="#8FA0B3" stroke-width="1.6" stroke-dasharray="5,4"/>
 <rect x="30" y="555" width="800" height="410" rx="10" fill="#FFFFFF" stroke="#2E7D4F" stroke-width="2.2"/>
 <text x="58" y="593" font-size="20" font-weight="700" fill="#2E7D4F" text-anchor="start">High-Availability</text>
-<text x="58" y="615" font-size="12.5" font-weight="400" fill="#5A6B7B" text-anchor="start">any Control Unit, in any shape above, deployed as a redundant pair</text>
+<text x="58" y="615" font-size="12.5" font-weight="400" fill="#5A6B7B" text-anchor="start">any ControlUnit, in any shape above, deployed as a redundant pair</text>
 <line x1="90" y1="720" x2="172" y2="720" stroke="#1F3B57" stroke-width="1.8" marker-end="url(#tri-navy)"/>
 <text x="86" y="704" font-size="11" font-weight="400" fill="#5A6B7B" text-anchor="start" font-style="italic">shared input</text>
 <line x1="180" y1="714" x2="345.0" y2="672" stroke="#1F3B57" stroke-width="1.8" marker-end="url(#tri-navy)"/>
@@ -141,18 +141,18 @@
 <line x1="515.0" y1="672" x2="680" y2="714" stroke="#1F3B57" stroke-width="1.8" marker-end="url(#tri-navy)"/>
 <line x1="515.0" y1="768" x2="680" y2="726" stroke="#1F3B57" stroke-width="1.6" marker-end="url(#tri-navy)" stroke-dasharray="5,4"/>
 <line x1="688" y1="720" x2="770" y2="720" stroke="#1F3B57" stroke-width="1.8" marker-end="url(#tri-navy)"/>
-<text x="700" y="704" font-size="11" font-weight="400" fill="#5A6B7B" text-anchor="end" font-style="italic">shared output</text>
+<text x="820" y="744" font-size="11" font-weight="400" fill="#5A6B7B" text-anchor="end" font-style="italic">shared output</text>
 <text x="58" y="923" font-size="12.5" font-weight="400" fill="#33404D" text-anchor="start">on failure, Standby takes over the shared inputs/outputs —</text>
 <text x="58" y="943" font-size="12.5" font-weight="400" fill="#33404D" text-anchor="start">the shape above (Point-to-Point, Star or Mesh) is unchanged</text>
 <rect x="870" y="555" width="800" height="410" rx="10" fill="#FFFFFF" stroke="#2F6F9E" stroke-width="2.2"/>
 <text x="898" y="593" font-size="20" font-weight="700" fill="#2F6F9E" text-anchor="start">Cloud &amp; Analytics</text>
-<text x="898" y="615" font-size="12.5" font-weight="400" fill="#5A6B7B" text-anchor="start">any Control Unit, in any shape above, streams telemetry upward</text>
+<text x="898" y="615" font-size="12.5" font-weight="400" fill="#5A6B7B" text-anchor="start">any ControlUnit, in any shape above, streams telemetry upward</text>
 <rect x="1200.0" y="823" width="140" height="44" rx="8" fill="#FFFFFF" stroke="#1F3B57" stroke-width="2.2"/>
 <text x="1270.0" y="850" font-size="15" font-weight="700" fill="#1F3B57" text-anchor="middle" font-family="Consolas, Menlo, monospace">CU</text>
 <text x="1270.0" y="879" font-size="11" font-weight="400" fill="#5A6B7B" text-anchor="middle" font-style="italic">any shape above</text>
 <rect x="1080.0" y="650" width="380" height="66" rx="20" fill="#FFFFFF" stroke="#2F6F9E" stroke-width="2.4"/>
 <text x="1270.0" y="678" font-size="16" font-weight="700" fill="#2F6F9E" text-anchor="middle">AI / Analytics Layer</text>
-<text x="1270.0" y="698" font-size="11" font-weight="400" fill="#5A6B7B" text-anchor="middle">Sub-model 7</text>
+<text x="1270.0" y="698" font-size="11" font-weight="400" fill="#5A6B7B" text-anchor="middle">Sub-model 11</text>
 <path d="M 1270.0 823 L 1270.0 726" fill="none" stroke="#2F6F9E" stroke-width="2" marker-end="url(#tri-navy)" stroke-dasharray="2,6"/>
 <circle cx="1270.0" cy="795.84" r="4" fill="#2F6F9E"/>
 <circle cx="1270.0" cy="772.56" r="4" fill="#2F6F9E"/>
@@ -176,13 +176,13 @@
 <text x="284" y="1215" font-size="12.5" font-weight="400" fill="#16202B" text-anchor="start">Transducer</text>
 <rect x="446.0" y="1195.0" width="44" height="30" rx="6" fill="#FFFFFF" stroke="#1F3B57" stroke-width="2"/>
 <text x="468" y="1215" font-size="12.5" font-weight="700" fill="#1F3B57" text-anchor="middle" font-family="Consolas, Menlo, monospace">CU</text>
-<text x="500" y="1215" font-size="12.5" font-weight="400" fill="#16202B" text-anchor="start">Control Unit</text>
-<rect x="686.0" y="1195.0" width="44" height="30" rx="6" fill="#FFFFFF" stroke="#2F6F9E" stroke-width="2"/>
-<text x="708" y="1215" font-size="12.5" font-weight="700" fill="#2F6F9E" text-anchor="middle" font-family="Consolas, Menlo, monospace">SC</text>
-<text x="740" y="1215" font-size="12.5" font-weight="400" fill="#16202B" text-anchor="start">Signal Converter</text>
-<rect x="974.0" y="1195.0" width="44" height="30" rx="6" fill="#FFFFFF" stroke="#2E7D4F" stroke-width="2"/>
-<text x="996" y="1215" font-size="12.5" font-weight="700" fill="#2E7D4F" text-anchor="middle" font-family="Consolas, Menlo, monospace">A</text>
-<text x="1028" y="1215" font-size="12.5" font-weight="400" fill="#16202B" text-anchor="start">Actuator</text>
+<text x="500" y="1215" font-size="12.5" font-weight="400" fill="#16202B" text-anchor="start">ControlUnit</text>
+<rect x="674.0" y="1195.0" width="44" height="30" rx="6" fill="#FFFFFF" stroke="#2F6F9E" stroke-width="2"/>
+<text x="696" y="1215" font-size="12.5" font-weight="700" fill="#2F6F9E" text-anchor="middle" font-family="Consolas, Menlo, monospace">SC</text>
+<text x="728" y="1215" font-size="12.5" font-weight="400" fill="#16202B" text-anchor="start">SignalConverter</text>
+<rect x="950.0" y="1195.0" width="44" height="30" rx="6" fill="#FFFFFF" stroke="#2E7D4F" stroke-width="2"/>
+<text x="972" y="1215" font-size="12.5" font-weight="700" fill="#2E7D4F" text-anchor="middle" font-family="Consolas, Menlo, monospace">A</text>
+<text x="1004" y="1215" font-size="12.5" font-weight="400" fill="#16202B" text-anchor="start">Actuator</text>
 <line x1="60" y1="1254" x2="106" y2="1254" stroke="#1F3B57" stroke-width="2" marker-end="url(#tri-navy)"/>
 <text x="118" y="1259" font-size="13" font-weight="400" fill="#16202B" text-anchor="start">signal flow</text>
 <path d="M 250 1254 L 296 1254" fill="none" stroke="#8FA0B3" stroke-width="1.6" marker-end="url(#tri-gray)" stroke-dasharray="5,4"/>

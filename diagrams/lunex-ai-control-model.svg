@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 2210" width="1600" height="2210" font-family="Inter, Segoe UI, Helvetica Neue, Arial, sans-serif">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 2254" width="1600" height="2254" font-family="Inter, Segoe UI, Helvetica Neue, Arial, sans-serif">
 <defs>
   <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
     <path d="M20 0H0V20" fill="none" stroke="#E6EBF0" stroke-width="1"/>
@@ -22,21 +22,21 @@
   </marker>
 </defs>
 
-<rect width="1600" height="2210" fill="#FBFAF8"/>
-<rect width="1600" height="2210" fill="url(#grid5)"/>
+<rect width="1600" height="2254" fill="#FBFAF8"/>
+<rect width="1600" height="2254" fill="url(#grid5)"/>
 
-<text x="60" y="56" font-size="14" font-weight="400" fill="#5A6B7B" text-anchor="start" letter-spacing="2.5">LUNEX — SUB-MODEL 16</text>
+<text x="60" y="56" font-size="14" font-weight="400" fill="#5A6B7B" text-anchor="start" letter-spacing="2.5">LUNEX — SUB-MODEL 21</text>
 <text x="60" y="86" font-size="26" font-weight="600" fill="#16202B" text-anchor="start">Closed-Loop AI Control</text>
 <text x="60" y="110" font-size="13" font-weight="400" fill="#5A6B7B" text-anchor="start">an AI model that adjusts the process daily, treated as an Assembly — almost nothing here is new</text>
-<rect x="30" y="145" width="1540" height="330" rx="10" fill="#FFFFFF" stroke="#2F6F9E" stroke-width="2.2"/>
-<text x="58" y="183" font-size="20" font-weight="700" fill="#2F6F9E" text-anchor="start">AIControlUnit — a Control Unit Subclass, Not a New Branch</text>
+<rect x="30" y="145" width="1540" height="352" rx="10" fill="#FFFFFF" stroke="#2F6F9E" stroke-width="2.2"/>
+<text x="58" y="183" font-size="20" font-weight="700" fill="#2F6F9E" text-anchor="start">AIControlUnit — a ControlUnit Subclass, Not a New Branch</text>
 <text x="58" y="205" font-size="12.5" font-weight="400" fill="#5A6B7B" text-anchor="start">sits in a Point-to-Point or Star Assembly (Sub-model 3) exactly like a PLC would</text>
 <rect x="90" y="245" width="220" height="56" rx="8" fill="#FFFFFF" stroke="#1F3B57" stroke-width="2"/>
-<text x="200.0" y="269" font-size="13.5" font-weight="700" fill="#1F3B57" text-anchor="middle">Control Unit</text>
+<text x="200.0" y="269" font-size="13.5" font-weight="700" fill="#1F3B57" text-anchor="middle">ControlUnit</text>
 <text x="200.0" y="287" font-size="10" font-weight="400" fill="#5A6B7B" text-anchor="middle" font-style="italic">extends Device (Sub-model 1)</text>
 <rect x="90" y="340" width="220" height="60" rx="8" fill="#FFFFFF" stroke="#2F6F9E" stroke-width="2.4"/>
 <text x="200.0" y="366" font-size="14.5" font-weight="700" fill="#2F6F9E" text-anchor="middle">AIControlUnit</text>
-<text x="200.0" y="386" font-size="10.5" font-weight="400" fill="#5A6B7B" text-anchor="middle" font-style="italic">extends Control Unit</text>
+<text x="200.0" y="386" font-size="10.5" font-weight="400" fill="#5A6B7B" text-anchor="middle" font-style="italic">extends ControlUnit</text>
 <path d="M 200.0 340 L 200.0 301" fill="none" stroke="#1F3B57" stroke-width="2" marker-end="url(#tri-hollow)"/>
 <rect x="400" y="245" width="560" height="190" rx="8" fill="#FFFFFF" stroke="#1F3B57" stroke-width="2"/>
 <text x="418" y="275" font-size="12" font-weight="400" fill="#33404D" text-anchor="start" font-family="Consolas, Menlo, monospace">+ objective : string</text>
@@ -58,11 +58,11 @@
 <line x1="1344" y1="365" x2="1406" y2="365" stroke="#1F3B57" stroke-width="1.8" marker-end="url(#tri-navy)"/>
 <text x="1245.0" y="325" font-size="11.5" font-weight="400" fill="#5A6B7B" text-anchor="middle" font-style="italic">an ordinary Point-to-Point Assembly</text>
 <text x="1245.0" y="410" font-size="11.5" font-weight="400" fill="#5A6B7B" text-anchor="middle" font-style="italic">— the AI just occupies the CU slot</text>
-<text x="58" y="445" font-size="12" font-weight="400" fill="#33404D" text-anchor="start" font-style="italic">no new topology, no new hierarchy level — an AIControlUnit is deployed exactly like any other Control Unit</text>
-<rect x="30" y="525" width="1540" height="1050" rx="10" fill="#FFFFFF" stroke="#2F6F9E" stroke-width="2.2"/>
-<text x="58" y="563" font-size="20" font-weight="700" fill="#2F6F9E" text-anchor="start">On / Off — the Real State Machine, Not a Redrawn One</text>
-<text x="58" y="585" font-size="12.5" font-weight="400" fill="#5A6B7B" text-anchor="start">an Interlock forces exactly the Sub-model 4 transition it corresponds to — the target depends on where the AI currently is</text>
-<g transform="translate(90,620) scale(0.62)">
+<text x="58" y="471" font-size="12" font-weight="400" fill="#33404D" text-anchor="start" font-style="italic">no new topology, no new hierarchy level — an AIControlUnit is deployed exactly like any other ControlUnit</text>
+<rect x="30" y="547" width="1540" height="1050" rx="10" fill="#FFFFFF" stroke="#2F6F9E" stroke-width="2.2"/>
+<text x="58" y="585" font-size="20" font-weight="700" fill="#2F6F9E" text-anchor="start">On / Off — the Real State Machine, Not a Redrawn One</text>
+<text x="58" y="607" font-size="12.5" font-weight="400" fill="#5A6B7B" text-anchor="start">an Interlock forces exactly the Sub-model 4 transition it corresponds to — the target depends on where the AI currently is</text>
+<g transform="translate(90,642) scale(0.62)">
 <defs>
   <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
     <path d="M20 0H0V20" fill="none" stroke="#E6EBF0" stroke-width="1"/>
@@ -80,8 +80,6 @@
   <marker id="ah-red" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
     <path d="M0 0 L10 5 L0 10 z" fill="#B3402F"/></marker>
 </defs>
-<rect width="1280" height="1170" fill="#FBFAF8"/>
-<rect width="1280" height="1170" fill="url(#grid5)"/>
 <path d="M224.0 152.7 Q312.5 132.5 370.5 119.3" fill="none" stroke="#2E7D4F" stroke-width="2" marker-end="url(#ah-green)"/>
 <text x="308.2" y="153.9" font-size="14" font-weight="500" fill="#16202B" text-anchor="middle" stroke="#FBFAF8" stroke-width="5" paint-order="stroke" stroke-linejoin="round">Unlock</text>
 <path d="M543.5 118.3 Q612.5 132.5 717.4 154.1" fill="none" stroke="#2E7D4F" stroke-width="2" marker-end="url(#ah-green)"/>
@@ -176,50 +174,50 @@
 <path d="M715.8 177.0 Q612.5 200.0 540.1 216.1" fill="none" stroke="#B3402F" stroke-width="9" stroke-linecap="round" opacity="0.55"/>
 <path d="M370.3 214.2 Q312.5 200.0 221.7 177.7" fill="none" stroke="#B3402F" stroke-width="9" stroke-linecap="round" opacity="0.55"/>
 </g>
-<rect x="60" y="1280.0" width="1480" height="150" rx="10" fill="#FFFFFF" stroke="#1F3B57" stroke-width="2"/>
-<text x="84" y="1310.0" font-size="14" font-weight="700" fill="#16202B" text-anchor="start">the Off case — corrected here</text>
-<text x="84" y="1334.0" font-size="12.5" font-weight="400" fill="#33404D" text-anchor="start">Inhibited is unreachable from Off (Sub-model 4 has no such edge). So while the AI is Off, an</text>
-<text x="84" y="1354.0" font-size="12.5" font-weight="400" fill="#33404D" text-anchor="start">inhibit-type Interlock cannot target Inhibited — it targets Locked instead, via the same Off →</text>
-<text x="84" y="1374.0" font-size="12.5" font-weight="400" fill="#33404D" text-anchor="start">Locking → Locked edge lockType: lock already uses. Off never silently blocks Enabling and waits;</text>
-<text x="84" y="1394.0" font-size="12.5" font-weight="400" fill="#33404D" text-anchor="start">it actively locks out — this rule applies to every object with an Interlock, not only AIControlUnit.</text>
-<line x1="60" y1="1470.0" x2="106" y2="1470.0" stroke="#2E7D4F" stroke-width="8"/>
-<text x="118" y="1475.0" font-size="13" font-weight="400" fill="#16202B" text-anchor="start">leads to Inhibited (from Standby or On)</text>
-<line x1="500" y1="1470.0" x2="546" y2="1470.0" stroke="#B3402F" stroke-width="8"/>
-<text x="558" y="1475.0" font-size="13" font-weight="400" fill="#16202B" text-anchor="start">leads to Locked (from Standby, Inhibited — or directly from Off)</text>
-<text x="58" y="1515.0" font-size="12" font-weight="400" fill="#33404D" text-anchor="start" font-style="italic">same highlighted paths as Sub-model 5 — this diagram is transplanted, not redrawn, so it cannot drift out of sync</text>
-<rect x="30" y="1625" width="1540" height="430" rx="10" fill="#FFFFFF" stroke="#B3402F" stroke-width="2.2"/>
-<text x="58" y="1663" font-size="20" font-weight="700" fill="#B3402F" text-anchor="start">operatingBounds — Required on the Process, Optional on the Twin</text>
-<text x="58" y="1685" font-size="12.5" font-weight="400" fill="#5A6B7B" text-anchor="start">unbounded is only safe where it can't cause real-world harm — a structural rule, not a promise</text>
-<rect x="60" y="1730" width="730.0" height="130" rx="10" fill="#FFFFFF" stroke="#B3402F" stroke-width="2.4"/>
-<text x="84" y="1762" font-size="14.5" font-weight="700" fill="#B3402F" text-anchor="start">target: PhysicalDevice</text>
-<text x="84" y="1786" font-size="12" font-weight="700" fill="#B3402F" text-anchor="start" font-family="Consolas, Menlo, monospace">operatingBounds REQUIRED</text>
-<text x="84" y="1812" font-size="12" font-weight="400" fill="#33404D" text-anchor="start">a real setpoint, a real consequence —</text>
-<text x="84" y="1830" font-size="12" font-weight="400" fill="#33404D" text-anchor="start">governance never allows unbounded here</text>
-<rect x="850.0" y="1730" width="730.0" height="130" rx="10" fill="#FFFFFF" stroke="#2E7D4F" stroke-width="2.2"/>
-<text x="874.0" y="1762" font-size="14.5" font-weight="700" fill="#2E7D4F" text-anchor="start">target: DigitalTwin (Sub-model 7)</text>
-<text x="874.0" y="1786" font-size="12" font-weight="700" fill="#2E7D4F" text-anchor="start" font-family="Consolas, Menlo, monospace">operatingBounds may be empty</text>
-<text x="874.0" y="1812" font-size="12" font-weight="400" fill="#33404D" text-anchor="start">the twin absorbs the consequence —</text>
-<text x="874.0" y="1830" font-size="12" font-weight="400" fill="#33404D" text-anchor="start">safe to test without limits</text>
-<rect x="60.0" y="1940" width="350.5" height="74" rx="10" fill="#FFFFFF" stroke="#1F3B57" stroke-width="2.2"/>
-<text x="235.25" y="1970" font-size="11.5" font-weight="700" fill="#1F3B57" text-anchor="middle">AI wants setpoint</text>
-<text x="235.25" y="1992" font-size="10" font-weight="400" fill="#5A6B7B" text-anchor="middle" font-style="italic">outside operatingBounds</text>
-<line x1="410.5" y1="1977" x2="436.5" y2="1977" stroke="#1F3B57" stroke-width="1.8" marker-end="url(#tri-navy)"/>
-<rect x="436.5" y="1940" width="350.5" height="74" rx="10" fill="#FFFFFF" stroke="#B3402F" stroke-width="2.2"/>
-<text x="611.75" y="1970" font-size="11.5" font-weight="700" fill="#B3402F" text-anchor="middle">action clamped</text>
-<text x="611.75" y="1992" font-size="10" font-weight="400" fill="#5A6B7B" text-anchor="middle" font-style="italic">never reaches the Device</text>
-<line x1="787.0" y1="1977" x2="813.0" y2="1977" stroke="#1F3B57" stroke-width="1.8" marker-end="url(#tri-navy)"/>
-<rect x="813.0" y="1940" width="350.5" height="74" rx="10" fill="#FFFFFF" stroke="#B3402F" stroke-width="2.2"/>
-<text x="988.25" y="1970" font-size="11.5" font-weight="700" fill="#B3402F" text-anchor="middle">ImprovementRecommendation</text>
-<text x="988.25" y="1992" font-size="10" font-weight="400" fill="#5A6B7B" text-anchor="middle" font-style="italic">raised (Sub-model 15)</text>
-<line x1="1163.5" y1="1977" x2="1189.5" y2="1977" stroke="#1F3B57" stroke-width="1.8" marker-end="url(#tri-navy)"/>
-<rect x="1189.5" y="1940" width="350.5" height="74" rx="10" fill="#FFFFFF" stroke="#2F6F9E" stroke-width="2.2"/>
-<text x="1364.75" y="1970" font-size="11.5" font-weight="700" fill="#2F6F9E" text-anchor="middle">engineer reviews bounds</text>
-<text x="1364.75" y="1992" font-size="10" font-weight="400" fill="#5A6B7B" text-anchor="middle" font-style="italic">always — no exception</text>
-<text x="58" y="2025" font-size="12" font-weight="400" fill="#33404D" text-anchor="start" font-style="italic">the bound itself may turn out to be wrong — but that's a human decision (Sub-model 15), never a silent auto-widen</text>
-<line x1="60" y1="2095" x2="1540" y2="2095" stroke="#D6DEE7" stroke-width="1"/>
-<text x="60" y="2118" font-size="12" font-weight="400" fill="#5A6B7B" text-anchor="start" letter-spacing="1.6">LEGEND</text>
-<line x1="60" y1="2150" x2="106" y2="2150" stroke="#1F3B57" stroke-width="2" marker-end="url(#tri-hollow)"/>
-<text x="118" y="2155" font-size="13" font-weight="400" fill="#16202B" text-anchor="start">inheritance (extends)</text>
-<line x1="400" y1="2150" x2="446" y2="2150" stroke="#1F3B57" stroke-width="1.8" marker-end="url(#tri-navy)"/>
-<text x="458" y="2155" font-size="13" font-weight="400" fill="#16202B" text-anchor="start">mandatory workflow step</text>
+<rect x="60" y="1302.0" width="1480" height="150" rx="10" fill="#FFFFFF" stroke="#1F3B57" stroke-width="2"/>
+<text x="84" y="1332.0" font-size="14" font-weight="700" fill="#16202B" text-anchor="start">the Off case — corrected here</text>
+<text x="84" y="1356.0" font-size="12.5" font-weight="400" fill="#33404D" text-anchor="start">Inhibited is unreachable from Off (Sub-model 4 has no such edge). So while the AI is Off, an</text>
+<text x="84" y="1376.0" font-size="12.5" font-weight="400" fill="#33404D" text-anchor="start">inhibit-type Interlock cannot target Inhibited — it targets Locked instead, via the same Off →</text>
+<text x="84" y="1396.0" font-size="12.5" font-weight="400" fill="#33404D" text-anchor="start">Locking → Locked edge lockType: lock already uses. Off never silently blocks Enabling and waits;</text>
+<text x="84" y="1416.0" font-size="12.5" font-weight="400" fill="#33404D" text-anchor="start">it actively locks out — this rule applies to every object with an Interlock, not only AIControlUnit.</text>
+<line x1="60" y1="1492.0" x2="106" y2="1492.0" stroke="#2E7D4F" stroke-width="8"/>
+<text x="118" y="1497.0" font-size="13" font-weight="400" fill="#16202B" text-anchor="start">leads to Inhibited (from Standby or On)</text>
+<line x1="500" y1="1492.0" x2="546" y2="1492.0" stroke="#B3402F" stroke-width="8"/>
+<text x="558" y="1497.0" font-size="13" font-weight="400" fill="#16202B" text-anchor="start">leads to Locked (from Standby, Inhibited — or directly from Off)</text>
+<text x="58" y="1537.0" font-size="12" font-weight="400" fill="#33404D" text-anchor="start" font-style="italic">same highlighted paths as Sub-model 6 — this diagram is transplanted, not redrawn, so it cannot drift out of sync</text>
+<rect x="30" y="1647" width="1540" height="452" rx="10" fill="#FFFFFF" stroke="#B3402F" stroke-width="2.2"/>
+<text x="58" y="1685" font-size="20" font-weight="700" fill="#B3402F" text-anchor="start">operatingBounds — Required on the Process, Optional on the Twin</text>
+<text x="58" y="1707" font-size="12.5" font-weight="400" fill="#5A6B7B" text-anchor="start">unbounded is only safe where it can't cause real-world harm — a structural rule, not a promise</text>
+<rect x="58" y="1752" width="722.0" height="130" rx="10" fill="#FFFFFF" stroke="#B3402F" stroke-width="2.4"/>
+<text x="82" y="1784" font-size="14.5" font-weight="700" fill="#B3402F" text-anchor="start">target: PhysicalDevice</text>
+<text x="82" y="1808" font-size="12" font-weight="700" fill="#B3402F" text-anchor="start" font-family="Consolas, Menlo, monospace">operatingBounds REQUIRED</text>
+<text x="82" y="1834" font-size="12" font-weight="400" fill="#33404D" text-anchor="start">a real setpoint, a real consequence —</text>
+<text x="82" y="1852" font-size="12" font-weight="400" fill="#33404D" text-anchor="start">governance never allows unbounded here</text>
+<rect x="820.0" y="1752" width="722.0" height="130" rx="10" fill="#FFFFFF" stroke="#2E7D4F" stroke-width="2.2"/>
+<text x="844.0" y="1784" font-size="14.5" font-weight="700" fill="#2E7D4F" text-anchor="start">target: DigitalTwin (Sub-model 11)</text>
+<text x="844.0" y="1808" font-size="12" font-weight="700" fill="#2E7D4F" text-anchor="start" font-family="Consolas, Menlo, monospace">operatingBounds may be empty</text>
+<text x="844.0" y="1834" font-size="12" font-weight="400" fill="#33404D" text-anchor="start">the twin absorbs the consequence —</text>
+<text x="844.0" y="1852" font-size="12" font-weight="400" fill="#33404D" text-anchor="start">safe to test without limits</text>
+<rect x="60.0" y="1962" width="350.5" height="74" rx="10" fill="#FFFFFF" stroke="#1F3B57" stroke-width="2.2"/>
+<text x="235.25" y="1992" font-size="11.5" font-weight="700" fill="#1F3B57" text-anchor="middle">AI wants setpoint</text>
+<text x="235.25" y="2014" font-size="10" font-weight="400" fill="#5A6B7B" text-anchor="middle" font-style="italic">outside operatingBounds</text>
+<line x1="410.5" y1="1999" x2="436.5" y2="1999" stroke="#1F3B57" stroke-width="1.8" marker-end="url(#tri-navy)"/>
+<rect x="436.5" y="1962" width="350.5" height="74" rx="10" fill="#FFFFFF" stroke="#B3402F" stroke-width="2.2"/>
+<text x="611.75" y="1992" font-size="11.5" font-weight="700" fill="#B3402F" text-anchor="middle">action clamped</text>
+<text x="611.75" y="2014" font-size="10" font-weight="400" fill="#5A6B7B" text-anchor="middle" font-style="italic">never reaches the Device</text>
+<line x1="787.0" y1="1999" x2="813.0" y2="1999" stroke="#1F3B57" stroke-width="1.8" marker-end="url(#tri-navy)"/>
+<rect x="813.0" y="1962" width="350.5" height="74" rx="10" fill="#FFFFFF" stroke="#B3402F" stroke-width="2.2"/>
+<text x="988.25" y="1992" font-size="11.5" font-weight="700" fill="#B3402F" text-anchor="middle">ImprovementRecommendation</text>
+<text x="988.25" y="2014" font-size="10" font-weight="400" fill="#5A6B7B" text-anchor="middle" font-style="italic">raised (Sub-model 20)</text>
+<line x1="1163.5" y1="1999" x2="1189.5" y2="1999" stroke="#1F3B57" stroke-width="1.8" marker-end="url(#tri-navy)"/>
+<rect x="1189.5" y="1962" width="350.5" height="74" rx="10" fill="#FFFFFF" stroke="#2F6F9E" stroke-width="2.2"/>
+<text x="1364.75" y="1992" font-size="11.5" font-weight="700" fill="#2F6F9E" text-anchor="middle">engineer reviews bounds</text>
+<text x="1364.75" y="2014" font-size="10" font-weight="400" fill="#5A6B7B" text-anchor="middle" font-style="italic">always — no exception</text>
+<text x="58" y="2067" font-size="12" font-weight="400" fill="#33404D" text-anchor="start" font-style="italic">the bound itself may turn out to be wrong — but that's a human decision (Sub-model 20), never a silent auto-widen</text>
+<line x1="60" y1="2139" x2="1540" y2="2139" stroke="#D6DEE7" stroke-width="1"/>
+<text x="60" y="2162" font-size="12" font-weight="400" fill="#5A6B7B" text-anchor="start" letter-spacing="1.6">LEGEND</text>
+<line x1="60" y1="2194" x2="106" y2="2194" stroke="#1F3B57" stroke-width="2" marker-end="url(#tri-hollow)"/>
+<text x="118" y="2199" font-size="13" font-weight="400" fill="#16202B" text-anchor="start">inheritance (extends)</text>
+<line x1="400" y1="2194" x2="446" y2="2194" stroke="#1F3B57" stroke-width="1.8" marker-end="url(#tri-navy)"/>
+<text x="458" y="2199" font-size="13" font-weight="400" fill="#16202B" text-anchor="start">mandatory workflow step</text>
 </svg>

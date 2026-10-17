@@ -22,7 +22,7 @@
 <rect width="1600" height="1660" fill="#FBFAF8"/>
 <rect width="1600" height="1660" fill="url(#grid5)"/>
 
-<text x="60" y="56" font-size="14" font-weight="400" fill="#5A6B7B" text-anchor="start" letter-spacing="2.5">LUNEX — SUB-MODEL 7</text>
+<text x="60" y="56" font-size="14" font-weight="400" fill="#5A6B7B" text-anchor="start" letter-spacing="2.5">LUNEX — SUB-MODEL 11</text>
 <text x="60" y="86" font-size="26" font-weight="600" fill="#16202B" text-anchor="start">Data / AI Layer</text>
 <text x="60" y="110" font-size="13" font-weight="400" fill="#5A6B7B" text-anchor="start">The layer PackML and S88 don't have — telemetry with meaning attached, ready for AI consumption</text>
 <rect x="30" y="145" width="1540" height="420" rx="10" fill="#FFFFFF" stroke="#2F6F9E" stroke-width="2.2"/>
@@ -38,16 +38,16 @@
 <text x="100" y="440" font-size="12.5" font-weight="400" fill="#33404D" text-anchor="start" font-family="Consolas, Menlo, monospace">"properties": { "value": 4.2, "unit": "bar" }</text>
 <text x="80" y="467" font-size="13" font-weight="700" fill="#16202B" text-anchor="start" font-family="Consolas, Menlo, monospace">}</text>
 <text x="730" y="275" font-size="12.5" font-weight="700" fill="#2F6F9E" text-anchor="start" font-family="Consolas, Menlo, monospace">path</text>
-<text x="810" y="275" font-size="12" font-weight="400" fill="#33404D" text-anchor="start">Sub-model 2 — the addressable namespace</text>
+<text x="825" y="275" font-size="12" font-weight="400" fill="#33404D" text-anchor="start">Sub-model 2 — the addressable namespace</text>
 <text x="730" y="309" font-size="12.5" font-weight="700" fill="#2F6F9E" text-anchor="start" font-family="Consolas, Menlo, monospace">class</text>
-<text x="810" y="309" font-size="12" font-weight="400" fill="#33404D" text-anchor="start">Sub-model 1 — which universal class / derived type</text>
+<text x="825" y="309" font-size="12" font-weight="400" fill="#33404D" text-anchor="start">Sub-model 1 — which universal class / derived type</text>
 <text x="730" y="343" font-size="12.5" font-weight="700" fill="#2F6F9E" text-anchor="start" font-family="Consolas, Menlo, monospace">state</text>
-<text x="810" y="343" font-size="12" font-weight="400" fill="#33404D" text-anchor="start">Sub-model 4 — the state machine instance</text>
+<text x="825" y="343" font-size="12" font-weight="400" fill="#33404D" text-anchor="start">Sub-model 4 — the state machine instance</text>
 <text x="730" y="377" font-size="12.5" font-weight="700" fill="#2F6F9E" text-anchor="start" font-family="Consolas, Menlo, monospace">health</text>
-<text x="810" y="377" font-size="12" font-weight="400" fill="#33404D" text-anchor="start">Sub-model 1 — diagnostics, independent of state</text>
+<text x="825" y="377" font-size="12" font-weight="400" fill="#33404D" text-anchor="start">Sub-model 1 — diagnostics, independent of state</text>
 <text x="730" y="411" font-size="12.5" font-weight="700" fill="#2F6F9E" text-anchor="start" font-family="Consolas, Menlo, monospace">properties</text>
-<text x="810" y="411" font-size="12" font-weight="400" fill="#33404D" text-anchor="start">Sub-model 1 — the object's own parameters</text>
-<text x="58" y="527" font-size="12" font-weight="400" fill="#33404D" text-anchor="start" font-style="italic">same envelope for a Sensor, a Firewall/IDS or an Interlock — one shape, every class (Sub-models 1, 5, 6)</text>
+<text x="825" y="411" font-size="12" font-weight="400" fill="#33404D" text-anchor="start">Sub-model 1 — the object's own parameters</text>
+<text x="58" y="527" font-size="12" font-weight="400" fill="#33404D" text-anchor="start" font-style="italic">same envelope for a Sensor, a Firewall/IDS or an Interlock — one shape, every class (Sub-models 1, 6, 7)</text>
 <rect x="30" y="615" width="1540" height="400" rx="10" fill="#FFFFFF" stroke="#2F6F9E" stroke-width="2.2"/>
 <text x="58" y="653" font-size="20" font-weight="700" fill="#2F6F9E" text-anchor="start">Context Layer — What Makes It AI-Ready, Not Just Data</text>
 <text x="58" y="675" font-size="12.5" font-weight="400" fill="#5A6B7B" text-anchor="start">semantic relationships an AI can traverse — separate from the containment chain in Sub-model 2</text>
@@ -91,10 +91,10 @@
 <text x="800.0" y="1223" font-size="10" font-weight="400" fill="#5A6B7B" text-anchor="middle">(Panel 1)</text>
 <text x="800.0" y="1257" font-size="10.5" font-weight="400" fill="#5A6B7B" text-anchor="middle" font-style="italic">queries flow back</text>
 <text x="58" y="1295" font-size="12" font-weight="400" fill="#33404D" text-anchor="start" font-style="italic">the twin is what an AI model actually queries — it never touches the physical Device directly</text>
-<text x="58" y="1317" font-size="12" font-weight="400" fill="#33404D" text-anchor="start" font-style="italic">the Twin only ever holds the current state — for everything the state WAS, see the Historian (Sub-model 14)</text>
+<text x="58" y="1317" font-size="12" font-weight="400" fill="#33404D" text-anchor="start" font-style="italic">the Twin only ever holds the current state — for everything the state WAS, see the Historian (Sub-model 19)</text>
 <rect x="30" y="1395" width="1540" height="110" rx="10" fill="#FFFFFF" stroke="#2E7D4F" stroke-width="2.2"/>
 <text x="58" y="1425" font-size="15" font-weight="700" fill="#2E7D4F" text-anchor="start">Closing the loop from Sub-model 4</text>
-<text x="58" y="1447" font-size="12.5" font-weight="400" fill="#33404D" text-anchor="start">collective status (“rollup”) was deliberately left out of the state model — formalized in Sub-model 9,</text>
+<text x="58" y="1447" font-size="12.5" font-weight="400" fill="#33404D" text-anchor="start">collective status (“rollup”) was deliberately left out of the state model — formalized in Sub-model 14,</text>
 <text x="58" y="1467" font-size="12.5" font-weight="400" fill="#33404D" text-anchor="start">computed on the Digital Twin graph this layer maintains: worst-case tier, tier counts, and the full list of</text>
 <text x="58" y="1487" font-size="12.5" font-weight="400" fill="#33404D" text-anchor="start">contributors — not baked into LunexObject itself, and never overwriting an object's own state.</text>
 <line x1="60" y1="1545" x2="1540" y2="1545" stroke="#D6DEE7" stroke-width="1"/>

@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1770" width="1600" height="1770" font-family="Inter, Segoe UI, Helvetica Neue, Arial, sans-serif">
+<defs>
+  <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
+    <path d="M20 0H0V20" fill="none" stroke="#E6EBF0" stroke-width="1"/>
+  </pattern>
+  <pattern id="grid5" width="100" height="100" patternUnits="userSpaceOnUse">
+    <rect width="100" height="100" fill="url(#grid)"/>
+    <path d="M100 0H0V100" fill="none" stroke="#D6DEE7" stroke-width="1"/>
+  </pattern>
+  <marker id="tri-navy" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+    <path d="M0 0 L10 5 L0 10 Z" fill="#1F3B57"/>
+  </marker>
+  <marker id="tri-hollow" viewBox="0 0 12 12" refX="11" refY="6" markerWidth="11" markerHeight="11" orient="auto-start-reverse">
+    <path d="M0 0 L12 6 L0 12 Z" fill="#FFFFFF" stroke="#1F3B57" stroke-width="1.4"/>
+  </marker>
+  <marker id="tri-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+    <path d="M0 0 L10 5 L0 10 Z" fill="#2F6F9E"/>
+  </marker>
+  <marker id="tri-red" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+    <path d="M0 0 L10 5 L0 10 Z" fill="#B3402F"/>
+  </marker>
+</defs>
+
+<rect width="1600" height="1770" fill="#FBFAF8"/>
+<rect width="1600" height="1770" fill="url(#grid5)"/>
+
+<text x="60" y="56" font-size="14" font-weight="400" fill="#5A6B7B" text-anchor="start" letter-spacing="2.5">LUNEX — SUB-MODEL 13</text>
+<text x="60" y="86" font-size="26" font-weight="600" fill="#16202B" text-anchor="start">Management of Change (MOC)</text>
+<text x="60" y="110" font-size="13" font-weight="400" fill="#5A6B7B" text-anchor="start">One ChangeRequest lifecycle, generalizing five previously ad-hoc approval points across the model</text>
+<rect x="30" y="145" width="1540" height="495" rx="10" fill="#FFFFFF" stroke="#2F6F9E" stroke-width="2.2"/>
+<text x="58" y="183" font-size="20" font-weight="700" fill="#2F6F9E" text-anchor="start">What MOC Generalizes — Five Approval Points, One Object</text>
+<text x="58" y="205" font-size="12.5" font-weight="400" fill="#5A6B7B" text-anchor="start">Each of these previously implied its own ad-hoc approval step; all now route through ChangeRequest</text>
+<rect x="58" y="245" width="430" height="56" rx="8" fill="#FFFFFF" stroke="#1F3B57" stroke-width="2"/>
+<text x="74" y="269" font-size="12.5" font-weight="700" fill="#16202B" text-anchor="start">ImprovementRecommendation.requiresApproval</text>
+<text x="74" y="287" font-size="10.5" font-weight="400" fill="#5A6B7B" text-anchor="start" font-style="italic">Sub-model 20 — Predictive Maintenance</text>
+<path d="M488 273.0 C608 273.0 900 421.0 1020 421.0" fill="none" stroke="#8FA0B3" stroke-width="1.6" marker-end="url(#tri-navy)" stroke-dasharray="4,4"/>
+<rect x="58" y="319" width="430" height="56" rx="8" fill="#FFFFFF" stroke="#1F3B57" stroke-width="2"/>
+<text x="74" y="343" font-size="12.5" font-weight="700" fill="#16202B" text-anchor="start">Interlock / SIF modification</text>
+<text x="74" y="361" font-size="10.5" font-weight="400" fill="#5A6B7B" text-anchor="start" font-style="italic">Sub-model 6 — Safety</text>
+<path d="M488 347.0 C608 347.0 900 421.0 1020 421.0" fill="none" stroke="#8FA0B3" stroke-width="1.6" marker-end="url(#tri-navy)" stroke-dasharray="4,4"/>
+<rect x="58" y="393" width="430" height="56" rx="8" fill="#FFFFFF" stroke="#1F3B57" stroke-width="2"/>
+<text x="74" y="417" font-size="12.5" font-weight="700" fill="#16202B" text-anchor="start">Zone / Conduit reconfiguration</text>
+<text x="74" y="435" font-size="10.5" font-weight="400" fill="#5A6B7B" text-anchor="start" font-style="italic">Sub-model 7 — Security Zones &amp; Conduits</text>
+<path d="M488 421.0 C608 421.0 900 421.0 1020 421.0" fill="none" stroke="#8FA0B3" stroke-width="1.6" marker-end="url(#tri-navy)" stroke-dasharray="4,4"/>
+<rect x="58" y="467" width="430" height="56" rx="8" fill="#FFFFFF" stroke="#1F3B57" stroke-width="2"/>
+<text x="74" y="491" font-size="12.5" font-weight="700" fill="#16202B" text-anchor="start">AccessGrant escalation</text>
+<text x="74" y="509" font-size="10.5" font-weight="400" fill="#5A6B7B" text-anchor="start" font-style="italic">Sub-model 8 — Identity &amp; Access Mgmt</text>
+<path d="M488 495.0 C608 495.0 900 421.0 1020 421.0" fill="none" stroke="#8FA0B3" stroke-width="1.6" marker-end="url(#tri-navy)" stroke-dasharray="4,4"/>
+<rect x="58" y="541" width="430" height="56" rx="8" fill="#FFFFFF" stroke="#1F3B57" stroke-width="2"/>
+<text x="74" y="565" font-size="12.5" font-weight="700" fill="#16202B" text-anchor="start">Recipe parameter change</text>
+<text x="74" y="583" font-size="10.5" font-weight="400" fill="#5A6B7B" text-anchor="start" font-style="italic">Sub-model 5 — Recipe &amp; Execution</text>
+<path d="M488 569.0 C608 569.0 900 421.0 1020 421.0" fill="none" stroke="#8FA0B3" stroke-width="1.6" marker-end="url(#tri-navy)" stroke-dasharray="4,4"/>
+<rect x="1020" y="366.0" width="320" height="110" rx="10" fill="#FFFFFF" stroke="#B3402F" stroke-width="2.6"/>
+<text x="1180" y="401.0" font-size="17" font-weight="700" fill="#B3402F" text-anchor="middle">ChangeRequest</text>
+<text x="1180" y="423.0" font-size="11.5" font-weight="400" fill="#33404D" text-anchor="middle" font-style="italic">one object, one lifecycle,</text>
+<text x="1180" y="441.0" font-size="11.5" font-weight="400" fill="#33404D" text-anchor="middle" font-style="italic">one approval model</text>
+<text x="1180" y="463.0" font-size="10.5" font-weight="400" fill="#5A6B7B" text-anchor="middle" font-style="italic">riskAssessment reuses Sub-model 14's Tier scale</text>
+<rect x="30" y="690" width="1540" height="330" rx="10" fill="#FFFFFF" stroke="#2F6F9E" stroke-width="2.2"/>
+<text x="58" y="728" font-size="20" font-weight="700" fill="#2F6F9E" text-anchor="start">ChangeRequest Lifecycle — Its Own State Value Space</text>
+<text x="58" y="750" font-size="12.5" font-weight="400" fill="#5A6B7B" text-anchor="start">A dedicated state machine, the same design move Sub-model 10's SecurityIncident makes for its lifecycle</text>
+<rect x="70" y="810" width="205" height="40" rx="20" fill="#FFFFFF" stroke="#1F3B57" stroke-width="2.2"/>
+<text x="172.5" y="836" font-size="12.5" font-weight="700" fill="#1F3B57" text-anchor="middle">Draft</text>
+<line x1="275" y1="830" x2="299" y2="830" stroke="#1F3B57" stroke-width="2" marker-end="url(#tri-navy)"/>
+<rect x="299" y="810" width="205" height="40" rx="20" fill="#FFFFFF" stroke="#1F3B57" stroke-width="2.2"/>
+<text x="401.5" y="836" font-size="12.5" font-weight="700" fill="#1F3B57" text-anchor="middle">PendingApproval</text>
+<line x1="504" y1="830" x2="528" y2="830" stroke="#1F3B57" stroke-width="2" marker-end="url(#tri-navy)"/>
+<rect x="528" y="810" width="205" height="40" rx="20" fill="#FFFFFF" stroke="#1F3B57" stroke-width="2.2"/>
+<text x="630.5" y="836" font-size="12.5" font-weight="700" fill="#1F3B57" text-anchor="middle">Approved</text>
+<line x1="733" y1="830" x2="757" y2="830" stroke="#1F3B57" stroke-width="2" marker-end="url(#tri-navy)"/>
+<rect x="757" y="810" width="205" height="40" rx="20" fill="#FFFFFF" stroke="#1F3B57" stroke-width="2.2"/>
+<text x="859.5" y="836" font-size="12.5" font-weight="700" fill="#1F3B57" text-anchor="middle">Implemented</text>
+<line x1="962" y1="830" x2="986" y2="830" stroke="#1F3B57" stroke-width="2" marker-end="url(#tri-navy)"/>
+<rect x="986" y="810" width="205" height="40" rx="20" fill="#FFFFFF" stroke="#1F3B57" stroke-width="2.2"/>
+<text x="1088.5" y="836" font-size="12.5" font-weight="700" fill="#1F3B57" text-anchor="middle">Verified</text>
+<line x1="1191" y1="830" x2="1215" y2="830" stroke="#1F3B57" stroke-width="2" marker-end="url(#tri-navy)"/>
+<rect x="1215" y="810" width="205" height="40" rx="20" fill="#FFFFFF" stroke="#2E7D4F" stroke-width="2.2"/>
+<text x="1317.5" y="836" font-size="12.5" font-weight="700" fill="#2E7D4F" text-anchor="middle">Closed</text>
+<rect x="299" y="905" width="205" height="40" rx="20" fill="#FFFFFF" stroke="#B3402F" stroke-width="2.2"/>
+<text x="401.5" y="931" font-size="12.5" font-weight="700" fill="#B3402F" text-anchor="middle">Rejected</text>
+<path d="M401.5 850 L401.5 905" fill="none" stroke="#B3402F" stroke-width="2" marker-end="url(#tri-red)"/>
+<text x="415.5" y="886" font-size="11" font-weight="400" fill="#5A6B7B" text-anchor="start" font-style="italic">approval declined</text>
+<path d="M504 925 C724 925 1175 925 1317.5 850" fill="none" stroke="#B3402F" stroke-width="1.8" marker-end="url(#tri-red)" stroke-dasharray="4,4"/>
+<text x="58" y="990" font-size="12" font-weight="400" fill="#33404D" text-anchor="start" font-style="italic">requiredApprovals : RoleRef[] names who must approve before Draft can leave PendingApproval; approvals : Approval[] records each decision</text>
+<rect x="30" y="1070" width="1540" height="545" rx="10" fill="#FFFFFF" stroke="#2F6F9E" stroke-width="2.2"/>
+<text x="58" y="1108" font-size="20" font-weight="700" fill="#2F6F9E" text-anchor="start">Schema — ChangeRequest, Approval, ChangePolicy, and the VersionRecord It Produces</text>
+<text x="58" y="1130" font-size="12.5" font-weight="400" fill="#5A6B7B" text-anchor="start">ChangePolicy is governance authored once; ChangeRequest is governance applied once — it can only raise the approval bar, never lower it</text>
+<rect x="58" y="1165" width="440" height="270" rx="8" fill="#FFFFFF" stroke="#B3402F" stroke-width="2.4"/>
+<text x="74" y="1191" font-size="14.5" font-weight="700" fill="#B3402F" text-anchor="start">ChangeRequest</text>
+<text x="74" y="1209" font-size="10.5" font-weight="400" fill="#5A6B7B" text-anchor="start" font-style="italic">extends LunexObject</text>
+<text x="74" y="1231" font-size="10.8" font-weight="400" fill="#33404D" text-anchor="start" font-family="Consolas, Menlo, monospace">+ subject : ObjectRef</text>
+<text x="74" y="1251.5" font-size="10.8" font-weight="400" fill="#33404D" text-anchor="start" font-family="Consolas, Menlo, monospace">+ changeType : parameter|configuration|</text>
+<text x="74" y="1272.0" font-size="10.8" font-weight="400" fill="#33404D" text-anchor="start" font-family="Consolas, Menlo, monospace">    procedural|physical</text>
+<text x="74" y="1292.5" font-size="10.8" font-weight="400" fill="#33404D" text-anchor="start" font-family="Consolas, Menlo, monospace">+ proposedBy : IdentityRef</text>
+<text x="74" y="1313.0" font-size="10.8" font-weight="400" fill="#33404D" text-anchor="start" font-family="Consolas, Menlo, monospace">+ description : string</text>
+<text x="74" y="1333.5" font-size="10.8" font-weight="400" fill="#33404D" text-anchor="start" font-family="Consolas, Menlo, monospace">+ riskAssessment : Tier  (Sub-model 14)</text>
+<text x="74" y="1354.0" font-size="10.8" font-weight="400" fill="#33404D" text-anchor="start" font-family="Consolas, Menlo, monospace">+ requiredApprovals : RoleRef[]</text>
+<text x="74" y="1374.5" font-size="10.8" font-weight="400" fill="#33404D" text-anchor="start" font-family="Consolas, Menlo, monospace">+ approvals : Approval[]</text>
+<text x="74" y="1395.0" font-size="10.8" font-weight="400" fill="#33404D" text-anchor="start" font-family="Consolas, Menlo, monospace">+ state : Draft|PendingApproval|Approved|</text>
+<text x="74" y="1415.5" font-size="10.8" font-weight="400" fill="#33404D" text-anchor="start" font-family="Consolas, Menlo, monospace">    Rejected|Implemented|Verified|Closed</text>
+<rect x="598" y="1165" width="400" height="130" rx="8" fill="#FFFFFF" stroke="#1F3B57" stroke-width="2"/>
+<text x="614" y="1191" font-size="14.5" font-weight="700" fill="#1F3B57" text-anchor="start">Approval</text>
+<text x="614" y="1215" font-size="10.8" font-weight="400" fill="#33404D" text-anchor="start" font-family="Consolas, Menlo, monospace">+ role : RoleRef</text>
+<text x="614" y="1232.5" font-size="10.8" font-weight="400" fill="#33404D" text-anchor="start" font-family="Consolas, Menlo, monospace">+ approver : IdentityRef</text>
+<text x="614" y="1250.0" font-size="10.8" font-weight="400" fill="#33404D" text-anchor="start" font-family="Consolas, Menlo, monospace">+ decision : approve|reject</text>
+<text x="614" y="1267.5" font-size="10.8" font-weight="400" fill="#33404D" text-anchor="start" font-family="Consolas, Menlo, monospace">+ comment : string  (optional)</text>
+<text x="614" y="1285.0" font-size="10.8" font-weight="400" fill="#33404D" text-anchor="start" font-family="Consolas, Menlo, monospace">+ timestamp : datetime</text>
+<rect x="598" y="1330" width="400" height="105" rx="8" fill="#FFFFFF" stroke="#2E7D4F" stroke-width="2"/>
+<text x="614" y="1356" font-size="14.5" font-weight="700" fill="#2E7D4F" text-anchor="start">VersionRecord</text>
+<text x="614" y="1380" font-size="10.8" font-weight="400" fill="#33404D" text-anchor="start" font-family="Consolas, Menlo, monospace">+ subject, changeRequest : ref</text>
+<text x="614" y="1397.5" font-size="10.8" font-weight="400" fill="#33404D" text-anchor="start" font-family="Consolas, Menlo, monospace">+ baselineBefore / baselineAfter : snapshot</text>
+<text x="614" y="1415.0" font-size="10.8" font-weight="400" fill="#33404D" text-anchor="start" font-family="Consolas, Menlo, monospace">+ createdAt : datetime</text>
+<line x1="498" y1="1210" x2="598" y2="1210" stroke="#1F3B57" stroke-width="1.8" marker-end="url(#tri-navy)"/>
+<text x="548.0" y="1198" font-size="10.5" font-weight="400" fill="#5A6B7B" text-anchor="middle" font-style="italic">approvals[]</text>
+<line x1="628" y1="1295" x2="628" y2="1330" stroke="#2E7D4F" stroke-width="1.8" marker-end="url(#tri-navy)"/>
+<rect x="1060" y="1165" width="440" height="60" rx="30" fill="#FFFFFF" stroke="#2E7D4F" stroke-width="2.2" stroke-dasharray="5,4"/>
+<text x="1280.0" y="1201" font-size="13" font-weight="700" fill="#2E7D4F" text-anchor="middle">Historian  (Sub-model 19) — append-only store</text>
+<path d="M998 1382.5 L1029.0 1382.5 L1029.0 1195.0 L1060 1195.0" fill="none" stroke="#2E7D4F" stroke-width="2" marker-end="url(#tri-navy)" stroke-dasharray="4,4"/>
+<text x="1076" y="1249" font-size="11.5" font-weight="400" fill="#33404D" text-anchor="start" font-style="italic">closing a ChangeRequest appends one VersionRecord</text>
+<text x="1076" y="1267" font-size="11.5" font-weight="400" fill="#33404D" text-anchor="start" font-style="italic">alongside ordinary HistorianRecord objects</text>
+<rect x="1060" y="1285" width="440" height="165" rx="8" fill="#FFFFFF" stroke="#1F3B57" stroke-width="2.2"/>
+<text x="1076" y="1311" font-size="14.5" font-weight="700" fill="#1F3B57" text-anchor="start">ChangePolicy</text>
+<text x="1076" y="1329" font-size="10.5" font-weight="400" fill="#5A6B7B" text-anchor="start" font-style="italic">extends LunexObject</text>
+<text x="1076" y="1351" font-size="10.8" font-weight="400" fill="#33404D" text-anchor="start" font-family="Consolas, Menlo, monospace">+ appliesTo : ClassRef | LunexObjectRef</text>
+<text x="1076" y="1370.5" font-size="10.8" font-weight="400" fill="#33404D" text-anchor="start" font-family="Consolas, Menlo, monospace">+ changeTypes : [...]  (empty = all)</text>
+<text x="1076" y="1390.0" font-size="10.8" font-weight="400" fill="#33404D" text-anchor="start" font-family="Consolas, Menlo, monospace">+ requiredTier : Tier | null  (Sub-model 14)</text>
+<text x="1076" y="1409.5" font-size="10.8" font-weight="400" fill="#33404D" text-anchor="start" font-family="Consolas, Menlo, monospace">+ requiredApprovals : RoleRef[]</text>
+<text x="1076" y="1429.0" font-size="10.8" font-weight="400" fill="#33404D" text-anchor="start" font-family="Consolas, Menlo, monospace">+ minApprovals : integer  (default 1)</text>
+<path d="M1460 1450 C1460 1530 438 1530 438 1435" fill="none" stroke="#1F3B57" stroke-width="1.8" marker-end="url(#tri-navy)" stroke-dasharray="4,4"/>
+<text x="779.0" y="1546" font-size="11" font-weight="400" fill="#5A6B7B" text-anchor="middle" font-style="italic">ChangePolicy resolves requiredApprovals / riskAssessment floor onto a matching ChangeRequest</text>
+<text x="58" y="1572" font-size="11.3" font-weight="400" fill="#33404D" text-anchor="start" font-style="italic">LunexObject.owner (Sub-model 1) and ChangePolicy.appliesTo both resolve through the same Sub-model 8 Role vocabulary.</text>
+<line x1="60" y1="1655" x2="1540" y2="1655" stroke="#D6DEE7" stroke-width="1"/>
+<text x="60" y="1678" font-size="12" font-weight="400" fill="#5A6B7B" text-anchor="start" letter-spacing="1.6">LEGEND</text>
+<line x1="60" y1="1710" x2="106" y2="1710" stroke="#1F3B57" stroke-width="2" marker-end="url(#tri-navy)"/>
+<text x="118" y="1715" font-size="13" font-weight="400" fill="#16202B" text-anchor="start">state transition / schema reference</text>
+<line x1="400" y1="1710" x2="446" y2="1710" stroke="#8FA0B3" stroke-width="1.6" marker-end="url(#tri-navy)" stroke-dasharray="4,4"/>
+<text x="458" y="1715" font-size="13" font-weight="400" fill="#16202B" text-anchor="start">routes into ChangeRequest</text>
+<line x1="760" y1="1710" x2="806" y2="1710" stroke="#B3402F" stroke-width="2" marker-end="url(#tri-red)"/>
+<text x="818" y="1715" font-size="13" font-weight="400" fill="#16202B" text-anchor="start">rejection path</text>
+</svg>
