@@ -11,7 +11,7 @@ Expected layout when running this script:
 
   repo-root/
     LUNEX-Specification.md
-    diagrams/                  <- the 16 .svg files referenced by the spec
+    diagrams/                  <- the 21 .svg files referenced by the spec
     tools/pdf/build_pdf.py     <- this script
 
 Usage (from repo root):
@@ -174,6 +174,15 @@ def wrap_chapters_with_diagrams(html):
         h2["class"] = (h2.get("class") or []) + ["chapter-no-diagram"]
         n_plain += 1
 
+    # A horizontal rule directly before a chapter (which starts a new page anyway)
+    # can spill onto an otherwise empty page; drop it.
+    for hr in soup.find_all("hr"):
+        nxt = hr.find_next_sibling()
+        if nxt is not None and (
+            "chapter-with-diagram" in (nxt.get("class") or [])
+            or "chapter-no-diagram" in (nxt.get("class") or [])
+        ):
+            hr.decompose()
     log(f"wrapped {n_with_diagram} chapter+diagram headings, {n_plain} plain headings")
     return str(soup)
 
@@ -235,11 +244,11 @@ em { color: #5A6B7B; }
 
 TITLEPAGE = """
 <div class="titlepage">
-  <div class="kicker">LUNEX &mdash; VERSION 0.1 &mdash; DRAFT</div>
+  <div class="kicker">LUNEX &mdash; VERSION 0.2 &mdash; DRAFT</div>
   <h1>LUNEX</h1>
   <div class="swatch"></div>
   <div class="sub">A unified, object-oriented reference model for operational technology, safety, security, and AI.</div>
-  <div class="meta">lunex.cloud<br/>Sixteen sub-models &middot; Full specification, with diagrams</div>
+  <div class="meta">lunex.cloud<br/>Twenty-one sub-models &middot; Full specification, with diagrams</div>
 </div>
 """
 
