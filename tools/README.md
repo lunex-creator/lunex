@@ -25,6 +25,12 @@ Each script writes its output SVG to the current working directory — run them 
 python3 check_crossings.py path/to/diagram.svg
 ```
 
+`lint_diagram.py` renders a diagram in headless Chromium (Playwright) and reports text overflowing its box, overlapping texts, arrows that end away from any box, and lines through text. Legend arrows, dotted `physicalRef` arrows, bus lines and the scaled state-machine fragment (Safety) produce known false positives.
+
+```bash
+python3 lint_diagram.py path/to/diagram.svg
+```
+
 ## `pdf/build_pdf.py`
 
 Builds `LUNEX-Specification.pdf` from `LUNEX-Specification.md` in one command.
